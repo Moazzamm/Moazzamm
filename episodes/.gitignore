@@ -1,0 +1,10 @@
+# raw footage, renders and work files stay on your machine
+*/raw/
+*/work/
+*/broll/
+*/music/
+*.mp4
+*.mov
+*.wav
+*.mp3
+!example-*/**/*.json

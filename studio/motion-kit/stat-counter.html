@@ -1,0 +1,72 @@
+<!doctype html>
+<html
+  lang="en"
+  data-composition-variables='[
+    {"id":"label","type":"string","label":"Label","default":"TOTAL SPENT · 7 DAYS"},
+    {"id":"prefix","type":"string","label":"Prefix","default":"$"},
+    {"id":"value","type":"number","label":"Value","default":412},
+    {"id":"suffix","type":"string","label":"Suffix","default":""},
+    {"id":"note","type":"string","label":"Handwritten note","default":"food, hotels and the jeep included"},
+    {"id":"separator","type":"boolean","label":"Thousands separator (off for years)","default":true},
+    {"id":"accent","type":"color","label":"Accent","default":"#2EC4B6"},
+    {"id":"length","type":"number","label":"Length (s), stretch to fit the voice line","default":4.5,"min":4.5,"max":60,"step":0.1}
+  ]'
+>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <title>Moazzam Travels — Stat Counter</title>
+    <script src="assets/vendor/gsap.min.js"></script>
+    <style>
+      @font-face { font-family: "Bebas Neue"; src: url("assets/fonts/bebas-neue-latin-400-normal.woff2") format("woff2"); font-weight: 400; }
+      @font-face { font-family: "Inter"; src: url("assets/fonts/inter-latin-700-normal.woff2") format("woff2"); font-weight: 700; }
+      @font-face { font-family: "Caveat"; src: url("assets/fonts/caveat-latin-600-normal.woff2") format("woff2"); font-weight: 600; }
+      html, body { margin: 0; background: transparent; }
+      #root { position: relative; width: 100%; height: 100%; overflow: hidden; }
+      .clip { position: absolute; inset: 0; }
+      #card { position: absolute; right: 140px; top: 150px; width: 640px; padding: 40px 48px 44px; }
+      #card-bg { position: absolute; inset: 0; border-radius: 22px; background: rgba(11, 22, 32, 0.82); box-shadow: 0 30px 60px rgba(0, 0, 0, 0.35); border-top: 6px solid var(--accent); }
+      #label { position: relative; font: 700 24px/1 Inter, sans-serif; letter-spacing: 0.3em; color: var(--accent); }
+      #num { position: relative; margin-top: 18px; font: 400 200px/0.85 "Bebas Neue", sans-serif; color: #fffaf2; white-space: nowrap; }
+      #num .pre, #num .suf { font-size: 110px; color: #f3e7d3; vertical-align: 52px; margin-right: 6px; }
+      #bar { position: relative; margin-top: 22px; height: 8px; border-radius: 4px; background: rgba(243, 231, 211, 0.14); overflow: hidden; }
+      #fill { position: absolute; inset: 0; background: var(--accent); border-radius: 4px; }
+      #note { position: relative; margin-top: 20px; font: 600 44px/1.05 Caveat, cursive; color: #ffd9a8; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="stat-counter" data-start="0" data-width="1920" data-height="1080">
+      <section id="stat" class="clip" data-start="0" data-duration="4.5" data-track-index="0">
+        <div id="card">
+          <div id="card-bg"></div>
+          <div id="label" data-var-text="label">TOTAL SPENT · 7 DAYS</div>
+          <div id="num"><span class="pre" data-var-text="prefix">$</span><span id="n">0</span><span class="suf" data-var-text="suffix"></span></div>
+          <div id="bar"><div id="fill"></div></div>
+          <div id="note" data-var-text="note">food, hotels and the jeep included</div>
+        </div>
+      </section>
+    </div>
+    <script>
+      const vars = window.__hyperframes.getVariables();
+      const n = document.getElementById("n");
+      const decimals = Number.isInteger(vars.value) ? 0 : 1;
+      const counter = { v: 0 };
+      const draw = () => { n.textContent = counter.v.toLocaleString("en-US", { minimumFractionDigits: decimals, maximumFractionDigits: decimals, useGrouping: vars.separator }); };
+      draw();
+
+      const L = Math.max(4.5, Number(window.__hyperframes.getVariables().length) || 4.5);
+      document.getElementById("stat").setAttribute("data-duration", L);
+      const tl = gsap.timeline({ paused: true });
+      tl.fromTo("#card-bg", { scaleY: 0, transformOrigin: "50% 0%" }, { scaleY: 1, duration: 0.5, ease: "expo.out" }, 0.1)
+        .fromTo("#label", { opacity: 0, x: -20 }, { opacity: 1, x: 0, duration: 0.45, ease: "power3.out" }, 0.3)
+        .fromTo("#num", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, 0.35)
+        .fromTo(counter, { v: 0 }, { v: vars.value, duration: 1.6, ease: "power3.out", onUpdate: draw }, 0.4)
+        .fromTo("#fill", { scaleX: 0, transformOrigin: "0% 50%" }, { scaleX: 1, duration: 1.6, ease: "power3.out" }, 0.4)
+        .fromTo("#num", { scale: 1 }, { scale: 1.06, duration: 0.12, yoyo: true, repeat: 1, ease: "power2.out", transformOrigin: "0% 50%" }, 2.0)
+        .fromTo("#note", { opacity: 0, y: 12, rotation: -3 }, { opacity: 1, y: 0, rotation: -1.5, duration: 0.6, ease: "power2.out" }, 1.9)
+        .to(["#label", "#num", "#bar", "#note"], { opacity: 0, y: -12, duration: 0.3, ease: "power2.in", stagger: 0.03 }, L - 0.6)
+        .to("#card-bg", { scaleY: 0, duration: 0.35, ease: "expo.in" }, L - 0.45);
+      window.__timelines["stat-counter"] = tl;
+    </script>
+  </body>
+</html>

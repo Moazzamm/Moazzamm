@@ -1,0 +1,74 @@
+<!doctype html>
+<html
+  lang="en"
+  data-composition-variables='[
+    {"id":"place","type":"string","label":"Place","default":"Attabad Lake"},
+    {"id":"region","type":"string","label":"Region / detail","default":"Gojal, Gilgit-Baltistan"},
+    {"id":"accent","type":"color","label":"Accent","default":"#FF7A3D"},
+    {"id":"side","type":"enum","label":"Side","default":"left","options":[{"value":"left","label":"Bottom left"},{"value":"right","label":"Bottom right"}]},
+    {"id":"length","type":"number","label":"Length (s), stretch to fit the voice line","default":5,"min":5,"max":60,"step":0.1}
+  ]'
+>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <title>Moazzam Travels — Location Tag</title>
+    <script src="assets/vendor/gsap.min.js"></script>
+    <style>
+      @font-face { font-family: "Inter"; src: url("assets/fonts/inter-latin-800-normal.woff2") format("woff2"); font-weight: 800; }
+      @font-face { font-family: "Inter"; src: url("assets/fonts/inter-latin-500-normal.woff2") format("woff2"); font-weight: 500; }
+      html, body { margin: 0; background: transparent; }
+      #root { position: relative; width: 100%; height: 100%; overflow: hidden; }
+      .clip { position: absolute; inset: 0; }
+      #tag { position: absolute; bottom: 120px; left: 120px; display: flex; align-items: center; gap: 26px; }
+      #tag.right { left: auto; right: 120px; flex-direction: row-reverse; text-align: right; }
+      #pin { width: 84px; height: 84px; flex: none; }
+      #pin svg { width: 100%; height: 100%; display: block; filter: drop-shadow(0 6px 14px rgba(0, 0, 0, 0.45)); }
+      #panel { position: relative; padding: 18px 34px 20px 30px; overflow: hidden; }
+      #panel-bg { position: absolute; inset: 0; background: rgba(11, 22, 32, 0.78); border-left: 6px solid var(--accent); border-radius: 4px; }
+      #tag.right #panel-bg { border-left: none; border-right: 6px solid var(--accent); }
+      #place { position: relative; font: 800 64px/1.05 Inter, sans-serif; color: #fffaf2; letter-spacing: -0.01em; white-space: nowrap; }
+      #region { position: relative; margin-top: 8px; font: 500 28px/1 Inter, sans-serif; color: #f3e7d3; opacity: 0.85; letter-spacing: 0.06em; white-space: nowrap; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="location-tag" data-start="0" data-width="1920" data-height="1080">
+      <section id="lt" class="clip" data-start="0" data-duration="5" data-track-index="0">
+        <div id="tag">
+          <div id="pin">
+            <svg viewBox="0 0 64 64" aria-hidden="true">
+              <path d="M32 4C20.4 4 11 13.2 11 24.6 11 40 32 60 32 60s21-20 21-35.4C53 13.2 43.6 4 32 4z" fill="var(--accent)" />
+              <circle cx="32" cy="24.5" r="8" fill="#fffaf2" />
+            </svg>
+          </div>
+          <div id="panel">
+            <div id="panel-bg"></div>
+            <div id="place" data-var-text="place">Attabad Lake</div>
+            <div id="region" data-var-text="region">Gojal, Gilgit-Baltistan</div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <script>
+      const vars = window.__hyperframes.getVariables();
+      const right = vars.side === "right";
+      if (right) document.getElementById("tag").classList.add("right");
+      const dir = right ? 1 : -1;
+
+      const L = Math.max(5, Number(window.__hyperframes.getVariables().length) || 5);
+      document.getElementById("lt").setAttribute("data-duration", L);
+      const tl = gsap.timeline({ paused: true });
+      tl.fromTo("#pin", { y: -260, opacity: 0 }, { y: 0, opacity: 1, duration: 0.55, ease: "bounce.out" }, 0.1)
+        .to("#pin", { scaleY: 0.86, duration: 0.08, yoyo: true, repeat: 1, transformOrigin: "50% 100%" }, 0.42)
+        .fromTo("#panel-bg", { scaleX: 0, transformOrigin: right ? "100% 50%" : "0% 50%" }, { scaleX: 1, duration: 0.55, ease: "expo.out" }, 0.45)
+        .fromTo("#place", { x: 40 * dir * -1, opacity: 0 }, { x: 0, opacity: 1, duration: 0.6, ease: "power3.out" }, 0.6)
+        .fromTo("#region", { x: 30 * dir * -1, opacity: 0 }, { x: 0, opacity: 0.85, duration: 0.6, ease: "power3.out" }, 0.75)
+        .to("#pin", { y: -6, duration: 1.4, ease: "sine.inOut", yoyo: true, repeat: 1 }, 1.3)
+        // exit
+        .to(["#place", "#region"], { x: 30 * dir, opacity: 0, duration: 0.35, ease: "power2.in", stagger: 0.05 }, L - 0.75)
+        .to("#panel-bg", { scaleX: 0, duration: 0.4, ease: "expo.in" }, L - 0.65)
+        .to("#pin", { y: 30, opacity: 0, duration: 0.35, ease: "power2.in" }, L - 0.5);
+      window.__timelines["location-tag"] = tl;
+    </script>
+  </body>
+</html>

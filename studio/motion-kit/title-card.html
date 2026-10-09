@@ -1,0 +1,103 @@
+<!doctype html>
+<html
+  lang="en"
+  data-composition-variables='[
+    {"id":"kicker","type":"string","label":"Kicker","default":"EPISODE 04 · PAKISTAN"},
+    {"id":"title","type":"string","label":"Place","default":"HUNZA VALLEY","maxLength":16},
+    {"id":"subtitle","type":"string","label":"Handwritten line","default":"where the mountains meet the sky"},
+    {"id":"coords","type":"string","label":"Coordinates","default":"36.3167° N · 74.6500° E"},
+    {"id":"accent","type":"color","label":"Accent","default":"#FF7A3D"},
+    {"id":"showBackground","type":"boolean","label":"Solid background (off = transparent overlay)","default":true},
+    {"id":"length","type":"number","label":"Length (s), stretch to fit the voice line","default":5,"min":5,"max":60,"step":0.1}
+  ]'
+>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <title>Moazzam Travels — Title Card</title>
+    <script src="assets/vendor/gsap.min.js"></script>
+    <style>
+      @font-face { font-family: "Bebas Neue"; src: url("assets/fonts/bebas-neue-latin-400-normal.woff2") format("woff2"); font-weight: 400; }
+      @font-face { font-family: "Inter"; src: url("assets/fonts/inter-latin-700-normal.woff2") format("woff2"); font-weight: 700; }
+      @font-face { font-family: "Inter"; src: url("assets/fonts/inter-latin-500-normal.woff2") format("woff2"); font-weight: 500; }
+      @font-face { font-family: "Caveat"; src: url("assets/fonts/caveat-latin-600-normal.woff2") format("woff2"); font-weight: 600; }
+      html, body { margin: 0; background: transparent; }
+      #root { position: relative; width: 100%; height: 100%; overflow: hidden; color: #f3e7d3; }
+      .clip { position: absolute; inset: 0; }
+      #bg {
+        position: absolute; inset: 0;
+        background:
+          radial-gradient(1100px 620px at 50% 108%, color-mix(in srgb, var(--accent) 42%, transparent), transparent 70%),
+          radial-gradient(900px 500px at 12% -10%, rgba(46, 196, 182, 0.18), transparent 70%),
+          linear-gradient(180deg, #0b1620 0%, #10202c 60%, #1a1c22 100%);
+      }
+      #grain {
+        position: absolute; inset: -50%;
+        background-image: radial-gradient(rgba(255,255,255,0.07) 1px, transparent 1px);
+        background-size: 3px 3px; opacity: 0.55; mix-blend-mode: overlay;
+      }
+      #stage { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+      #kicker {
+        font: 700 30px/1 Inter, sans-serif; letter-spacing: 0.42em; color: var(--accent);
+        margin-bottom: 26px; padding-left: 0.42em;
+      }
+      #title { display: flex; font: 400 280px/0.86 "Bebas Neue", sans-serif; letter-spacing: 0.02em; }
+      .mask { display: block; overflow: hidden; padding: 0 2px; }
+      .ch { display: block; }
+      .space { width: 0.28em; }
+      #rule { width: 1100px; height: 3px; margin-top: 26px; background: linear-gradient(90deg, transparent, #f3e7d3 18%, #f3e7d3 82%, transparent); }
+      #subtitle { margin-top: 30px; font: 600 64px/1 Caveat, cursive; color: #ffd9a8; }
+      #coords {
+        position: absolute; left: 0; right: 0; bottom: 84px; text-align: center;
+        font: 500 24px/1 Inter, sans-serif; letter-spacing: 0.3em; color: rgba(243, 231, 211, 0.72);
+      }
+      #pin { display: inline-block; width: 10px; height: 10px; border-radius: 50%; background: var(--accent); margin-right: 18px; vertical-align: 2px; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="title-card" data-start="0" data-width="1920" data-height="1080">
+      <section id="card" class="clip" data-start="0" data-duration="5" data-track-index="0">
+        <div id="bg"><div id="grain"></div></div>
+        <div id="stage">
+          <div id="kicker" data-var-text="kicker">EPISODE 04 · PAKISTAN</div>
+          <div id="title"></div>
+          <div id="rule"></div>
+          <div id="subtitle" data-var-text="subtitle">where the mountains meet the sky</div>
+        </div>
+        <div id="coords"><span id="pin"></span><span id="coords-text" data-var-text="coords">36.3167° N · 74.6500° E</span></div>
+      </section>
+    </div>
+    <script>
+      const vars = window.__hyperframes.getVariables();
+      if (!vars.showBackground) document.getElementById("bg").style.display = "none";
+
+      // split the place name into masked letters for the rise-in
+      const title = document.getElementById("title");
+      for (const c of vars.title) {
+        const mask = document.createElement("span");
+        mask.className = c === " " ? "mask space" : "mask";
+        const ch = document.createElement("span");
+        ch.className = "ch";
+        ch.textContent = c === " " ? " " : c;
+        mask.appendChild(ch);
+        title.appendChild(mask);
+      }
+
+      const L = Math.max(5, Number(window.__hyperframes.getVariables().length) || 5);
+      document.getElementById("card").setAttribute("data-duration", L);
+      const tl = gsap.timeline({ paused: true });
+      tl.fromTo("#bg", { scale: 1.12 }, { scale: 1, duration: L, ease: "none" }, 0)
+        .fromTo("#grain", { x: 0, y: 0 }, { x: 40, y: -30, duration: L, ease: "none" }, 0)
+        .fromTo("#kicker", { opacity: 0, y: 18, scale: 1.08 }, { opacity: 1, y: 0, scale: 1, duration: 0.9, ease: "power3.out" }, 0.15)
+        .fromTo(".ch", { yPercent: 110 }, { yPercent: 0, duration: 0.85, ease: "expo.out", stagger: 0.045 }, 0.3)
+        .fromTo("#rule", { scaleX: 0 }, { scaleX: 1, duration: 1.1, ease: "power4.inOut" }, 0.75)
+        .fromTo("#subtitle", { opacity: 0, y: 14, rotation: -3 }, { opacity: 1, y: 0, rotation: -1.5, duration: 0.9, ease: "power2.out" }, 1.25)
+        .fromTo("#coords", { opacity: 0, clipPath: "inset(0 50% 0 50%)" }, { opacity: 1, clipPath: "inset(0 0% 0 0%)", duration: 1.0, ease: "power2.out" }, 1.45)
+        .fromTo("#pin", { scale: 0 }, { scale: 1, duration: 0.5, ease: "back.out(3)" }, 1.6)
+        // exit, so the card hands off cleanly to footage
+        .to(".ch", { yPercent: -110, duration: 0.5, ease: "power3.in", stagger: 0.02 }, L - 0.75)
+        .to(["#kicker", "#rule", "#subtitle", "#coords"], { opacity: 0, y: -16, duration: 0.45, ease: "power2.in" }, L - 0.7);
+      window.__timelines["title-card"] = tl;
+    </script>
+  </body>
+</html>

@@ -1,0 +1,62 @@
+<!doctype html>
+<html
+  lang="en"
+  data-composition-variables='[
+    {"id":"headline","type":"string","label":"Headline","default":"THE JOURNEY CONTINUES"},
+    {"id":"channel","type":"string","label":"Channel name","default":"Moazzam Travels"},
+    {"id":"cta","type":"string","label":"Handwritten CTA","default":"watch the next one, it gets wilder"},
+    {"id":"accent","type":"color","label":"Accent","default":"#FF7A3D"}
+  ]'
+>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <title>Moazzam Travels — End Screen</title>
+    <script src="assets/vendor/gsap.min.js"></script>
+    <style>
+      @font-face { font-family: "Bebas Neue"; src: url("assets/fonts/bebas-neue-latin-400-normal.woff2") format("woff2"); font-weight: 400; }
+      @font-face { font-family: "Inter"; src: url("assets/fonts/inter-latin-700-normal.woff2") format("woff2"); font-weight: 700; }
+      @font-face { font-family: "Caveat"; src: url("assets/fonts/caveat-latin-600-normal.woff2") format("woff2"); font-weight: 600; }
+      html, body { margin: 0; background: #0b1620; }
+      #root { position: relative; width: 100%; height: 100%; overflow: hidden; color: #f3e7d3; }
+      .clip { position: absolute; inset: 0; }
+      #bg { position: absolute; inset: 0; background: radial-gradient(1000px 600px at 50% 120%, color-mix(in srgb, var(--accent) 35%, transparent), transparent 70%), linear-gradient(180deg, #0b1620, #12222d); }
+      #headline { position: absolute; top: 96px; left: 0; right: 0; text-align: center; font: 400 104px/1 "Bebas Neue", sans-serif; letter-spacing: 0.06em; }
+      #cta { position: absolute; top: 210px; left: 0; right: 0; text-align: center; font: 600 52px/1 Caveat, cursive; color: #ffd9a8; }
+      /* empty frames where YouTube end-screen elements are placed in Studio */
+      .slot { position: absolute; top: 330px; width: 720px; height: 405px; border-radius: 18px; border: 3px dashed rgba(243, 231, 211, 0.35); }
+      #slot-a { left: 170px; }
+      #slot-b { right: 170px; }
+      #sub { position: absolute; left: 0; right: 0; top: 800px; display: flex; justify-content: center; align-items: center; gap: 28px; }
+      #avatar { width: 150px; height: 150px; border-radius: 50%; border: 3px dashed rgba(243, 231, 211, 0.35); }
+      #chan { font: 700 40px/1 Inter, sans-serif; letter-spacing: 0.02em; }
+      #btn { display: inline-block; margin-top: 12px; padding: 14px 28px; border-radius: 10px; background: var(--accent); color: #0b1620; font: 700 26px/1 Inter, sans-serif; letter-spacing: 0.18em; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="end-screen" data-start="0" data-width="1920" data-height="1080" data-duration="20">
+      <section id="end" class="clip" data-start="0" data-duration="20" data-track-index="0">
+        <div id="bg"></div>
+        <div id="headline" data-var-text="headline">THE JOURNEY CONTINUES</div>
+        <div id="cta" data-var-text="cta">watch the next one, it gets wilder</div>
+        <div class="slot" id="slot-a"></div>
+        <div class="slot" id="slot-b"></div>
+        <div id="sub">
+          <div id="avatar"></div>
+          <div><div id="chan" data-var-text="channel">Moazzam Travels</div><div id="btn">SUBSCRIBE</div></div>
+        </div>
+      </section>
+    </div>
+    <script>
+      const tl = gsap.timeline({ paused: true });
+      tl.fromTo("#bg", { opacity: 0 }, { opacity: 1, duration: 0.6 }, 0)
+        .fromTo("#headline", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.7, ease: "expo.out" }, 0.2)
+        .fromTo("#cta", { opacity: 0, rotation: -3 }, { opacity: 1, rotation: -1.5, duration: 0.6, ease: "power2.out" }, 0.6)
+        .fromTo(".slot", { opacity: 0, scale: 0.92 }, { opacity: 1, scale: 1, duration: 0.6, ease: "back.out(1.6)", stagger: 0.12 }, 0.5)
+        .fromTo("#sub", { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" }, 0.9)
+        .fromTo("#btn", { scale: 1 }, { scale: 1.06, duration: 0.5, ease: "sine.inOut", yoyo: true, repeat: 11 }, 2.0)
+        .fromTo("#bg", { scale: 1 }, { scale: 1.06, duration: 20, ease: "none" }, 0);
+      window.__timelines["end-screen"] = tl;
+    </script>
+  </body>
+</html>

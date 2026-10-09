@@ -1,0 +1,12 @@
+{
+  "base": "work/cut.mp4",
+  "out": "work/assembled.mp4",
+  "punch": [
+    {"start": 12.4, "end": 15.0, "scale": 1.15}
+  ],
+  "overlays": [
+    {"file": "gfx/title-card.mp4", "at": 9.8},
+    {"file": "gfx/loc-passu.mov", "at": 21.3},
+    {"file": "broll/drone_lake.mp4", "at": 40.0, "trim": 4.5}
+  ]
+}

@@ -1,0 +1,126 @@
+<!doctype html>
+<html
+  lang="en"
+  data-composition-variables='[
+    {"id":"from","type":"string","label":"From","default":"ISLAMABAD"},
+    {"id":"to","type":"string","label":"To","default":"HUNZA"},
+    {"id":"distance","type":"number","label":"Distance","default":612,"min":1},
+    {"id":"unit","type":"string","label":"Unit","default":"KM"},
+    {"id":"mode","type":"enum","label":"Transport","default":"car","options":[{"value":"plane","label":"Plane"},{"value":"car","label":"Car / bus"},{"value":"train","label":"Train"}]},
+    {"id":"duration","type":"string","label":"Travel time","default":"14 HRS ON THE KKH"},
+    {"id":"accent","type":"color","label":"Accent","default":"#FF7A3D"},
+    {"id":"length","type":"number","label":"Length (s), stretch to fit the voice line","default":6,"min":6,"max":60,"step":0.1}
+  ]'
+>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <title>Moazzam Travels — Route Map</title>
+    <script src="assets/vendor/gsap.min.js"></script>
+    <style>
+      @font-face { font-family: "Bebas Neue"; src: url("assets/fonts/bebas-neue-latin-400-normal.woff2") format("woff2"); font-weight: 400; }
+      @font-face { font-family: "Inter"; src: url("assets/fonts/inter-latin-700-normal.woff2") format("woff2"); font-weight: 700; }
+      html, body { margin: 0; background: #0b1620; }
+      #root { position: relative; width: 100%; height: 100%; overflow: hidden; color: #f3e7d3; }
+      .clip { position: absolute; inset: 0; }
+      #bg { position: absolute; inset: 0; background: radial-gradient(1200px 700px at 50% 45%, #14303d, #0b1620 70%); }
+      #dots { position: absolute; inset: 0; }
+      #map { position: absolute; inset: 0; }
+      .city { position: absolute; transform: translate(-50%, 0); text-align: center; }
+      .city .name { font: 400 76px/1 "Bebas Neue", sans-serif; letter-spacing: 0.06em; }
+      .city .lbl { font: 700 20px/1 Inter, sans-serif; letter-spacing: 0.35em; color: var(--accent); margin-bottom: 10px; }
+      #readout { position: absolute; left: 0; right: 0; bottom: 110px; text-align: center; }
+      #dist { font: 400 150px/0.9 "Bebas Neue", sans-serif; letter-spacing: 0.02em; }
+      #dist small { font-size: 64px; margin-left: 10px; color: var(--accent); }
+      #time { margin-top: 10px; font: 700 26px/1 Inter, sans-serif; letter-spacing: 0.32em; opacity: 0.8; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="route-map" data-start="0" data-width="1920" data-height="1080">
+      <section id="scene" class="clip" data-start="0" data-duration="6" data-track-index="0">
+        <div id="bg"></div>
+        <svg id="dots" viewBox="0 0 1920 1080"></svg>
+        <svg id="map" viewBox="0 0 1920 1080">
+          <path id="route-shadow" d="M 420 640 Q 960 170 1500 640" fill="none" stroke="rgba(0,0,0,0.35)" stroke-width="10" stroke-linecap="round" />
+          <path id="route" d="M 420 640 Q 960 170 1500 640" fill="none" stroke="var(--accent)" stroke-width="6" stroke-linecap="round" stroke-dasharray="2 18" />
+          <circle id="ring-a" cx="420" cy="640" r="18" fill="none" stroke="var(--accent)" stroke-width="3" />
+          <circle id="dot-a" cx="420" cy="640" r="12" fill="#fffaf2" />
+          <circle id="ring-b" cx="1500" cy="640" r="18" fill="none" stroke="var(--accent)" stroke-width="3" />
+          <circle id="dot-b" cx="1500" cy="640" r="12" fill="var(--accent)" />
+          <g id="vehicle"><g id="vehicle-art"></g></g>
+        </svg>
+        <div class="city" id="city-a" style="left: 420px; top: 680px"><div class="lbl">FROM</div><div class="name" data-var-text="from">ISLAMABAD</div></div>
+        <div class="city" id="city-b" style="left: 1500px; top: 680px"><div class="lbl">TO</div><div class="name" data-var-text="to">HUNZA</div></div>
+        <div id="readout">
+          <div id="dist"><span id="dist-n">0</span><small id="unit" data-var-text="unit">KM</small></div>
+          <div id="time" data-var-text="duration">14 HRS ON THE KKH</div>
+        </div>
+      </section>
+    </div>
+    <script>
+      const vars = window.__hyperframes.getVariables();
+      const NS = "http://www.w3.org/2000/svg";
+
+      // deterministic dot-matrix backdrop (no randomness: a fixed wave pattern)
+      const dots = document.getElementById("dots");
+      for (let y = 60; y < 1080; y += 36) {
+        for (let x = 30; x < 1920; x += 36) {
+          const v = Math.sin(x * 0.006) * Math.cos(y * 0.009) + Math.sin((x + y) * 0.003);
+          if (v < 0.35) continue;
+          const c = document.createElementNS(NS, "circle");
+          c.setAttribute("cx", x); c.setAttribute("cy", y); c.setAttribute("r", 2.4);
+          c.setAttribute("fill", "rgba(243,231,211,0.16)");
+          c.setAttribute("class", "bgdot");
+          dots.appendChild(c);
+        }
+      }
+
+      const icons = {
+        plane: '<path d="M-26 -4 L10 -4 L24 -18 L30 -18 L20 -4 L30 -4 L36 -10 L40 -10 L36 0 L40 10 L36 10 L30 4 L20 4 L30 18 L24 18 L10 4 L-26 4 Z" fill="#fffaf2"/>',
+        car: '<rect x="-30" y="-10" width="60" height="20" rx="8" fill="#fffaf2"/><rect x="-14" y="-18" width="30" height="12" rx="5" fill="#fffaf2"/><circle cx="-16" cy="12" r="6" fill="#0b1620"/><circle cx="16" cy="12" r="6" fill="#0b1620"/>',
+        train: '<rect x="-32" y="-16" width="64" height="30" rx="9" fill="#fffaf2"/><rect x="-24" y="-10" width="18" height="10" rx="2" fill="#0b1620"/><rect x="6" y="-10" width="18" height="10" rx="2" fill="#0b1620"/><circle cx="-18" cy="16" r="5" fill="#0b1620"/><circle cx="18" cy="16" r="5" fill="#0b1620"/>'
+      };
+      document.getElementById("vehicle-art").innerHTML = icons[vars.mode] || icons.car;
+
+      const route = document.getElementById("route");
+      const len = route.getTotalLength();
+      const reveal = document.getElementById("route-shadow");
+      reveal.style.strokeDasharray = `${len}`;
+      const veh = document.getElementById("vehicle");
+      const distEl = document.getElementById("dist-n");
+      const fmt = (n) => Math.round(n).toLocaleString("en-US");
+
+      const travel = { p: 0 };
+      const place = () => {
+        const L = travel.p * len;
+        const pt = route.getPointAtLength(L);
+        const ahead = route.getPointAtLength(Math.min(len, L + 1));
+        const behind = route.getPointAtLength(Math.max(0, L - 1));
+        const ang = Math.atan2(ahead.y - behind.y, ahead.x - behind.x) * 180 / Math.PI;
+        veh.setAttribute("transform", `translate(${pt.x} ${pt.y}) rotate(${ang})`);
+        reveal.style.strokeDashoffset = `${len * (1 - travel.p)}`;
+        route.style.clipPath = `inset(0 ${(1 - travel.p) * 100}% 0 0)`;
+        distEl.textContent = fmt(vars.distance * travel.p);
+      };
+      place();
+
+      const L = Math.max(6, Number(window.__hyperframes.getVariables().length) || 6);
+      document.getElementById("scene").setAttribute("data-duration", L);
+      const tl = gsap.timeline({ paused: true });
+      tl.fromTo("#bg", { scale: 1.08 }, { scale: 1, duration: L, ease: "none" }, 0)
+        .fromTo(".bgdot", { opacity: 0 }, { opacity: 1, duration: 0.8, stagger: { each: 0.0006, from: "center" } }, 0)
+        .fromTo("#dot-a", { scale: 0, transformOrigin: "50% 50%" }, { scale: 1, duration: 0.4, ease: "back.out(3)" }, 0.3)
+        .fromTo("#ring-a", { scale: 0.6, opacity: 1, transformOrigin: "50% 50%" }, { scale: 2.6, opacity: 0, duration: 1.0, ease: "power2.out" }, 0.4)
+        .fromTo("#city-a", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, 0.45)
+        .fromTo("#vehicle", { opacity: 0 }, { opacity: 1, duration: 0.2 }, 0.8)
+        .fromTo(travel, { p: 0 }, { p: 1, duration: 2.8, ease: "power2.inOut", onUpdate: place }, 0.8)
+        .fromTo("#readout", { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" }, 0.9)
+        .fromTo("#dot-b", { scale: 0, transformOrigin: "50% 50%" }, { scale: 1, duration: 0.45, ease: "back.out(3)" }, 3.5)
+        .fromTo("#ring-b", { scale: 0.6, opacity: 1, transformOrigin: "50% 50%" }, { scale: 2.8, opacity: 0, duration: 1.1, ease: "power2.out" }, 3.55)
+        .fromTo("#city-b", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, 3.6)
+        .to("#vehicle", { opacity: 0, duration: 0.3 }, 3.7)
+        .to("#scene", { opacity: 0, duration: 0.5, ease: "power2.in" }, L - 0.5);
+      window.__timelines["route-map"] = tl;
+    </script>
+  </body>
+</html>

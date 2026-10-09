@@ -1,0 +1,64 @@
+<!doctype html>
+<html
+  lang="en"
+  data-composition-variables='[
+    {"id":"number","type":"string","label":"Chapter number","default":"02"},
+    {"id":"title","type":"string","label":"Chapter title","default":"The Old Silk Road"},
+    {"id":"accent","type":"color","label":"Accent","default":"#FF7A3D"},
+    {"id":"length","type":"number","label":"Length (s), stretch to fit the voice line","default":3.5,"min":3.5,"max":60,"step":0.1}
+  ]'
+>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <title>Moazzam Travels — Chapter Card</title>
+    <script src="assets/vendor/gsap.min.js"></script>
+    <style>
+      @font-face { font-family: "Bebas Neue"; src: url("assets/fonts/bebas-neue-latin-400-normal.woff2") format("woff2"); font-weight: 400; }
+      @font-face { font-family: "Inter"; src: url("assets/fonts/inter-latin-700-normal.woff2") format("woff2"); font-weight: 700; }
+      @font-face { font-family: "Caveat"; src: url("assets/fonts/caveat-latin-600-normal.woff2") format("woff2"); font-weight: 600; }
+      html, body { margin: 0; background: #0b1620; }
+      #root { position: relative; width: 100%; height: 100%; overflow: hidden; color: #f3e7d3; }
+      .clip { position: absolute; inset: 0; }
+      #wipe { position: absolute; inset: 0; background: var(--accent); }
+      #panel { position: absolute; inset: 0; background: linear-gradient(135deg, #0b1620, #142a36); }
+      #wrap { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; gap: 56px; }
+      #num { font: 400 340px/0.8 "Bebas Neue", sans-serif; color: transparent; -webkit-text-stroke: 3px var(--accent); }
+      #txt { display: flex; flex-direction: column; gap: 14px; }
+      #lbl { font: 700 26px/1 Inter, sans-serif; letter-spacing: 0.5em; color: var(--accent); }
+      #title { font: 600 110px/1 Caveat, cursive; color: #fffaf2; white-space: nowrap; }
+      #line { height: 3px; width: 100%; background: #f3e7d3; opacity: 0.6; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="chapter-card" data-start="0" data-width="1920" data-height="1080">
+      <section id="chapter" class="clip" data-start="0" data-duration="3.5" data-track-index="0">
+        <div id="wipe"></div>
+        <div id="panel"></div>
+        <div id="wrap">
+          <div id="num" data-var-text="number">02</div>
+          <div id="txt">
+            <div id="lbl">CHAPTER</div>
+            <div id="title" data-var-text="title">The Old Silk Road</div>
+            <div id="line"></div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <script>
+      const L = Math.max(3.5, Number(window.__hyperframes.getVariables().length) || 3.5);
+      document.getElementById("chapter").setAttribute("data-duration", L);
+      const tl = gsap.timeline({ paused: true });
+      tl.fromTo("#wipe", { xPercent: -100 }, { xPercent: 0, duration: 0.45, ease: "power4.inOut" }, 0)
+        .fromTo("#panel", { xPercent: -100 }, { xPercent: 0, duration: 0.5, ease: "power4.inOut" }, 0.12)
+        .fromTo("#num", { opacity: 0, x: -60 }, { opacity: 1, x: 0, duration: 0.7, ease: "expo.out" }, 0.45)
+        .fromTo("#lbl", { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, 0.6)
+        .fromTo("#title", { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" }, 0.7)
+        .fromTo("#line", { scaleX: 0, transformOrigin: "0% 50%" }, { scaleX: 1, duration: 0.8, ease: "power3.inOut" }, 0.85)
+        .fromTo("#wrap", { scale: 1 }, { scale: 1.03, duration: L - 1.1, ease: "none" }, 0.5)
+        .to("#wrap", { opacity: 0, duration: 0.3, ease: "power2.in" }, L - 0.55)
+        .to(["#panel", "#wipe"], { xPercent: 100, duration: 0.45, ease: "power4.inOut", stagger: 0.06 }, L - 0.5);
+      window.__timelines["chapter-card"] = tl;
+    </script>
+  </body>
+</html>
