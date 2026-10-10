@@ -1,6 +1,6 @@
 ---
 name: better-ui
-description: Polishes the surfaces, icons and motion in your project with exact values for border radius, optical alignment, shadows, icon states and animation.
+description: Polishes the surfaces, icons and motion in your project with exact values for border radius, optical alignment, shadows, icon states and animation. Use whenever building, styling or reviewing any web UI (HTML/CSS, Tailwind, React, Vue, Svelte, Motion), including new frontend projects, components, landing pages, dashboards and artifacts.
 ---
 
 # UI polish
