@@ -79,7 +79,9 @@ main{max-width:1400px;margin:0 auto;padding:8px 16px 48px}
       var section = el('section', 'flow');
       var head = el('div', 'flow-head');
       head.appendChild(el('h2', null, flow.title));
-      head.appendChild(el('span', 'count', flow.screens.length + ' screens'));
+      head.appendChild(el('span', 'count', flow.expected && flow.expected !== flow.screens.length
+        ? flow.screens.length + ' of ' + flow.expected + ' screens'
+        : flow.screens.length + ' screens'));
       var play = el('button', 'play', 'Slideshow ▶');
       var startAt = globalIndex;
       play.addEventListener('click', function () { openViewer(startAt); });

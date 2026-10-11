@@ -20,7 +20,10 @@ Mobbin only shows flows to logged-in users, so you run this in **your own browse
 2. Press `F12` (Mac: `Cmd+Opt+J`) → **Console** tab.
 3. Paste the whole contents of `save-mobbin-page.js` and press **Enter**.
    (Chrome may ask you to type `allow pasting` first.)
-4. Wait. A small box at the bottom-right shows progress. It scrolls the page, embeds the images, and then downloads `…-offline.html`.
+4. Wait (about a minute for 100+ screens) and don't scroll yourself. A box at the bottom-right shows progress, such as "found 64 of 110 screens in 7 flows".
+   It scrolls the whole page and every flow's slider, collecting screens as they appear.
+   - If every flow's count matches (e.g. "4 screens" → 4 found), it downloads `…-offline.html` automatically.
+   - If something is missing, the box lists those flows. Scroll to them yourself (they're picked up automatically), then press **Save now**.
 
 ### Option B: Bookmarklet (one click next time)
 1. Create a new bookmark.
@@ -30,7 +33,10 @@ Mobbin only shows flows to logged-in users, so you run this in **your own browse
 ## Notes
 - Open the saved file by double-clicking it. It works in any modern browser, on desktop and phone, with no internet.
 - If the progress box reports images that "could not be embedded", those few will only show when you're online. Run the saver again if that happens.
-- Screens are grouped under the nearest heading on the page, which is normally the flow name.
+- Each flow keeps its own slider, named from the caption under it on Mobbin (e.g. "Connecting to Gmail from Onboarding · 4 screens").
+  Mobbin's menu previews and the "More like …" suggestions from other apps are left out.
+- A screen that appears in several flows is kept in each of them.
+- Saved with an older version? `node fix-saved-file.js your-file.html` cleans it up. Re-running the saver gets you the complete set of flows, though.
 - The saved file is for your personal reference. Mobbin's content belongs to Mobbin and the app makers, so don't republish it.
 
 ## Development

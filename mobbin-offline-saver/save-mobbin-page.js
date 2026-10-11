@@ -55,7 +55,9 @@
       var section = el('section', 'flow');
       var head = el('div', 'flow-head');
       head.appendChild(el('h2', null, flow.title));
-      head.appendChild(el('span', 'count', flow.screens.length + ' screens'));
+      head.appendChild(el('span', 'count', flow.expected && flow.expected !== flow.screens.length
+        ? flow.screens.length + ' of ' + flow.expected + ' screens'
+        : flow.screens.length + ' screens'));
       var play = el('button', 'play', 'Slideshow ▶');
       var startAt = globalIndex;
       play.addEventListener('click', function () { openViewer(startAt); });
@@ -248,9 +250,44 @@
       '</body></html>';
   }
 
+  // Group screens into flows, best signal first:
+  // 1. The caption under each Mobbin flow slider ("Connecting to Gmail from
+  //    Onboarding" + "4 screens"). Images without one (menu previews, "More like"
+  //    suggestions) are dropped.
+  // 2. The "<App> <Flow> screen" alt text, keeping only the page's own app.
+  // 3. The nearest heading above each image.
+  function organize(items, title) {
+    var groups = [], byTitle = {};
+    var add = function (name, item) {
+      if (!byTitle[name]) { byTitle[name] = { title: name, screens: [] }; groups.push(byTitle[name]); }
+      if (item.expected) byTitle[name].expected = item.expected;
+      byTitle[name].screens.push({ src: item.src, alt: item.alt || '' });
+    };
+    var captioned = items.filter(function (i) { return i.flow; });
+    if (captioned.length) {
+      captioned.forEach(function (i) { add(i.flow, i); });
+      return groups;
+    }
+    var app = String(title || '').replace(/\s+(web|ios|android)$/i, '').trim();
+    var appLower = app.toLowerCase();
+    var re = /^(.*\S)\s+screen$/i;
+    var flowOf = function (item) {
+      var m = re.exec(item.alt || '');
+      if (!m) return null;
+      var lower = m[1].toLowerCase();
+      if (lower === appLower) return app;
+      if (lower.indexOf(appLower + ' ') === 0) return m[1].slice(app.length + 1);
+      return null;
+    };
+    var own = appLower ? items.filter(flowOf) : [];
+    if (own.length >= 3) own.forEach(function (i) { add(flowOf(i), i); });
+    else items.forEach(function (i) { add(i.heading || 'Screens', i); });
+    return groups;
+  }
+
   // Node: export the builder for the demo/test script.
   if (typeof module !== 'undefined' && module.exports && typeof window === 'undefined') {
-    module.exports = { buildViewerHtml: buildViewerHtml };
+    module.exports = { buildViewerHtml: buildViewerHtml, organize: organize };
     return;
   }
 
@@ -261,40 +298,76 @@
 
   var overlay = document.createElement('div');
   overlay.style.cssText = 'position:fixed;right:16px;bottom:16px;z-index:2147483647;background:#111;color:#fff;' +
-    'font:14px/1.4 system-ui,sans-serif;padding:12px 16px;border-radius:10px;box-shadow:0 6px 24px rgba(0,0,0,.35);max-width:340px';
+    'font:14px/1.4 system-ui,sans-serif;padding:12px 16px;border-radius:10px;box-shadow:0 6px 24px rgba(0,0,0,.35);max-width:360px';
+  var statusText = document.createElement('div');
+  var saveBtn = document.createElement('button');
+  saveBtn.textContent = 'Save now';
+  saveBtn.style.cssText = 'margin-top:10px;background:#fff;color:#111;border:0;border-radius:999px;padding:6px 14px;font:600 13px system-ui,sans-serif;cursor:pointer';
+  overlay.appendChild(statusText);
+  overlay.appendChild(saveBtn);
   document.body.appendChild(overlay);
-  function status(msg) { overlay.textContent = 'Mobbin Offline Saver: ' + msg; }
+  function status(msg) { statusText.textContent = 'Mobbin Offline Saver: ' + msg; }
 
   function sleep(ms) { return new Promise(function (r) { setTimeout(r, ms); }); }
 
-  // Scroll the window and every horizontally/vertically scrollable box to the end
-  // so lazy-loaded screens get rendered.
-  async function loadEverything() {
-    var lastHeight = -1, stable = 0;
-    for (var i = 0; i < 200 && stable < 3; i++) {
-      window.scrollTo(0, document.documentElement.scrollHeight);
-      await sleep(500);
-      var h = document.documentElement.scrollHeight;
-      if (h === lastHeight) stable++; else { stable = 0; lastHeight = h; }
-      status('loading page… (' + Math.round(h / 1000) + 'k px)');
-    }
-    var boxes = Array.prototype.filter.call(document.querySelectorAll('*'), function (e) {
+  var stopScrolling = false;
+
+  function scrollers(axis) {
+    return Array.prototype.filter.call(document.querySelectorAll('*'), function (e) {
+      if (e === document.documentElement || e === document.body || overlay.contains(e)) return false;
       var cs = getComputedStyle(e);
-      return (e.scrollWidth > e.clientWidth + 20 && /(auto|scroll)/.test(cs.overflowX)) ||
-             (e.scrollHeight > e.clientHeight + 20 && /(auto|scroll)/.test(cs.overflowY) && e !== document.documentElement && e !== document.body);
+      return axis === 'x'
+        ? e.scrollWidth > e.clientWidth + 20 && /(auto|scroll)/.test(cs.overflowX)
+        : e.scrollHeight > e.clientHeight + 20 && /(auto|scroll)/.test(cs.overflowY);
     });
-    for (var b = 0; b < boxes.length; b++) {
-      var box = boxes[b];
-      for (var x = 0; x < 40; x++) {
-        var beforeL = box.scrollLeft, beforeT = box.scrollTop;
-        box.scrollLeft += box.clientWidth;
-        box.scrollTop += box.clientHeight;
-        await sleep(150);
-        if (box.scrollLeft === beforeL && box.scrollTop === beforeT) break;
-      }
+  }
+
+  function inView(e) {
+    var r = e.getBoundingClientRect();
+    return r.bottom > 0 && r.top < innerHeight && r.width > 0 && r.height > 0;
+  }
+
+  // Mobbin only keeps the screens near the viewport in the page, so screens are
+  // harvested at every scroll step instead of once at the end.
+  async function scrollThrough(getPos, setPos, size, onStep) {
+    var still = 0;
+    for (var i = 0; i < 5000 && still < 4 && !stopScrolling; i++) {
+      var before = getPos();
+      setPos(before + size() * 0.8);
+      await sleep(350);
+      harvest();
+      if (onStep) await onStep();
+      still = getPos() === before ? still + 1 : 0;
     }
+  }
+
+  var doneRows = typeof WeakSet !== 'undefined' ? new WeakSet() : { has: function () { return false; }, add: function () {} };
+  async function scrollVisibleRows() {
+    var rows = scrollers('x').filter(function (r) { return inView(r) && !doneRows.has(r); });
+    for (var i = 0; i < rows.length && !stopScrolling; i++) {
+      var row = rows[i];
+      doneRows.add(row);
+      await scrollThrough(function () { return row.scrollLeft; }, function (v) { row.scrollLeft = v; },
+        function () { return row.clientWidth; });
+    }
+  }
+
+  async function autoScroll() {
+    harvest();
+    await scrollVisibleRows();
+    var progress = function () { status('scrolling… found ' + screenCount() + ' so far'); return scrollVisibleRows(); };
     window.scrollTo(0, 0);
-    await sleep(800);
+    await scrollThrough(function () { return window.scrollY; }, function (v) { window.scrollTo(0, v); },
+      function () { return innerHeight; }, progress);
+    var boxes = scrollers('y').sort(function (a, b) { return b.scrollHeight - a.scrollHeight; });
+    for (var i = 0; i < boxes.length && !stopScrolling; i++) {
+      var box = boxes[i];
+      if (!box.isConnected || box.getBoundingClientRect().height < 200) continue;
+      box.scrollTop = 0;
+      await sleep(300);
+      await scrollThrough(function () { return box.scrollTop; }, function (v) { box.scrollTop = v; },
+        function () { return box.clientHeight; }, progress);
+    }
   }
 
   function bestSrc(img) {
@@ -325,29 +398,77 @@
     return t.length > 0 && t.length < 120 ? t : null;
   }
 
-  function collect() {
-    var flows = [];
-    var byTitle = {};
-    var seen = {};
-    var current = document.title.replace(/\s*[|–-]\s*Mobbin.*$/i, '') || 'Screens';
-    var walker = document.createTreeWalker(document.body, NodeFilter.SHOW_ELEMENT);
-    var node;
-    while ((node = walker.nextNode())) {
-      if (node === overlay) continue;
-      if (/^H[1-4]$/.test(node.tagName) || node.getAttribute('role') === 'heading') {
+  function pageTitle() {
+    return document.title.replace(/\s*[|–-]\s*Mobbin.*$/i, '').trim() || 'Mobbin page';
+  }
+
+  // Finds the flow caption for a screen: the smallest ancestor holding exactly
+  // one "N screens" label; the flow name is the text just before that label.
+  var COUNT_RE = /^\s*(\d+)\s+screens?\s*$/i;
+  function cleanText(e) { return (e.textContent || '').replace(/\s+/g, ' ').trim(); }
+  function captionFor(img) {
+    for (var el = img.parentElement, depth = 0; el && el !== document.body && depth < 14; el = el.parentElement, depth++) {
+      var counts = Array.prototype.filter.call(el.querySelectorAll('*'), function (e) {
+        return COUNT_RE.test(e.textContent) && !Array.prototype.some.call(e.children, function (c) { return COUNT_RE.test(c.textContent); });
+      });
+      if (counts.length > 1) return null;
+      if (counts.length === 1) {
+        var countEl = counts[0];
+        for (var node = countEl; node && node !== el; node = node.parentElement) {
+          for (var sib = node.previousElementSibling; sib; sib = sib.previousElementSibling) {
+            var t = cleanText(sib);
+            if (t && t.length < 160 && !COUNT_RE.test(t)) return { flow: t, expected: +COUNT_RE.exec(countEl.textContent)[1] };
+          }
+        }
+        return null;
+      }
+    }
+    return null;
+  }
+
+  // Adds every screen image currently in the page (in page order, with its flow
+  // caption and the nearest heading above it) to `found`. Safe to call repeatedly:
+  // Mobbin removes off-screen screens, so this runs at every scroll step.
+  var found = [];
+  var seenKey = {};
+  var captionCache = typeof WeakMap !== 'undefined' ? new WeakMap() : null;
+  function harvest() {
+    var current = pageTitle();
+    var nodes = document.querySelectorAll('img, h1, h2, h3, h4, [role="heading"]');
+    for (var i = 0; i < nodes.length; i++) {
+      var node = nodes[i];
+      if (overlay.contains(node)) continue;
+      if (node.tagName !== 'IMG') {
         var t = headingText(node);
         if (t) current = t;
         continue;
       }
-      if (node.tagName !== 'IMG') continue;
       var url = bestSrc(node);
-      if (!url || seen[url] || !isScreen(node, url)) continue;
-      seen[url] = true;
-      if (!byTitle[current]) { byTitle[current] = { title: current, screens: [] }; flows.push(byTitle[current]); }
-      byTitle[current].screens.push({ src: url, alt: node.alt || '' });
+      if (!url || !isScreen(node, url)) continue;
+      var cap = captionCache && captionCache.has(node) ? captionCache.get(node) : captionFor(node);
+      if (captionCache) captionCache.set(node, cap);
+      var key = (cap ? cap.flow : '') + '|' + url; // the same screen can belong to several flows
+      if (seenKey[key]) continue;
+      seenKey[key] = true;
+      found.push({ src: url, alt: node.alt || '', heading: current, flow: cap && cap.flow, expected: cap && cap.expected });
     }
-    return flows;
   }
+
+  // "37 screens in 6 flows" plus, when captions give counts, what's still missing.
+  function summary() {
+    var flows = organize(found, pageTitle());
+    var got = 0, expected = 0, missing = [];
+    flows.forEach(function (f) {
+      got += f.screens.length;
+      if (f.expected) {
+        expected += f.expected;
+        if (f.screens.length < f.expected) missing.push(f.title + ' (' + f.screens.length + '/' + f.expected + ')');
+      }
+    });
+    return { flows: flows.length, got: got, expected: expected, missing: missing,
+      text: got + (expected ? ' of ' + expected : '') + ' screens in ' + flows.length + ' flows' };
+  }
+  function screenCount() { return summary().text; }
 
   function blobToDataUrl(blob) {
     return new Promise(function (resolve, reject) {
@@ -394,11 +515,18 @@
     setTimeout(function () { URL.revokeObjectURL(a.href); a.remove(); }, 5000);
   }
 
-  async function run() {
+  var saving = false;
+  async function save() {
+    if (saving) return;
+    saving = true;
+    stopScrolling = true;
+    clearInterval(timer);
+    document.removeEventListener('scroll', onScroll, true);
+    saveBtn.remove();
     try {
-      status('scrolling to load every screen…');
-      await loadEverything();
-      var flows = collect();
+      harvest();
+      var title = pageTitle();
+      var flows = organize(found, title);
       var list = [];
       flows.forEach(function (f) { f.screens.forEach(function (s) { list.push(s); }); });
       if (!list.length) { status('no screens found. Make sure you are logged in and the screens are visible.'); return; }
@@ -419,7 +547,6 @@
       var logoImg = document.querySelector('img[src*="app_logos"]');
       if (logoImg) logo = await embed(bestSrc(logoImg) || logoImg.src);
 
-      var title = document.title.replace(/\s*[|–-]\s*Mobbin.*$/i, '').trim() || 'Mobbin page';
       var html = buildViewerHtml({
         title: title,
         url: location.href,
@@ -430,12 +557,50 @@
       });
       var fname = title.replace(/[^\w\- ]+/g, '').trim().replace(/\s+/g, '-').slice(0, 80) || 'mobbin';
       download(html, fname + '-offline.html');
-      status('done! Saved ' + list.length + ' screens' + (failed ? ' (' + failed + ' not embedded)' : '') +
-        ' – ' + (html.length / 1048576).toFixed(1) + ' MB. Click to close.');
+      status('done! Saved ' + list.length + ' screens in ' + flows.length + ' flows' +
+        (failed ? ' (' + failed + ' not embedded)' : '') + ' – ' + (html.length / 1048576).toFixed(1) + ' MB. Click to close.');
       overlay.style.cursor = 'pointer';
       overlay.onclick = function () { overlay.remove(); };
     } catch (err) {
       status('error: ' + (err && err.message || err));
+      console.error(err);
+    }
+  }
+
+  function waitingMessage() {
+    var sm = summary();
+    var msg = 'found ' + sm.text + '.';
+    if (sm.missing.length) msg += ' Missing: ' + sm.missing.slice(0, 4).join(', ') + (sm.missing.length > 4 ? '…' : '') + '.';
+    return msg + ' Scroll to anything missing (it is added automatically), then press Save now.';
+  }
+
+  // Keep collecting while the user scrolls or opens other flows, until they save.
+  var scrollPending = false;
+  function onScroll() {
+    if (scrollPending) return;
+    scrollPending = true;
+    setTimeout(function () { scrollPending = false; harvest(); }, 250);
+  }
+  var timer = setInterval(function () {
+    harvest();
+    if (stopScrolling && !saving) status(waitingMessage());
+  }, 700);
+  document.addEventListener('scroll', onScroll, true);
+  saveBtn.addEventListener('click', save);
+
+  async function run() {
+    try {
+      status('scrolling to collect every screen…');
+      await autoScroll();
+      if (saving) return;
+      stopScrolling = true;
+      harvest();
+      var sm = summary();
+      // Everything accounted for: save straight away. Otherwise let the user help.
+      if (sm.got && !sm.missing.length) return save();
+      status(waitingMessage());
+    } catch (err) {
+      status('error while scrolling: ' + (err && err.message || err) + ' – press Save now to save what was found.');
       console.error(err);
     }
   }
