@@ -294,6 +294,8 @@
   // ---------------------------------------------------------------------------
   // Collector (runs on the live Mobbin page)
   // ---------------------------------------------------------------------------
+  if (window.__mobbinOfflineSaverRunning) return;
+  window.__mobbinOfflineSaverRunning = true;
   var MIN_SIZE = 120; // ignore icons/avatars smaller than this (px)
 
   var overlay = document.createElement('div');
@@ -500,9 +502,21 @@
         if (!res2.ok) throw new Error(res2.status);
         return await blobToDataUrl(await res2.blob());
       } catch (e2) {
-        try { return await viaCanvas(url); } catch (e3) { return null; }
+        try { return await viaCanvas(url); } catch (e3) { return viaExtension(url); }
       }
     }
+  }
+
+  // Chrome extension only: the background worker can fetch images the page can't.
+  function viaExtension(url) {
+    if (typeof chrome === 'undefined' || !chrome.runtime || !chrome.runtime.id) return Promise.resolve(null);
+    return new Promise(function (resolve) {
+      try {
+        chrome.runtime.sendMessage({ type: 'fetchImage', url: url }, function (reply) {
+          resolve(!chrome.runtime.lastError && reply && reply.dataUrl || null);
+        });
+      } catch (e) { resolve(null); }
+    });
   }
 
   function download(html, name) {
@@ -564,6 +578,8 @@
     } catch (err) {
       status('error: ' + (err && err.message || err));
       console.error(err);
+    } finally {
+      window.__mobbinOfflineSaverRunning = false;
     }
   }
 
