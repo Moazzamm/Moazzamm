@@ -1,0 +1,984 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Forma AI</title>
+  <meta name="description" content="Forma AI turns product requirements and research into interface designs, user flows, and interactive prototypes.">
+  <meta name="theme-color" content="#ECEEE9">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath fill='%2315171C' d='M2 2h9a7 7 0 0 1 7 7v9H2z'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300..500;1,6..72,300..400&family=Schibsted+Grotesk:wght@400..700&display=swap">
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="main.js"></script>
+</head>
+<body>
+<svg class="sprite" aria-hidden="true" focusable="false">
+  <symbol id="i-move" viewBox="0 0 24 24"><path d="M6 4l13 6.5-5.6 1.9L11.5 18z"/></symbol>
+  <symbol id="i-frame" viewBox="0 0 24 24"><path d="M8 3v18M16 3v18M3 8h18M3 16h18"/></symbol>
+  <symbol id="i-text" viewBox="0 0 24 24"><path d="M5 7V5h14v2M12 5v14M9 19h6"/></symbol>
+  <symbol id="i-comment" viewBox="0 0 24 24"><path d="M4 5h16v11H10l-6 4z"/></symbol>
+  <symbol id="i-pen" viewBox="0 0 24 24"><path d="M4 20l1-4L16 5l3 3L8 19zM14 7l3 3"/></symbol>
+  <symbol id="i-play" viewBox="0 0 24 24"><path d="M8 5.5v13l10.5-6.5z" fill="currentColor" stroke="none"/></symbol>
+  <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="6"/><path d="M20 20l-4.6-4.6"/></symbol>
+  <symbol id="i-send" viewBox="0 0 24 24"><path d="M12 19V6M6 11l6-6 6 6"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></symbol>
+  <symbol id="i-doc" viewBox="0 0 24 24"><path d="M6 3h8l4 4v14H6zM14 3v4h4M9 12h6M9 16h6"/></symbol>
+  <symbol id="i-chevron" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></symbol>
+  <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+  <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 9h16M4 15h16"/></symbol>
+  <symbol id="i-link" viewBox="0 0 24 24"><path d="M10 14a4 4 0 0 0 5.7 0l3-3A4 4 0 0 0 13 5.3l-1 1M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/></symbol>
+  <symbol id="i-layers" viewBox="0 0 24 24"><path d="M12 4l8 4-8 4-8-4zM4 12l8 4 8-4M4 16l8 4 8-4"/></symbol>
+  <symbol id="i-alert" viewBox="0 0 24 24"><path d="M12 4l9 16H3zM12 10v4M12 17v.5"/></symbol>
+  <symbol id="i-code" viewBox="0 0 24 24"><path d="M9 8l-4 4 4 4M15 8l4 4-4 4"/></symbol>
+  <symbol id="i-undo" viewBox="0 0 24 24"><path d="M9 6L5 10l4 4M5 10h9a5 5 0 0 1 0 10h-3"/></symbol>
+  <symbol id="i-grid" viewBox="0 0 24 24"><path d="M4 4h16v16H4zM9.3 4v16M14.7 4v16"/></symbol>
+</svg>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header" data-header>
+  <div class="wrap header-inner">
+    <a class="brand" href="#top" aria-label="Forma AI, back to top">
+      <svg class="brand-mark" viewBox="0 0 20 20" aria-hidden="true"><path d="M2 2h9a7 7 0 0 1 7 7v9H2z"/></svg>
+      <span class="brand-name">Forma</span>
+    </a>
+    <nav class="primary-nav" aria-label="Primary">
+      <ul class="nav-list">
+        <li><a href="#workflow">Workflow</a></li>
+        <li><a href="#demo">Demo</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#use-cases">Use cases</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+    </nav>
+    <div class="header-actions">
+      <button type="button" class="text-btn header-signin" data-open-signup="signin">Sign in</button>
+      <button type="button" class="btn btn--primary btn--sm" data-open-signup>Start designing</button>
+      <button type="button" class="menu-toggle" aria-expanded="false" aria-controls="mobile-menu" data-menu-toggle>
+        <span class="sr-only" data-menu-label>Open menu</span>
+        <svg class="icon" aria-hidden="true"><use href="#i-menu"/></svg>
+      </button>
+    </div>
+  </div>
+  <div class="mobile-menu" id="mobile-menu" hidden>
+    <nav class="wrap" aria-label="Mobile">
+      <ul class="mobile-list">
+        <li><a href="#workflow">Workflow</a></li>
+        <li><a href="#demo">Demo</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#use-cases">Use cases</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+      <div class="mobile-actions">
+        <button type="button" class="btn btn--primary btn--lg" data-open-signup>Start designing</button>
+        <button type="button" class="btn btn--ghost btn--lg" data-open-signup="signin">Sign in</button>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ============ HERO ============ -->
+  <section class="hero" id="top" aria-labelledby="hero-title">
+    <div class="wrap hero-grid">
+      <h1 class="hero-title" id="hero-title">
+        <span class="ht-line">From product idea</span>
+        <span class="ht-line">to prototype.</span>
+        <span class="ht-line ht-line--axis">At the speed of thought.</span>
+      </h1>
+      <div class="hero-aside">
+        <p class="hero-lede">Turn complex product requirements into thoughtful interfaces, interactive prototypes, and user flows—without starting from a blank canvas.</p>
+        <div class="hero-act">
+          <div class="hero-ctas">
+            <button type="button" class="btn btn--primary btn--lg" data-open-signup>Start designing</button>
+            <a class="btn btn--ghost btn--lg" href="#workflow">Explore the workflow</a>
+          </div>
+          <p class="hero-note">Free for your first three projects. No card required.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="wrap">
+      <figure class="hero-figure" data-hero-figure>
+        <div class="app" data-app aria-hidden="true">
+          <div class="app-bar">
+            <div class="app-crumbs">
+              <svg class="app-mark" viewBox="0 0 20 20"><path d="M2 2h9a7 7 0 0 1 7 7v9H2z"/></svg>
+              <span class="muted">Tideline</span><span class="slash">/</span><span>Dispatch board</span>
+            </div>
+            <div class="app-tools">
+              <span class="tool is-on"><svg class="icon"><use href="#i-move"/></svg></span>
+              <span class="tool"><svg class="icon"><use href="#i-frame"/></svg></span>
+              <span class="tool"><svg class="icon"><use href="#i-text"/></svg></span>
+              <span class="tool"><svg class="icon"><use href="#i-comment"/></svg></span>
+              <span class="tool-sep"></span>
+              <span class="tool tool--ask"><svg class="icon"><use href="#i-pen"/></svg>Ask Forma</span>
+            </div>
+            <div class="app-share">
+              <span class="avatars"><span class="av av--a">DK</span><span class="av av--b">MS</span></span>
+              <span class="app-btn">Share</span>
+              <span class="app-btn app-btn--play"><svg class="icon"><use href="#i-play"/></svg></span>
+            </div>
+          </div>
+
+          <div class="app-body">
+            <div class="panel panel--lib">
+              <div class="panel-tabs"><span>Layers</span><span class="is-on">Library</span></div>
+              <div class="lib-search"><svg class="icon"><use href="#i-search"/></svg>Search components</div>
+              <div class="lib-source"><span class="sync-dot"></span>Tideline DS<span class="lib-ver">v4.2</span></div>
+              <div class="lib-group">
+                <p>Data display</p>
+                <ul>
+                  <li><span class="thumb thumb--pill"></span>Status pill<span class="n">6</span></li>
+                  <li class="is-hot"><span class="thumb thumb--row"></span>Job row<span class="n">8</span></li>
+                  <li><span class="thumb thumb--bar"></span>Timeline bar<span class="n">14</span></li>
+                  <li><span class="thumb thumb--count"></span>Count badge<span class="n">3</span></li>
+                </ul>
+              </div>
+              <div class="lib-group">
+                <p>Actions</p>
+                <ul>
+                  <li><span class="thumb thumb--btn"></span>Button</li>
+                  <li><span class="thumb thumb--tbtn"></span>Text button</li>
+                </ul>
+              </div>
+              <div class="lib-group">
+                <p>Navigation</p>
+                <ul>
+                  <li><span class="thumb thumb--nav"></span>Side nav</li>
+                  <li><span class="thumb thumb--tabs"></span>Tabs</li>
+                </ul>
+              </div>
+              <div class="lib-group">
+                <p>Inputs</p>
+                <ul>
+                  <li><span class="thumb thumb--field"></span>Search field</li>
+                  <li><span class="thumb thumb--field"></span>Select</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="canvas">
+              <div class="artboard-label"><span>Dispatch board</span><span class="dim">1280 × 832</span></div>
+              <div class="artboard">
+                <div class="tl-side gen" style="--d:0">
+                  <p class="tl-logo"><span class="tl-logo-mark"></span>Tideline</p>
+                  <ul class="tl-nav">
+                    <li class="is-on">Board</li><li>Jobs</li><li>Technicians</li><li>Customers</li><li>Reports</li>
+                  </ul>
+                </div>
+                <div class="tl-main">
+                  <div class="tl-head gen" style="--d:1">
+                    <div>
+                      <p class="tl-date">Tuesday 14 October</p>
+                      <p class="tl-title">Dispatch board</p>
+                    </div>
+                    <div class="tl-head-actions">
+                      <span class="tl-search">Search jobs</span>
+                      <span class="tl-btn">New job</span>
+                    </div>
+                  </div>
+                  <div class="tl-row">
+                    <div class="tl-card tl-late gen" style="--d:2" data-cite-target="1">
+                      <div class="tl-card-head"><span>Running late</span><span class="tl-count tl-count--late">3</span></div>
+                      <ul class="tl-jobs">
+                        <li><span class="tl-dot"></span><span class="tl-job"><b>Boiler service</b><small>14 Harbour St</small></span><span class="tl-eta">+35 min</span><span class="tl-reassign" data-cite-target="2">Reassign<span class="cite cite--sm" data-cite="2">2</span></span></li>
+                        <li><span class="tl-dot"></span><span class="tl-job"><b>Leaking radiator</b><small>7 Mill Lane</small></span><span class="tl-eta">+20 min</span><span class="tl-reassign">Reassign</span></li>
+                        <li><span class="tl-dot"></span><span class="tl-job"><b>Fuse board check</b><small>22 Quay Road</small></span><span class="tl-eta">+10 min</span><span class="tl-reassign">Reassign</span></li>
+                      </ul>
+                      <span class="cite" data-cite="1">1</span>
+                      <span class="sel" aria-hidden="true"><i></i><i></i><i></i><i></i><b>Running late&ensp;312 × 166</b></span>
+                    </div>
+                    <div class="tl-card tl-unassigned gen" style="--d:3">
+                      <div class="tl-card-head"><span>Unassigned</span><span class="tl-count">5</span></div>
+                      <ul class="tl-queue">
+                        <li data-cite-target="4"><span>Gas safety check</span><span class="tl-prio">Priority</span><span class="cite cite--assume" data-cite="4">4</span></li>
+                        <li><span>Tap replacement</span><span class="tl-time">11:00</span></li>
+                        <li><span>Extractor fan</span><span class="tl-time">13:30</span></li>
+                        <li><span>Thermostat install</span><span class="tl-time">15:00</span></li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="tl-card tl-capacity gen" style="--d:4" data-cite-target="3">
+                    <div class="tl-card-head"><span>Technician capacity</span><span class="tl-legend"><i></i>Booked<i class="late"></i>Running late</span></div>
+                    <p class="tl-hours"><span>8:00</span><span>10:00</span><span>12:00</span><span>14:00</span><span>17:00</span></p>
+                    <ul class="tl-gantt">
+                      <li><span class="tl-tech">Dee K.</span><span class="tl-track"><i style="--a:0;--b:22"></i><i class="late" style="--a:24;--b:44"></i><i style="--a:55;--b:80"></i></span></li>
+                      <li><span class="tl-tech">Sam O.</span><span class="tl-track"><i style="--a:6;--b:30"></i><i style="--a:36;--b:58"></i><i style="--a:70;--b:96"></i></span></li>
+                      <li><span class="tl-tech">Rui P.</span><span class="tl-track"><i class="late" style="--a:10;--b:34"></i><i style="--a:48;--b:66"></i></span></li>
+                      <li><span class="tl-tech">Lena V.</span><span class="tl-track"><i style="--a:0;--b:18"></i><i style="--a:20;--b:46"></i><i style="--a:52;--b:74"></i><i style="--a:78;--b:94"></i></span></li>
+                      <li><span class="tl-tech">Theo B.</span><span class="tl-track"><i style="--a:14;--b:40"></i><i style="--a:62;--b:88"></i></span></li>
+                    </ul>
+                    <span class="cite" data-cite="3">3</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="prompt">
+                <p class="prompt-status gen" style="--d:6"><svg class="icon"><use href="#i-check"/></svg>Generated from Dispatch PRD and 9 interview notes</p>
+                <div class="prompt-box">
+                  <svg class="prompt-mark" viewBox="0 0 20 20"><path d="M2 2h9a7 7 0 0 1 7 7v9H2z"/></svg>
+                  <p class="prompt-text" data-type="Design a dispatch board. Dispatchers need to spot late jobs and reassign them fast.">Design a dispatch board. Dispatchers need to spot late jobs and reassign them fast.</p>
+                  <span class="prompt-send"><svg class="icon"><use href="#i-send"/></svg></span>
+                </div>
+              </div>
+            </div>
+
+            <div class="panel panel--why">
+              <div class="panel-tabs"><span>Design</span><span>Prototype</span><span class="is-on">Rationale</span></div>
+              <div class="why-head"><p>4 decisions on this frame</p><span class="why-filter">All sources<svg class="icon"><use href="#i-chevron"/></svg></span></div>
+              <ol class="why-list">
+                <li class="why gen-r" style="--d:0" data-cite-item="1">
+                  <span class="cite">1</span>
+                  <div>
+                    <p class="why-title">Late jobs lead the board</p>
+                    <p class="why-quote"><mark>“The first thing I check every morning is who’s running behind.”</mark></p>
+                    <p class="why-src"><svg class="icon"><use href="#i-doc"/></svg>Dispatcher interview, P4</p>
+                  </div>
+                </li>
+                <li class="why gen-r" style="--d:1" data-cite-item="2">
+                  <span class="cite">2</span>
+                  <div>
+                    <p class="why-title">Reassign without leaving the list</p>
+                    <p class="why-quote"><mark>“Reassigning a job must take fewer than three steps.”</mark></p>
+                    <p class="why-src"><svg class="icon"><use href="#i-doc"/></svg>Dispatch PRD, section 2.3</p>
+                  </div>
+                </li>
+                <li class="why gen-r" style="--d:2" data-cite-item="3">
+                  <span class="cite">3</span>
+                  <div>
+                    <p class="why-title">Capacity as a timeline of hours</p>
+                    <p class="why-quote"><mark>“I think about my techs in hours, not tickets.”</mark></p>
+                    <p class="why-src"><svg class="icon"><use href="#i-doc"/></svg>Dispatcher interview, P7</p>
+                  </div>
+                </li>
+                <li class="why why--assume gen-r" style="--d:3" data-cite-item="4">
+                  <span class="cite cite--assume">4</span>
+                  <div>
+                    <p class="why-title">Priority badge on unassigned jobs</p>
+                    <p class="why-note">No source mentions customer priority. Marked as an assumption.</p>
+                    <span class="why-action"><svg class="icon"><use href="#i-plus"/></svg>Add evidence</span>
+                  </div>
+                </li>
+              </ol>
+            </div>
+          </div>
+        </div>
+
+        <div class="phone-wrap" data-phone-wrap>
+          <p class="phone-cap"><svg class="icon" aria-hidden="true"><use href="#i-play"/></svg>Prototype<span>Tap through the technician app</span></p>
+          <div class="phone" role="group" aria-roledescription="prototype" aria-label="Technician app prototype. Use the buttons to step through it." data-proto>
+            <div class="phone-status" aria-hidden="true"><span>9:41</span><span class="phone-island"></span><span class="phone-bars"></span></div>
+            <div class="phone-screens">
+              <section class="pscreen is-active" aria-label="Next job">
+                <p class="ps-kicker">Today, 4 jobs</p>
+                <p class="ps-title">Next job</p>
+                <div class="ps-job">
+                  <p class="ps-job-time">09:30 to 10:30</p>
+                  <p class="ps-job-name">Boiler service</p>
+                  <p class="ps-job-addr">14 Harbour Street</p>
+                  <div class="ps-map" aria-hidden="true"><i></i><i></i><i></i><b></b></div>
+                  <p class="ps-note">Side gate is open. Dog is friendly.</p>
+                </div>
+                <div class="ps-later">
+                  <p>Later today</p>
+                  <ul><li><span>11:00</span>Leaking radiator</li><li><span>13:30</span>Extractor fan</li></ul>
+                </div>
+                <button type="button" class="ps-btn" data-proto-next>Start route</button>
+              </section>
+              <section class="pscreen" aria-label="On the way">
+                <p class="ps-kicker">Boiler service</p>
+                <p class="ps-title">On the way</p>
+                <div class="ps-eta">
+                  <p class="ps-eta-num">12<span>min</span></p>
+                  <div class="ps-progress"><i></i></div>
+                  <p class="ps-check"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Customer notified of your arrival time</p>
+                </div>
+                <div class="ps-later">
+                  <p>Job details</p>
+                  <ul><li><span>Customer</span>Ruth Ellison</li><li><span>Arrive by</span>09:30</li><li><span>Access</span>Side gate</li></ul>
+                </div>
+                <button type="button" class="ps-btn" data-proto-next>I’ve arrived</button>
+              </section>
+              <section class="pscreen" aria-label="Job checklist">
+                <p class="ps-kicker">Boiler service</p>
+                <p class="ps-title">Checklist</p>
+                <ul class="ps-list">
+                  <li><label><input type="checkbox" checked>Isolate gas supply</label></li>
+                  <li><label><input type="checkbox" checked>Check system pressure</label></li>
+                  <li><label><input type="checkbox">Test flue and seals</label></li>
+                  <li><label><input type="checkbox">Photo of finished work</label></li>
+                </ul>
+                <p class="ps-field">Add a note for the office</p>
+                <button type="button" class="ps-btn" data-proto-next>Complete job</button>
+              </section>
+              <section class="pscreen" aria-label="Job complete">
+                <div class="ps-done">
+                  <span class="ps-done-icon"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg></span>
+                  <p class="ps-title">Job complete</p>
+                  <p class="ps-sub">Next at 11:00, leaking radiator on Mill Lane.</p>
+                </div>
+                <button type="button" class="ps-btn ps-btn--quiet" data-proto-next>Back to today</button>
+              </section>
+            </div>
+            <p class="sr-only" aria-live="polite" data-proto-live></p>
+          </div>
+        </div>
+
+        <figcaption class="sr-only">The Forma editor showing a generated dispatch dashboard on the canvas, the team’s component library on the left, and a rationale panel that cites the interview quote or requirement behind each design decision. A clickable technician-app prototype sits in front.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ============ WORKFLOW ============ -->
+  <section class="section workflow" id="workflow" aria-labelledby="workflow-title">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 id="workflow-title">Three steps from requirement to something people can click.</h2>
+        <p>Forma follows the order good product work already takes. Understand the problem, agree on the structure, then make it real.</p>
+      </div>
+
+      <ol class="steps">
+        <li class="step">
+          <div class="step-visual" aria-hidden="true">
+            <div class="mini-doc">
+              <p class="mini-doc-title">Dispatch PRD</p>
+              <p>Dispatchers manage around 40 jobs a day across 6 technicians. <mark>Late jobs are found by phone calls from customers</mark>, often after the delay has grown.</p>
+              <p>Goal: <mark>reassign a late job in fewer than three steps</mark> and keep the customer informed.</p>
+              <ul class="mini-sources">
+                <li><svg class="icon"><use href="#i-doc"/></svg>Interview notes<span>9</span></li>
+                <li><svg class="icon"><use href="#i-doc"/></svg>Support tickets<span>48</span></li>
+                <li><svg class="icon"><use href="#i-layers"/></svg>Tideline DS</li>
+              </ul>
+            </div>
+            <span class="noodle" aria-hidden="true"></span>
+          </div>
+          <div class="step-text">
+            <p class="step-num">1</p>
+            <h3>Bring what you know</h3>
+            <p>Paste a PRD, drop in interview notes or support tickets, and connect your Figma library. Forma reads all of it before it draws anything.</p>
+          </div>
+        </li>
+        <li class="step">
+          <div class="step-visual" aria-hidden="true">
+            <div class="mini-flow">
+              <span class="mf-node">Open board</span>
+              <span class="mf-edge"></span>
+              <span class="mf-node mf-node--cited">Spot late job<span class="cite cite--sm">1</span></span>
+              <span class="mf-edge"></span>
+              <span class="mf-node mf-node--cited">Reassign inline<span class="cite cite--sm">2</span></span>
+              <span class="mf-edge"></span>
+              <span class="mf-node">Notify customer</span>
+              <span class="mf-gap"><svg class="icon"><use href="#i-alert"/></svg>No technician free? Flow has no answer yet.</span>
+            </div>
+            <span class="noodle" aria-hidden="true"></span>
+          </div>
+          <div class="step-text">
+            <p class="step-num">2</p>
+            <h3>Shape the structure</h3>
+            <p>Forma proposes user flows and screen layouts, each linked to the requirement or quote behind it. Accept, edit, or ask for another direction.</p>
+          </div>
+        </li>
+        <li class="step">
+          <div class="step-visual" aria-hidden="true">
+            <div class="mini-proto">
+              <div class="mp-screen">
+                <span class="mp-bar"></span>
+                <span class="mp-row mp-row--late"><i></i><b></b><em>Reassign</em></span>
+                <span class="mp-row"><i></i><b></b></span>
+                <span class="mp-row"><i></i><b></b></span>
+                <span class="mp-hotspot"></span>
+              </div>
+              <ul class="mp-menu">
+                <li><svg class="icon"><use href="#i-link"/></svg>Share test link</li>
+                <li class="is-on"><svg class="icon"><use href="#i-layers"/></svg>Export to Figma</li>
+                <li><svg class="icon"><use href="#i-code"/></svg>Specs and tokens</li>
+              </ul>
+            </div>
+          </div>
+          <div class="step-text">
+            <p class="step-num">3</p>
+            <h3>Prototype and hand off</h3>
+            <p>Click through real states, share a link for testing, and export to Figma with your own components. Developers get specs and tokens.</p>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ============ DEMO ============ -->
+  <section class="section demo" id="demo" aria-labelledby="demo-title">
+    <div class="wrap">
+      <div class="demo-grid">
+        <div class="demo-side">
+        <div class="demo-intro">
+          <h2 id="demo-title">Pick a brief. Watch it take shape.</h2>
+          <p>Each sample comes with its own research. Choose one to see what Forma produces at every stage, then click through the prototype it builds.</p>
+        </div>
+        <fieldset class="briefs" data-briefs>
+          <legend class="briefs-legend">Sample briefs</legend>
+          <label class="brief">
+            <input type="radio" name="brief" value="clinic" checked>
+            <span class="brief-row"><span class="brief-name">Clinic booking</span><span class="brief-meta">Mobile app</span></span>
+            <span class="brief-text">Patients of a physiotherapy clinic should be able to book, move, and cancel sessions without calling reception.</span>
+          </label>
+          <label class="brief">
+            <input type="radio" name="brief" value="expenses">
+            <span class="brief-row"><span class="brief-name">Expense approvals</span><span class="brief-meta">Web app</span></span>
+            <span class="brief-text">Finance managers approve their team’s expenses and need to catch policy problems before money leaves the account.</span>
+          </label>
+          <label class="brief">
+            <input type="radio" name="brief" value="api">
+            <span class="brief-row"><span class="brief-name">API onboarding</span><span class="brief-meta">Web app</span></span>
+            <span class="brief-text">New developers on a payments API should make their first successful request in one sitting.</span>
+          </label>
+          <p class="brief-current" data-brief-current></p>
+          <div class="brief-sources">
+            <p>Attached to this brief</p>
+            <ul data-brief-sources></ul>
+          </div>
+        </fieldset>
+        <form class="own-brief" data-own-brief novalidate>
+          <label for="own-brief-input">Or start from your own idea</label>
+          <div class="own-field">
+            <input id="own-brief-input" name="own-brief" type="text" autocomplete="off" placeholder="Describe what you’re building">
+            <button type="submit" class="btn btn--primary btn--sm">Start designing</button>
+          </div>
+        </form>
+        </div>
+
+        <div class="demo-app" data-demo>
+          <div class="demo-bar">
+            <p class="demo-file"><svg class="app-mark" viewBox="0 0 20 20" aria-hidden="true"><path d="M2 2h9a7 7 0 0 1 7 7v9H2z"/></svg><span data-demo-name>Clinic booking</span></p>
+            <div class="tabs tabs--app" role="tablist" aria-label="Forma output" data-tabs>
+              <button type="button" role="tab" id="dt-research" aria-controls="dp-research" aria-selected="true">Research</button>
+              <button type="button" role="tab" id="dt-flow" aria-controls="dp-flow" aria-selected="false" tabindex="-1">Flow</button>
+              <button type="button" role="tab" id="dt-screens" aria-controls="dp-screens" aria-selected="false" tabindex="-1">Screens</button>
+              <button type="button" role="tab" id="dt-proto" aria-controls="dp-proto" aria-selected="false" tabindex="-1">Prototype</button>
+            </div>
+          </div>
+          <div class="demo-stage" data-demo-stage>
+            <div class="demo-progress" data-demo-progress hidden>
+              <ol>
+                <li>Reading the brief</li>
+                <li>Clustering research</li>
+                <li>Drafting the flow</li>
+                <li>Composing screens from your library</li>
+              </ol>
+            </div>
+            <div class="demo-panel" role="tabpanel" id="dp-research" aria-labelledby="dt-research" tabindex="0" data-panel="research"></div>
+            <div class="demo-panel" role="tabpanel" id="dp-flow" aria-labelledby="dt-flow" tabindex="0" data-panel="flow" hidden></div>
+            <div class="demo-panel" role="tabpanel" id="dp-screens" aria-labelledby="dt-screens" tabindex="0" data-panel="screens" hidden></div>
+            <div class="demo-panel" role="tabpanel" id="dp-proto" aria-labelledby="dt-proto" tabindex="0" data-panel="proto" hidden></div>
+          </div>
+          <p class="sr-only" aria-live="polite" data-demo-live></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FEATURES ============ -->
+  <section class="section features" id="features" aria-labelledby="features-title">
+    <div class="wrap">
+      <div class="evidence">
+        <figure class="ev-quote">
+          <blockquote><p>“The first thing I check every morning is <mark>who’s running behind</mark>.”</p></blockquote>
+          <figcaption><span class="cite">1</span>Dispatcher interview, P4. Cited by Forma on the dispatch board.</figcaption>
+        </figure>
+        <span class="ev-noodle" aria-hidden="true"></span>
+        <div class="ev-ui" aria-hidden="true">
+          <div class="ev-card">
+            <p class="ev-card-head">Running late<span>3</span></p>
+            <ul>
+              <li><span class="tl-dot"></span><span>Boiler service<small>14 Harbour St</small></span><em>+35 min</em></li>
+              <li><span class="tl-dot"></span><span>Leaking radiator<small>7 Mill Lane</small></span><em>+20 min</em></li>
+              <li><span class="tl-dot"></span><span>Fuse board check<small>22 Quay Road</small></span><em>+10 min</em></li>
+            </ul>
+            <span class="cite">1</span>
+          </div>
+          <p class="ev-caption">The panel that quote produced, placed first on the board.</p>
+        </div>
+      </div>
+
+      <div class="section-head">
+        <h2 id="features-title">Every screen arrives with its reasoning.</h2>
+        <p>Forma’s output is meant to be questioned. These are the parts of the product that let you check its work, change it, and ship it to your team’s standard.</p>
+      </div>
+
+      <div class="feature feature--wide">
+        <div class="feature-copy">
+          <h3>Decisions you can trace</h3>
+          <p>Select any element to see why it’s there. Forma links layouts, labels, and flows to the quote or requirement that shaped them, and marks anything it inferred as an assumption.</p>
+        </div>
+        <div class="feature-mock mock-trace" aria-hidden="true">
+          <div class="mt-canvas">
+            <div class="mt-list">
+              <p class="mt-list-head">Running late<span>3</span></p>
+              <div class="mt-component">
+                <div class="mt-row"><span class="tl-dot"></span><span class="mt-name">Boiler service<small>14 Harbour St</small></span><span class="mt-eta">+35 min</span><span class="mt-btn">Reassign</span></div>
+                <span class="sel sel--static"><i></i><i></i><i></i><i></i></span>
+              </div>
+              <div class="mt-row mt-row--dim"><span class="tl-dot"></span><span class="mt-name">Leaking radiator<small>7 Mill Lane</small></span><span class="mt-eta">+20 min</span><span class="mt-btn">Reassign</span></div>
+              <div class="mt-row mt-row--dim"><span class="tl-dot"></span><span class="mt-name">Fuse board check<small>22 Quay Road</small></span><span class="mt-eta">+10 min</span><span class="mt-btn">Reassign</span></div>
+            </div>
+            <div class="mt-pop">
+              <p class="mt-pop-head"><span class="cite">2</span>Why this is here</p>
+              <p class="mt-pop-claim">Reassign sits on the row so dispatchers never open the job to move it.</p>
+              <div class="mt-sources">
+                <p class="mt-src"><svg class="icon"><use href="#i-doc"/></svg><span><b>Dispatch PRD, section 2.3</b><mark>Reassigning a job must take fewer than three steps.</mark></span></p>
+                <p class="mt-src"><svg class="icon"><use href="#i-doc"/></svg><span><b>Dispatcher interview, P2</b><mark>“I lose the thread every time I click into a job.”</mark></span></p>
+              </div>
+              <div class="mt-actions"><span>Open sources</span><span>Try another option</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="feature-pair">
+        <div class="feature">
+          <div class="feature-mock mock-gaps" aria-hidden="true">
+            <p class="mg-head">Gaps in Dispatch PRD<span>3 found</span></p>
+            <ul class="mg-list">
+              <li><span class="mg-kind">Failure path</span><p>Reassign fails because no technician has capacity.</p><span class="mg-add"><svg class="icon"><use href="#i-plus"/></svg>Add to flow</span></li>
+              <li class="is-added"><span class="mg-kind">Empty state</span><p>No late jobs yet today.</p><span class="mg-add"><svg class="icon"><use href="#i-check"/></svg>Added</span></li>
+              <li><span class="mg-kind">Permission</span><p>Can a technician reassign their own job?</p><span class="mg-add"><svg class="icon"><use href="#i-plus"/></svg>Ask PM</span></li>
+            </ul>
+          </div>
+          <div class="feature-copy">
+            <h3>Gaps found before review</h3>
+            <p>Forma reads your spec for what it leaves out, like empty states, failure paths, and permissions. You decide which ones become screens.</p>
+          </div>
+        </div>
+        <div class="feature">
+          <div class="feature-mock mock-system" aria-hidden="true">
+            <p class="ms-head"><span class="sync-dot"></span>Tideline DS<span>Synced from Figma 2 min ago</span></p>
+            <ul class="ms-tokens">
+              <li><span class="sw" style="--sw:#1D6A55"></span>color.action.primary<code>#1D6A55</code></li>
+              <li><span class="sw" style="--sw:#B54A1F"></span>color.status.late<code>#B54A1F</code></li>
+              <li><span class="sw sw--space"></span>space.row.gap<code>12</code></li>
+              <li><span class="sw sw--radius"></span>radius.control<code>6</code></li>
+            </ul>
+            <p class="ms-foot"><span>38 components in use</span><span class="ms-ok"><svg class="icon"><use href="#i-check"/></svg>0 detached</span></p>
+          </div>
+          <div class="feature-copy">
+            <h3>Your design system, not a generic one</h3>
+            <p>Connect a Figma library and Forma composes with your components and tokens. Nothing is detached, so handoff stays clean.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="feature feature--wide feature--states">
+        <div class="feature-mock mock-states" data-states>
+          <div class="st-device" aria-live="polite">
+            <div class="st-screen" data-state-view="default">
+              <p class="st-title">Running late</p>
+              <ul class="st-rows">
+                <li><span class="tl-dot"></span><span>Boiler service</span><em>+35 min</em></li>
+                <li><span class="tl-dot"></span><span>Leaking radiator</span><em>+20 min</em></li>
+                <li><span class="tl-dot"></span><span>Fuse board check</span><em>+10 min</em></li>
+              </ul>
+            </div>
+            <div class="st-screen" data-state-view="loading" hidden>
+              <p class="st-title">Running late</p>
+              <ul class="st-rows st-rows--skeleton" aria-label="Loading late jobs"><li></li><li></li><li></li></ul>
+            </div>
+            <div class="st-screen st-screen--center" data-state-view="empty" hidden>
+              <span class="st-icon"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg></span>
+              <p class="st-title">Nobody is running late</p>
+              <p class="st-sub">Late jobs appear here as soon as an arrival time slips.</p>
+            </div>
+            <div class="st-screen st-screen--center" data-state-view="error" hidden>
+              <span class="st-icon st-icon--error"><svg class="icon" aria-hidden="true"><use href="#i-alert"/></svg></span>
+              <p class="st-title">Couldn’t load late jobs</p>
+              <p class="st-sub">The connection to your scheduling system timed out. Your last update was at 09:12.</p>
+              <span class="st-retry">Try again</span>
+            </div>
+          </div>
+        </div>
+        <div class="feature-copy">
+          <h3>Prototypes with every state</h3>
+          <p>Loading, empty, and error states are generated with each screen, so a test session doesn’t stop at the happy path.</p>
+          <fieldset class="seg" data-state-seg>
+            <legend class="sr-only">Preview state</legend>
+            <label><input type="radio" name="state" value="default" checked><span>Default</span></label>
+            <label><input type="radio" name="state" value="loading"><span>Loading</span></label>
+            <label><input type="radio" name="state" value="empty"><span>Empty</span></label>
+            <label><input type="radio" name="state" value="error"><span>Error</span></label>
+          </fieldset>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ BEFORE / AFTER ============ -->
+  <section class="section compare" id="compare" aria-labelledby="compare-title">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 id="compare-title">The same idea, before and after Forma.</h2>
+        <p>On the left, the sketch from a kickoff meeting. On the right, the screen Forma produced from that sketch, the PRD, and six interviews with finance managers. Drag to compare.</p>
+      </div>
+
+      <div class="ba-layout">
+        <div class="ba-col">
+        <p class="ba-legend"><span>Kickoff sketch</span><span class="ba-hint">Drag the handle or use arrow keys</span><span>Generated by Forma</span></p>
+        <div class="ba" data-ba>
+          <div class="ba-fit" data-fit="1040" data-fit-height="620">
+            <div class="ba-inner">
+              <!-- AFTER -->
+              <div class="ba-after">
+                <div class="ex-side">
+                  <p class="ex-logo"><span></span>Ledgerly</p>
+                  <ul><li class="is-on">Approvals</li><li>Expenses</li><li>Cards</li><li>Policies</li><li>Reports</li></ul>
+                </div>
+                <div class="ex-main">
+                  <div class="ex-head">
+                    <div><p class="ex-title">Approvals</p><p class="ex-sub">12 waiting on you. Oldest from Monday.</p></div>
+                    <span class="ex-batch">Approve 9 clean expenses<span class="cite">2</span></span>
+                  </div>
+                  <div class="ex-tabs"><span class="is-on">To review<b>12</b></span><span>Flagged<b>3</b></span><span>Done</span></div>
+                  <div class="ex-table">
+                    <div class="ex-tr ex-th"><span>Expense</span><span>Person</span><span>Amount</span><span>Policy</span></div>
+                    <div class="ex-tr is-sel"><span><b>Hotel, Lisbon</b><small>2 nights</small></span><span>Priya N.</span><span class="num">$712.00</span><span class="ex-flag">$112 over hotel limit<span class="cite">1</span></span></div>
+                    <div class="ex-tr"><span><b>Team lunch</b><small>6 people</small></span><span>Marco D.</span><span class="num">$186.40</span><span class="ex-ok">Within policy</span></div>
+                    <div class="ex-tr"><span><b>Taxi to airport</b><small>Receipt missing</small></span><span>Priya N.</span><span class="num">$48.00</span><span class="ex-flag">Needs receipt</span></div>
+                    <div class="ex-tr"><span><b>Figma seats</b><small>Annual</small></span><span>Ana L.</span><span class="num">$540.00</span><span class="ex-ok">Within policy</span></div>
+                    <div class="ex-tr"><span><b>Train, Porto</b><small>Return</small></span><span>Marco D.</span><span class="num">$64.20</span><span class="ex-ok">Within policy</span></div>
+                  </div>
+                </div>
+                <div class="ex-aside">
+                  <p class="ex-aside-title">Receipt<span class="cite">3</span></p>
+                  <div class="ex-receipt">
+                    <p class="ex-r-hotel">Hotel Miradouro</p>
+                    <p class="ex-r-line"><span>2 nights</span><span>$680.00</span></p>
+                    <p class="ex-r-line"><span>City tax</span><span>$32.00</span></p>
+                    <p class="ex-r-line ex-r-total"><span>Total</span><span>$712.00</span></p>
+                  </div>
+                  <p class="ex-policy">Hotel limit is $300 a night in Lisbon.</p>
+                  <div class="ex-actions"><span class="ex-approve">Approve</span><span class="ex-return">Return with note</span></div>
+                </div>
+              </div>
+              <!-- BEFORE -->
+              <div class="ba-before" data-ba-before>
+                <div class="sk-side"><span class="sk-word">logo</span><span class="sk-line"></span><span class="sk-line"></span><span class="sk-line"></span><span class="sk-line"></span></div>
+                <div class="sk-main">
+                  <div class="sk-head"><span class="sk-word sk-word--lg">Approvals</span><span class="sk-box sk-btn">approve all?</span></div>
+                  <span class="sk-tabs"><span class="sk-box">pending</span><span class="sk-box">done</span><span class="sk-note sk-note--tabs">filters??</span></span>
+                  <div class="sk-table">
+                    <span class="sk-row"></span><span class="sk-row"></span><span class="sk-row"></span><span class="sk-row"></span><span class="sk-row"></span>
+                  </div>
+                  <span class="sk-note sk-note--policy">how do we show policy stuff??</span>
+                </div>
+                <div class="sk-aside"><span class="sk-img"></span><span class="sk-word">receipt (modal?)</span><span class="sk-box sk-btn">ok</span><span class="sk-box sk-btn">no</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="ba-divider" aria-hidden="true"><span class="ba-knob"></span></div>
+          <label class="sr-only" for="ba-range">Reveal the kickoff sketch. Lower values show more of Forma’s version.</label>
+          <input class="ba-range" id="ba-range" type="range" min="0" max="100" value="50" data-ba-range>
+        </div>
+        </div>
+
+        <ol class="ba-notes">
+          <li>
+            <span class="cite">1</span>
+            <div><h3>Policy problems flagged in the list</h3><p>Managers told us they find issues after approving. Flags now appear before anyone clicks.</p></div>
+          </li>
+          <li>
+            <span class="cite">2</span>
+            <div><h3>One action for clean expenses</h3><p>Most approvals happen in a single Friday session, so expenses within policy can go together.</p></div>
+          </li>
+          <li>
+            <span class="cite">3</span>
+            <div><h3>Receipts beside the row</h3><p>Opening each receipt was the slowest step. The modal from the sketch became a side panel.</p></div>
+          </li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ USE CASES ============ -->
+  <section class="section usecases" id="use-cases" aria-labelledby="usecases-title">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 id="usecases-title">Made for the people who shape products.</h2>
+        <p>Designers keep the final say. Product managers get something clickable sooner. Design system teams keep every screen on-system.</p>
+      </div>
+
+      <div class="uc">
+        <div class="tabs tabs--rail" role="tablist" aria-label="Use cases" aria-orientation="vertical" data-tabs>
+          <button type="button" role="tab" id="ut-design" aria-controls="up-design" aria-selected="true">Product designers</button>
+          <button type="button" role="tab" id="ut-pm" aria-controls="up-pm" aria-selected="false" tabindex="-1">Product managers</button>
+          <button type="button" role="tab" id="ut-sys" aria-controls="up-sys" aria-selected="false" tabindex="-1">Design system teams</button>
+        </div>
+
+        <div class="uc-panel" role="tabpanel" id="up-design" aria-labelledby="ut-design" tabindex="0">
+          <div class="uc-copy">
+            <h3>Start from a strong first draft and keep the final say.</h3>
+            <ul class="uc-list">
+              <li>Explore three layout directions from one brief before your first critique.</li>
+              <li>Stress-test a flow for edge cases while it is still cheap to change.</li>
+              <li>Export to Figma as real component instances, ready to refine by hand.</li>
+            </ul>
+          </div>
+          <div class="uc-mock mock-directions" aria-hidden="true">
+            <div class="dir"><div class="dir-art dir-art--table"><i></i><i></i><i></i><i></i></div><p>A. Table first</p></div>
+            <div class="dir is-picked"><div class="dir-art dir-art--time"><i></i><i></i><i></i></div><p>B. Timeline first</p></div>
+            <div class="dir"><div class="dir-art dir-art--map"><i></i><i></i><i></i></div><p>C. Map first</p></div>
+          </div>
+        </div>
+
+        <div class="uc-panel" role="tabpanel" id="up-pm" aria-labelledby="ut-pm" tabindex="0" hidden>
+          <div class="uc-copy">
+            <h3>Turn a requirements doc into something people can click.</h3>
+            <ul class="uc-list">
+              <li>Prototype a feature before sprint planning, not after.</li>
+              <li>Put a test link in front of customers on the same day.</li>
+              <li>Change a requirement and see which screens it affects.</li>
+            </ul>
+          </div>
+          <div class="uc-mock mock-diff" aria-hidden="true">
+            <p class="df-file"><svg class="icon"><use href="#i-doc"/></svg>Dispatch PRD, section 2.3</p>
+            <p class="df-line df-line--del">Reassigning a job must take fewer than three steps.</p>
+            <p class="df-line df-line--add">Reassigning a job must take one step from the board.</p>
+            <div class="df-impact">
+              <p>2 screens affected</p>
+              <ul><li>Dispatch board</li><li>Job detail</li></ul>
+              <span class="df-btn">Update screens</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="uc-panel" role="tabpanel" id="up-sys" aria-labelledby="ut-sys" tabindex="0" hidden>
+          <div class="uc-copy">
+            <h3>Scale design output without losing consistency.</h3>
+            <ul class="uc-list">
+              <li>Every generated screen is built from your published components.</li>
+              <li>New patterns go to your team as review requests, not surprises.</li>
+              <li>Comments, approvals, and version history stay with the design.</li>
+            </ul>
+          </div>
+          <div class="uc-mock mock-review" aria-hidden="true">
+            <p class="rv-head"><span class="rv-status">Changes requested</span>Review: Capacity timeline</p>
+            <div class="rv-thread">
+              <div class="rv-msg"><span class="av av--b">MS</span><div><p class="rv-who">Mia S.<span>Design systems</span></p><p>The bar uses a new hover color. Can we use <code>color.surface.hover</code> instead?</p></div></div>
+              <div class="rv-msg rv-msg--forma"><span class="av av--forma"><svg viewBox="0 0 20 20"><path d="M2 2h9a7 7 0 0 1 7 7v9H2z"/></svg></span><div><p class="rv-who">Forma<span>Suggested fix</span></p><p>Swapped to <code>color.surface.hover</code> in 14 instances. Ready for another look.</p></div></div>
+            </div>
+            <div class="rv-foot"><span class="rv-approve">Approve</span><span>Reply</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PRICING ============ -->
+  <section class="section pricing" id="pricing" aria-labelledby="pricing-title">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 id="pricing-title">Start free. Pay when you bring your system and your team.</h2>
+        <div class="pricing-intro">
+          <p>Every plan includes rationale and citations on every screen. Paid plans add your own design system, research at scale, and collaboration.</p>
+          <fieldset class="seg seg--billing" data-billing>
+            <legend class="sr-only">Billing period</legend>
+            <label><input type="radio" name="billing" value="monthly"><span>Monthly</span></label>
+            <label><input type="radio" name="billing" value="yearly" checked><span>Yearly<em>2 months free</em></span></label>
+          </fieldset>
+        </div>
+      </div>
+
+      <div class="plans">
+        <article class="plan" aria-labelledby="plan-starter">
+          <h3 class="plan-name" id="plan-starter">Starter</h3>
+          <p class="plan-for">For trying Forma on a real project.</p>
+          <p class="plan-price"><span class="amount">$0</span><span class="per">forever</span></p>
+          <button type="button" class="btn btn--ghost btn--block" data-open-signup data-plan="Starter">Start for free</button>
+          <p class="plan-note">No card needed.</p>
+          <ul class="plan-list">
+            <li class="plan-list-lead">Includes</li>
+            <li>3 projects</li>
+            <li>Upload up to 10 research sources per project</li>
+            <li>Rationale and citations on every screen</li>
+            <li>Forma’s neutral component library</li>
+            <li>Public prototype links</li>
+          </ul>
+        </article>
+        <article class="plan plan--pro" aria-labelledby="plan-pro">
+          <h3 class="plan-name" id="plan-pro">Pro</h3>
+          <p class="plan-for">For designers working across several products.</p>
+          <p class="plan-price"><span class="amount" data-price data-monthly="24" data-yearly="20">$20</span><span class="per" data-per>per month, billed yearly</span></p>
+          <button type="button" class="btn btn--primary btn--block" data-open-signup data-plan="Pro">Start Pro trial</button>
+          <p class="plan-note">14 days free. No card needed.</p>
+          <ul class="plan-list">
+            <li class="plan-list-lead">Everything in Starter, plus</li>
+            <li>Unlimited projects</li>
+            <li>Connect your own Figma design system</li>
+            <li>Unlimited research sources</li>
+            <li>Export to Figma, specs, and tokens</li>
+            <li>Private, password-protected prototypes</li>
+          </ul>
+        </article>
+        <article class="plan" aria-labelledby="plan-team">
+          <h3 class="plan-name" id="plan-team">Team</h3>
+          <p class="plan-for">For product teams designing together.</p>
+          <p class="plan-price"><span class="amount" data-price data-monthly="40" data-yearly="33">$33</span><span class="per" data-per-team>per editor per month, billed yearly</span></p>
+          <button type="button" class="btn btn--ghost btn--block" data-open-signup data-plan="Team">Start Team trial</button>
+          <p class="plan-note">14 days free. No card needed.</p>
+          <ul class="plan-list">
+            <li class="plan-list-lead">Everything in Pro, plus</li>
+            <li>Shared libraries and research across projects</li>
+            <li>Live co-editing and comments</li>
+            <li>Review requests and approvals</li>
+            <li>Unlimited free viewers</li>
+            <li>Roles, permissions, and admin controls</li>
+          </ul>
+        </article>
+      </div>
+      <p class="plans-foot">Need SSO, audit logs, or data kept in a specific region? <button type="button" class="text-btn text-btn--underline" data-open-signup="sales">Talk to us about Enterprise</button></p>
+
+      <details class="compare-table">
+        <summary><span>Compare plans in detail</span><svg class="icon" aria-hidden="true"><use href="#i-chevron"/></svg></summary>
+        <div class="table-scroll">
+          <table>
+            <caption class="sr-only">Plan comparison</caption>
+            <thead><tr><th scope="col">Feature</th><th scope="col">Starter</th><th scope="col">Pro</th><th scope="col">Team</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">Projects</th><td>3</td><td>Unlimited</td><td>Unlimited</td></tr>
+              <tr><th scope="row">Research sources</th><td>10 per project</td><td>Unlimited</td><td>Unlimited, shared</td></tr>
+              <tr><th scope="row">Design system</th><td>Forma neutral</td><td>1 connected library</td><td>Unlimited libraries</td></tr>
+              <tr><th scope="row">Rationale and citations</th><td>Included</td><td>Included</td><td>Included</td></tr>
+              <tr><th scope="row">Exports</th><td>PNG and PDF</td><td>Figma, specs, tokens</td><td>Figma, specs, tokens</td></tr>
+              <tr><th scope="row">Prototype links</th><td>Public</td><td>Private and password</td><td>Private, password, team-only</td></tr>
+              <tr><th scope="row">Collaboration</th><td>Comments</td><td>Comments</td><td>Co-editing, reviews, approvals</td></tr>
+              <tr><th scope="row">Admin</th><td>None</td><td>None</td><td>Roles and permissions</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </details>
+    </div>
+  </section>
+
+  <!-- ============ FAQ ============ -->
+  <section class="section faq" id="faq" aria-labelledby="faq-title">
+    <div class="wrap faq-grid">
+      <div class="faq-head">
+        <h2 id="faq-title">Questions teams ask before they start.</h2>
+        <p>About trust, how Forma fits your workflow, and working together.</p>
+      </div>
+      <div class="faq-groups" data-accordion>
+        <div class="faq-group">
+          <h3 class="faq-topic">Trust</h3>
+          <div class="acc">
+            <h4 class="acc-h"><button type="button" class="acc-btn" aria-expanded="false" aria-controls="faq-1" id="faq-1-btn">Is my product data used to train AI models?<span class="acc-icon" aria-hidden="true"></span></button></h4>
+            <div class="acc-panel" id="faq-1" role="region" aria-labelledby="faq-1-btn"><div><p>No. Your briefs, research, and designs are never used to train Forma’s models or any third-party model. On Team and Enterprise plans, admins also choose how long uploaded research is kept.</p></div></div>
+          </div>
+          <div class="acc">
+            <h4 class="acc-h"><button type="button" class="acc-btn" aria-expanded="false" aria-controls="faq-2" id="faq-2-btn">Where do the citations come from?<span class="acc-icon" aria-hidden="true"></span></button></h4>
+            <div class="acc-panel" id="faq-2" role="region" aria-labelledby="faq-2-btn"><div><p>Only from the sources you attach to a project, such as PRDs, interview notes, tickets, and analytics exports. When Forma makes a decision none of your sources support, it labels it as an assumption so you can add evidence or change it.</p></div></div>
+          </div>
+          <div class="acc">
+            <h4 class="acc-h"><button type="button" class="acc-btn" aria-expanded="false" aria-controls="faq-3" id="faq-3-btn">Who owns what Forma generates?<span class="acc-icon" aria-hidden="true"></span></button></h4>
+            <div class="acc-panel" id="faq-3" role="region" aria-labelledby="faq-3-btn"><div><p>You do. Designs, flows, prototypes, and exports belong to you or your organization, on every plan, including Starter.</p></div></div>
+          </div>
+        </div>
+        <div class="faq-group">
+          <h3 class="faq-topic">Workflow</h3>
+          <div class="acc">
+            <h4 class="acc-h"><button type="button" class="acc-btn" aria-expanded="false" aria-controls="faq-4" id="faq-4-btn">Do I need a design system to start?<span class="acc-icon" aria-hidden="true"></span></button></h4>
+            <div class="acc-panel" id="faq-4" role="region" aria-labelledby="faq-4-btn"><div><p>No. Forma starts with a neutral component library. When you connect a Figma library on Pro or Team, new and existing screens can be rebuilt with your components and tokens.</p></div></div>
+          </div>
+          <div class="acc">
+            <h4 class="acc-h"><button type="button" class="acc-btn" aria-expanded="false" aria-controls="faq-5" id="faq-5-btn">Can I move work into Figma or code?<span class="acc-icon" aria-hidden="true"></span></button></h4>
+            <div class="acc-panel" id="faq-5" role="region" aria-labelledby="faq-5-btn"><div><p>Yes. Export frames to Figma as editable layers with auto layout and real component instances. Developers get specs and design tokens for each screen.</p></div></div>
+          </div>
+          <div class="acc">
+            <h4 class="acc-h"><button type="button" class="acc-btn" aria-expanded="false" aria-controls="faq-6" id="faq-6-btn">What happens when Forma gets something wrong?<span class="acc-icon" aria-hidden="true"></span></button></h4>
+            <div class="acc-panel" id="faq-6" role="region" aria-labelledby="faq-6-btn"><div><p>Edit it directly on the canvas, or select it and describe the change. Forma only regenerates what you select, and every version is kept in history so you can compare or roll back.</p></div></div>
+          </div>
+        </div>
+        <div class="faq-group">
+          <h3 class="faq-topic">Collaboration</h3>
+          <div class="acc">
+            <h4 class="acc-h"><button type="button" class="acc-btn" aria-expanded="false" aria-controls="faq-7" id="faq-7-btn">How do teams review work in Forma?<span class="acc-icon" aria-hidden="true"></span></button></h4>
+            <div class="acc-panel" id="faq-7" role="region" aria-labelledby="faq-7-btn"><div><p>Comment on any element, request a review from a person or a group such as your design systems team, and approve or request changes. Reviews and their outcomes stay attached to the design.</p></div></div>
+          </div>
+          <div class="acc">
+            <h4 class="acc-h"><button type="button" class="acc-btn" aria-expanded="false" aria-controls="faq-8" id="faq-8-btn">Who needs a paid seat?<span class="acc-icon" aria-hidden="true"></span></button></h4>
+            <div class="acc-panel" id="faq-8" role="region" aria-labelledby="faq-8-btn"><div><p>Only people who edit designs. On Team, anyone can view, comment, and click through prototypes for free.</p></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FINAL CTA ============ -->
+  <section class="final" aria-labelledby="final-title">
+    <div class="wrap final-grid">
+      <h2 class="final-title" id="final-title">Start with a sentence. Leave&nbsp;with a&nbsp;prototype.</h2>
+      <form class="idea-form" data-idea-form novalidate>
+        <label for="idea-input">What are you building?</label>
+        <div class="idea-field">
+          <input id="idea-input" name="idea" type="text" autocomplete="off" placeholder="A booking flow for a physiotherapy clinic">
+          <button type="submit" class="btn btn--light btn--lg">Start designing</button>
+        </div>
+        <p class="idea-hint">Free for your first three projects. Your idea carries into your first project.</p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-grid">
+    <div class="footer-brand">
+      <a class="brand brand--light" href="#top" aria-label="Forma AI, back to top">
+        <svg class="brand-mark" viewBox="0 0 20 20" aria-hidden="true"><path d="M2 2h9a7 7 0 0 1 7 7v9H2z"/></svg>
+        <span class="brand-name">Forma</span>
+      </a>
+      <p>Product requirements in, research-backed designs and prototypes out.</p>
+    </div>
+    <nav class="footer-nav" aria-label="Footer">
+      <ul>
+        <li><a href="#workflow">Workflow</a></li>
+        <li><a href="#demo">Demo</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#compare">Before and after</a></li>
+        <li><a href="#use-cases">Use cases</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+    </nav>
+    <div class="footer-tools">
+      <button type="button" class="grid-toggle" aria-pressed="false" data-grid-toggle><svg class="icon" aria-hidden="true"><use href="#i-grid"/></svg>Show layout grid</button>
+    </div>
+    <p class="footer-fine">© 2026 Forma Labs. Forma AI is a fictional product, designed as a concept.</p>
+  </div>
+</footer>
+
+<div class="layout-grid" aria-hidden="true" data-layout-grid hidden><div class="wrap"><div class="layout-grid-cols"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div></div>
+
+<dialog class="dialog" id="signup" aria-labelledby="signup-title" data-signup>
+  <button type="button" class="dialog-close" data-close-dialog><span class="sr-only">Close</span><svg class="icon" aria-hidden="true"><use href="#i-close"/></svg></button>
+  <div class="dialog-body" data-signup-form-view>
+    <h2 class="dialog-title" id="signup-title" data-signup-title>Start designing with Forma</h2>
+    <p class="dialog-sub" data-signup-sub>Create a free workspace. Your first three projects are included.</p>
+    <div class="dialog-context" data-signup-context hidden></div>
+    <form class="signup-form" data-signup-form novalidate>
+      <label for="signup-email">Work email</label>
+      <input id="signup-email" name="email" type="email" autocomplete="email" placeholder="you@company.com" aria-describedby="signup-error" required>
+      <p class="field-error" id="signup-error" data-signup-error hidden>Enter an email address like name@company.com.</p>
+      <button type="submit" class="btn btn--primary btn--lg btn--block" data-signup-submit>Create workspace</button>
+    </form>
+  </div>
+  <div class="dialog-body dialog-done" data-signup-done-view hidden>
+    <span class="done-icon"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg></span>
+    <h2 class="dialog-title" data-done-title tabindex="-1">Check your inbox</h2>
+    <p class="dialog-sub" data-done-text></p>
+    <button type="button" class="btn btn--ghost btn--lg btn--block" data-close-dialog>Done</button>
+  </div>
+</dialog>
+</body>
+</html>
