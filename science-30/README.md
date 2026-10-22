@@ -1,4 +1,4 @@
-# Curiosity Engine: 30 days of premium science content
+# Amazing Facts: 30 days of premium science content
 
 A complete 30-day pack for a premium science and facts page on X, Instagram, YouTube Shorts and TikTok.
 

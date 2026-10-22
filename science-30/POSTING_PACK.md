@@ -1,4 +1,4 @@
-# Curiosity Engine — 30-Day Posting Pack
+# Amazing Facts — 30-Day Posting Pack
 
 Every day has a **feed poster** (`posters/dayNN.jpg`, 1080×1350 — X + Instagram) and a **vertical reel** (`reels/dayNN.mp4`, 1080×1920, ~25 s with narration and an original score — Reels / Shorts / TikTok / X video).
 

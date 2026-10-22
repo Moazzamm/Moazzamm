@@ -1,0 +1,21 @@
+ok /home/user/Moazzamm/science-30/audio/day02.wav
+ok /home/user/Moazzamm/science-30/audio/day03.wav
+ok /home/user/Moazzamm/science-30/audio/day04.wav
+ok /home/user/Moazzamm/science-30/audio/day05.wav
+ok /home/user/Moazzamm/science-30/audio/day06.wav
+ok /home/user/Moazzamm/science-30/audio/day07.wav
+ok /home/user/Moazzamm/science-30/audio/day08.wav
+ok /home/user/Moazzamm/science-30/audio/day09.wav
+ok /home/user/Moazzamm/science-30/audio/day10.wav
+err 11 429 {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota ex
+err 11 429 {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota ex
+err 11 429 {
+  "error": {
+    "code": 429,
+    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota ex
