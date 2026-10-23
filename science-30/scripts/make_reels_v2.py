@@ -170,9 +170,9 @@ def build_audio(vo, cuts, stat_t, total, mood, seed):
         i = int(t * sr)
         if i < 0 or i >= n: return
         seg = sig[:n - i] * vol; mix[i:i + len(seg)] += seg[:, None]
-    add(sfx_boom(sr), 0.0, 0.55)
-    for c in cuts: add(sfx_whoosh(sr, rng=rng), max(c - 0.18, 0), 0.22)
-    if stat_t: add(sfx_riser(sr), max(stat_t - 1.1, 0.2), 0.30); add(sfx_boom(sr), stat_t, 0.35)
+    add(sfx_boom(sr), 0.0, 0.30)
+    for c in cuts: add(sfx_whoosh(sr, rng=rng), max(c - 0.18, 0), 0.04)
+    if stat_t: add(sfx_riser(sr), max(stat_t - 1.1, 0.2), 0.06); add(sfx_boom(sr), stat_t, 0.20)
     mix += voice[:, None] * 1.0
     path = os.path.join(TMP, f"v2_day{seed:02d}.wav")
     pcm = (np.clip(mix, -1, 1) * 32767).astype(np.int16)
@@ -327,6 +327,13 @@ def render(d):
     audio = build_audio(vo, [b[0] for b in bounds[1:]], stat_t, total, MOOD.get(d["tag"], "upbeat"), n)
 
     out = os.path.join(OUT, f"day{n:02d}.mp4")
+    if os.environ.get("AUDIO_ONLY") and os.path.exists(out):  # swap the soundtrack, keep the picture
+        tmp = os.path.join(TMP, f"remux_{n:02d}.mp4")
+        subprocess.run(["ffmpeg", "-y", "-nostdin", "-loglevel", "error", "-i", out, "-i", audio,
+            "-filter_complex", "[1:a]loudnorm=I=-14:TP=-1.0:LRA=9[a]", "-map", "0:v", "-map", "[a]",
+            "-c:v", "copy", "-c:a", "aac", "-b:a", "192k", "-movflags", "+faststart", "-shortest", tmp], check=True)
+        os.replace(tmp, out)
+        return out, round(total, 1), len(bounds)
     ff = subprocess.Popen(["ffmpeg", "-y", "-nostdin", "-loglevel", "error", "-f", "rawvideo", "-pix_fmt", "rgb24",
         "-s", f"{W}x{H}", "-r", str(FPS), "-i", "-", "-i", audio,
         "-filter_complex", "[1:a]loudnorm=I=-14:TP=-1.0:LRA=9[a]", "-map", "0:v", "-map", "[a]",
