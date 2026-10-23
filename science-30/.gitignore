@@ -1,2 +1,7 @@
 .build/
 __pycache__/
+footage/*.mp4
+footage/*.tsv
+footage/*.log
+footage/fetch.sh
+.models/

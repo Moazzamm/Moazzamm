@@ -1,6 +1,8 @@
 # Amazing Facts — 30-Day Posting Pack
 
-Every day has a **feed poster** (`posters/dayNN.jpg`, 1080×1350 — X + Instagram) and a **vertical reel** (`reels/dayNN.mp4`, 1080×1920, ~25 s with narration and an original score — Reels / Shorts / TikTok / X video).
+Every day has a **feed poster** (`posters/dayNN.jpg`, 1080×1350 — X + Instagram) and a **high-retention vertical reel** (`reels_v2/dayNN.mp4`, 1080×1920, 14–21 s — Reels / Shorts / TikTok / X video).
+
+**Reel posting tips:** use the Shorts title as the on-platform title, pin a comment asking the question the reel raises, and don't add an extra intro — the hook starts at frame 1 and the end loops back to the start.
 
 **How to post:** put the X hook as the tweet text and attach the poster (or the reel). Use the caption on Instagram / YouTube Shorts. Every fact was checked; numbers are rounded conservatively and the copy uses "about" where estimates vary.
 
@@ -30,9 +32,10 @@ Days run in order and the topic pillars rotate. The weekday is only a suggestion
 > #science #graphene #materials #engineering
 
 **Stat on poster:** 200× — stronger than steel, by weight  
-**Reel narration:** Steel holds up our cities. But this sheet, just one atom thick, is about two hundred times stronger, weight for weight. It's carbon atoms locked in a perfect honeycomb, and it lets almost all light straight through. The future may be built from something you can barely see.  
+**Shorts/Reels title:** This sheet is one atom thick.  
+**Reel script (v2):** This sheet is one atom thick. And it's about 200 times stronger than steel. It's called graphene. Pure carbon, locked in a perfect honeycomb. It's so thin, light passes straight through. A sheet you can barely see… could one day hold up a bridge. Send this to someone who thinks steel is strong.  
 **Alt text:** A massive braided steel suspension cable running diagonally from the bottom-left corner, dark brushed metal with specular highlights.  
-**Files:** `posters/day01.jpg` · `reels/day01.mp4`
+**Files:** `posters/day01.jpg` · `reels_v2/day01.mp4`
 
 ---
 
@@ -49,9 +52,10 @@ Days run in order and the topic pillars rotate. The weekday is only a suggestion
 > #octopus #biology #nature #science
 
 **Stat on poster:** 500M — neurons — about two-thirds in the arms  
-**Reel narration:** This animal thinks with its arms. An octopus has around five hundred million neurons, and about two thirds of them are in its arms. Each arm can taste, feel, and react almost on its own. Eight arms. One brain. A truly distributed mind.  
+**Shorts/Reels title:** An octopus has nine brains. Kind of.  
+**Reel script (v2):** An octopus has nine brains. Kind of. It has about 500 million neurons… and two-thirds of them are in its arms. Each arm can taste, touch and decide on its own. Cut off from the brain, an arm still reacts. It changes colour in a fraction of a second. Eight arms. One mind. Zero bones. Follow for a fact like this every day.  
 **Alt text:** Cinematic underwater portrait of an octopus, its intelligent eye in sharp focus, arms curling gracefully around it, skin textures rich in deep red and amber.  
-**Files:** `posters/day02.jpg` · `reels/day02.mp4`
+**Files:** `posters/day02.jpg` · `reels_v2/day02.mp4`
 
 ---
 
@@ -68,9 +72,10 @@ Days run in order and the topic pillars rotate. The weekday is only a suggestion
 > #space #astronomy #neutronstar #physics
 
 **Stat on poster:** ~1 BILLION — tons per teaspoon  
-**Reel narration:** Imagine one ordinary teaspoon. Now fill it with matter from a neutron star — a dead star crushed to the size of a city. That single spoonful would weigh around a billion tons. The universe makes things denser than we can imagine.  
+**Shorts/Reels title:** This teaspoon weighs a billion tons.  
+**Reel script (v2):** This teaspoon weighs a billion tons. Not because of the spoon… but because of what's inside it. Neutron star matter. A star heavier than the Sun, crushed into a ball the size of a city. One spoonful would outweigh every human alive. Send this to the friend who loves space.  
 **Alt text:** A single polished silver teaspoon floating in deep space, holding a tiny, impossibly bright blue-white glowing sphere of matter that warps light around it.  
-**Files:** `posters/day03.jpg` · `reels/day03.mp4`
+**Files:** `posters/day03.jpg` · `reels_v2/day03.mp4`
 
 ---
 
@@ -89,9 +94,10 @@ Days run in order and the topic pillars rotate. The weekday is only a suggestion
 > #brain #neuroscience #humanbody #science
 
 **Stat on poster:** 20 W — the power budget of your brain  
-**Reel narration:** Every thought you have is electricity. Eighty-six billion neurons send tiny electrical pulses, every second of your life. And the whole system runs on about twenty watts, roughly a dim light bulb. The most powerful computer we know runs on a lunchbox of energy.  
+**Shorts/Reels title:** Your brain runs on 20 watts.  
+**Reel script (v2):** Your brain runs on 20 watts. That's a dim light bulb. Yet it holds about 86 billion neurons… firing tiny electrical pulses every second. The world's fastest supercomputers need megawatts. Your brain does it on a sandwich. Right now, reading this, it's sparking. Share this with someone who needs a brain boost.  
 **Alt text:** Side-profile silhouette of a human head made of dark glass, inside it a luminous web of neural pathways crackling with electric blue and violet arcs, a single warm glowing filament light bulb floating just in front of the forehead.  
-**Files:** `posters/day04.jpg` · `reels/day04.mp4`
+**Files:** `posters/day04.jpg` · `reels_v2/day04.mp4`
 
 ---
 
@@ -108,9 +114,10 @@ Days run in order and the topic pillars rotate. The weekday is only a suggestion
 > #LHC #CERN #physics #engineering
 
 **Stat on poster:** 27 km — ring, ~100 m underground  
-**Reel narration:** Under these quiet fields, there's a secret. A twenty-seven kilometre ring, a hundred metres underground, crossing two countries. It smashes particles together at almost the speed of light, to reveal how the universe is built. Humanity's biggest machine is built to study the smallest things.  
+**Shorts/Reels title:** The biggest machine on Earth is hidden underground.  
+**Reel script (v2):** The biggest machine on Earth is hidden underground. A 27-kilometre ring… buried 100 metres below two countries. Inside, protons race at 99.9999991% of light speed. Then they smash together. That's how we found the Higgs boson. The biggest machine ever built… to study the smallest things. Follow for more mind-blowing engineering.  
 **Alt text:** Cutaway view of the Earth's surface showing green countryside and a small town above, with a giant glowing circular tunnel ring buried deep underground beneath it, a long blue superconducting magnet pipe inside the tunnel, beams of light racing around the ring.  
-**Files:** `posters/day05.jpg` · `reels/day05.mp4`
+**Files:** `posters/day05.jpg` · `reels_v2/day05.mp4`
 
 ---
 
@@ -125,9 +132,10 @@ Days run in order and the topic pillars rotate. The weekday is only a suggestion
 > #tardigrade #biology #nature #science
 
 **Stat on poster:** 0.5 mm — of near-indestructible life  
-**Reel narration:** Meet the toughest animal alive. Freeze it. Dry it out completely. It curls into a tiny shell and waits. It has survived intense radiation, and even exposure to open space. Half a millimetre long. Almost impossible to kill.  
+**Shorts/Reels title:** This animal survived outer space.  
+**Reel script (v2):** This animal survived outer space. Meet the tardigrade. Half a millimetre long. Freeze it. Survives. Dry it out for years. Survives. Blast it with radiation. Survives. It curls into a tiny tun and waits. Send this to the toughest person you know.  
 **Alt text:** Macro-style hyper-detailed 3D render of a tardigrade (water bear) on a mossy surface, translucent plump segmented body, eight stubby clawed legs, soft studio lighting with iridescent rim light, deep teal background with bokeh, empty dark space in the top 40% of the frame.  
-**Files:** `posters/day06.jpg` · `reels/day06.mp4`
+**Files:** `posters/day06.jpg` · `reels_v2/day06.mp4`
 
 ---
 
@@ -144,9 +152,10 @@ Days run in order and the topic pillars rotate. The weekday is only a suggestion
 > #sunset #physics #science #nature
 
 **Stat on poster:** ~5× — more scattering for blue than red  
-**Reel narration:** Why is the sky blue at noon, but red at sunset? At sunset, light travels through much more air. The blue gets scattered away. Only the reds and oranges make it to your eyes. Every sunset is physics, painted across the sky.  
+**Shorts/Reels title:** The sky isn't blue by accident.  
+**Reel script (v2):** The sky isn't blue by accident. Air scatters blue light far more than red. At noon, that blue fills the whole sky. At sunset, light travels through way more air. The blue gets scattered away… and only the reds and oranges reach you. Every sunset is physics, painted across the sky. Save this for your next sunset.  
 **Alt text:** Breathtaking sunset over a calm ocean horizon, the sky graded from deep blue overhead through violet to fiery orange and red at the horizon, delicate translucent curved light rays showing the sun's path through a thick layer of atmosphere.  
-**Files:** `posters/day07.jpg` · `reels/day07.mp4`
+**Files:** `posters/day07.jpg` · `reels_v2/day07.mp4`
 
 ---
 
@@ -163,9 +172,10 @@ Days run in order and the topic pillars rotate. The weekday is only a suggestion
 > #NASA #space #ParkerSolarProbe #Sun
 
 **Stat on poster:** 692,000 — km/h — fastest object ever built  
-**Reel narration:** This is the fastest object humans have ever built. NASA's Parker Solar Probe skimmed just six million kilometres from the Sun's surface, at around six hundred and ninety-two thousand kilometres per hour. New York to Tokyo in under a minute.  
+**Shorts/Reels title:** This is the fastest thing humans have ever built.  
+**Reel script (v2):** This is the fastest thing humans have ever built. NASA's Parker Solar Probe. It flew just 6 million km from the Sun… at about 692,000 km/h. That's New York to Tokyo in under a minute. Its heat shield faces almost 1,000°C… while the instruments behind it stay near room temperature. Follow for more space records.  
 **Alt text:** Cinematic space poster of a small spacecraft with a large white heat shield diving toward the blazing Sun, solar flares and plasma loops filling the frame, motion streaks behind the probe, intense orange and gold light, epic composition, empty dark space in the top 40% of the frame.  
-**Files:** `posters/day08.jpg` · `reels/day08.mp4`
+**Files:** `posters/day08.jpg` · `reels_v2/day08.mp4`
 
 ---
 
@@ -182,9 +192,10 @@ Days run in order and the topic pillars rotate. The weekday is only a suggestion
 > #engineering #bridges #architecture #physics
 
 **Stat on poster:** 1,280 m — Golden Gate's main span, hung from two cables  
-**Reel narration:** How does something this heavy just hang in the air? The road hangs from cables. The cables pull — that's tension. The towers push straight down into the ground — that's compression — and the cable ends are anchored into enormous blocks. Weight isn't fought. It's redirected.  
+**Shorts/Reels title:** How does a bridge this heavy just hang in the air?  
+**Reel script (v2):** How does a bridge this heavy just hang in the air? The road hangs from cables. The cables pull. That's tension. The towers push down. That's compression. Huge anchors lock the cable ends into the ground. The weight isn't fought… it's redirected. Share this with an engineer.  
 **Alt text:** Elegant suspension bridge at blue hour spanning a misty bay, clean minimal composition, glowing thin cyan force lines overlaid along the main cables and suspenders and warm amber arrows down the towers, editorial engineering diagram aesthetic blended with photoreal, empty sky in the top 40% of the frame.  
-**Files:** `posters/day09.jpg` · `reels/day09.mp4`
+**Files:** `posters/day09.jpg` · `reels_v2/day09.mp4`
 
 ---
 
@@ -201,9 +212,10 @@ Days run in order and the topic pillars rotate. The weekday is only a suggestion
 > #sharks #evolution #history #science
 
 **Stat on poster:** 450M — years of sharks — trees: ~385M  
-**Reel narration:** Sharks are older than trees. Shark-like fish were already swimming around four hundred and fifty million years ago. The first real trees only appeared around three hundred and eighty-five million years ago. They've survived five mass extinctions. Respect the shark.  
+**Shorts/Reels title:** Sharks are older than trees.  
+**Reel script (v2):** Sharks are older than trees. Shark-like fish swam 450 million years ago. The first real trees? About 385 million years ago. Sharks have survived five mass extinctions. They were here before the dinosaurs… and they're still here. Respect the shark. Send this to someone who's scared of sharks.  
 **Alt text:** A sleek ancient shark gliding through a prehistoric ocean lit by shafts of sunlight from above, primitive sea creatures below, while a thin glowing horizontal timeline arc curves across the composition.  
-**Files:** `posters/day10.jpg` · `reels/day10.mp4`
+**Files:** `posters/day10.jpg` · `reels_v2/day10.mp4`
 
 ---
 
@@ -220,9 +232,10 @@ Days run in order and the topic pillars rotate. The weekday is only a suggestion
 > #space #Earth #aurora #physics
 
 **Stat on poster:** ~65,000 km — how far the shield reaches toward the Sun  
-**Reel narration:** The Sun constantly blasts charged particles toward us. But Earth's magnetic field, created by its molten iron core, bends most of them away. The ones that slip through near the poles light up the sky as auroras. Every aurora is the sign of a shield, working.  
+**Shorts/Reels title:** Earth has an invisible force field.  
+**Reel script (v2):** Earth has an invisible force field. The Sun blasts us with charged particles nonstop. But Earth's molten iron core makes a magnetic shield… that bends most of them away. The ones that slip in near the poles… light up the sky as auroras. Every aurora is the shield working. Follow for daily science like this.  
 **Alt text:** Planet Earth in space with glowing blue and violet magnetic field lines looping around it like a protective cocoon, a stream of golden solar wind particles from the left bending around the field, a faint green aurora ring at the north pole.  
-**Files:** `posters/day11.jpg` · `reels/day11.mp4`
+**Files:** `posters/day11.jpg` · `reels_v2/day11.mp4`
 
 ---
 
@@ -239,9 +252,10 @@ Days run in order and the topic pillars rotate. The weekday is only a suggestion
 > #humanbody #anatomy #science #engineering
 
 **Stat on poster:** ~170 MPa — bone compression strength vs ~30 for concrete  
-**Reel narration:** Your skeleton is a super-material. Bone can withstand several times more compression than typical concrete, while being much lighter, flexible — and able to repair itself. You are walking around inside a living, self-healing structure.  
+**Shorts/Reels title:** Your bones are stronger than concrete.  
+**Reel script (v2):** Your bones are stronger than concrete. Bone can take about 170 MPa of compression. Typical concrete? Around 30. And bone is far lighter. It's flexible, so it doesn't shatter. And unlike concrete… it repairs itself. You're walking around in a self-healing super-material. Share this with someone who breaks everything.  
 **Alt text:** Split composition: left half an elegant macro of human bone with its intricate honeycomb trabecular structure in warm ivory light, right half a raw grey concrete block with rough texture, a thin glowing vertical line dividing them.  
-**Files:** `posters/day12.jpg` · `reels/day12.mp4`
+**Files:** `posters/day12.jpg` · `reels_v2/day12.mp4`
 
 ---
 
@@ -258,9 +272,10 @@ Days run in order and the topic pillars rotate. The weekday is only a suggestion
 > #biomimicry #engineering #Japan #design
 
 **Stat on poster:** 15% — less electricity used  
-**Reel narration:** Japan's early bullet trains had a problem: a loud boom every time they burst out of a tunnel. An engineer who loved birdwatching noticed how a kingfisher dives into water with barely a splash. So the train got a kingfisher-shaped nose. It became quieter, faster, and used about fifteen percent less electricity. Nature solved it first. Engineers just paid attention.  
+**Shorts/Reels title:** A bird fixed Japan's bullet train.  
+**Reel script (v2):** A bird fixed Japan's bullet train. Early trains made a loud boom leaving tunnels. An engineer who loved birdwatching noticed the kingfisher. It dives into water with almost no splash. So they gave the train a kingfisher beak. Quieter. Faster. About 15% less electricity. Nature solved it first. Follow for more genius design.  
 **Alt text:** Side-by-side premium composition: a kingfisher in profile diving with its long pointed beak toward water, and the long sleek pointed nose of a white high-speed bullet train mirroring the exact same curve, both in elegant studio lighting against a deep blue gradient.  
-**Files:** `posters/day13.jpg` · `reels/day13.mp4`
+**Files:** `posters/day13.jpg` · `reels_v2/day13.mp4`
 
 ---
 
@@ -277,9 +292,10 @@ Days run in order and the topic pillars rotate. The weekday is only a suggestion
 > #Saturn #space #astronomy #whatif
 
 **Stat on poster:** ~40° — of sky covered by the rings  
-**Reel narration:** Picture the Moon rising tonight. Now swap it for Saturn, at the same distance. Its rings would stretch across about forty degrees of sky — eighty Moons side by side. Our sky would never look ordinary again.  
+**Shorts/Reels title:** What if Saturn replaced the Moon?  
+**Reel script (v2):** What if Saturn replaced the Moon? Same distance. 384,000 km away. Its rings would stretch across about 40 degrees of sky. That's 80 Moons side by side. At night it would glow brighter than anything. Every sunset would have rings. Our sky would never look ordinary again. Send this to someone who loves the night sky.  
 **Alt text:** Hyper-real night sky over a quiet desert landscape with a lone tree, enormous Saturn rising above the horizon and filling much of the sky, its rings spanning majestically across the frame, warm amber planet glow, stars, atmospheric haze, awe-inspiring cinematic scale.  
-**Files:** `posters/day14.jpg` · `reels/day14.mp4`
+**Files:** `posters/day14.jpg` · `reels_v2/day14.mp4`
 
 ---
 
@@ -296,9 +312,10 @@ Days run in order and the topic pillars rotate. The weekday is only a suggestion
 > #jellyfish #biology #ocean #science
 
 **Stat on poster:** 4.5 mm — Turritopsis dohrnii  
-**Reel narration:** This tiny jellyfish can cheat death. When it's injured or stressed, it can turn its adult body back into an early life stage — and grow up all over again. In theory, again and again. Not invincible — but it can hit restart.  
+**Shorts/Reels title:** This jellyfish can cheat death.  
+**Reel script (v2):** This jellyfish can cheat death. It's called Turritopsis dohrnii. When it's injured or stressed… it turns its adult body back into a baby polyp. Then it grows up all over again. In theory, it can do it forever. Biologically… immortal. Follow for weirder biology.  
 **Alt text:** A tiny glowing translucent jellyfish with a red-orange core and delicate trailing tentacles floating in deep black water, surrounded by a soft luminous circular loop of light suggesting an endless life cycle.  
-**Files:** `posters/day15.jpg` · `reels/day15.mp4`
+**Files:** `posters/day15.jpg` · `reels_v2/day15.mp4`
 
 ---
 
@@ -315,9 +332,10 @@ Days run in order and the topic pillars rotate. The weekday is only a suggestion
 > #aviation #engineering #lightning #science
 
 **Stat on poster:** 1 / year — lightning strikes per airliner, on average  
-**Reel narration:** Commercial airplanes get hit by lightning about once a year, each. The current hits the nose or a wingtip and flows along the outer skin, then exits from the tail. Inside, the cabin acts like a cage, and passengers stay safe. Scary outside. Engineered to be boring inside.  
+**Shorts/Reels title:** Every airliner gets hit by lightning about once a year.  
+**Reel script (v2):** Every airliner gets hit by lightning about once a year. And almost no one notices. Lightning hits the nose or a wingtip… races along the outer skin… and exits from the tail. The cabin acts like a Faraday cage. Scary outside. Boring inside. Share this with a nervous flyer.  
 **Alt text:** A commercial jet airliner flying through a dark storm at night as a brilliant lightning bolt strikes its nose, electric current visibly flowing along the outer skin and exiting at the tail, cinematic, dramatic purple-blue storm clouds, empty sky in the top 40% of the frame.  
-**Files:** `posters/day16.jpg` · `reels/day16.mp4`
+**Files:** `posters/day16.jpg` · `reels_v2/day16.mp4`
 
 ---
 
@@ -334,9 +352,10 @@ Days run in order and the topic pillars rotate. The weekday is only a suggestion
 > #petrichor #rain #science #nature
 
 **Stat on poster:** 5 ppt — how little geosmin your nose can detect  
-**Reel narration:** You know this smell. When rain hits dry ground, each drop launches tiny bubbles of air carrying oils and a compound called geosmin. Your nose is so sensitive to it, you can detect a few parts per trillion. It's called petrichor. Petrichor: the scent of earth, set free by rain.  
+**Shorts/Reels title:** That smell after rain has a name.  
+**Reel script (v2):** That smell after rain has a name. It's called petrichor. When rain hits dry ground, drops launch tiny air bubbles. They carry plant oils and geosmin… made by soil bacteria. Your nose can detect it at about 5 parts per trillion. You can literally smell the earth breathing. Save this for the next rainy day.  
 **Alt text:** Moody macro photograph of a single raindrop striking dry cracked earth, a fine mist of tiny aerosol droplets bursting upward catching soft backlight, dark stormy blue-grey tones, cinematic, empty dark space in the top 40% of the frame.  
-**Files:** `posters/day17.jpg` · `reels/day17.mp4`
+**Files:** `posters/day17.jpg` · `reels_v2/day17.mp4`
 
 ---
 
@@ -353,9 +372,10 @@ Days run in order and the topic pillars rotate. The weekday is only a suggestion
 > #blackhole #space #physics #myths
 
 **Stat on poster:** 6 km — wide — a black hole with the Sun's mass  
-**Reel narration:** Black holes are not cosmic vacuum cleaners. If the Sun turned into a black hole with the same mass, Earth would keep orbiting exactly as before. Same mass, same gravity at our distance. Dark and cold? Yes. Swallowed? No.  
+**Shorts/Reels title:** Black holes don't suck.  
+**Reel script (v2):** Black holes don't suck. If the Sun became a black hole… with the same mass… Earth would keep orbiting exactly the same. The gravity at our distance? Unchanged. It would get dark and cold… but we would not fall in. Follow for more myths, busted.  
 **Alt text:** Clean elegant space diagram: a small black hole with a glowing orange accretion ring at the centre, a thin luminous circular orbit path around it with a small blue Earth on the orbit, faint grid of curved spacetime beneath, deep black background, minimalist premium aesthetic, empty space in the top 40% of the frame.  
-**Files:** `posters/day18.jpg` · `reels/day18.mp4`
+**Files:** `posters/day18.jpg` · `reels_v2/day18.mp4`
 
 ---
 
@@ -372,9 +392,10 @@ Days run in order and the topic pillars rotate. The weekday is only a suggestion
 > #cats #physics #animals #science
 
 **Stat on poster:** ~0.3 s — to turn upright  
-**Reel narration:** Drop a cat upside down, and it bends in the middle, turning its front and back halves in opposite directions. The total spin stays zero, so no physics is broken. It just lands on its feet. Not magic. Just very clever physics.  
+**Shorts/Reels title:** Drop a cat upside down and it lands on its feet.  
+**Reel script (v2):** Drop a cat upside down and it lands on its feet. How, without breaking physics? It bends in the middle… spins its front half one way… and its back half the other. Total spin stays zero. Physics is happy. Upright in about a third of a second. Send this to a cat person.  
 **Alt text:** Elegant motion-sequence photograph of a cat falling and rotating in midair, five semi-transparent ghosted stages from upside down to upright landing pose, studio black background, soft rim light, high-speed photography aesthetic, empty dark space in the top 40% of the frame.  
-**Files:** `posters/day19.jpg` · `reels/day19.mp4`
+**Files:** `posters/day19.jpg` · `reels_v2/day19.mp4`
 
 ---
 
@@ -391,9 +412,10 @@ Days run in order and the topic pillars rotate. The weekday is only a suggestion
 > #technology #smartphone #engineering #space
 
 **Stat on poster:** 19B+ — transistors in one phone chip  
-**Reel narration:** What's actually inside your phone? A single chip holds billions of transistors, each smaller than a virus. That's vastly more computing power than the computer that guided astronauts to the Moon. You carry a moon-mission's worth of computing — many times over.  
+**Shorts/Reels title:** You're holding a supercomputer.  
+**Reel script (v2):** You're holding a supercomputer. One phone chip holds billions of transistors. Each one smaller than a virus. Apollo's guidance computer had about 4 KB of memory. Your phone has millions of times more. And you use it to watch cat videos. Humanity's greatest machine… in your pocket. Share this with someone glued to their phone.  
 **Alt text:** Exploded-view technical render of a smartphone floating in layers: glass screen, display, logic board with a glowing processor chip, camera modules, battery and antennas, each layer separated vertically with thin glowing guide lines, dark graphite background, premium product photography, empty space in the top 40% of the frame.  
-**Files:** `posters/day20.jpg` · `reels/day20.mp4`
+**Files:** `posters/day20.jpg` · `reels_v2/day20.mp4`
 
 ---
 
@@ -410,9 +432,10 @@ Days run in order and the topic pillars rotate. The weekday is only a suggestion
 > #volcano #earthscience #agriculture #nature
 
 **Stat on poster:** ~800M — people live near active volcanoes  
-**Reel narration:** Volcanoes destroy everything in their path. But over time, their ash and rock break down into soil packed with minerals, creating some of the most fertile land on Earth. From fire comes food.  
+**Shorts/Reels title:** Volcanoes destroy everything…  
+**Reel script (v2):** Volcanoes destroy everything… then create some of the richest farmland on Earth. Volcanic ash breaks down into soil packed with minerals. Potassium. Phosphorus. Magnesium. That's why farms climb the slopes of active volcanoes. Hundreds of millions of people live in their shadow. From fire… comes food. Follow for more Earth science.  
 **Alt text:** A single dramatic composition transitioning left to right: a smoking volcano with glowing lava on the left blending into lush green terraced farmland and vineyards on its fertile slopes on the right, golden hour light, cinematic landscape, empty sky in the top 40% of the frame.  
-**Files:** `posters/day21.jpg` · `reels/day21.mp4`
+**Files:** `posters/day21.jpg` · `reels_v2/day21.mp4`
 
 ---
 
@@ -429,9 +452,10 @@ Days run in order and the topic pillars rotate. The weekday is only a suggestion
 > #physics #boomerang #science #explainer
 
 **Stat on poster:** 2 wings — one spinning, self-steering system  
-**Reel narration:** Throw it away, and it comes back. Why? Each arm is a small wing. As it spins, the top arm moves faster through the air and makes more lift. That imbalance tilts the spinning boomerang, steering it in a circle, right back to you. A wing that's designed to come home.  
+**Shorts/Reels title:** Why does a boomerang come back?  
+**Reel script (v2):** Why does a boomerang come back? Each arm is a small wing. As it spins, the top arm moves faster through the air… so it makes more lift. That uneven push tilts the spinning boomerang… steering it in a circle. Right back to you. Send this to someone who can't throw one.  
 **Alt text:** Stylized premium composition of a wooden boomerang spinning in midair with a glowing elegant curved flight path looping in a circle back toward the thrower's hand, soft blue sky gradient, motion blur on the boomerang, minimalist, empty sky in the top 40% of the frame.  
-**Files:** `posters/day22.jpg` · `reels/day22.mp4`
+**Files:** `posters/day22.jpg` · `reels_v2/day22.mp4`
 
 ---
 
@@ -448,9 +472,10 @@ Days run in order and the topic pillars rotate. The weekday is only a suggestion
 > #space #astronaut #humanbody #NASA
 
 **Stat on poster:** ~5 cm — taller in orbit  
-**Reel narration:** In space, astronauts get taller. Without gravity squashing it, the spine relaxes and the discs between the vertebrae expand. They can grow up to about three percent, around five centimetres. Back on Earth, it fades away. Gravity is quietly squashing you, every day.  
+**Shorts/Reels title:** Astronauts get taller in space.  
+**Reel script (v2):** Astronauts get taller in space. Up to about 3%. Around 5 cm. On Earth, gravity squashes your spine all day. In orbit, the discs between your vertebrae expand. Back on Earth, the height disappears. Often with a little back pain. Gravity is quietly shrinking you right now. Follow for more space facts.  
 **Alt text:** An astronaut floating inside a space station near a window with Earth visible, a glowing semi-transparent x-ray overlay of the spine showing the vertebral discs slightly expanded with soft cyan highlights, cinematic, empty space in the top 40% of the frame.  
-**Files:** `posters/day23.jpg` · `reels/day23.mp4`
+**Files:** `posters/day23.jpg` · `reels_v2/day23.mp4`
 
 ---
 
@@ -467,9 +492,10 @@ Days run in order and the topic pillars rotate. The weekday is only a suggestion
 > #crocodile #animals #nature #science
 
 **Stat on poster:** 3,700 — psi bite force  
-**Reel narration:** This is the strongest bite ever measured. A saltwater crocodile can bite with about three thousand seven hundred psi. Your bite? Around one hundred and sixty. Some animals are simply built differently.  
+**Shorts/Reels title:** This is the strongest bite ever measured.  
+**Reel script (v2):** This is the strongest bite ever measured. A saltwater crocodile. About 3,700 psi. That's 16,000 newtons of force. A lion? Around 1,000 psi. Your bite? About 160. Some animals are simply built different. Share this with someone who'd swim there.  
 **Alt text:** Powerful cinematic close-up of a saltwater crocodile's head at the waterline, jaws slightly open showing teeth, eye glistening, water droplets, dramatic low light with deep green and gold tones, intense and majestic, empty dark space in the top 40% of the frame.  
-**Files:** `posters/day24.jpg` · `reels/day24.mp4`
+**Files:** `posters/day24.jpg` · `reels_v2/day24.mp4`
 
 ---
 
@@ -484,9 +510,10 @@ Days run in order and the topic pillars rotate. The weekday is only a suggestion
 > #architecture #engineering #skyscraper #physics
 
 **Stat on poster:** 660 t — steel ball inside Taipei 101  
-**Reel narration:** Skyscrapers are built to sway. A perfectly rigid tower would crack under the force. A little flexibility lets it survive. Some even hang a giant pendulum inside. Taipei 101's weighs six hundred and sixty tonnes, swinging against the wind. Strength isn't stiffness. It's balance.  
+**Shorts/Reels title:** Skyscrapers are designed to sway.  
+**Reel script (v2):** Skyscrapers are designed to sway. A perfectly rigid tower would crack. So engineers let them bend a little. Some hide a giant pendulum inside. Taipei 101's weighs 660 tonnes… swinging against the wind. Strength isn't stiffness. It's balance. Follow for more engineering secrets.  
 **Alt text:** Elegant cutaway illustration of a supertall skyscraper at night revealing a giant golden spherical tuned mass damper suspended by cables near the top floors, subtle glowing wind lines flowing around the tower, premium architectural render, deep blue night, empty sky in the top 40% of the frame.  
-**Files:** `posters/day25.jpg` · `reels/day25.mp4`
+**Files:** `posters/day25.jpg` · `reels_v2/day25.mp4`
 
 ---
 
@@ -503,9 +530,10 @@ Days run in order and the topic pillars rotate. The weekday is only a suggestion
 > #physics #quantum #science #absolutezero
 
 **Stat on poster:** 2.7 K — deep space — labs reach billionths of a kelvin  
-**Reel narration:** Deep space is about minus two hundred and seventy degrees Celsius. But in laboratories on Earth, scientists go colder. Using lasers and magnets, they slow atoms until they're billionths of a degree above absolute zero. The coldest places in the universe may be human-made.  
+**Shorts/Reels title:** The coldest place in the universe might be on Earth.  
+**Reel script (v2):** The coldest place in the universe might be on Earth. Deep space sits at about −270°C. But in labs, scientists go colder. Using lasers and magnets… they slow atoms almost to a stop… just billionths of a degree above absolute zero. Humans made the coldest places we know. Send this to someone who's always cold.  
 **Alt text:** Futuristic physics laboratory with a complex golden cryogenic chandelier-like dilution refrigerator, frosty mist and intense blue cryogenic glow, laser beams converging on a tiny glowing atom cloud, cinematic, empty dark space in the top 40% of the frame.  
-**Files:** `posters/day26.jpg` · `reels/day26.mp4`
+**Files:** `posters/day26.jpg` · `reels_v2/day26.mp4`
 
 ---
 
@@ -522,9 +550,10 @@ Days run in order and the topic pillars rotate. The weekday is only a suggestion
 > #flamingo #birds #nature #biology
 
 **Stat on poster:** GREY — the colour flamingo chicks hatch  
-**Reel narration:** Flamingos aren't born pink. Chicks are grey. Their colour comes from what they eat: algae and brine shrimp, full of pigments called carotenoids. Those pigments end up in their feathers. Change the diet, and the pink fades. You really are what you eat.  
+**Shorts/Reels title:** Flamingos aren't born pink.  
+**Reel script (v2):** Flamingos aren't born pink. The chicks are grey. Their colour comes from their food. Algae and brine shrimp, full of carotenoids. The same pigments that make carrots orange. Change their diet… and the pink fades. You really are what you eat. Share this with a flamingo fan.  
 **Alt text:** Elegant portrait of a vivid pink flamingo standing in still shallow water at sunrise, perfect reflection, soft pastel pink and coral palette, graceful curved neck, fine feather detail, minimalist editorial composition, empty soft sky in the top 40% of the frame.  
-**Files:** `posters/day27.jpg` · `reels/day27.mp4`
+**Files:** `posters/day27.jpg` · `reels_v2/day27.mp4`
 
 ---
 
@@ -541,9 +570,10 @@ Days run in order and the topic pillars rotate. The weekday is only a suggestion
 > #JWST #space #astronomy #universe
 
 **Stat on poster:** 13.5B — years back in time  
-**Reel narration:** This telescope is a time machine. Light takes time to travel. So the farther we look, the further back in time we see. Some of these faint galaxies are shown as they were over thirteen billion years ago. Looking up is looking back.  
+**Shorts/Reels title:** This telescope is a time machine.  
+**Reel script (v2):** This telescope is a time machine. Light takes time to travel. So the farther we look, the further back we see. Some galaxies in Webb's images… are shown as they were over 13 billion years ago. Before Earth even existed. Looking up is looking back. Follow for more cosmic perspective.  
 **Alt text:** Majestic deep-field view of the universe filled with countless colourful galaxies of all shapes, glowing gold and violet, receding into depth with a subtle sense of layered distance, the golden hexagonal mirror of a space telescope glinting in the lower corner, cinematic, empty dark space in the top 40% of the frame.  
-**Files:** `posters/day28.jpg` · `reels/day28.mp4`
+**Files:** `posters/day28.jpg` · `reels_v2/day28.mp4`
 
 ---
 
@@ -560,9 +590,10 @@ Days run in order and the topic pillars rotate. The weekday is only a suggestion
 > #helicopter #aviation #physics #engineering
 
 **Stat on poster:** 4 forces — lift · weight · thrust · torque  
-**Reel narration:** Hovering looks calm. It's actually a constant balancing act. The main rotor blades are spinning wings that push air down, creating lift. But spinning them twists the body the other way, so the tail rotor pushes back to keep it steady. Every second in the air, four forces held in perfect balance.  
+**Shorts/Reels title:** Hovering is a constant balancing act.  
+**Reel script (v2):** Hovering is a constant balancing act. The main rotor blades are spinning wings. They push air down, creating lift. But spinning them twists the body the other way. So the tail rotor pushes back. Tilt the rotor… and the whole helicopter moves. Four forces, balanced every second. Share this with a future pilot.  
 **Alt text:** Premium aviation render of a sleek black helicopter hovering above a calm lake at dusk, rotor blades blurred into a disc, elegant thin glowing force arrows: lift up, weight down, tail rotor thrust sideways, dark moody blue-orange palette, empty sky in the top 40% of the frame.  
-**Files:** `posters/day29.jpg` · `reels/day29.mp4`
+**Files:** `posters/day29.jpg` · `reels_v2/day29.mp4`
 
 ---
 
@@ -579,6 +610,7 @@ Days run in order and the topic pillars rotate. The weekday is only a suggestion
 > #robots #AI #futuretech #engineering
 
 **Stat on poster:** 2 + 2 — legs and hands — the shape our world expects  
-**Reel narration:** Why are companies building robots shaped like us? Because our world is built for human bodies. Stairs, handles, tools — all made for two legs and two hands. A robot with the same shape can use the world we already have. The future may walk through the same doors you do.  
+**Shorts/Reels title:** Why build robots shaped like us?  
+**Reel script (v2):** Why build robots shaped like us? Because our world is built for human bodies. Stairs. Door handles. Tools. Car seats. Kitchen counters. All made for two legs and two hands. A robot with our shape can use the world we already have. The future may walk through your door. Follow for the future, explained.  
 **Alt text:** Premium photoreal humanoid robot with sleek white and graphite panels standing in a modern home kitchen, holding a cup, warm natural window light, cinematic shallow depth of field, calm and sophisticated, empty space in the top 40% of the frame.  
-**Files:** `posters/day30.jpg` · `reels/day30.mp4`
+**Files:** `posters/day30.jpg` · `reels_v2/day30.mp4`

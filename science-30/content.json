@@ -31,7 +31,20 @@
           "vo": "It's carbon atoms locked in a perfect honeycomb, and it lets almost all light straight through."
         }
       ],
-      "payoff": "The future may be built from something you can barely see."
+      "payoff": "The future may be built from something you can barely see.",
+      "reel": {
+        "broll": "steel cables",
+        "lines": [
+          "This sheet is *one atom* thick.",
+          "And it's about *200 times* stronger than steel.",
+          "It's called *graphene*.",
+          "Pure carbon, locked in a perfect *honeycomb*.",
+          "It's so thin, light passes *straight through*.",
+          "A sheet you can barely see…",
+          "could one day hold up a *bridge*.",
+          "Send this to someone who thinks steel is strong."
+        ]
+      }
     },
     {
       "day": 2,
@@ -61,7 +74,20 @@
           "vo": "Each arm can taste, feel, and react almost on its own."
         }
       ],
-      "payoff": "Eight arms. One brain. A truly distributed mind."
+      "payoff": "Eight arms. One brain. A truly distributed mind.",
+      "reel": {
+        "broll": "octopus underwater",
+        "lines": [
+          "An octopus has *nine* brains. Kind of.",
+          "It has about *500 million* neurons…",
+          "and *two-thirds* of them are in its arms.",
+          "Each arm can *taste*, touch and decide on its own.",
+          "Cut off from the brain, an arm still *reacts*.",
+          "It changes colour in a *fraction* of a second.",
+          "Eight arms. One mind. *Zero* bones.",
+          "Follow for a fact like this every day."
+        ]
+      }
     },
     {
       "day": 3,
@@ -91,7 +117,20 @@
           "vo": "That single spoonful would weigh around a billion tons."
         }
       ],
-      "payoff": "The universe makes things denser than we can imagine."
+      "payoff": "The universe makes things denser than we can imagine.",
+      "reel": {
+        "broll": "galaxy stars space",
+        "lines": [
+          "This teaspoon weighs a *billion tons*.",
+          "Not because of the spoon…",
+          "but because of what's *inside it*.",
+          "Neutron star matter.",
+          "A star *heavier than the Sun*,",
+          "crushed into a ball the size of a *city*.",
+          "One spoonful would outweigh *every human alive*.",
+          "Send this to the friend who loves space."
+        ]
+      }
     },
     {
       "day": 4,
@@ -121,7 +160,20 @@
           "vo": "And the whole system runs on about twenty watts, roughly a dim light bulb."
         }
       ],
-      "payoff": "The most powerful computer we know runs on a lunchbox of energy."
+      "payoff": "The most powerful computer we know runs on a lunchbox of energy.",
+      "reel": {
+        "broll": "neurons brain",
+        "lines": [
+          "Your brain runs on *20 watts*.",
+          "That's a *dim light bulb*.",
+          "Yet it holds about *86 billion* neurons…",
+          "firing tiny *electrical* pulses every second.",
+          "The world's fastest supercomputers need *megawatts*.",
+          "Your brain does it on a *sandwich*.",
+          "Right now, reading this, it's *sparking*.",
+          "Share this with someone who needs a brain boost."
+        ]
+      }
     },
     {
       "day": 5,
@@ -151,7 +203,20 @@
           "vo": "It smashes particles together at almost the speed of light, to reveal how the universe is built."
         }
       ],
-      "payoff": "Humanity's biggest machine is built to study the smallest things."
+      "payoff": "Humanity's biggest machine is built to study the smallest things.",
+      "reel": {
+        "broll": "underground tunnel technology",
+        "lines": [
+          "The biggest machine on Earth is *hidden underground*.",
+          "A *27-kilometre* ring…",
+          "buried *100 metres* below *two countries*.",
+          "Inside, protons race at *99.9999991%* of light speed.",
+          "Then they *smash* together.",
+          "That's how we found the *Higgs boson*.",
+          "The biggest machine ever built… to study the *smallest* things.",
+          "Follow for more mind-blowing engineering."
+        ]
+      }
     },
     {
       "day": 6,
@@ -181,7 +246,20 @@
           "vo": "It has survived intense radiation, and even exposure to open space."
         }
       ],
-      "payoff": "Half a millimetre long. Almost impossible to kill."
+      "payoff": "Half a millimetre long. Almost impossible to kill.",
+      "reel": {
+        "broll": "moss macro water drop",
+        "lines": [
+          "This animal survived *outer space*.",
+          "Meet the *tardigrade*.",
+          "Half a millimetre long.",
+          "Freeze it. *Survives*.",
+          "Dry it out for years. *Survives*.",
+          "Blast it with radiation. *Survives*.",
+          "It curls into a tiny *tun* and waits.",
+          "Send this to the toughest person you know."
+        ]
+      }
     },
     {
       "day": 7,
@@ -211,7 +289,20 @@
           "vo": "At sunset, light travels through much more air. The blue gets scattered away. Only the reds and oranges make it to your eyes."
         }
       ],
-      "payoff": "Every sunset is physics, painted across the sky."
+      "payoff": "Every sunset is physics, painted across the sky.",
+      "reel": {
+        "broll": "sunset ocean",
+        "lines": [
+          "The sky isn't blue by accident.",
+          "Air scatters *blue* light far more than *red*.",
+          "At noon, that blue fills the *whole sky*.",
+          "At sunset, light travels through *way more* air.",
+          "The blue gets scattered *away*…",
+          "and only the *reds* and *oranges* reach you.",
+          "Every sunset is *physics*, painted across the sky.",
+          "Save this for your next sunset."
+        ]
+      }
     },
     {
       "day": 8,
@@ -241,7 +332,20 @@
           "vo": "at around six hundred and ninety-two thousand kilometres per hour."
         }
       ],
-      "payoff": "New York to Tokyo in under a minute."
+      "payoff": "New York to Tokyo in under a minute.",
+      "reel": {
+        "broll": "sun solar flare",
+        "lines": [
+          "This is the *fastest* thing humans have ever built.",
+          "NASA's *Parker Solar Probe*.",
+          "It flew just *6 million km* from the Sun…",
+          "at about *692,000 km/h*.",
+          "That's New York to Tokyo in *under a minute*.",
+          "Its heat shield faces almost *1,000°C*…",
+          "while the instruments behind it stay near *room temperature*.",
+          "Follow for more space records."
+        ]
+      }
     },
     {
       "day": 9,
@@ -271,7 +375,20 @@
           "vo": "The towers push straight down into the ground — that's compression — and the cable ends are anchored into enormous blocks."
         }
       ],
-      "payoff": "Weight isn't fought. It's redirected."
+      "payoff": "Weight isn't fought. It's redirected.",
+      "reel": {
+        "broll": "suspension bridge aerial",
+        "lines": [
+          "How does a bridge this heavy just *hang* in the air?",
+          "The road hangs from *cables*.",
+          "The cables *pull*. That's tension.",
+          "The towers *push down*. That's compression.",
+          "Huge *anchors* lock the cable ends into the ground.",
+          "The weight isn't fought…",
+          "it's *redirected*.",
+          "Share this with an engineer."
+        ]
+      }
     },
     {
       "day": 10,
@@ -301,7 +418,20 @@
           "vo": "The first real trees only appeared around three hundred and eighty-five million years ago."
         }
       ],
-      "payoff": "They've survived five mass extinctions. Respect the shark."
+      "payoff": "They've survived five mass extinctions. Respect the shark.",
+      "reel": {
+        "broll": "shark underwater",
+        "lines": [
+          "Sharks are *older than trees*.",
+          "Shark-like fish swam *450 million* years ago.",
+          "The first real trees? About *385 million* years ago.",
+          "Sharks have survived *five* mass extinctions.",
+          "They were here *before* the dinosaurs…",
+          "and they're *still* here.",
+          "Respect the *shark*.",
+          "Send this to someone who's scared of sharks."
+        ]
+      }
     },
     {
       "day": 11,
@@ -331,7 +461,20 @@
           "vo": "The ones that slip through near the poles light up the sky as auroras."
         }
       ],
-      "payoff": "Every aurora is the sign of a shield, working."
+      "payoff": "Every aurora is the sign of a shield, working.",
+      "reel": {
+        "broll": "aurora borealis",
+        "lines": [
+          "Earth has an *invisible force field*.",
+          "The Sun blasts us with *charged particles* nonstop.",
+          "But Earth's molten iron core makes a *magnetic shield*…",
+          "that bends most of them *away*.",
+          "The ones that slip in near the poles…",
+          "light up the sky as *auroras*.",
+          "Every aurora is the shield *working*.",
+          "Follow for daily science like this."
+        ]
+      }
     },
     {
       "day": 12,
@@ -361,7 +504,20 @@
           "vo": "while being much lighter, flexible — and able to repair itself."
         }
       ],
-      "payoff": "You are walking around inside a living, self-healing structure."
+      "payoff": "You are walking around inside a living, self-healing structure.",
+      "reel": {
+        "broll": "skeleton x-ray",
+        "lines": [
+          "Your bones are stronger than *concrete*.",
+          "Bone can take about *170 MPa* of compression.",
+          "Typical concrete? Around *30*.",
+          "And bone is *far lighter*.",
+          "It's flexible, so it doesn't *shatter*.",
+          "And unlike concrete… it *repairs itself*.",
+          "You're walking around in a *self-healing super-material*.",
+          "Share this with someone who breaks everything."
+        ]
+      }
     },
     {
       "day": 13,
@@ -391,7 +547,20 @@
           "vo": "So the train got a kingfisher-shaped nose. It became quieter, faster, and used about fifteen percent less electricity."
         }
       ],
-      "payoff": "Nature solved it first. Engineers just paid attention."
+      "payoff": "Nature solved it first. Engineers just paid attention.",
+      "reel": {
+        "broll": "bullet train japan",
+        "lines": [
+          "A *bird* fixed Japan's bullet train.",
+          "Early trains made a loud *boom* leaving tunnels.",
+          "An engineer who loved birdwatching noticed the *kingfisher*.",
+          "It dives into water with *almost no splash*.",
+          "So they gave the train a *kingfisher beak*.",
+          "Quieter. Faster. About *15% less* electricity.",
+          "Nature solved it *first*.",
+          "Follow for more genius design."
+        ]
+      }
     },
     {
       "day": 14,
@@ -421,7 +590,20 @@
           "vo": "Its rings would stretch across about forty degrees of sky — eighty Moons side by side."
         }
       ],
-      "payoff": "Our sky would never look ordinary again."
+      "payoff": "Our sky would never look ordinary again.",
+      "reel": {
+        "broll": "night sky stars timelapse",
+        "lines": [
+          "What if *Saturn* replaced the Moon?",
+          "Same distance. *384,000 km* away.",
+          "Its rings would stretch across about *40 degrees* of sky.",
+          "That's *80 Moons* side by side.",
+          "At night it would glow *brighter* than anything.",
+          "Every sunset would have *rings*.",
+          "Our sky would never look ordinary *again*.",
+          "Send this to someone who loves the night sky."
+        ]
+      }
     },
     {
       "day": 15,
@@ -451,7 +633,20 @@
           "vo": "and grow up all over again. In theory, again and again."
         }
       ],
-      "payoff": "Not invincible — but it can hit restart."
+      "payoff": "Not invincible — but it can hit restart.",
+      "reel": {
+        "broll": "jellyfish glowing",
+        "lines": [
+          "This jellyfish can *cheat death*.",
+          "It's called *Turritopsis dohrnii*.",
+          "When it's injured or stressed…",
+          "it turns its adult body back into a *baby polyp*.",
+          "Then it grows up *all over again*.",
+          "In theory, it can do it *forever*.",
+          "Biologically… *immortal*.",
+          "Follow for weirder biology."
+        ]
+      }
     },
     {
       "day": 16,
@@ -481,7 +676,20 @@
           "vo": "then exits from the tail. Inside, the cabin acts like a cage, and passengers stay safe."
         }
       ],
-      "payoff": "Scary outside. Engineered to be boring inside."
+      "payoff": "Scary outside. Engineered to be boring inside.",
+      "reel": {
+        "broll": "lightning storm night",
+        "lines": [
+          "Every airliner gets hit by lightning about *once a year*.",
+          "And almost no one *notices*.",
+          "Lightning hits the *nose* or a *wingtip*…",
+          "races along the *outer skin*…",
+          "and exits from the *tail*.",
+          "The cabin acts like a *Faraday cage*.",
+          "Scary outside. *Boring* inside.",
+          "Share this with a nervous flyer."
+        ]
+      }
     },
     {
       "day": 17,
@@ -511,7 +719,20 @@
           "vo": "Your nose is so sensitive to it, you can detect a few parts per trillion. It's called petrichor."
         }
       ],
-      "payoff": "Petrichor: the scent of earth, set free by rain."
+      "payoff": "Petrichor: the scent of earth, set free by rain.",
+      "reel": {
+        "broll": "rain drops ground",
+        "lines": [
+          "That smell after rain has a *name*.",
+          "It's called *petrichor*.",
+          "When rain hits dry ground, drops launch tiny *air bubbles*.",
+          "They carry plant oils and *geosmin*…",
+          "made by *soil bacteria*.",
+          "Your nose can detect it at about *5 parts per trillion*.",
+          "You can literally *smell* the earth breathing.",
+          "Save this for the next rainy day."
+        ]
+      }
     },
     {
       "day": 18,
@@ -541,7 +762,20 @@
           "vo": "Earth would keep orbiting exactly as before. Same mass, same gravity at our distance."
         }
       ],
-      "payoff": "Dark and cold? Yes. Swallowed? No."
+      "payoff": "Dark and cold? Yes. Swallowed? No.",
+      "reel": {
+        "broll": "black hole space",
+        "lines": [
+          "Black holes *don't suck*.",
+          "If the Sun became a black hole…",
+          "with the *same mass*…",
+          "Earth would keep orbiting *exactly* the same.",
+          "The gravity at our distance? *Unchanged*.",
+          "It would get *dark* and *cold*…",
+          "but we would *not* fall in.",
+          "Follow for more myths, busted."
+        ]
+      }
     },
     {
       "day": 19,
@@ -571,7 +805,20 @@
           "vo": "The total spin stays zero, so no physics is broken. It just lands on its feet."
         }
       ],
-      "payoff": "Not magic. Just very clever physics."
+      "payoff": "Not magic. Just very clever physics.",
+      "reel": {
+        "broll": "cat jumping slow motion",
+        "lines": [
+          "Drop a cat upside down and it lands on its *feet*.",
+          "How, without breaking *physics*?",
+          "It bends in the *middle*…",
+          "spins its front half one way…",
+          "and its back half the *other*.",
+          "Total spin stays *zero*. Physics is happy.",
+          "Upright in about *a third of a second*.",
+          "Send this to a cat person."
+        ]
+      }
     },
     {
       "day": 20,
@@ -601,7 +848,20 @@
           "vo": "That's vastly more computing power than the computer that guided astronauts to the Moon."
         }
       ],
-      "payoff": "You carry a moon-mission's worth of computing — many times over."
+      "payoff": "You carry a moon-mission's worth of computing — many times over.",
+      "reel": {
+        "broll": "circuit board macro",
+        "lines": [
+          "You're holding a *supercomputer*.",
+          "One phone chip holds *billions* of transistors.",
+          "Each one smaller than a *virus*.",
+          "Apollo's guidance computer had about *4 KB* of memory.",
+          "Your phone has *millions* of times more.",
+          "And you use it to watch *cat videos*.",
+          "Humanity's greatest machine… *in your pocket*.",
+          "Share this with someone glued to their phone."
+        ]
+      }
     },
     {
       "day": 21,
@@ -631,7 +891,20 @@
           "vo": "creating some of the most fertile land on Earth."
         }
       ],
-      "payoff": "From fire comes food."
+      "payoff": "From fire comes food.",
+      "reel": {
+        "broll": "volcano lava",
+        "lines": [
+          "Volcanoes *destroy* everything…",
+          "then create some of the *richest* farmland on Earth.",
+          "Volcanic ash breaks down into soil packed with *minerals*.",
+          "Potassium. Phosphorus. *Magnesium*.",
+          "That's why farms climb the slopes of *active volcanoes*.",
+          "Hundreds of millions of people live in their *shadow*.",
+          "From fire… comes *food*.",
+          "Follow for more Earth science."
+        ]
+      }
     },
     {
       "day": 22,
@@ -661,7 +934,20 @@
           "vo": "That imbalance tilts the spinning boomerang, steering it in a circle, right back to you."
         }
       ],
-      "payoff": "A wing that's designed to come home."
+      "payoff": "A wing that's designed to come home.",
+      "reel": {
+        "broll": "boomerang throw",
+        "lines": [
+          "Why does a boomerang *come back*?",
+          "Each arm is a small *wing*.",
+          "As it spins, the top arm moves *faster* through the air…",
+          "so it makes *more lift*.",
+          "That uneven push *tilts* the spinning boomerang…",
+          "steering it in a *circle*.",
+          "Right back to *you*.",
+          "Send this to someone who can't throw one."
+        ]
+      }
     },
     {
       "day": 23,
@@ -691,7 +977,20 @@
           "vo": "They can grow up to about three percent, around five centimetres. Back on Earth, it fades away."
         }
       ],
-      "payoff": "Gravity is quietly squashing you, every day."
+      "payoff": "Gravity is quietly squashing you, every day.",
+      "reel": {
+        "broll": "astronaut space",
+        "lines": [
+          "Astronauts get *taller* in space.",
+          "Up to about *3%*. Around *5 cm*.",
+          "On Earth, gravity *squashes* your spine all day.",
+          "In orbit, the discs between your vertebrae *expand*.",
+          "Back on Earth, the height *disappears*.",
+          "Often with a little *back pain*.",
+          "Gravity is quietly *shrinking* you right now.",
+          "Follow for more space facts."
+        ]
+      }
     },
     {
       "day": 24,
@@ -721,7 +1020,20 @@
           "vo": "Your bite? Around one hundred and sixty."
         }
       ],
-      "payoff": "Some animals are simply built differently."
+      "payoff": "Some animals are simply built differently.",
+      "reel": {
+        "broll": "crocodile water",
+        "lines": [
+          "This is the strongest bite *ever measured*.",
+          "A saltwater crocodile.",
+          "About *3,700 psi*.",
+          "That's *16,000 newtons* of force.",
+          "A lion? Around *1,000 psi*.",
+          "Your bite? About *160*.",
+          "Some animals are simply *built different*.",
+          "Share this with someone who'd swim there."
+        ]
+      }
     },
     {
       "day": 25,
@@ -751,7 +1063,20 @@
           "vo": "Some even hang a giant pendulum inside. Taipei 101's weighs six hundred and sixty tonnes, swinging against the wind."
         }
       ],
-      "payoff": "Strength isn't stiffness. It's balance."
+      "payoff": "Strength isn't stiffness. It's balance.",
+      "reel": {
+        "broll": "skyscraper wind clouds",
+        "lines": [
+          "Skyscrapers are *designed* to sway.",
+          "A perfectly rigid tower would *crack*.",
+          "So engineers let them *bend* a little.",
+          "Some hide a giant *pendulum* inside.",
+          "Taipei 101's weighs *660 tonnes*…",
+          "swinging *against* the wind.",
+          "Strength isn't stiffness. It's *balance*.",
+          "Follow for more engineering secrets."
+        ]
+      }
     },
     {
       "day": 26,
@@ -781,7 +1106,20 @@
           "vo": "Using lasers and magnets, they slow atoms until they're billionths of a degree above absolute zero."
         }
       ],
-      "payoff": "The coldest places in the universe may be human-made."
+      "payoff": "The coldest places in the universe may be human-made.",
+      "reel": {
+        "broll": "liquid nitrogen laboratory",
+        "lines": [
+          "The coldest place in the universe might be *on Earth*.",
+          "Deep space sits at about *−270°C*.",
+          "But in labs, scientists go *colder*.",
+          "Using *lasers* and *magnets*…",
+          "they slow atoms almost to a *stop*…",
+          "just *billionths* of a degree above absolute zero.",
+          "Humans made the coldest places we *know*.",
+          "Send this to someone who's always cold."
+        ]
+      }
     },
     {
       "day": 27,
@@ -811,7 +1149,20 @@
           "vo": "Those pigments end up in their feathers. Change the diet, and the pink fades."
         }
       ],
-      "payoff": "You really are what you eat."
+      "payoff": "You really are what you eat.",
+      "reel": {
+        "broll": "flamingos",
+        "lines": [
+          "Flamingos aren't born *pink*.",
+          "The chicks are *grey*.",
+          "Their colour comes from their *food*.",
+          "Algae and brine shrimp, full of *carotenoids*.",
+          "The same pigments that make carrots *orange*.",
+          "Change their diet… and the pink *fades*.",
+          "You really are what you *eat*.",
+          "Share this with a flamingo fan."
+        ]
+      }
     },
     {
       "day": 28,
@@ -841,7 +1192,20 @@
           "vo": "Some of these faint galaxies are shown as they were over thirteen billion years ago."
         }
       ],
-      "payoff": "Looking up is looking back."
+      "payoff": "Looking up is looking back.",
+      "reel": {
+        "broll": "nebula space",
+        "lines": [
+          "This telescope is a *time machine*.",
+          "Light takes *time* to travel.",
+          "So the farther we look, the further *back* we see.",
+          "Some galaxies in Webb's images…",
+          "are shown as they were over *13 billion* years ago.",
+          "Before Earth even *existed*.",
+          "Looking up is looking *back*.",
+          "Follow for more cosmic perspective."
+        ]
+      }
     },
     {
       "day": 29,
@@ -871,7 +1235,20 @@
           "vo": "But spinning them twists the body the other way, so the tail rotor pushes back to keep it steady."
         }
       ],
-      "payoff": "Every second in the air, four forces held in perfect balance."
+      "payoff": "Every second in the air, four forces held in perfect balance.",
+      "reel": {
+        "broll": "helicopter",
+        "lines": [
+          "Hovering is a constant *balancing act*.",
+          "The main rotor blades are spinning *wings*.",
+          "They push air *down*, creating *lift*.",
+          "But spinning them twists the body the *other way*.",
+          "So the tail rotor *pushes back*.",
+          "Tilt the rotor… and the whole helicopter *moves*.",
+          "*Four* forces, balanced every second.",
+          "Share this with a future pilot."
+        ]
+      }
     },
     {
       "day": 30,
@@ -901,7 +1278,20 @@
           "vo": "A robot with the same shape can use the world we already have."
         }
       ],
-      "payoff": "The future may walk through the same doors you do."
+      "payoff": "The future may walk through the same doors you do.",
+      "reel": {
+        "broll": "robot",
+        "lines": [
+          "Why build robots shaped like *us*?",
+          "Because our world is built for *human bodies*.",
+          "Stairs. Door handles. *Tools*.",
+          "Car seats. Kitchen counters.",
+          "All made for *two legs* and *two hands*.",
+          "A robot with our shape can use the world *we already have*.",
+          "The future may walk through *your* door.",
+          "Follow for the future, explained."
+        ]
+      }
     }
   ]
 }

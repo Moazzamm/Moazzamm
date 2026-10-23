@@ -5,11 +5,14 @@ A complete 30-day pack for a premium science and facts page on X, Instagram, You
 | Folder | What's inside |
 |---|---|
 | `posters/` | 30 feed posters, 1080×1350 JPG (fits X and Instagram) |
-| `reels/` | 30 vertical reels, 1080×1920 MP4, about 25 s each, with narration, an original ambient score, animated type and an end card |
+| `reels_v2/` | **30 high-retention reels** (use these): 1080×1920, 14–21 s, real HD footage mixed with AI visuals, a cut every ~2 s, bold word-synced captions, sound effects, ducked music and a seamless loop |
+| `reels/` | The first, slower cinematic version (kept for reference) |
 | `POSTING_PACK.md` | For each day: the X post, caption, stat, narration script and alt text |
 | `content.json` | Source of truth: hooks, captions, image prompts, scene prompts and voiceover lines |
 | `raw/` | The AI visuals before typography (posters plus 3 reel scenes per day) |
-| `audio/` | Narration WAVs |
+| `audio2/` | v2 narration (Kokoro TTS) and word timestamps |
+| `footage/` | HD stock clips per day, plus `CREDITS.md` |
+| `music/` | Two original background tracks |
 | `scripts/` | The pipeline that rebuilds everything from `content.json` |
 
 ## Design system
@@ -23,7 +26,10 @@ pip install pillow numpy opencv-python-headless   # ffmpeg is also required
 cd scripts
 python3 make_posters.py          # all posters (or pass day numbers: 1 5 9)
 python3 voiceover.py 3           # re-narrate a day (needs GEMINI_API_KEY); delete audio/day03.wav first
-python3 make_reels.py 3          # re-render a reel
+python3 make_reels.py 3          # re-render a v1 reel
+python3 voiceover_kokoro.py 3    # v2 narration (needs the Kokoro model files)
+python3 align_words.py 3         # word timestamps for captions (needs GEMINI_API_KEY)
+python3 make_reels_v2.py 3       # re-render a v2 reel
 ```
 To change the brand name or handle, edit `brand` and `handle` at the top of `content.json`, then rerun both scripts.
 
