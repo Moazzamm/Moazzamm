@@ -50,7 +50,7 @@ music*=me
 sfx=np.zeros(N)
 s=int((T[4]+3)*SR); L=int(15*SR); r=lowp(rng.normal(0,1,L),70)*np.minimum(1,np.minimum(np.arange(L)/SR/2,(L-np.arange(L))/SR/4)); sfx[s:s+L]+=r/np.abs(r).max()*0.35
 s=int((T[6]+3)*SR); L=int(9*SR); r=band(rng.normal(0,1,L),200,900)*np.sin(np.pi*np.arange(L)/L)**2*(1+0.5*np.sin(2*np.pi*np.arange(L)/SR*0.3)); sfx[s:s+L]+=r/np.abs(r).max()*0.18
-s=int((T[14]-0.3)*SR); L=int(7*SR); c=band(rng.normal(0,1,L),2500,9000)*(rng.random(L)<0.02)*3+band(rng.normal(0,1,L),3000,8000)*0.3; c*=np.minimum(1,np.minimum(np.arange(L)/SR/0.5,(L-np.arange(L))/SR/1.5)); sfx[s:s+L]+=c/np.abs(c).max()*0.22
+s=int((T[14]-0.3)*SR); L=int(7*SR); c=band(rng.normal(0,1,L),3000,8000)*0.3; c*=np.minimum(1,np.minimum(np.arange(L)/SR/0.5,(L-np.arange(L))/SR/1.5)); sfx[s:s+L]+=c/np.abs(c).max()*0.22
 s=int((T[15]+len(np.load('vo/seg15.npy'))/24000-0.2)*SR); L=int(3*SR); tt=np.arange(L)/SR; h=np.sin(2*np.pi*42*tt)*np.exp(-tt*1.6); sfx[s:s+L]+=h*0.5
 s=int((T[30]+1)*SR); L=int(min(26,total-T[30]-2)*SR); w=band(rng.normal(0,1,L),400,4000)*np.minimum(1,np.minimum(np.arange(L)/SR/2,(L-np.arange(L))/SR/3)); sfx[s:s+L]+=w/np.abs(w).max()*0.08
 s=int((T[27])*SR); L=int(10*SR); w=band(rng.normal(0,1,L),150,700)*np.sin(np.pi*np.arange(L)/L); sfx[s:s+L]+=w/np.abs(w).max()*0.12
@@ -73,15 +73,16 @@ whoosh(sc["night"]["start"]+sc["night"]["p"]["P5"]-0.3,1.2,0.12)
 whoosh(sc["invest"]["start"]+sc["invest"]["p"]["P10"]-0.3)
 whoosh(sc["timeline"]["start"]+sc["timeline"]["p"]["P32"]-0.3,0.9,0.15)
 # --- VO (24k -> 48k)
-vo24=np.load("data/vo_track.npy"); vo=np.interp(np.arange(N)/SR*24000, np.arange(len(vo24)), vo24)
+vo24=np.load("data/vo_track.npy"); from scipy.signal import resample_poly
+vo=resample_poly(vo24,2,1)[:N]; vo=np.pad(vo,(0,max(0,N-len(vo))))
 # duck music under VO
 from scipy.ndimage import maximum_filter1d, uniform_filter1d
-act=uniform_filter1d((np.abs(vo)>0.02).astype(float)[::480],50); act=np.repeat(act,480)[:N]; act=np.pad(act,(0,max(0,N-len(act))))
+actb=uniform_filter1d((np.abs(vo)>0.02).astype(float)[::480],50); act=np.interp(np.arange(N),np.arange(len(actb))*480,actb); act=uniform_filter1d(act,9600)
 duck=1-0.45*np.clip(act*3,0,1)
 mix=vo*0.9+music*0.16*duck+sfx*0.5
 mix=mix/np.abs(mix).max()*0.95
 st=np.stack([mix,mix],1)
 with wave.open("mix_raw.wav","wb") as w:
     w.setnchannels(2);w.setsampwidth(2);w.setframerate(SR);w.writeframes((st*32767).astype(np.int16).tobytes())
-subprocess.run(["ffmpeg","-loglevel","error","-y","-i","mix_raw.wav","-af","loudnorm=I=-14:TP=-1.5:LRA=11","-ar","48000","-c:a","pcm_s16le","mix.wav"],check=True)
+subprocess.run(["ffmpeg","-loglevel","error","-y","-i","mix_raw.wav","-af","adeclick=window=55:overlap=75:threshold=4,loudnorm=I=-14:TP=-2.0:LRA=11,alimiter=limit=0.79:attack=5:release=50:level=0","-ar","48000","-c:a","pcm_s16le","mix.wav"],check=True)
 print("audio done",total)

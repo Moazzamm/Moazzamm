@@ -9,6 +9,7 @@ for i in range(len(paras)):
         with wave.open(tmp_in,"wb") as w: w.setnchannels(1);w.setsampwidth(2);w.setframerate(SR);w.writeframes((x*32767).astype(np.int16).tobytes())
         subprocess.run(["ffmpeg","-loglevel","error","-y","-i",tmp_in,"-filter:a",f"atempo={f:.3f}",tmp_out],check=True)
         w=wave.open(tmp_out); x=np.frombuffer(w.readframes(w.getnframes()),np.int16).astype(np.float32)/32767
+    f=int(0.015*SR); x=x.copy(); x[:f]*=np.linspace(0,1,f); x[-f:]*=np.linspace(1,0,f)
     segs[i]=x
 gap={i:0.6 for i in segs}; gap.update({2:1.1,8:1.6,15:1.6,21:0.9,23:0.9,26:0.9,28:1.4,32:0.9,33:1.0,34:1.3})
 T={}; t=1.6
