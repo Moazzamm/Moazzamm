@@ -87,6 +87,7 @@ BEATS = {
         dict(a="single leaf", type="callout", icon="leaf", big="1 LEAF", small="CAN SERIOUSLY POISON A CHILD"),
         dict(a="smoke from burning", type="callout", icon="flame", big="SMOKE", small="IS DANGEROUS TOO"),
         dict(a="In Sri Lanka", type="map", pin="srilanka", label="SRI LANKA", sub="THOUSANDS POISONED EVERY YEAR"),
+        dict(a="In Sri Lanka", type="photo", key="yellow", label="YELLOW OLEANDER · SRI LANKA", dur=6.5, replaces="map"),
         dict(type="meter", value=8),
     ],
     "p2": [
@@ -210,11 +211,21 @@ def main():
             else:  # meter: near the end of the narration
                 b["t"] = round(vo + dur - 3.4, 3)
             beats.append(b)
+        for r in [b for b in beats if b.get("replaces")]:  # a real photo takes the slot of e.g. a map beat
+            beats = [b for b in beats if not (b["type"] == r["replaces"] and b.get("a") == r["a"])]
         beats.sort(key=lambda b: b["t"])
-        for i, b in enumerate(beats):  # map duration: until next beat (4-7s)
+        for i, b in enumerate(beats):  # map duration: until the next beat, or just past the narration (4-7s)
             if b["type"] == "map":
-                nxt = beats[i + 1]["t"] if i + 1 < len(beats) else vo + dur
+                nxt = next((x["t"] for x in beats[i + 1:] if x["type"] != "meter"), vo + dur + 0.6)
                 b["dur"] = round(min(7.0, max(4.0, nxt - b["t"] + 0.2)), 3)
+        meter = next((b for b in beats if b["type"] == "meter"), None)
+        if meter:  # the lethality meter never shares the screen with a map; hold it at least 2.8 s
+            for b in beats:
+                if b["type"] == "map" and b["t"] - 0.5 < meter["t"] < b["t"] + b["dur"]:
+                    meter["t"] = round(b["t"] + b["dur"] - 0.25, 3)
+            tail = max(tail, meter["t"] + 2.8 - (vo + dur))
+        beats.sort(key=lambda b: b["t"])
+        for b in beats:
             sfx.append(dict(t=b["t"], kind="whoosh" if b["type"] == "photo" else b["type"]))
         if "rank" in s:
             sfx.append(dict(t=vo, kind="slam"))

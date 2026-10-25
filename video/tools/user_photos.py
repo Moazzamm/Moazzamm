@@ -13,11 +13,14 @@ OUT = os.path.join(ROOT, "build", "photos")
 
 # sid: (hero source crop, detail source crop, credit). Crops are (file, left, top, right, bottom).
 PHOTOS = {
-    "p10": (("2.webp", 735, 201, 1380, 655), ("2.webp", 80, 199, 729, 657), "Cornell CALS Weed Science"),
-    "p9": (("3.webp", 74, 100, 903, 880), ("3.webp", 300, 150, 880, 870), "Meadow City Nursery"),
-    "p8": (("4.webp", 60, 135, 856, 1235), ("4.webp", 60, 135, 856, 1235), "Pixabay"),
-    "p7": (("5.webp", 194, 20, 1138, 1222), ("5.webp", 194, 60, 1138, 900), "Encyclopaedia Britannica"),
-    "p6": (("6.webp", 150, 0, 1180, 790), ("6.webp", 330, 0, 1050, 790), "Nepal Desk"),
+    "p10": dict(hero=("2.webp", 735, 201, 1380, 655), detail=("2.webp", 80, 199, 729, 657), credit="Cornell CALS Weed Science"),
+    "p9": dict(hero=("3.webp", 74, 100, 903, 880), detail=("3.webp", 300, 150, 880, 870), credit="Meadow City Nursery"),
+    "p8": dict(hero=("4.webp", 60, 135, 856, 1235), detail=("4.webp", 60, 135, 856, 1235), credit="Pixabay"),
+    "p7": dict(hero=("5.webp", 194, 20, 1138, 1222), detail=("5.webp", 194, 60, 1138, 900), credit="Encyclopaedia Britannica"),
+    "p6": dict(hero=("6.webp", 150, 0, 1180, 790), detail=("6.webp", 330, 0, 1050, 790), credit="Nepal Desk"),
+    "p3": dict(yellow=("9.webp", 330, 60, 900, 772), credit="Kew Science, Plants of the World Online"),
+    "p2": dict(hero=("8.webp", 258, 115, 1112, 1318), detail=("8.webp", 330, 150, 1050, 1050), credit="Giuseppe Mazza, Monaco Nature Encyclopedia"),
+    "p1": dict(hero=("7.webp", 137, 2, 1112, 820), detail=("7.webp", 380, 0, 830, 560), credit="iStock / bdspn"),
 }
 
 
@@ -36,37 +39,29 @@ def sharpen(im):
     return im.filter(ImageFilter.UnsharpMask(radius=1.6, percent=70, threshold=2))
 
 
-def hero(im, size=(2112, 1188)):
-    W, H = size
-    bg = ImageOps.fit(im, (W // 4, H // 4)).filter(ImageFilter.GaussianBlur(9)).resize(size, Image.BICUBIC)
-    bg = ImageEnhance.Brightness(bg).enhance(0.42)
-    if im.width / im.height >= 1.6 and im.width >= 1400:
-        return sharpen(grade(ImageOps.fit(im, size, Image.LANCZOS)))
-    h = int(H * 0.9); w = int(im.width * h / im.height)
-    if w > W * 0.9:
-        w = int(W * 0.9); h = int(im.height * w / im.width)
-    fg = sharpen(grade(im.resize((w, h), Image.LANCZOS)))
-    shadow = Image.new("RGBA", (w + 120, h + 120), (0, 0, 0, 0))
-    shadow.paste((0, 0, 0, 200), (60, 60, 60 + w, 60 + h))
-    shadow = shadow.filter(ImageFilter.GaussianBlur(28))
-    canvas = grade(bg, 1.0).convert("RGBA")
-    x, y = (W - w) // 2 + 120, (H - h) // 2
-    canvas.alpha_composite(shadow, (x - 60, y - 40))
-    canvas.paste(fg, (x, y))
-    return canvas.convert("RGB")
+def hero(im, box=(1560 * 1.12, 800 * 1.12)):
+    """Sharp, graded hero sized for the on-screen photo window (with headroom for the slow zoom)."""
+    k = min(box[0] / im.width, box[1] / im.height)
+    return sharpen(grade(im.resize((round(im.width * k), round(im.height * k)), Image.LANCZOS)))
 
 
 def main():
     os.makedirs(OUT, exist_ok=True)
     meta, credits = {}, []
-    for sid, (h, d, credit) in PHOTOS.items():
-        hi, di = load(h), load(d)
-        hero(hi).save(os.path.join(OUT, f"{sid}_hero.jpg"), quality=92)
-        bg = ImageOps.fit(hi, (480, 270)).filter(ImageFilter.GaussianBlur(10)).resize((1920, 1080), Image.BICUBIC)
-        ImageEnhance.Brightness(bg).enhance(0.5).save(os.path.join(OUT, f"{sid}_bg.jpg"), quality=85)
-        sharpen(grade(ImageOps.fit(di, (880, 1100), Image.LANCZOS), 0.97)).save(os.path.join(OUT, f"{sid}_detail.jpg"), quality=92)
-        meta[sid] = dict(keys=["hero", "detail"], credit=credit)
-        credits.append(f"• {sid.upper()}: {credit}")
+    for sid, spec in PHOTOS.items():
+        keys = [k for k in spec if k != "credit"]
+        for key in keys:
+            im = load(spec[key])
+            if key == "hero":
+                hero(im).save(os.path.join(OUT, f"{sid}_hero.jpg"), quality=92)
+                bg = ImageOps.fit(im, (480, 270)).filter(ImageFilter.GaussianBlur(10)).resize((1920, 1080), Image.BICUBIC)
+                ImageEnhance.Brightness(bg).enhance(0.5).save(os.path.join(OUT, f"{sid}_bg.jpg"), quality=85)
+            else:
+                sharpen(grade(ImageOps.fit(im, (880, 1100), Image.LANCZOS), 0.97)).save(os.path.join(OUT, f"{sid}_{key}.jpg"), quality=92)
+        meta[sid] = dict(keys=keys, credit=spec["credit"])
+        if "hero" in spec:
+            hb = spec["hero"]; meta[sid]["hw"] = [hb[3] - hb[1], hb[4] - hb[2]]
+        credits.append(f"• {sid.upper()}: {spec['credit']}")
     open(os.path.join(ROOT, "build", "photos.js"), "w").write("window.PHOTOS=" + json.dumps(meta) + ";")
     json.dump(meta, open(os.path.join(OUT, "photos.json"), "w"))
     open(os.path.join(ROOT, "out", "photo_credits.txt"), "w").write("\n".join(credits) + "\n")
