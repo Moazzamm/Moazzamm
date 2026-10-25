@@ -95,8 +95,8 @@ BEATS = {
         dict(a="abrin", type="callout", icon="biohazard", big="ABRIN", small="EVEN DEADLIER THAN RICIN"),
         dict(a="a single one may be enough", type="callout", icon="skull", big="1 SEED", small="MAY KILL AN ADULT"),
         dict(a="pulled from shops", type="callout", icon="ban", big="RECALLED", small="JEWELRY PULLED FROM SHOPS"),
-        dict(a="you might want to take", type="bracelet"),
-        dict(type="meter", value=10),
+        dict(a="So if you own a bracelet", type="bracelet"),
+        dict(type="meter", value=10, after=0.2),
     ],
     "outro": [
         dict(a="Nature is beautiful", type="recap"),
@@ -182,7 +182,7 @@ def main():
         sid = s["id"]
         dur = wav_dur(os.path.join(ROOT, "build", "vo", f"{sid}.wav"))
         lead = 0.9 if sid == "hook" else LEAD
-        tail = 5.6 if sid == "outro" else GAP
+        tail = 5.6 if sid == "outro" else 3.2 if sid == "p1" else GAP
         start, vo = t, t + lead
         segs = align(s["text"], dur, pauses[sid])
         beats = []
@@ -192,6 +192,8 @@ def main():
                 idx = s["text"].find(b["a"])
                 assert idx >= 0, (sid, b["a"])
                 b["t"] = round(vo + char_time(segs, idx), 3)
+            elif "after" in b:  # meter shown after the narration ends
+                b["t"] = round(vo + dur + b["after"], 3)
             else:  # meter: near the end of the narration
                 b["t"] = round(vo + dur - 3.4, 3)
             beats.append(b)

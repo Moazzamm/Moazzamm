@@ -4,7 +4,7 @@ const { spawn } = require('child_process');
 const path = require('path');
 (async () => {
   const [from, to, out, mode] = [+process.argv[2], +process.argv[3], process.argv[4], process.argv[5] || 'video'];
-  const b = await chromium.launch({ args: ['--disable-gpu-vsync', '--force-color-profile=srgb'] });
+  const b = await chromium.launch({ args: ['--disable-gpu', '--num-raster-threads=1', '--force-color-profile=srgb'] });
   const p = await b.newPage({ viewport: { width: 1920, height: 1080 } });
   p.on('pageerror', e => console.error('PAGEERR', e.message));
   await p.goto('file://' + path.resolve(__dirname, '../comp/index.html'));
@@ -19,7 +19,7 @@ const path = require('path');
     await b.close(); return;
   }
   const ff = spawn('ffmpeg', ['-y', '-loglevel', 'error', '-f', 'image2pipe', '-framerate', String(fps), '-c:v', 'mjpeg', '-i', '-',
-    '-c:v', 'libx264', '-preset', 'medium', '-crf', '17', '-pix_fmt', 'yuv420p', '-r', String(fps), out], { stdio: ['pipe', 'inherit', 'inherit'] });
+    '-c:v', 'libx264', '-preset', 'faster', '-tune', 'grain', '-b:v', '6M', '-maxrate', '7.5M', '-bufsize', '12M', '-pix_fmt', 'yuv420p', '-r', String(fps), out], { stdio: ['pipe', 'inherit', 'inherit'] });
   const t0 = Date.now();
   for (let f = from; f < to; f++) {
     await p.evaluate(t => renderAt(t), f / fps);

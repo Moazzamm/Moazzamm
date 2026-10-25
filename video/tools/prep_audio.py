@@ -6,7 +6,7 @@ import numpy as np
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OUT = os.path.join(ROOT, "build", "vo")
 TARGET_WPM = float(os.environ.get("WPM", 158))
-MAX_PAUSE = 0.42      # seconds of silence kept at most inside a scene
+MAX_PAUSE = 0.55      # seconds of silence kept at most inside a scene
 SR = 24000
 
 
@@ -65,7 +65,7 @@ def main():
             w.writeframes((np.clip(y, -1, 1) * 32767).astype(np.int16).tobytes())
         words = len(re.findall(r"[A-Za-z0-9']+", s["text"]))
         cur_dur = len(y) / sr
-        tempo = min(1.25, max(1.0, cur_dur / (words / TARGET_WPM * 60)))
+        tempo = min(1.25, max(0.9, cur_dur / (words / TARGET_WPM * 60)))
         dst = os.path.join(OUT, f"{s['id']}.wav")
         subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-i", tmp, "-af",
                         f"atempo={tempo:.4f},aresample=48000", "-ac", "1", dst], check=True)

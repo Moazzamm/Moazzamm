@@ -79,13 +79,17 @@ def score(total):
     return reverb(out, 3.5, 0.4)
 
 
+def hp(x, fc):
+    return x - fft_lowpass(x, fc, order=4)
+
+
 def sfx(kind):
     def env(m, k): return np.exp(-np.arange(m) / SR * k)
     if kind == 'slam':
         m = int(2.2 * SR); tt = np.arange(m) / SR
         boom = np.sin(2 * np.pi * (85 * np.exp(-tt * 2.5) + 30) * tt) * env(m, 2.2)
         hit = fft_lowpass(rng.standard_normal(m), 1800) * env(m, 9)
-        return (boom * 0.9 + hit * 0.8) * 0.8
+        return hp((boom * 0.9 + hit * 0.8) * 0.5, 45)
     if kind == 'whoosh':
         m = int(0.7 * SR); tt = np.arange(m) / SR
         x = rng.standard_normal(m); x = fft_lowpass(x, 3000) - fft_lowpass(x, 400)
@@ -102,10 +106,11 @@ def sfx(kind):
         return (np.sin(2 * np.pi * 1320 * tt) + 0.5 * np.sin(2 * np.pi * 1980 * tt)) * env(m, 6) * 0.18
     if kind in ('title', 'tease', 'reveal'):
         m = int(3.0 * SR); tt = np.arange(m) / SR
-        return (np.sin(2 * np.pi * (60 * np.exp(-tt * 1.5) + 28) * tt) * env(m, 1.4) + fft_lowpass(rng.standard_normal(m), 900) * env(m, 3) * 0.6) * 0.9
+        x = (np.sin(2 * np.pi * (70 * np.exp(-tt * 1.5) + 45) * tt) * env(m, 1.8) + fft_lowpass(rng.standard_normal(m), 900) * env(m, 4) * 0.5)
+        return hp(x, 45) * (0.45 if kind == 'title' else 0.25)
     if kind == 'strike':
         m = int(0.5 * SR)
-        return fft_lowpass(rng.standard_normal(m), 2500) * env(m, 12) * 0.6
+        return (fft_lowpass(rng.standard_normal(m), 4000) - fft_lowpass(rng.standard_normal(m), 600)) * env(m, 14) * 0.22
     if kind == 'meter':
         m = int(2.2 * SR); x = np.zeros(m)
         for k in range(10):
@@ -142,6 +147,8 @@ def main():
     c = np.cumsum(np.concatenate([np.zeros(k), e, np.zeros(k)])); e = ((c[2 * k:] - c[:-2 * k]) / (2 * k))[:len(e)]; e = np.clip(e / (np.percentile(e[e > 0.002], 60) + 1e-9), 0, 1)
     duck = 1 - 0.62 * e
     music *= duck
+    fx *= 1 - 0.45 * e  # keep effects under the voice too
+    fin = int(2.5 * SR); music[:fin] *= np.linspace(0, 1, fin) ** 2
     music[-int(5 * SR):] *= np.linspace(1, 1.6, int(5 * SR))  # lift under end card
     mix = vo * 1.0 + music * 0.55 + fx * 0.55
     fade = int(1.5 * SR); mix[-fade:] *= np.linspace(1, 0, fade)
