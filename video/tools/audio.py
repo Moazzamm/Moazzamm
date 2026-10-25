@@ -30,24 +30,35 @@ def note(f):
     return 440 * 2 ** ((f - 69) / 12)
 
 
-def score(total):
-    n = int(total * SR); t = np.arange(n) / SR; out = np.zeros(n)
-    # chord progression (D minor, dark): Dm - Bb - Gm - A, 8 s each
+def pad_loop():
+    """One seamless 32 s loop of the chord progression (Dm - Bb - Gm - A), tiled later."""
     chords = [[38, 50, 53, 57, 62], [34, 46, 50, 53, 58], [31, 43, 50, 55, 58], [33, 45, 49, 52, 57]]
-    seg = 8.0
-    for ci in range(int(total / seg) + 2):
+    seg, L = 8.0, 52.0
+    n = int(L * SR); t = np.arange(n) / SR; out = np.zeros(n)
+    for ci in range(6):
         ch = chords[ci % 4]; a0 = ci * seg - 1.5; a1 = a0 + seg + 3.0
         i0, i1 = max(0, int(a0 * SR)), min(n, int(a1 * SR))
-        if i0 >= i1: continue
         tt = t[i0:i1]; env = np.clip((tt - a0) / 1.5, 0, 1) * np.clip((a1 - tt) / 1.5, 0, 1)
         sig = np.zeros(i1 - i0)
         for k, m in enumerate(ch):
-            fr = note(m)
-            for det in (-0.12, 0.0, 0.11):  # chorus
-                ff = fr * 2 ** (det / 12)
+            for det in (-0.12, 0.0, 0.11):
+                ff = note(m) * 2 ** (det / 12)
                 for h in range(1, 6):
                     sig += np.sin(2 * np.pi * ff * h * tt + k + h) / (h ** 1.6) * (0.9 if k == 0 else 0.45)
         out[i0:i1] += sig * env
+    return out[int(8 * SR):int(40.5 * SR)]
+
+
+def score(total):
+    n = int(total * SR); t = np.arange(n) / SR
+    loop = pad_loop(); body = int(32 * SR); xf = len(loop) - body
+    out = np.zeros(n + len(loop)); ramp = np.linspace(0, 1, xf)
+    for i in range(0, n, body):
+        seg = loop.copy()
+        if i > 0: seg[:xf] *= ramp
+        seg[body:] *= ramp[::-1]
+        out[i:i + len(seg)] += seg
+    out = out[:n]
     out = fft_lowpass(out, 900) * 0.05
     # sub heartbeat pulse (lub-dub every 1.5 s)
     pulse = np.zeros(n)
@@ -128,7 +139,7 @@ def main():
     music = score(n / SR)[:n]
     # ducking: music drops ~9 dB under narration
     e = np.abs(vo); k = int(0.25 * SR)
-    e = np.convolve(e, np.ones(k) / k, mode="same"); e = np.clip(e / (np.percentile(e[e > 0.002], 60) + 1e-9), 0, 1)
+    c = np.cumsum(np.concatenate([np.zeros(k), e, np.zeros(k)])); e = ((c[2 * k:] - c[:-2 * k]) / (2 * k))[:len(e)]; e = np.clip(e / (np.percentile(e[e > 0.002], 60) + 1e-9), 0, 1)
     duck = 1 - 0.62 * e
     music *= duck
     music[-int(5 * SR):] *= np.linspace(1, 1.6, int(5 * SR))  # lift under end card
