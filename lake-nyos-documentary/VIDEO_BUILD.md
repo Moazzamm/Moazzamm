@@ -1,7 +1,7 @@
 # Rendered video: how it was built
 
 **Output:**
-- `lake_nyos_documentary_1080p.mp4`: the upload master (1920×1080, 25 fps, H.264 ≤8 Mbps + AAC 192k, 7:38.7, −14 LUFS). It's about 450 MB, so it's not in git and was delivered separately.
+- `lake_nyos_documentary_1080p.mp4`: the upload master (1920×1080, 25 fps, H.264 ≤6.5 Mbps + AAC 192k, 7:38.7, −14 LUFS). It's about 350 MB, so it's not in git and was delivered separately.
 - `lake_nyos_documentary_720p_preview.mp4`: the review copy (94 MB, committed).
 - `thumbnail.jpg` (1280×720) and `captions.srt` (131 timed captions).
 
