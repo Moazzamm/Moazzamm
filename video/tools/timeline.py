@@ -67,7 +67,7 @@ BEATS = {
         dict(a="burns skin like acid", type="callout", icon="flame", big="ACID-LIKE", small="SAP BURNS SKIN"),
         dict(a="standing under it in the rain", type="rain"),
         dict(a="Burn the wood", type="callout", icon="eye", big="SMOKE", small="CAN DAMAGE YOUR EYES"),
-        dict(a="In Florida and the Caribbean", type="photo", key="sign", label="REAL WARNING SIGN · ARUBA", dur=6.5),
+        dict(a="In Florida and the Caribbean", type="map", pin="caribbean", label="FLORIDA & CARIBBEAN", sub="TREES MARKED WITH RED BANDS"),
         dict(type="meter", value=8),
     ],
     "p4": [
@@ -86,7 +86,7 @@ BEATS = {
         dict(a="Every single part", type="callout", icon="alert-triangle", big="100%", small="OF THE PLANT IS POISONOUS"),
         dict(a="single leaf", type="callout", icon="leaf", big="1 LEAF", small="CAN SERIOUSLY POISON A CHILD"),
         dict(a="smoke from burning", type="callout", icon="flame", big="SMOKE", small="IS DANGEROUS TOO"),
-        dict(a="In Sri Lanka", type="photo", key="yellow", label="YELLOW OLEANDER", dur=6.5),
+        dict(a="In Sri Lanka", type="map", pin="srilanka", label="SRI LANKA", sub="THOUSANDS POISONED EVERY YEAR"),
         dict(type="meter", value=8),
     ],
     "p2": [
@@ -114,7 +114,8 @@ BEATS = {
         dict(a="watch this video next", type="endcard"),
     ],
 }
-PIN_ALIASES = {}
+_pj = os.path.join(ROOT, "build", "photos", "photos.json")
+PHOTOS = json.load(open(_pj)) if os.path.exists(_pj) else {}
 
 
 def wav_dur(p):
@@ -198,6 +199,8 @@ def main():
         beats = []
         for b in BEATS.get(sid, []):
             b = dict(b)
+            if b["type"] == "photo" and b["key"] not in PHOTOS.get(sid, {}).get("keys", []):
+                continue  # no real photo supplied for this plant
             if "a" in b:
                 idx = s["text"].find(b["a"])
                 assert idx >= 0, (sid, b["a"])

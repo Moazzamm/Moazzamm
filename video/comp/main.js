@@ -32,10 +32,11 @@
     document.documentElement.style.setProperty('--glow', sc.rank && sc.rank <= 3 ? '#ff2d3d' : '#b6ff3b');
     if (isPlant) { $('#plantWrap').innerHTML = buildPlant(KIND[sc.id], sc.rank); S.plant = $('#plantWrap svg'); }
     const ph = (window.PHOTOS || {})[sc.id];
-    $('#photo').style.backgroundImage = ph ? `url(../build/photos/${sc.id}_hero.jpg)` : 'none';
-    $('#photobg').style.backgroundImage = ph ? `url(../build/photos/${sc.id}_bg.jpg)` : 'none';
+    const hero = ph && ph.keys.includes('hero');
+    $('#photo').style.backgroundImage = hero ? `url(../build/photos/${sc.id}_hero.jpg)` : 'none';
+    $('#photobg').style.backgroundImage = hero ? `url(../build/photos/${sc.id}_bg.jpg)` : 'none';
     $('#photoCredit').textContent = ph ? 'Photo: ' + ph.credit : '';
-    S.hasPhoto = !!ph;
+    S.hasPhoto = !!hero;
     if (sc.id === 'hook') {
       const ks = ['nightshade', 'foxglove', 'oleander', 'castor', 'monkshood'];
       $('#garden').innerHTML = ks.map((k, i) => `<div class="g" style="left:${-60 + i * 400}px;transform:scale(${i % 2 ? .95 : 1.1})">${buildPlant(k, 'g' + i, i + 3)}</div>`).join('');
