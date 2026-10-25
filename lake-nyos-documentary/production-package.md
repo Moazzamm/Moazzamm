@@ -2,7 +2,7 @@
 
 Faceless investigative science documentary · 7:40 target · 1,108-word narration · 16:9, 1920×1080
 
-The narration-only file, ready to paste into a voice generator, is `script.txt` in this folder.
+The narration-only file, ready to paste into a voice generator, is `script.txt` in this folder. A fully rendered version of the film, and how it was built, is described in `VIDEO_BUILD.md`.
 
 ---
 

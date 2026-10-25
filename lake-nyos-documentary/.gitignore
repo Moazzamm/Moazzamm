@@ -1,0 +1,10 @@
+# large intermediates (regenerable)
+build/clips/
+build/data/
+build/img/
+build/vo/*.wav
+build/vo/*.npy
+build/*.wav
+build/video_only.mp4
+build/*.log
+build/__pycache__/
