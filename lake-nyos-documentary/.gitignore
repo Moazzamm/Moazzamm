@@ -13,3 +13,5 @@ build/__pycache__/
 lake_nyos_documentary_1080p.mp4
 build/real/shot_*.png
 build/real/urls*.txt
+build/concat.txt
+build/groups*.txt
