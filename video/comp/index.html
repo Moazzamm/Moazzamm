@@ -1,0 +1,123 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<link rel="stylesheet" href="../assets/fonts/fonts.css">
+<style>
+:root{--bg:#040806;--lime:#b6ff3b;--red:#ff2d3d;--bone:#eef0e6;--amber:#ffb84d;--glow:#b6ff3b}
+*{box-sizing:border-box;margin:0;padding:0}
+body{width:1920px;height:1080px;overflow:hidden;background:#000}
+#stage{position:absolute;inset:0;overflow:hidden;background:radial-gradient(ellipse 70% 80% at 40% 55%,#0d2117 0%,#06100b 55%,#020403 100%);font-family:Inter,sans-serif;color:var(--bone)}
+#cam{position:absolute;inset:0}
+.layer{position:absolute;inset:0}
+.fog{position:absolute;width:1500px;height:1500px;border-radius:50%;background:radial-gradient(circle,rgba(70,140,100,.16),rgba(0,0,0,0) 65%)}
+#photo,#photobg{position:absolute;inset:0;background-size:cover;background-position:center;opacity:0}
+#photoTag{position:absolute;left:64px;bottom:150px;font:700 22px 'JetBrains Mono';letter-spacing:.25em;color:var(--lime);opacity:0;text-shadow:0 2px 8px #000}
+#photoCredit{position:absolute;right:40px;bottom:18px;font:500 15px 'JetBrains Mono';color:rgba(255,255,255,.55);opacity:0}
+#mapWrap{opacity:0}
+#plantWrap{position:absolute;left:30px;top:50px;width:1000px;height:1000px;transform-origin:50% 90%}
+#plantWrap svg,.mini svg{width:100%;height:100%;overflow:visible}
+#garden{position:absolute;inset:0}
+#garden .g{position:absolute;width:520px;height:520px;bottom:-30px}
+canvas{position:absolute;inset:0}
+#panel{position:absolute;left:1080px;top:190px;width:800px;height:700px}
+.card{position:absolute;left:0;width:790px;height:196px;display:flex;align-items:center;gap:30px;padding:22px 30px 22px 34px;background:linear-gradient(90deg,rgba(8,18,12,.88),rgba(8,18,12,.55));border:1px solid rgba(182,255,59,.16);border-left:6px solid var(--red);border-radius:6px;box-shadow:0 20px 50px rgba(0,0,0,.45)}
+.card .ic{width:96px;height:96px;flex:none;color:var(--lime)}
+.card .ic svg{width:100%;height:100%;stroke:currentColor;fill:none;stroke-width:1.6;filter:drop-shadow(0 0 10px rgba(182,255,59,.5))}
+.card .big{font:400 86px/0.95 Anton;letter-spacing:.01em;color:var(--bone);white-space:nowrap}
+.card .small{margin-top:10px;font:700 24px 'JetBrains Mono';letter-spacing:.14em;color:var(--lime);white-space:nowrap}
+.card .bar{position:absolute;left:0;bottom:0;height:3px;background:linear-gradient(90deg,var(--red),rgba(255,45,61,0))}
+.chain{display:flex;align-items:center;justify-content:space-between;gap:0}
+.chain .node{display:flex;flex-direction:column;align-items:center;gap:10px;width:150px}
+.chain .node svg{width:76px;height:76px;stroke:var(--lime);fill:none;stroke-width:1.6}
+.chain .node span{font:700 19px 'JetBrains Mono';letter-spacing:.12em}
+.chain .arr{font:400 46px Anton;color:var(--red)}
+#meter{position:absolute;left:1090px;top:330px;width:780px;opacity:0}
+#meter .lab{font:700 28px 'JetBrains Mono';letter-spacing:.4em;color:var(--lime)}
+#meter .segs{display:flex;gap:12px;margin-top:26px}
+#meter .seg{width:66px;height:150px;border:2px solid rgba(255,255,255,.18);border-radius:4px;background:rgba(255,255,255,.03);position:relative;overflow:hidden}
+#meter .seg i{position:absolute;inset:0;transform-origin:50% 100%}
+#meter .num{margin-top:30px;font:400 150px/1 Anton;color:var(--bone)}
+#meter .num small{font-size:70px;color:rgba(255,255,255,.4)}
+#meter .verdict{font:700 26px 'JetBrains Mono';letter-spacing:.2em;color:var(--red);margin-top:10px}
+#ecg{position:absolute;left:1080px;top:820px;width:790px;height:190px;opacity:0}
+#ecg .t{position:absolute;left:0;top:-34px;font:700 20px 'JetBrains Mono';letter-spacing:.25em;color:var(--red)}
+#center{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;pointer-events:none}
+.ov{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;opacity:0}
+.word{font:400 210px/1 Anton;letter-spacing:.02em;position:relative}
+.strike{position:absolute;left:-4%;top:52%;height:16px;background:var(--red);box-shadow:0 0 30px var(--red)}
+.title1{font:400 250px/0.9 Anton;color:var(--lime);text-shadow:0 0 60px rgba(182,255,59,.55)}
+.title2{font:400 120px/1 Anton;color:var(--bone);margin-top:10px}
+.title2 b{color:var(--red);font-weight:400}
+.tease{font:400 420px/1 Anton;color:var(--red);position:relative}
+.tease .c1,.tease .c2{position:absolute;inset:0;mix-blend-mode:screen}
+.sub{font:700 32px 'JetBrains Mono';letter-spacing:.3em;color:var(--bone);margin-top:6px}
+.quote{max-width:1300px;font:700 italic 64px/1.25 'Playfair Display';color:var(--bone)}
+.quote::before{content:'\201C';display:block;font:400 200px/0.6 Anton;color:var(--red);margin-bottom:30px}
+.cite{margin-top:36px;font:700 24px 'JetBrains Mono';letter-spacing:.2em;color:var(--lime)}
+#slam{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;opacity:0}
+#slam .n{font:400 520px/0.85 Anton;color:var(--bone);text-shadow:0 0 80px rgba(255,45,61,.6)}
+#slam .n b{color:var(--red);font-weight:400}
+#slam .nm{font:400 110px/1 Anton;letter-spacing:.06em;margin-top:10px;white-space:nowrap}
+#slam .lt{font:700 italic 40px 'Playfair Display';color:var(--lime);margin-top:8px}
+#badge{position:absolute;left:56px;top:44px;display:flex;align-items:baseline;gap:18px;opacity:0}
+#badge .r{font:400 84px/1 Anton;color:var(--red)}
+#badge .nm{font:400 54px/1 Anton;letter-spacing:.04em}
+#badge .lt{font:700 italic 24px 'Playfair Display';color:var(--lime);margin-left:4px}
+#track{position:absolute;right:56px;top:56px;display:flex;gap:10px;opacity:0}
+#track span{width:44px;height:44px;border-radius:50%;border:2px solid rgba(255,255,255,.2);font:400 22px/40px Anton;text-align:center;color:rgba(255,255,255,.45)}
+#track span.on{border-color:var(--red);background:var(--red);color:#fff;box-shadow:0 0 18px var(--red)}
+#track span.done{border-color:rgba(182,255,59,.5);color:var(--lime)}
+#caps{position:absolute;left:0;right:0;bottom:56px;text-align:center}
+#caps span{display:inline-block;padding:10px 26px;font:800 46px/1.2 Inter;color:#fff;background:rgba(0,0,0,.55);border-radius:10px;text-shadow:0 3px 10px #000;max-width:1500px}
+#brand{position:absolute;right:58px;bottom:22px;font:700 17px 'JetBrains Mono';letter-spacing:.35em;color:rgba(255,255,255,.35)}
+#maplabel{position:absolute;left:1010px;top:440px;opacity:0}
+#maplabel .l{font:400 92px/1 Anton;color:var(--bone);text-shadow:0 4px 30px #000;white-space:nowrap}
+#maplabel .s{font:700 28px 'JetBrains Mono';letter-spacing:.18em;color:var(--lime);margin-top:12px;white-space:nowrap}
+#maplabel .k{font:700 20px 'JetBrains Mono';letter-spacing:.4em;color:var(--red);margin-bottom:14px}
+#recap{position:absolute;inset:0;opacity:0}
+.mini{position:absolute;width:330px;height:330px}
+.mini .lb{position:absolute;left:0;right:0;bottom:-30px;text-align:center;font:400 30px Anton;letter-spacing:.05em}
+.mini .lb b{color:var(--red);font-weight:400;margin-right:8px}
+#endcard{position:absolute;inset:0;opacity:0}
+#endcard .box{position:absolute;left:110px;top:300px;width:900px;height:506px;border:3px solid var(--lime);border-radius:14px;box-shadow:0 0 50px rgba(182,255,59,.25);display:flex;align-items:center;justify-content:center;text-align:center;background:rgba(0,0,0,.35)}
+#endcard .box div{font:400 74px/1.05 Anton;color:rgba(255,255,255,.85)}
+#endcard .k{position:absolute;left:110px;top:220px;font:700 30px 'JetBrains Mono';letter-spacing:.35em;color:var(--lime)}
+#endcard .sb{position:absolute;left:1160px;top:470px;width:640px;height:170px;border-radius:85px;background:var(--red);display:flex;align-items:center;justify-content:center;font:400 84px Anton;letter-spacing:.06em;box-shadow:0 0 60px rgba(255,45,61,.6)}
+#endcard .ch{position:absolute;left:1160px;top:680px;width:640px;text-align:center;font:700 28px 'JetBrains Mono';letter-spacing:.3em;color:var(--bone)}
+#bracelet{position:absolute;left:1180px;top:200px;width:640px;height:640px;opacity:0}
+#vig{position:absolute;inset:0;background:radial-gradient(ellipse 75% 75% at 50% 50%,rgba(0,0,0,0) 55%,rgba(0,0,0,.72) 100%)}
+#grain{position:absolute;inset:-50%;background:url(../build/grain.png);opacity:.06}
+#flash{position:absolute;inset:0;opacity:0}
+</style></head>
+<body>
+<div id="stage"><div id="cam">
+  <div class="fog" id="fog0"></div><div class="fog" id="fog1"></div><div class="fog" id="fog2"></div>
+  <div id="photobg"></div>
+  <div id="garden"></div>
+  <div id="plantWrap"></div>
+  <svg id="mapWrap" class="layer" viewBox="0 0 1920 1080"><g id="mapG"></g></svg>
+  <div id="maplabel"><div class="k">CASE FILE</div><div class="l"></div><div class="s"></div></div>
+  <canvas id="fx" width="1920" height="1080"></canvas>
+  <div id="photo"></div><div id="photoTag">▲ REAL PHOTO</div>
+  <div id="panel"></div>
+  <div id="meter"><div class="lab">LETHALITY RATING</div><div class="segs"></div><div class="num"></div><div class="verdict"></div></div>
+  <svg id="ecg" viewBox="0 0 790 190"><text class="t" x="0" y="-14"></text><path fill="none" stroke="#ff2d3d" stroke-width="4" stroke-linejoin="round"/></svg>
+  <svg id="bracelet" viewBox="0 0 640 640"></svg>
+  <div id="recap"></div>
+  <div id="endcard"><div class="k">WATCH NEXT</div><div class="box"><div>TOP 10 MOST<br>DANGEROUS DOGS</div></div><div class="sb">SUBSCRIBE</div><div class="ch">AMAZING FACTS</div></div>
+  <div id="center"></div>
+  <div id="slam"><div class="n"></div><div class="nm"></div><div class="lt"></div></div>
+  <div id="badge"><span class="r"></span><span class="nm"></span><span class="lt"></span></div>
+  <div id="track"></div>
+  <div id="caps"><span></span></div>
+</div>
+<div id="photoCredit"></div>
+<div id="brand">AMAZING FACTS</div>
+<div id="vig"></div><div id="grain"></div><div id="flash"></div>
+</div>
+<script src="../build/timeline.js"></script>
+<script src="../build/mapdata.js"></script>
+<script src="../build/icons.js"></script>
+<script src="../build/photos.js" onerror="window.PHOTOS={}"></script>
+<script src="plants.js"></script>
+<script src="main.js"></script>
+</body></html>

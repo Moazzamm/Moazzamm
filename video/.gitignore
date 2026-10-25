@@ -1,0 +1,7 @@
+node_modules/
+build/
+assets/audio/
+assets/audio_slow/
+assets/photos/
+out/*.mp4
+out/*.log

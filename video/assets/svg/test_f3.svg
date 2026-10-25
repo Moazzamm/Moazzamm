@@ -1,0 +1,97 @@
+<svg viewBox="0 0 1000 1000" xmlns="http://www.w3.org/2000/svg">
+  <!-- Fills Layer -->
+  <!-- Stem Fills -->
+  <path class="fl" d="M495,950 Q505,800 500,650 T520,400" fill="#3a5a2a" fill-opacity="0.4"/>
+  <path class="fl" d="M520,400 Q550,300 700,200" fill="#3a5a2a" fill-opacity="0.4"/>
+  <path class="fl" d="M520,400 Q480,320 300,280" fill="#3a5a2a" fill-opacity="0.4"/>
+  
+  <!-- Leaf Fills -->
+  <path class="fl" d="M500,750 C400,740 250,850 180,750 C120,650 300,550 490,680 Z" fill="#1e3d1a" fill-opacity="0.5"/>
+  <path class="fl" d="M510,720 C600,710 750,820 820,720 C880,620 700,520 510,650 Z" fill="#1e3d1a" fill-opacity="0.5"/>
+  <path class="fl" d="M520,450 C620,440 850,450 900,300 C920,150 700,250 530,380 Z" fill="#1e3d1a" fill-opacity="0.5"/>
+  <path class="fl" d="M480,450 C380,440 150,450 100,300 C80,150 300,250 470,380 Z" fill="#1e3d1a" fill-opacity="0.5"/>
+  <path class="fl" d="M550,280 C600,200 700,100 650,50 C550,20 500,150 530,250 Z" fill="#1e3d1a" fill-opacity="0.5"/>
+
+  <!-- Flower Fills -->
+  <path class="fl" d="M350,350 Q340,450 300,500 Q260,520 220,500 Q180,450 200,350 Z" fill="#5e3c58" fill-opacity="0.5"/>
+  <path class="fl" d="M650,350 Q660,450 700,500 Q740,520 780,500 Q820,450 800,350 Z" fill="#5e3c58" fill-opacity="0.5"/>
+
+  <!-- Berry Calyx Fills -->
+  <path class="fl" d="M500,180 L530,130 L580,140 L560,190 L600,230 L540,230 L510,280 L480,230 L420,230 L460,190 L440,140 Z" fill="#3a5a2a" fill-opacity="0.6"/>
+  <path class="fl" d="M780,580 L810,530 L860,540 L840,590 L880,630 L820,630 L790,680 L760,630 L700,630 L740,590 L720,540 Z" fill="#3a5a2a" fill-opacity="0.6"/>
+
+  <!-- Berry Fills -->
+  <circle class="fl" cx="510" cy="200" r="45" fill="#0a0a0a" fill-opacity="0.6"/>
+  <circle class="fl" cx="790" cy="600" r="45" fill="#0a0a0a" fill-opacity="0.6"/>
+
+  <!-- Line Art Layer -->
+  <g class="lines" stroke="#e8f5e0" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Main Stems -->
+    <path class="ln" d="M500,950 C510,850 500,750 505,650"/>
+    <path class="ln" d="M505,650 C510,550 515,450 520,400"/>
+    <path class="ln" d="M520,400 C540,350 600,280 700,200"/>
+    <path class="ln" d="M520,400 C500,350 400,300 300,280"/>
+    <path class="ln" d="M505,650 C450,660 400,680 350,700"/>
+    
+    <!-- Leaf 1 (Bottom Left) -->
+    <path class="ln" d="M500,750 C400,740 250,850 180,750 C120,650 300,550 490,680 Z"/>
+    <path class="ln" d="M490,680 C350,680 250,730 180,750"/> <!-- Midrib -->
+    <path class="ln" d="M420,700 Q380,750 350,780"/><path class="ln" d="M350,690 Q300,720 250,740"/>
+    <path class="ln" d="M280,650 Q230,680 200,710"/><path class="ln" d="M450,720 Q420,780 400,810"/>
+
+    <!-- Leaf 2 (Bottom Right) -->
+    <path class="ln" d="M510,720 C600,710 750,820 820,720 C880,620 700,520 510,650 Z"/>
+    <path class="ln" d="M510,650 C650,650 750,700 820,720"/> <!-- Midrib -->
+    <path class="ln" d="M580,670 Q620,720 650,750"/><path class="ln" d="M650,660 Q700,690 750,710"/>
+    <path class="ln" d="M720,620 Q770,650 800,680"/><path class="ln" d="M550,690 Q580,750 600,780"/>
+
+    <!-- Leaf 3 (Top Right) -->
+    <path class="ln" d="M520,450 C620,440 850,450 900,300 C920,150 700,250 530,380 Z"/>
+    <path class="ln" d="M530,380 C700,330 800,320 900,300"/> <!-- Midrib -->
+    <path class="ln" d="M600,370 Q650,400 700,420"/><path class="ln" d="M700,350 Q750,380 800,400"/>
+    <path class="ln" d="M800,320 Q850,340 880,360"/>
+
+    <!-- Leaf 4 (Top Left) -->
+    <path class="ln" d="M480,450 C380,440 150,450 100,300 C80,150 300,250 470,380 Z"/>
+    <path class="ln" d="M470,380 C300,330 200,320 100,300"/> <!-- Midrib -->
+    <path class="ln" d="M400,370 Q350,400 300,420"/><path class="ln" d="M300,350 Q250,380 200,400"/>
+    <path class="ln" d="M200,320 Q150,340 120,360"/>
+
+    <!-- Leaf 5 (Apex) -->
+    <path class="ln" d="M550,280 C600,200 700,100 650,50 C550,20 500,150 530,250 Z"/>
+    <path class="ln" d="M530,250 C550,150 600,100 650,50"/> <!-- Midrib -->
+
+    <!-- Flower 1 (Left Bell) -->
+    <path class="ln" d="M300,280 Q300,320 280,350"/> <!-- Pedicel -->
+    <path class="ln" d="M280,350 Q270,370 200,350 C180,450 220,500 250,510 C280,520 320,500 300,350 Z"/>
+    <path class="ln" d="M220,360 Q230,450 250,510"/> <!-- Petal rib -->
+    <path class="ln" d="M280,360 Q270,450 250,510"/> <!-- Petal rib -->
+    <path class="ln" d="M250,380 L250,460"/> <!-- Stamen -->
+    <path class="ln" d="M240,380 L245,450"/> <!-- Stamen -->
+
+    <!-- Flower 2 (Right Bell) -->
+    <path class="ln" d="M700,200 Q720,280 750,350"/> <!-- Pedicel -->
+    <path class="ln" d="M750,350 Q740,370 800,350 C820,450 780,500 750,510 C720,520 680,500 700,350 Z"/>
+    <path class="ln" d="M780,360 Q770,450 750,510"/> <!-- Petal rib -->
+    <path class="ln" d="M720,360 Q730,450 750,510"/> <!-- Petal rib -->
+    <path class="ln" d="M750,380 L750,460"/> <!-- Stamen -->
+
+    <!-- Berry 1 & Calyx (Top) -->
+    <path class="ln" d="M510,200 L530,130 M510,200 L580,140 M510,200 L600,230 M510,200 L510,280 M510,200 L420,230 M510,200 L440,140"/>
+    <path class="ln" d="M530,130 L580,140 L560,190 L600,230 L540,230 L510,280 L480,230 L420,230 L460,190 L440,140 Z"/>
+    <circle class="ln" cx="510" cy="200" r="45"/>
+    <path class="ln" d="M490,180 A15,15 0 0 1 510,170"/> <!-- Highlight -->
+
+    <!-- Berry 2 & Calyx (Bottom Right) -->
+    <path class="ln" d="M790,600 L810,530 M790,600 L860,540 M790,600 L880,630 M790,600 L790,680 M790,600 L700,630 M790,600 L720,540"/>
+    <path class="ln" d="M810,530 L860,540 L840,590 L880,630 L820,630 L790,680 L760,630 L700,630 L740,590 L720,540 Z"/>
+    <circle class="ln" cx="790" cy="600" r="45"/>
+    <path class="ln" d="M770,580 A15,15 0 0 1 790,570"/> <!-- Highlight -->
+    
+    <!-- Fine Details / Hairs / Texture -->
+    <path class="ln" d="M502,900 L508,905"/><path class="ln" d="M495,850 L501,855"/>
+    <path class="ln" d="M515,420 L522,425"/><path class="ln" d="M500,500 L506,505"/>
+    <path class="ln" d="M250,510 L245,530"/><path class="ln" d="M255,510 L260,530"/>
+    <path class="ln" d="M750,510 L745,530"/><path class="ln" d="M755,510 L760,530"/>
+  </g>
+</svg>
