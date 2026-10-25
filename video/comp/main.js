@@ -81,6 +81,7 @@
     S.ecg = sc.beats.find(b => b.type === 'ecg');
     S.rain = sc.beats.find(b => b.type === 'rain');
     S.brace = sc.beats.find(b => b.type === 'bracelet');
+    S.evid = sc.beats.filter(b => b.type === 'photo' && ph && ph.keys.includes(b.key));
     S.recap = sc.beats.find(b => b.type === 'recap');
     S.endcard = sc.beats.find(b => b.type === 'endcard');
     S.comment = sc.beats.find(b => b.type === 'comment');
@@ -128,8 +129,8 @@
     // hero photo (plant scenes): full-bleed after the rank slam, then crossfade to illustration
     let photoA = 0;
     if (S.hasPhoto) {
-      photoA = win(lt, 1.7, 7.6, .7, .9);
-      const k = cl((lt - 1.7) / 6);
+      photoA = win(lt, 1.7, 6.6, .6, .9);
+      const k = cl((lt - 1.7) / 5);
       $('#photo').style.transform = `scale(${(1.06 + .1 * k).toFixed(4)}) translate(${(-14 * k).toFixed(1)}px,${(-8 * k).toFixed(1)}px)`;
       $('#photobg').style.opacity = (sceneFade * .22 * (1 - mapA)).toFixed(3);
     } else $('#photobg').style.opacity = 0;
@@ -137,13 +138,27 @@
     $('#photoTag').style.opacity = (photoA * cl((lt - 2.4) / .4)).toFixed(3);
     $('#photoCredit').style.opacity = (photoA * .9).toFixed(3);
 
+    // evidence photo (real photo card over the illustration side)
+    let evA = 0;
+    for (const b of (S.evid || [])) {
+      const dt = t - b.t, a = win(t, b.t, b.t + (b.dur || 6), .45, .5) * sceneFade * (1 - mapA);
+      if (a <= evA) continue; evA = a;
+      const ev = $('#evid');
+      if (ev.dataset.k !== sc.id + b.key) { ev.dataset.k = sc.id + b.key; ev.querySelector('.im').style.backgroundImage = `url(../build/photos/${sc.id}_${b.key}.jpg)`; ev.querySelector('.cap').textContent = b.label; }
+      const e = eoBack(dt / .7);
+      ev.style.transform = `translate(${(-60 * (1 - eo3(dt / .6))).toFixed(1)}px,${(40 * (1 - eo3(dt / .6))).toFixed(1)}px) rotate(${(lerp(-9, -2.5, e)).toFixed(2)}deg) scale(${lerp(.85, 1, e).toFixed(4)})`;
+      ev.querySelector('.im').style.transform = `scale(${(1.04 + .08 * cl(dt / 6)).toFixed(4)})`;
+    }
+    $('#evid').style.opacity = evA.toFixed(3);
+    if (evA > 0 && S.hasPhoto) $('#photoCredit').style.opacity = (evA * .9).toFixed(3);
+
     // plant illustration
     if (S.plant) {
-      const drawStart = S.hasPhoto ? 6.4 : .5;
+      const drawStart = S.hasPhoto ? 5.6 : .5;
       animatePlant(S.plant, eio((lt - drawStart) / 7.5));
       const k = cl(st / sdur);
       const brace = S.brace ? cl((t - S.brace.t) / .6) : 0;
-      $('#plantWrap').style.opacity = (sceneFade * (1 - mapA * .9) * (1 - ovA * .8) * (1 - brace * .6)).toFixed(3);
+      $('#plantWrap').style.opacity = (sceneFade * (1 - mapA * .9) * (1 - ovA * .8) * (1 - brace * .6) * (1 - evA * .85)).toFixed(3);
       $('#plantWrap').style.transform = `translate(${(Math.sin(t * .3) * 6).toFixed(1)}px,${(10 - 20 * k).toFixed(1)}px) scale(${(.97 + .06 * k).toFixed(4)}) rotate(${(Math.sin(t * .45) * .5).toFixed(3)}deg)`;
     } else $('#plantWrap').style.opacity = 0;
     if (S.garden) S.garden.forEach((g, i) => { animatePlant(g, eio((t - .3 - i * .5) / 6)); g.parentNode.style.opacity = (.55 * (1 - ovA * .7) * sceneFade).toFixed(3); });
@@ -187,7 +202,7 @@
       const prevIdx = shown.length === 3 && vis.length > 3 ? idx + 1 : idx;
       const y = lerp(prevIdx * 222, idx * 222, c === shown[shown.length - 1] ? 1 : shift);
       const isNew = c === shown[shown.length - 1];
-      let op = e * (1 - mapA) * (1 - ovA) * cl((meterT - t) / .4) * sceneFade * (photoA > 0 ? 1 - photoA : 1);
+      let op = e * (1 - mapA) * (1 - ovA) * cl((meterT - t) / .4) * sceneFade;
       // the oldest card fades as a 4th arrives
       if (vis.length > 3 && idx === 0) op *= 1;
       c.el.style.opacity = op.toFixed(3);

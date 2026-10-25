@@ -18,6 +18,7 @@ BEATS = {
         dict(a="stay until number three", type="tease"),
     ],
     "p10": [
+        dict(a="The culprit?", type="photo", key="detail", label="THE KILLER: DATURA"),
         dict(a="In 1676", type="map", pin="jamestown", label="JAMESTOWN, VIRGINIA", sub="1676 · BRITISH SOLDIERS"),
         dict(a="For eleven days", type="callout", icon="brain", big="11 DAYS", small="OF TOTAL MADNESS"),
         dict(a="One blew feathers", type="quote", text="One would blow up a feather in the air... another, sitting in a corner like a monkey, grinning.", cite="Robert Beverley · History of Virginia, 1705"),
@@ -26,6 +27,7 @@ BEATS = {
         dict(type="meter", value=6),
     ],
     "p9": [
+        dict(a="Cows were grazing", type="photo", key="detail", label="WHITE SNAKEROOT"),
         dict(a="without you ever touching", type="callout", icon="hand-off", big="NO CONTACT", small="REQUIRED"),
         dict(a="swept across the American frontier", type="map", pin="indiana", label="AMERICAN FRONTIER", sub="EARLY 1800s · 'MILK SICKNESS'"),
         dict(a="thousands died", type="callout", icon="skull", big="THOUSANDS", small="DIED OF MILK SICKNESS"),
@@ -34,6 +36,7 @@ BEATS = {
         dict(type="meter", value=5),
     ],
     "p8": [
+        dict(a="In tiny, controlled doses", type="photo", key="detail", label="FOXGLOVE"),
         dict(a="act directly on the heart", type="callout", icon="heartbeat", big="THE HEART", small="IS ITS TARGET"),
         dict(a="since 1785", type="callout", icon="flask", big="1785", small="FIRST USED AS HEART MEDICINE"),
         dict(a="wildly out of rhythm", type="ecg"),
@@ -41,6 +44,7 @@ BEATS = {
         dict(type="meter", value=6),
     ],
     "p7": [
+        dict(a="But its shiny black berries", type="photo", key="detail", label="THE SWEET BLACK BERRIES"),
         dict(a="beautiful woman in Italian", type="callout", icon="eye", big="BELLA DONNA", small="= 'BEAUTIFUL WOMAN'"),
         dict(a="in Renaissance Italy", type="map", pin="italy", label="RENAISSANCE ITALY", sub="1400s - 1600s"),
         dict(a="taste sweet", type="callout", icon="alert-triangle", big="SWEET", small="BERRIES = DEADLY BAIT"),
@@ -49,6 +53,7 @@ BEATS = {
         dict(type="meter", value=7),
     ],
     "p6": [
+        dict(a="Its hooded blue flowers", type="photo", key="detail", label="MONKSHOOD"),
         dict(a="Queen of Poisons", type="callout", icon="crown", big="QUEEN", small="OF POISONS"),
         dict(a="absorbed through the skin", type="callout", icon="hand-stop", big="SKIN", small="CAN ABSORB THE TOXIN"),
         dict(a="In 2009", type="map", pin="london", label="LONDON, UK", sub="2009 · THE CURRY POISONING"),
@@ -56,15 +61,17 @@ BEATS = {
         dict(type="meter", value=8),
     ],
     "p5": [
+        dict(a="One bite can make", type="photo", key="detail", label="THE 'LITTLE APPLE OF DEATH'"),
         dict(a="Guinness World Records", type="callout", icon="trophy", big="#1", small="MOST DANGEROUS TREE ON EARTH"),
         dict(a="little apple of death", type="callout", icon="skull", big="'LITTLE APPLE", small="OF DEATH'"),
         dict(a="burns skin like acid", type="callout", icon="flame", big="ACID-LIKE", small="SAP BURNS SKIN"),
         dict(a="standing under it in the rain", type="rain"),
         dict(a="Burn the wood", type="callout", icon="eye", big="SMOKE", small="CAN DAMAGE YOUR EYES"),
-        dict(a="In Florida and the Caribbean", type="map", pin="caribbean", label="FLORIDA & CARIBBEAN", sub="TREES MARKED WITH RED BANDS"),
+        dict(a="In Florida and the Caribbean", type="photo", key="sign", label="REAL WARNING SIGN · ARUBA", dur=6.5),
         dict(type="meter", value=8),
     ],
     "p4": [
+        dict(a="It looks like harmless wild parsley", type="photo", key="detail", label="WATER HEMLOCK"),
         dict(a="most violently toxic", type="callout", icon="biohazard", big="MOST VIOLENT", small="TOXIC PLANT IN N. AMERICA"),
         dict(a="fifteen minutes", type="callout", icon="clock", big="15 MIN", small="TO VIOLENT SEIZURES"),
         dict(a="In 1992", type="map", pin="pennsylvania", label="PENNSYLVANIA, USA", sub="1992 · MISTAKEN FOR GINSENG"),
@@ -73,15 +80,17 @@ BEATS = {
         dict(type="meter", value=9),
     ],
     "p3": [
+        dict(a="Pink and white flowers", type="photo", key="detail", label="COMMON OLEANDER"),
         dict(a="you have almost certainly seen it", type="tease"),
         dict(a="from Los Angeles to Lahore", type="map", pin=["la", "lahore", "srilanka", "athens", "caribbean"], label="EVERYWHERE", sub="FROM LOS ANGELES TO LAHORE"),
         dict(a="Every single part", type="callout", icon="alert-triangle", big="100%", small="OF THE PLANT IS POISONOUS"),
         dict(a="single leaf", type="callout", icon="leaf", big="1 LEAF", small="CAN SERIOUSLY POISON A CHILD"),
         dict(a="smoke from burning", type="callout", icon="flame", big="SMOKE", small="IS DANGEROUS TOO"),
-        dict(a="In Sri Lanka", type="map", pin="srilanka", label="SRI LANKA", sub="THOUSANDS POISONED EVERY YEAR"),
+        dict(a="In Sri Lanka", type="photo", key="yellow", label="YELLOW OLEANDER", dur=6.5),
         dict(type="meter", value=8),
     ],
     "p2": [
+        dict(a="Gardeners love its giant", type="photo", key="detail", label="CASTOR BEAN"),
         dict(a="castor oil, which is safe", type="callout", icon="bottle", big="OIL = SAFE", small="THE POISON STAYS IN THE SEED"),
         dict(a="that poison is ricin", type="callout", icon="biohazard", big="RICIN", small="ONE OF NATURE'S DEADLIEST TOXINS"),
         dict(a="In 1978", type="map", pin="waterloo", label="WATERLOO BRIDGE, LONDON", sub="7 SEPTEMBER 1978"),
@@ -91,6 +100,7 @@ BEATS = {
         dict(type="meter", value=9),
     ],
     "p1": [
+        dict(a="Tiny, glossy, bright red seeds", type="photo", key="detail", label="ROSARY PEA SEEDS"),
         dict(a="They look like beads", type="callout", icon="diamond", big="JEWELRY", small="SOLD TO TOURISTS WORLDWIDE"),
         dict(a="abrin", type="callout", icon="biohazard", big="ABRIN", small="EVEN DEADLIER THAN RICIN"),
         dict(a="a single one may be enough", type="callout", icon="skull", big="1 SEED", small="MAY KILL AN ADULT"),
@@ -202,7 +212,7 @@ def main():
             if b["type"] == "map":
                 nxt = beats[i + 1]["t"] if i + 1 < len(beats) else vo + dur
                 b["dur"] = round(min(7.0, max(4.0, nxt - b["t"] + 0.2)), 3)
-            sfx.append(dict(t=b["t"], kind=b["type"]))
+            sfx.append(dict(t=b["t"], kind="whoosh" if b["type"] == "photo" else b["type"]))
         if "rank" in s:
             sfx.append(dict(t=vo, kind="slam"))
             sfx.append(dict(t=vo - 0.55, kind="whoosh"))
