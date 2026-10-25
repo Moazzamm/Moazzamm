@@ -1,10 +1,23 @@
 # Rendered video: how it was built
 
-**Output:** `lake_nyos_documentary_1080p.mp4` (1920×1080, 25 fps, H.264 + AAC, about 7:39, loudness −14 LUFS), plus `thumbnail.jpg` and `captions.srt`.
+**Output:**
+- `lake_nyos_documentary_1080p.mp4`: the upload master (1920×1080, 25 fps, H.264 ≤8 Mbps + AAC 192k, 7:38.7, −14 LUFS). It's about 450 MB, so it's not in git and was delivered separately.
+- `lake_nyos_documentary_720p_preview.mp4`: the review copy (94 MB, committed).
+- `thumbnail.jpg` (1280×720) and `captions.srt` (131 timed captions).
 
 Everything was generated in code from the script in `script.txt`. The build pipeline is in `build/`.
 
-## What's on screen
+## v2: real photos and a premium edit for the first 3 minutes
+
+After feedback that the opening felt like a lecture, the first ~3 minutes, the colour beat, the degassing timeline and the ending were rebuilt in `build/render2.py` around **real photographs**.
+
+- **Archive:** 1986 USGS photos of the red lake, the stripped 80 m promontory and a cow killed by the gas; the 1992 lake photo; the 2001 degassing raft; the 2006 fountain.
+- **Regional:** CC-licensed photos of the northwest highlands, maize farmland and a 1990 Nkambe gathering.
+- **Editing:** cinematic letterbox, two-layer parallax, drifting fog, film weave, flicker and dust on the archive shots, framed archival prints for the small photos, flash cuts with whooshes, and a boom under the title.
+
+Night scenes are real highland and lake photos graded to night, and are labelled as a reconstruction. Every photo is credited on screen and in the end card. Full provenance and licences are in `build/real/SOURCES.md`.
+
+## What's on screen (v1 base, still used after 3:00)
 
 | Visual | Source | Notes |
 |---|---|---|
@@ -16,7 +29,7 @@ Everything was generated in code from the script in `script.txt`. The build pipe
 | Lake cross-section, pressure, bottle, runaway release, trigger candidates, pipe | Drawn programmatically | Labelled "simplified, not to scale". |
 | Quotes, document card, numbers | Typography | Quotes are word-for-word from Smithsonian Magazine (2003) and Kling et al. (1987). |
 
-No AI-generated images or video are used, and no bodies or victims are shown.
+No AI-generated images or video are used, and no human victims are shown. The only casualty image is the USGS photo of a cow killed by the gas.
 
 ## Audio
 
@@ -31,7 +44,7 @@ No AI-generated images or video are used, and no bodies or victims are shown.
 ## Differences from the production plan, and why
 
 1. **No AI reconstructions (R1–R5).** Every Gemini image model has a free-tier quota of 0 on this API key, so real satellite and elevation data, maps and diagrams replace them. This fits the brief's own priority: "Prefer accurate archival material over AI imagery."
-2. **No NASA or USGS archival photos.** This environment's network policy blocks NASA, USGS and Wikimedia downloads (403). The Sentinel-2 imagery is a newer, higher-resolution substitute for the NASA Landsat image. If you have licensed archival photos, they can be cut in during a manual edit.
+2. **Archival photos via screenshots.** This environment's network policy blocks direct NASA, USGS and Wikimedia downloads (403), so the Commons photos were captured through the Firecrawl connector's screenshot of the media viewer. See `build/real/SOURCES.md`. No real video footage could be fetched.
 3. **No Lyria music.** Its quota is also 0, so the score is synthesized instead.
 
 ## Before publishing (manual checks)
@@ -48,7 +61,8 @@ cd build
 python3 plan.py            # timeline from voiceover segments -> plan.json, data/vo_track.npy
 python3 audio.py           # music + SFX + VO -> mix.wav (-14 LUFS)
 python3 render.py          # all scenes -> clips/*.mp4 (pass scene ids to render a subset)
-./assemble.sh              # concat + mux -> ../lake_nyos_documentary_1080p.mp4
+python3 render2.py         # v2 photo-driven scenes (overwrite cold…invest, evidence, redwipe, timeline, end)
+./assemble.sh              # concat + mux -> 1080p master + 720p preview
 python3 extras.py          # thumbnail.jpg + captions.srt
 ```
 

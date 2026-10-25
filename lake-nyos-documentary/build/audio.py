@@ -54,6 +54,24 @@ s=int((T[14]-0.3)*SR); L=int(7*SR); c=band(rng.normal(0,1,L),2500,9000)*(rng.ran
 s=int((T[15]+len(np.load('vo/seg15.npy'))/24000-0.2)*SR); L=int(3*SR); tt=np.arange(L)/SR; h=np.sin(2*np.pi*42*tt)*np.exp(-tt*1.6); sfx[s:s+L]+=h*0.5
 s=int((T[30]+1)*SR); L=int(min(26,total-T[30]-2)*SR); w=band(rng.normal(0,1,L),400,4000)*np.minimum(1,np.minimum(np.arange(L)/SR/2,(L-np.arange(L))/SR/3)); sfx[s:s+L]+=w/np.abs(w).max()*0.08
 s=int((T[27])*SR); L=int(10*SR); w=band(rng.normal(0,1,L),150,700)*np.sin(np.pi*np.arange(L)/L); sfx[s:s+L]+=w/np.abs(w).max()*0.12
+# transition whooshes / hits for the photo edit (render2)
+sc={s["name"]:s for s in plan["scenes"]}
+def whoosh(at, dur=0.9, g=0.22):
+    s=int((at-dur*0.7)*SR); L=int(dur*SR)
+    if s<0 or s+L>N: return
+    tt=np.arange(L)/SR; n=rng.normal(0,1,L)
+    env_=np.sin(np.pi*np.minimum(1,tt/dur))**3
+    w=band(n,300,5000)*env_; sfx[s:s+L]+=w/np.abs(w).max()*g
+def boom(at, g=0.55):
+    s=int(at*SR); L=int(2.5*SR)
+    if s+L>N: return
+    tt=np.arange(L)/SR; sfx[s:s+L]+=(np.sin(2*np.pi*48*tt)+0.5*np.sin(2*np.pi*31*tt))*np.exp(-tt*1.9)*g
+c=sc["cold"]["p"]; whoosh(c["P1"]-0.4); whoosh(c["P2"]-0.4); boom(c["P2"]+0.6)
+lo=sc["locator"]["start"]; seg=(sc["locator"]["dur"]-3.8)/3
+whoosh(lo+3.8); whoosh(lo+3.8+seg,0.7,0.12); whoosh(lo+3.8+2*seg,0.7,0.12)
+whoosh(sc["night"]["start"]+sc["night"]["p"]["P5"]-0.3,1.2,0.12)
+whoosh(sc["invest"]["start"]+sc["invest"]["p"]["P10"]-0.3)
+whoosh(sc["timeline"]["start"]+sc["timeline"]["p"]["P32"]-0.3,0.9,0.15)
 # --- VO (24k -> 48k)
 vo24=np.load("data/vo_track.npy"); vo=np.interp(np.arange(N)/SR*24000, np.arange(len(vo24)), vo24)
 # duck music under VO

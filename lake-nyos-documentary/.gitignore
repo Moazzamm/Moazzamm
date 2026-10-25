@@ -11,3 +11,5 @@ build/__pycache__/
 
 # 1080p master is ~450 MB (over GitHub limit); delivered separately
 lake_nyos_documentary_1080p.mp4
+build/real/shot_*.png
+build/real/urls*.txt
