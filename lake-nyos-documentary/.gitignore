@@ -8,3 +8,6 @@ build/*.wav
 build/video_only.mp4
 build/*.log
 build/__pycache__/
+
+# 1080p master is ~450 MB (over GitHub limit); delivered separately
+lake_nyos_documentary_1080p.mp4
