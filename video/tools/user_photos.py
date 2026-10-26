@@ -23,6 +23,8 @@ PHOTOS = {
                labels=dict(hero="GLOSSY BLACK BERRIES", detail="BERRIES & STAR CALYX")),
     "p6": dict(hero=("6.webp", 150, 0, 1180, 790), detail=("6.webp", 330, 0, 1050, 790), credit="Nepal Desk",
                labels=dict(hero="HOODED BLUE FLOWERS", detail="MONKSHOOD")),
+    "p5": dict(hero=("13.webp", 0, 0, 1168, 728), detail=("13.webp", 372, 86, 852, 686), credit="Supplied photo",
+               labels=dict(hero="MANCHINEEL BRANCH", detail="'LITTLE APPLE OF DEATH'")),
     "p4": dict(hero=("11.webp", 98, 50, 815, 540), detail=("11.webp", 300, 52, 760, 628), credit="Encyclopaedia Britannica",
                labels=dict(hero="WATER HEMLOCK", detail="WHITE UMBRELLA FLOWERS")),
     "p3": dict(hero=("12.webp", 75, 124, 1166, 1225), detail=("12.webp", 330, 300, 890, 1000), yellow=("9.webp", 330, 60, 900, 772),
