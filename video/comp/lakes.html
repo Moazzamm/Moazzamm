@@ -1,0 +1,134 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<link rel="stylesheet" href="../assets/fonts/fonts.css">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{width:1280px;height:720px;overflow:hidden;background:#05080b;font-family:Anton,sans-serif}
+.v{position:absolute;inset:0;overflow:hidden;display:none}
+svg.art{position:absolute;inset:0;width:1280px;height:720px}
+.punch{color:#fff;-webkit-text-stroke:5px #000;paint-order:stroke fill;text-shadow:0 7px 0 #000,0 0 40px rgba(0,0,0,.9);line-height:.86}
+.red{color:#ff2b3a}.yel{color:#ffd400}
+.tag{position:absolute;font:700 22px 'JetBrains Mono';letter-spacing:.25em;color:#fff;background:#ff2b3a;padding:8px 16px;box-shadow:0 8px 20px rgba(0,0,0,.6)}
+.vig{position:absolute;inset:0;background:radial-gradient(ellipse 80% 80% at 55% 55%,rgba(0,0,0,0) 50%,rgba(0,0,0,.8) 100%)}
+</style></head><body>
+
+<!-- Lake Peigneur: whirlpool swallowing a drilling rig -->
+<div class="v" id="peigneur">
+<svg class="art" viewBox="0 0 1280 720">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#121c26"/><stop offset="1" stop-color="#4a5c63"/></linearGradient>
+    <linearGradient id="water" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3f7470"/><stop offset=".45" stop-color="#1d4a48"/><stop offset="1" stop-color="#0a2224"/></linearGradient>
+    <radialGradient id="hole" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#000"/><stop offset=".7" stop-color="#03110f"/><stop offset="1" stop-color="#0d3330" stop-opacity="0"/></radialGradient>
+    <filter id="b4"><feGaussianBlur stdDeviation="4"/></filter>
+    <filter id="b14"><feGaussianBlur stdDeviation="14"/></filter>
+    <filter id="b30"><feGaussianBlur stdDeviation="30"/></filter>
+    <clipPath id="above"><rect x="0" y="0" width="1280" height="455"/></clipPath>
+  </defs>
+  <rect width="1280" height="260" fill="url(#sky)"/>
+  <ellipse cx="640" cy="236" rx="760" ry="70" fill="#ff7a3d" opacity=".32" filter="url(#b30)"/>
+  <g filter="url(#b30)" opacity=".7"><ellipse cx="300" cy="70" rx="320" ry="60" fill="#2b3a44"/><ellipse cx="900" cy="40" rx="380" ry="70" fill="#22303a"/><ellipse cx="1150" cy="150" rx="260" ry="50" fill="#5c6c70"/></g>
+  <path d="M0,232 Q60,206 120,226 T240,222 T360,228 T480,214 T600,226 T720,212 T840,224 T960,210 T1080,226 T1200,214 T1280,222 L1280,262 L0,262Z" fill="#14261c"/>
+  <rect x="0" y="256" width="1280" height="464" fill="url(#water)"/>
+  <!-- whirlpool -->
+  <g id="vortex"></g>
+  <ellipse cx="760" cy="472" rx="330" ry="122" fill="url(#hole)" opacity=".75"/>
+  <ellipse cx="760" cy="474" rx="150" ry="54" fill="url(#hole)"/>
+  <ellipse cx="760" cy="476" rx="62" ry="22" fill="#000"/>
+  <!-- barge being dragged in -->
+  <g transform="translate(470,500) rotate(14)"><rect x="-70" y="-16" width="140" height="30" rx="4" fill="#3a2a22" stroke="#000" stroke-width="3"/><rect x="-40" y="-34" width="50" height="20" fill="#7a4b2c" stroke="#000" stroke-width="3"/></g>
+  <!-- drilling rig leaning into the vortex -->
+  <g transform="translate(905,470) rotate(-24)">
+    <g id="rig" stroke="#1a0c04" stroke-width="3" fill="none"></g>
+  </g>
+  <!-- foam over the rig base -->
+  <g filter="url(#b4)" opacity=".85"><ellipse cx="900" cy="478" rx="110" ry="20" fill="#e8f3ee" opacity=".55"/><ellipse cx="835" cy="470" rx="70" ry="10" fill="#fff" opacity=".5"/></g>
+</svg>
+<div class="vig"></div>
+<div style="position:absolute;left:44px;top:58px">
+  <div class="punch" style="font-size:150px">GONE IN</div>
+  <div class="punch yel" style="font-size:218px">3 HOURS</div>
+</div>
+<svg class="art" viewBox="0 0 1280 720" style="pointer-events:none"><defs><filter id="ag"><feGaussianBlur stdDeviation="5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+  <path d="M1040,590 C1060,520 1020,450 905,395" fill="none" stroke="#000" stroke-width="26" stroke-linecap="round"/>
+  <path d="M1040,590 C1060,520 1020,450 905,395" fill="none" stroke="#ff2b3a" stroke-width="15" stroke-linecap="round" filter="url(#ag)"/>
+  <path d="M872,378 L936,384 L908,430 Z" fill="#ff2b3a" stroke="#000" stroke-width="6" stroke-linejoin="round"/></svg>
+<div class="tag" style="left:900px;top:600px">A DRILL DID THIS</div>
+</div>
+
+<!-- Lake Nyos: invisible gas cloud over the village -->
+<div class="v" id="nyos">
+<svg class="art" viewBox="0 0 1280 720">
+  <defs>
+    <linearGradient id="nsky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#03060f"/><stop offset="1" stop-color="#1b2540"/></linearGradient>
+    <radialGradient id="moon" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#fffbe8"/><stop offset=".55" stop-color="#f4ecc8"/><stop offset="1" stop-color="#f4ecc8" stop-opacity="0"/></radialGradient>
+    <linearGradient id="lake" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3b5f7a"/><stop offset="1" stop-color="#0c1b2a"/></linearGradient>
+    <filter id="fog"><feGaussianBlur stdDeviation="22"/></filter>
+    <filter id="fog2"><feGaussianBlur stdDeviation="9"/></filter>
+    <filter id="glow"><feGaussianBlur stdDeviation="5"/></filter>
+  </defs>
+  <rect width="1280" height="720" fill="url(#nsky)"/>
+  <g id="stars" fill="#fff"></g>
+  <circle cx="1120" cy="110" r="120" fill="url(#moon)" opacity=".35"/><circle cx="1120" cy="110" r="44" fill="#fbf6df"/>
+  <!-- crater hills -->
+  <path d="M0,330 C180,250 300,210 420,232 C520,250 560,300 640,300 C760,300 820,220 960,240 C1080,258 1180,300 1280,290 L1280,720 L0,720Z" fill="#0c1520"/>
+  <ellipse cx="520" cy="300" rx="200" ry="26" fill="url(#lake)"/>
+  <ellipse cx="560" cy="296" rx="60" ry="5" fill="#fff8d8" opacity=".35"/>
+  <path d="M0,420 C200,360 380,380 560,420 C760,466 960,420 1280,450 L1280,720 L0,720Z" fill="#070d14"/>
+  <!-- toxic CO2 cloud spilling from the crater lake -->
+  <g filter="url(#fog)" opacity=".9" id="cloud"></g>
+  <!-- village -->
+  <g id="huts"></g>
+  <g filter="url(#fog2)" opacity=".75" id="cloud2"></g>
+</svg>
+<div class="vig"></div>
+<div style="position:absolute;left:46px;top:40px">
+  <div class="punch red" style="font-size:190px">1,700</div>
+  <div class="punch" style="font-size:150px">DEAD</div>
+</div>
+<div style="position:absolute;right:44px;bottom:40px;text-align:right">
+  <div class="punch yel" style="font-size:176px">0 DROWNED</div>
+</div>
+<div class="tag" style="left:52px;top:372px;background:#111;border:2px solid #ff2b3a">LAKE NYOS · CAMEROON · 1986</div>
+</div>
+
+<script>
+const NS = 'http://www.w3.org/2000/svg', el = (tag, a, parent) => { const e = document.createElementNS(NS, tag); for (const k in a) e.setAttribute(k, a[k]); parent.appendChild(e); return e; };
+let seed = 7; const rnd = () => (seed = (seed * 16807) % 2147483647) / 2147483647;
+// ---- vortex: perspective spiral arms + rings
+const vx = document.getElementById('vortex'), cx = 760, cy = 470, sy = 0.37;
+for (let r = 560; r > 60; r -= 34) el('ellipse', { cx, cy, rx: r, ry: r * sy, fill: 'none', stroke: '#bfe3d9', 'stroke-opacity': (0.05 + 0.25 * (1 - r / 560)).toFixed(3), 'stroke-width': 2 }, vx);
+for (let arm = 0; arm < 7; arm++) {
+  let d = '';
+  for (let i = 0; i <= 140; i++) { const u = i / 140, th = arm * 2 * Math.PI / 7 + u * 5.2, r = 580 * Math.pow(1 - u, 1.35) + 40; d += (i ? 'L' : 'M') + (cx + Math.cos(th) * r).toFixed(1) + ',' + (cy + Math.sin(th) * r * sy).toFixed(1); }
+  el('path', { d, fill: 'none', stroke: '#e9fbf4', 'stroke-opacity': .55, 'stroke-width': 7, 'stroke-linecap': 'round', filter: 'url(#b4)' }, vx);
+  el('path', { d, fill: 'none', stroke: '#ffffff', 'stroke-opacity': .8, 'stroke-width': 2.2 }, vx);
+}
+for (let k = 0; k < 160; k++) { const u = rnd(), th = rnd() * Math.PI * 2, r = 80 + u * 480, len = 0.12 + rnd() * 0.25; let d = '';
+  for (let i = 0; i <= 8; i++) { const a = th + len * i / 8; d += (i ? 'L' : 'M') + (cx + Math.cos(a) * r).toFixed(1) + ',' + (cy + Math.sin(a) * r * sy).toFixed(1); }
+  el('path', { d, fill: 'none', stroke: '#fff', 'stroke-opacity': (0.15 + 0.5 * (1 - u)).toFixed(2), 'stroke-width': (1 + 2 * (1 - u)).toFixed(1) }, vx); }
+// ---- drilling rig (lattice derrick), drawn upward from y=0
+const rig = document.getElementById('rig'), H = 360, B = 70, T = 12;
+const X = (y, s) => s * (B + (T - B) * (-y / H));
+el('path', { d: `M${-B},0 L${-T},${-H} L${T},${-H} L${B},0`, stroke: '#e0782a', 'stroke-width': 7 }, rig);
+el('path', { d: `M${-B},0 L${-T},${-H} L${T},${-H} L${B},0`, stroke: '#1a0c04', 'stroke-width': 2 }, rig);
+for (let i = 0; i < 9; i++) { const y0 = -i * H / 9, y1 = -(i + 1) * H / 9;
+  el('path', { d: `M${X(y0, -1)},${y0} L${X(y1, 1)},${y1} M${X(y0, 1)},${y0} L${X(y1, -1)},${y1} M${X(y1, -1)},${y1} L${X(y1, 1)},${y1}`, stroke: '#c9661f', 'stroke-width': 3.2 }, rig); }
+el('rect', { x: -26, y: -H - 26, width: 52, height: 28, fill: '#e0782a', stroke: '#1a0c04', 'stroke-width': 3 }, rig);
+el('rect', { x: -B - 50, y: -18, width: 2 * B + 100, height: 26, fill: '#5b3a24', stroke: '#1a0c04', 'stroke-width': 3 }, rig);
+// ---- Lake Nyos: stars, gas cloud, huts
+const st = document.getElementById('stars'); for (let i = 0; i < 140; i++) el('circle', { cx: (rnd() * 1280).toFixed(0), cy: (rnd() * 300).toFixed(0), r: (rnd() * 1.4 + .3).toFixed(2), opacity: (rnd() * .8 + .2).toFixed(2) }, st);
+const cl = document.getElementById('cloud'), cl2 = document.getElementById('cloud2');
+for (let i = 0; i < 70; i++) { const u = i / 69, x = 560 + (rnd() - .5) * (60 + 820 * u) - 120 * u, y = 318 + Math.pow(u, 1.1) * 300 + (rnd() - .5) * 26, rx = 50 + rnd() * 70 + 170 * u;
+  el('ellipse', { cx: x.toFixed(0), cy: y.toFixed(0), rx: rx.toFixed(0), ry: (rx * .2).toFixed(0), fill: rnd() < .5 ? '#d6f0dc' : '#a7dcbc', opacity: (.28 + rnd() * .32).toFixed(2) }, cl); }
+for (let i = 0; i < 26; i++) { const x = 180 + rnd() * 760, y = 560 + rnd() * 90; el('ellipse', { cx: x.toFixed(0), cy: y.toFixed(0), rx: (60 + rnd() * 100).toFixed(0), ry: (14 + rnd() * 18).toFixed(0), fill: '#e2f6e6', opacity: (.25 + rnd() * .3).toFixed(2) }, cl2); }
+const hu = document.getElementById('huts');
+for (const [x, y, s] of [[300, 600, .9], [420, 630, 1.15], [560, 600, 1], [690, 640, 1.25], [820, 605, .95], [190, 640, .85]]) {
+  const w = 70 * s, h = 46 * s;
+  el('rect', { x: x - w / 2, y: y - h, width: w, height: h, fill: '#2a1c14', stroke: '#000', 'stroke-width': 2 }, hu);
+  el('path', { d: `M${x - w / 2 - 14 * s},${y - h + 4} L${x},${y - h - 52 * s} L${x + w / 2 + 14 * s},${y - h + 4}Z`, fill: '#5a4326', stroke: '#000', 'stroke-width': 2 }, hu);
+  el('rect', { x: x - 10 * s, y: y - h + 12 * s, width: 20 * s, height: 16 * s, fill: '#ffb347', filter: 'url(#glow)' }, hu);
+  el('rect', { x: x - 10 * s, y: y - h + 12 * s, width: 20 * s, height: 16 * s, fill: '#ffcf80' }, hu);
+}
+const v = (location.hash || '#peigneur').slice(1); document.getElementById(v).style.display = 'block';
+</script>
+</body></html>
