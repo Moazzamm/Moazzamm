@@ -1,0 +1,173 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<link rel="stylesheet" href="../assets/fonts/fonts.css">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{width:1280px;height:720px;overflow:hidden;background:#000;font-family:Anton,sans-serif}
+.v{position:absolute;inset:0;overflow:hidden;display:none}
+svg.art{position:absolute;inset:0;width:1280px;height:720px}
+.punch{color:#fff;-webkit-text-stroke:5px #000;paint-order:stroke fill;text-shadow:0 7px 0 #000,0 0 40px rgba(0,0,0,.9);line-height:.86}
+.red{color:#ff2b3a}.yel{color:#ffd400}
+.tag{position:absolute;font:700 22px 'JetBrains Mono';letter-spacing:.2em;color:#fff;background:#ff2b3a;padding:8px 16px;box-shadow:0 8px 20px rgba(0,0,0,.6);white-space:nowrap}
+.vig{position:absolute;inset:0;background:radial-gradient(ellipse 80% 80% at 55% 50%,rgba(0,0,0,0) 50%,rgba(0,0,0,.78) 100%)}
+.stamp{position:absolute;font:400 54px Anton;color:#ff2b3a;border:7px solid #ff2b3a;padding:4px 20px;border-radius:10px;transform:rotate(-10deg);letter-spacing:.06em;background:rgba(255,255,255,.88);box-shadow:0 10px 30px rgba(0,0,0,.5)}
+</style></head><body>
+
+<!-- DEADLIEST ANIMALS: the mosquito -->
+<div class="v" id="deadliest">
+<svg class="art" viewBox="0 0 1280 720">
+  <defs>
+    <radialGradient id="dbg" cx=".68" cy=".45" r=".8"><stop offset="0" stop-color="#5a0a12"/><stop offset=".55" stop-color="#1c0306"/><stop offset="1" stop-color="#060102"/></radialGradient>
+    <radialGradient id="blood" cx=".38" cy=".35" r=".75"><stop offset="0" stop-color="#ff7a85"/><stop offset=".35" stop-color="#e3152a"/><stop offset=".8" stop-color="#7d0614"/><stop offset="1" stop-color="#3a0208"/></radialGradient>
+    <radialGradient id="thor" cx=".4" cy=".3" r=".8"><stop offset="0" stop-color="#6b5a4c"/><stop offset=".6" stop-color="#2a211b"/><stop offset="1" stop-color="#0c0806"/></radialGradient>
+    <radialGradient id="eye" cx=".35" cy=".3" r=".75"><stop offset="0" stop-color="#ff6a4a"/><stop offset=".5" stop-color="#8a1206"/><stop offset="1" stop-color="#1a0201"/></radialGradient>
+    <linearGradient id="wing" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#bfe6ff" stop-opacity=".55"/><stop offset=".5" stop-color="#e4d2ff" stop-opacity=".25"/><stop offset="1" stop-color="#9fd8ff" stop-opacity=".45"/></linearGradient>
+    <filter id="soft"><feGaussianBlur stdDeviation="16"/></filter>
+    <filter id="sh"><feDropShadow dx="0" dy="18" stdDeviation="16" flood-color="#000" flood-opacity=".7"/></filter>
+    <filter id="glowR"><feGaussianBlur stdDeviation="10" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  </defs>
+  <rect width="1280" height="720" fill="url(#dbg)"/>
+  <g id="bokeh" filter="url(#soft)"></g>
+  <g id="mosq" filter="url(#sh)" transform="translate(40,10)"></g>
+  <!-- not these: shark / crocodile / snake -->
+  <g id="notthese" transform="translate(50,598) scale(.68)"></g>
+</svg>
+<div class="vig"></div>
+<div style="position:absolute;left:44px;top:46px">
+  <div class="punch" style="font-size:96px">THE DEADLIEST</div>
+  <div class="punch red" style="font-size:196px;margin-top:6px">#1 IS</div>
+  <div class="punch yel" style="font-size:196px">TINY</div>
+</div>
+<div class="tag" style="right:40px;bottom:36px">700,000+ DEATHS A YEAR</div>
+</div>
+
+<!-- 15 ANIMALS YOU WON'T BELIEVE ARE REAL: the axolotl -->
+<div class="v" id="real">
+<svg class="art" viewBox="0 0 1280 720">
+  <defs>
+    <linearGradient id="sea" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1fb5b0"/><stop offset=".55" stop-color="#0b6a78"/><stop offset="1" stop-color="#03252f"/></linearGradient>
+    <radialGradient id="skin" cx=".42" cy=".32" r=".8"><stop offset="0" stop-color="#ffe3ee"/><stop offset=".45" stop-color="#ffb2cf"/><stop offset="1" stop-color="#e2729d"/></radialGradient>
+    <radialGradient id="skin2" cx=".45" cy=".25" r=".9"><stop offset="0" stop-color="#ffd0e1"/><stop offset="1" stop-color="#d9608e"/></radialGradient>
+    <linearGradient id="gill" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#ff3f7f"/><stop offset="1" stop-color="#ff86b0"/></linearGradient>
+    <radialGradient id="ray" cx=".5" cy="0" r="1"><stop offset="0" stop-color="#fff" stop-opacity=".35"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></radialGradient>
+    <filter id="soft2"><feGaussianBlur stdDeviation="14"/></filter>
+    <filter id="sh2"><feDropShadow dx="0" dy="20" stdDeviation="18" flood-color="#012" flood-opacity=".6"/></filter>
+  </defs>
+  <rect width="1280" height="720" fill="url(#sea)"/>
+  <g opacity=".55" filter="url(#soft2)"><path d="M600,0 L760,0 L980,720 L640,720Z" fill="url(#ray)"/><path d="M880,0 L960,0 L1220,720 L1040,720Z" fill="url(#ray)"/><path d="M380,0 L430,0 L520,720 L360,720Z" fill="url(#ray)"/></g>
+  <g id="bubbles"></g>
+  <path d="M0,640 C200,610 380,660 620,630 C860,600 1060,650 1280,620 L1280,720 L0,720Z" fill="#05303a"/>
+  <g id="axo" filter="url(#sh2)" transform="translate(735,400) scale(.92)"></g>
+</svg>
+<div class="vig" style="background:radial-gradient(ellipse 80% 80% at 60% 50%,rgba(0,0,0,0) 55%,rgba(0,10,20,.7) 100%)"></div>
+<div style="position:absolute;left:44px;top:60px">
+  <div class="punch" style="font-size:132px">THIS IS</div>
+  <div class="punch yel" style="font-size:236px">REAL?!</div>
+</div>
+<svg class="art" viewBox="0 0 1280 720" style="pointer-events:none"><defs><filter id="ag"><feGaussianBlur stdDeviation="5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+  <path d="M430,560 C470,610 560,620 610,560" fill="none" stroke="#000" stroke-width="26" stroke-linecap="round"/>
+  <path d="M430,560 C470,610 560,620 610,560" fill="none" stroke="#ff2b3a" stroke-width="15" stroke-linecap="round" filter="url(#ag)"/>
+  <path d="M640,528 L630,590 L586,560 Z" fill="#ff2b3a" stroke="#000" stroke-width="6" stroke-linejoin="round"/></svg>
+<div class="stamp" style="left:60px;top:470px">100% REAL</div>
+<div class="tag" style="right:40px;bottom:30px;background:#06222a;border:2px solid #ffd400;color:#ffd400">15 ANIMALS YOU WON'T BELIEVE</div>
+</div>
+
+<script>
+const NS = 'http://www.w3.org/2000/svg';
+const el = (tag, a, p) => { const e = document.createElementNS(NS, tag); for (const k in a) e.setAttribute(k, a[k]); p.appendChild(e); return e; };
+let seed = 11; const rnd = () => (seed = (seed * 16807) % 2147483647) / 2147483647;
+
+// ================= MOSQUITO =================
+(() => {
+  const bk = document.getElementById('bokeh');
+  for (let i = 0; i < 26; i++) el('circle', { cx: (500 + rnd() * 780).toFixed(0), cy: (rnd() * 720).toFixed(0), r: (14 + rnd() * 50).toFixed(0), fill: rnd() < .7 ? '#ff3b4a' : '#ffb36b', opacity: (.08 + rnd() * .2).toFixed(2) }, bk);
+  const g = document.getElementById('mosq');
+  // legs (behind body): jointed, black with white bands (Aedes)
+  const leg = (pts, w) => {
+    const d = 'M' + pts.map(p => p.join(',')).join(' L');
+    el('path', { d, fill: 'none', stroke: '#000', 'stroke-width': w + 4, 'stroke-linecap': 'round', 'stroke-linejoin': 'round' }, g);
+    el('path', { d, fill: 'none', stroke: '#5a4334', 'stroke-width': w, 'stroke-linecap': 'round', 'stroke-linejoin': 'round' }, g);
+    el('path', { d, fill: 'none', stroke: '#c9a58a', 'stroke-opacity': .55, 'stroke-width': w * .3, 'stroke-linecap': 'round', 'stroke-linejoin': 'round', transform: 'translate(-1.5,-1.5)' }, g);
+    for (let i = 1; i < pts.length; i++) { const [x0, y0] = pts[i - 1], [x1, y1] = pts[i];
+      for (const u of [.3, .62]) { const x = x0 + (x1 - x0) * u, y = y0 + (y1 - y0) * u, dx = (x1 - x0) * .03, dy = (y1 - y0) * .03;
+        el('path', { d: `M${x - dx},${y - dy} L${x + dx},${y + dy}`, stroke: '#f4f1ea', 'stroke-width': w + 1, 'stroke-linecap': 'butt' }, g); } }
+  };
+  leg([[820, 360], [700, 470], [560, 640], [520, 720]], 9);
+  leg([[850, 370], [820, 520], [760, 700]], 7);
+  leg([[880, 360], [990, 500], [1080, 700]], 7);
+  leg([[905, 350], [1080, 430], [1250, 640]], 6);
+  leg([[870, 350], [930, 520], [990, 720]], 6);
+  leg([[835, 355], [640, 420], [470, 560]], 6);
+  // wings
+  for (const [rot, sx] of [[-28, 1], [-12, .92]]) {
+    const w = el('g', { transform: `translate(905,300) rotate(${rot}) scale(${sx})` }, g);
+    el('path', { d: 'M0,0 C120,-60 330,-70 420,-20 C440,-6 430,14 400,20 C300,40 120,40 0,0Z', fill: 'url(#wing)', stroke: '#d9f0ff', 'stroke-opacity': .7, 'stroke-width': 2 }, w);
+    for (const [a, b] of [[60, -20], [150, -30], [240, -30], [330, -20]]) el('path', { d: `M10,0 Q${a},${b} ${a + 70},${b + 10}`, fill: 'none', stroke: '#e8f6ff', 'stroke-opacity': .45, 'stroke-width': 1.5 }, w);
+  }
+  // abdomen engorged with blood
+  el('path', { d: 'M930,360 C1010,350 1150,380 1210,450 C1240,490 1225,540 1170,545 C1080,552 960,470 905,410 C885,388 900,363 930,360Z', fill: 'url(#blood)', stroke: '#2a0005', 'stroke-width': 4 }, g);
+  for (let i = 1; i < 7; i++) { const x = 930 + i * 42; el('path', { d: `M${x},${362 + i * 6} C${x + 18},${400 + i * 8} ${x + 8},${450 + i * 6} ${x - 10},${470 + i * 4}`, fill: 'none', stroke: '#4a0010', 'stroke-opacity': .55, 'stroke-width': 3 }, g); }
+  el('ellipse', { cx: 1040, cy: 405, rx: 70, ry: 16, fill: '#fff', opacity: .35, transform: 'rotate(22 1040 405)' }, g);
+  // thorax
+  el('path', { d: 'M820,340 C830,270 900,250 950,290 C985,320 975,380 930,395 C880,410 815,395 820,340Z', fill: 'url(#thor)', stroke: '#000', 'stroke-width': 4 }, g);
+  for (const [x1, y1, x2, y2] of [[860, 280, 900, 380], [890, 270, 935, 380]]) el('path', { d: `M${x1},${y1} Q${x1 + 30},${(y1 + y2) / 2} ${x2},${y2}`, fill: 'none', stroke: '#e9e2d6', 'stroke-opacity': .55, 'stroke-width': 3 }, g);
+  // head + eye
+  el('circle', { cx: 790, cy: 350, r: 42, fill: '#1a120e', stroke: '#000', 'stroke-width': 4 }, g);
+  el('circle', { cx: 782, cy: 342, r: 34, fill: 'url(#eye)' }, g);
+  for (let i = 0; i < 40; i++) { const a = rnd() * 6.28, r = rnd() * 30; el('circle', { cx: (782 + Math.cos(a) * r).toFixed(1), cy: (342 + Math.sin(a) * r).toFixed(1), r: 2.2, fill: '#000', opacity: .25 }, g); }
+  el('ellipse', { cx: 772, cy: 330, rx: 10, ry: 6, fill: '#fff', opacity: .8 }, g);
+  // antennae (feathery)
+  for (const [ex, ey] of [[690, 250], [720, 228]]) { el('path', { d: `M770,325 Q${(770 + ex) / 2},${ey + 30} ${ex},${ey}`, fill: 'none', stroke: '#1a120e', 'stroke-width': 3 }, g);
+    for (let k = 1; k < 9; k++) { const u = k / 9, x = 770 + (ex - 770) * u, y = 325 + (ey - 325) * u; el('path', { d: `M${x},${y} l${-8 - 6 * u},${-12} M${x},${y} l${6},${-14}`, stroke: '#3a2a20', 'stroke-width': 1.5 }, g); } }
+  // proboscis needle + blood drop
+  el('path', { d: 'M760,372 L590,520', stroke: '#000', 'stroke-width': 9, 'stroke-linecap': 'round' }, g);
+  el('path', { d: 'M760,372 L590,520', stroke: '#a88a74', 'stroke-width': 3.5, 'stroke-linecap': 'round' }, g);
+  el('path', { d: 'M584,526 C574,548 578,566 590,566 C602,566 604,548 584,526Z', fill: '#e3152a', stroke: '#3a0208', 'stroke-width': 2, filter: 'url(#glowR)' }, g);
+  // "not these" row
+  const nt = document.getElementById('notthese');
+  const sil = [
+    'M0,40 C30,20 80,10 120,22 L140,0 L148,28 C170,34 186,40 196,46 C180,52 160,56 140,58 L146,80 L120,62 C80,70 30,62 0,40Z', // shark
+    'M0,44 C40,30 120,28 170,36 C190,28 210,30 226,38 C210,46 190,50 170,48 C120,58 40,56 0,44Z M40,48 l-6,14 M90,52 l-4,14 M140,50 l4,14 M170,48 l6,12', // croc
+    'M0,40 C20,10 50,10 60,40 C70,70 100,70 110,40 C120,10 150,10 160,40 C170,60 190,62 204,50', // snake
+  ];
+  sil.forEach((d, i) => { const gg = el('g', { transform: `translate(${i * 250},0)` }, nt);
+    el('path', { d, fill: i === 2 ? 'none' : '#d9cfc8', stroke: i === 2 ? '#d9cfc8' : '#000', 'stroke-width': i === 2 ? 16 : 2, 'stroke-linecap': 'round', opacity: .9 }, gg);
+    el('path', { d: 'M10,-6 L196,86 M196,-6 L10,86', stroke: '#000', 'stroke-width': 18, 'stroke-linecap': 'round' }, gg);
+    el('path', { d: 'M10,-6 L196,86 M196,-6 L10,86', stroke: '#ff2b3a', 'stroke-width': 11, 'stroke-linecap': 'round' }, gg); });
+  const lbl = el('text', { x: 0, y: -20, fill: '#fff', 'font-family': 'JetBrains Mono', 'font-weight': 700, 'font-size': 22, 'letter-spacing': 5 }, nt); lbl.textContent = 'NOT SHARKS · NOT CROCS · NOT SNAKES';
+})();
+
+// ================= AXOLOTL =================
+(() => {
+  const bb = document.getElementById('bubbles');
+  for (let i = 0; i < 34; i++) { const x = rnd() * 1280, y = rnd() * 640, r = 3 + rnd() * 12; el('circle', { cx: x.toFixed(0), cy: y.toFixed(0), r: r.toFixed(1), fill: 'none', stroke: '#dffcff', 'stroke-opacity': (.25 + rnd() * .4).toFixed(2), 'stroke-width': 2 }, bb); }
+  const g = document.getElementById('axo');
+  // long body + finned tail behind the head (swimming pose)
+  el('path', { d: 'M180,-40 C320,-60 470,-40 560,-10 C620,10 650,40 640,60 C560,40 470,60 360,90 C260,110 170,90 120,60Z', fill: 'url(#skin2)', stroke: '#b24873', 'stroke-width': 4 }, g);
+  el('path', { d: 'M420,-36 C500,-80 600,-70 660,-20 C690,10 700,50 690,70 C650,40 560,20 470,30Z', fill: '#f7b4cd', stroke: '#b24873', 'stroke-width': 3, opacity: .85 }, g);
+  for (const [x, y, r] of [[-120, 40, 25], [110, 40, -25], [300, 95, 30], [420, 70, -10]]) { const lg = el('g', { transform: `translate(${x},${y}) rotate(${r})` }, g);
+    el('path', { d: 'M-14,-30 C-18,0 -12,30 0,40 C12,30 18,0 14,-30Z', fill: '#f7a9c7', stroke: '#b24873', 'stroke-width': 3 }, lg);
+    for (const fx of [-12, -4, 4, 12]) el('path', { d: `M0,36 L${fx},54`, stroke: '#e57aa4', 'stroke-width': 5, 'stroke-linecap': 'round' }, lg); }
+  // gills: three feathery branches each side
+  const gill = (sx, ang) => { const gg = el('g', { transform: `translate(${sx * 150},-120) rotate(${ang})` }, g);
+    el('path', { d: 'M0,0 C40,-40 95,-80 160,-92', fill: 'none', stroke: 'url(#gill)', 'stroke-width': 15, 'stroke-linecap': 'round' }, gg);
+    for (let k = 1; k <= 12; k++) { const u = k / 13, x = 160 * u, y = -92 * Math.pow(u, .8);
+      el('path', { d: `M${x},${y} q-8,-26 4,-40 M${x},${y} q10,18 -2,32`, fill: 'none', stroke: '#ff5c92', 'stroke-width': 6, 'stroke-linecap': 'round' }, gg); } };
+  for (const [s, a] of [[1, -40], [1, -8], [1, 24]]) gill(s, a);
+  [[-40], [-8], [24]].forEach(([a]) => { const gg = el('g', { transform: `translate(-150,-120) scale(-1,1) rotate(${a})` }, g);
+    el('path', { d: 'M0,0 C40,-40 95,-80 160,-92', fill: 'none', stroke: 'url(#gill)', 'stroke-width': 15, 'stroke-linecap': 'round' }, gg);
+    for (let k = 1; k <= 12; k++) { const u = k / 13, x = 160 * u, y = -92 * Math.pow(u, .8);
+      el('path', { d: `M${x},${y} q-8,-26 4,-40 M${x},${y} q10,18 -2,32`, fill: 'none', stroke: '#ff5c92', 'stroke-width': 6, 'stroke-linecap': 'round' }, gg); } });
+  // head
+  el('path', { d: 'M-190,-110 C-190,-230 190,-230 190,-110 C190,0 120,40 0,40 C-120,40 -190,0 -190,-110Z', fill: 'url(#skin)', stroke: '#b24873', 'stroke-width': 5 }, g);
+  el('ellipse', { cx: -40, cy: -170, rx: 90, ry: 30, fill: '#fff', opacity: .35 }, g);
+  // eyes
+  for (const x of [-105, 105]) { el('circle', { cx: x, cy: -100, r: 22, fill: '#14070c' }, g); el('circle', { cx: x - 7, cy: -108, r: 7, fill: '#fff' }, g); el('circle', { cx: x + 6, cy: -94, r: 3, fill: '#fff', opacity: .8 }, g); }
+  // smile + blush
+  el('path', { d: 'M-90,-40 C-40,0 40,0 90,-40', fill: 'none', stroke: '#8a2a52', 'stroke-width': 7, 'stroke-linecap': 'round' }, g);
+  for (const x of [-135, 135]) el('ellipse', { cx: x, cy: -55, rx: 26, ry: 14, fill: '#ff6fa0', opacity: .45 }, g);
+})();
+
+const v = (location.hash || '#deadliest').slice(1); document.getElementById(v).style.display = 'block';
+</script>
+</body></html>
