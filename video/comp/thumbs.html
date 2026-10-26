@@ -1,0 +1,82 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<link rel="stylesheet" href="../assets/fonts/fonts.css">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{width:1280px;height:720px;overflow:hidden;background:#070304;font-family:Anton,sans-serif}
+.v{position:absolute;inset:0;overflow:hidden;display:none}
+.bgblur{position:absolute;inset:-60px;background-size:cover;background-position:center;filter:blur(34px) brightness(.32) saturate(1.5)}
+.vig{position:absolute;inset:0;background:radial-gradient(ellipse 80% 80% at 50% 50%,rgba(0,0,0,0) 45%,rgba(0,0,0,.85) 100%)}
+.punch{color:#fff;-webkit-text-stroke:5px #000;paint-order:stroke fill;text-shadow:0 7px 0 #000,0 0 40px rgba(0,0,0,.9);line-height:.86;letter-spacing:.01em}
+.red{color:#ff2b3a}.yel{color:#ffd400}.lime{color:#c6ff3d}
+.badge{position:absolute;border-radius:50%;background:radial-gradient(circle at 35% 30%,#ff5a66,#d10f1f 70%);border:7px solid #fff;color:#fff;display:flex;align-items:center;justify-content:center;font-family:Anton;box-shadow:0 0 40px rgba(255,30,50,.8),0 10px 24px rgba(0,0,0,.6)}
+.tape{position:absolute;height:64px;background:repeating-linear-gradient(45deg,#ffd400 0 34px,#111 34px 68px);box-shadow:0 10px 30px rgba(0,0,0,.8);display:flex;align-items:center;justify-content:center}
+.tape span{font:400 38px Anton;color:#fff;-webkit-text-stroke:6px #000;paint-order:stroke fill;letter-spacing:.08em;white-space:nowrap}
+svg.ov{position:absolute;inset:0;width:1280px;height:720px;overflow:visible}
+.photo{position:absolute;background-size:cover;background-position:center}
+.card{position:absolute;border:6px solid #f4f1ea;box-shadow:0 24px 60px rgba(0,0,0,.85);background-size:cover;background-position:center}
+</style></head><body>
+
+<!-- A: IT'S IN YOUR HOME (oleander) -->
+<div class="v" id="a">
+  <div class="bgblur" style="background-image:url(../build/thumb/oleander.jpg)"></div>
+  <div class="photo" style="left:-30px;top:-30px;width:800px;height:790px;background-image:url(../build/thumb/oleander.jpg);
+       -webkit-mask-image:radial-gradient(ellipse 62% 62% at 46% 50%,#000 58%,transparent 82%);filter:saturate(1.15) contrast(1.05)"></div>
+  <div style="position:absolute;inset:0;background:radial-gradient(ellipse 45% 70% at 30% 50%,rgba(255,40,70,0),rgba(255,30,50,.22) 75%,rgba(0,0,0,0) 100%)"></div>
+  <div class="vig"></div>
+  <svg class="ov" viewBox="0 0 1280 720">
+    <defs><filter id="g"><feGaussianBlur stdDeviation="6" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+    <ellipse cx="392" cy="402" rx="168" ry="150" transform="rotate(-12 392 402)" fill="none" stroke="#ff1f30" stroke-width="11" stroke-dasharray="980 60" filter="url(#g)"/>
+    <path d="M770,520 C700,560 640,540 590,470" fill="none" stroke="#000" stroke-width="30" stroke-linecap="round"/>
+    <path d="M770,520 C700,560 640,540 590,470" fill="none" stroke="#ff1f30" stroke-width="18" stroke-linecap="round" filter="url(#g)"/>
+    <path d="M556,420 L626,452 L578,500 Z" fill="#ff1f30" stroke="#000" stroke-width="6" stroke-linejoin="round"/>
+  </svg>
+  <div class="badge" style="left:34px;top:30px;width:150px;height:150px;font-size:86px">#3</div>
+  <div style="position:absolute;right:46px;top:54px;text-align:right">
+    <div class="punch" style="font-size:132px">IT'S IN</div>
+    <div class="punch red" style="font-size:196px">YOUR</div>
+    <div class="punch" style="font-size:196px">HOME</div>
+  </div>
+  <div class="tape" style="left:-60px;right:-60px;bottom:26px;transform:rotate(-2.5deg)"><span>⚠ 10 PLANTS THAT CAN K*LL ⚠ DO NOT TOUCH ⚠</span></div>
+</div>
+
+<!-- B: 1 SEED CAN K*LL YOU (rosary pea) -->
+<div class="v" id="b">
+  <div class="photo" style="left:180px;top:-90px;width:1500px;height:1260px;background-image:url(../build/thumb/rosary_bowl.jpg);filter:saturate(1.2) contrast(1.1)"></div>
+  <div style="position:absolute;inset:0;background:linear-gradient(90deg,#070304 0%,#070304 30%,rgba(7,3,4,.75) 45%,rgba(7,3,4,0) 64%)"></div>
+  <div class="vig"></div>
+  <svg class="ov" viewBox="0 0 1280 720">
+    <defs><filter id="g2"><feGaussianBlur stdDeviation="6" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+    <circle cx="905" cy="330" r="74" fill="none" stroke="#fff" stroke-width="10" filter="url(#g2)"/>
+    <path d="M640,470 C720,470 780,430 820,385" fill="none" stroke="#000" stroke-width="28" stroke-linecap="round"/>
+    <path d="M640,470 C720,470 780,430 820,385" fill="none" stroke="#fff" stroke-width="16" stroke-linecap="round" filter="url(#g2)"/>
+    <path d="M840,358 L838,420 L790,392 Z" fill="#fff" stroke="#000" stroke-width="6" stroke-linejoin="round"/>
+  </svg>
+  <div style="position:absolute;left:44px;top:70px">
+    <div class="punch red" style="font-size:228px">1 SEED</div>
+    <div class="punch" style="font-size:142px;margin-top:10px">CAN K*LL</div>
+    <div class="punch yel" style="font-size:142px">YOU</div>
+  </div>
+  <div class="badge" style="right:36px;top:30px;width:150px;height:150px;font-size:86px">#1</div>
+</div>
+
+<!-- C: DON'T TOUCH THESE (collage) -->
+<div class="v" id="c">
+  <div class="bgblur" style="background-image:url(../build/thumb/nightshade.jpg);filter:blur(40px) brightness(.25) saturate(1.4)"></div>
+  <div class="vig"></div>
+  <div class="card" style="left:40px;top:196px;width:380px;height:470px;background-image:url(../build/thumb/oleander.jpg);transform:rotate(-5deg)"></div>
+  <div class="card" style="left:450px;top:180px;width:380px;height:470px;background-image:url(../build/thumb/nightshade.jpg);transform:rotate(2deg)"></div>
+  <div class="card" style="left:860px;top:196px;width:380px;height:470px;background-image:url(../build/thumb/rosary_bowl.jpg);background-position:60% 40%;transform:rotate(5deg)"></div>
+  <div class="badge" style="left:40px;top:560px;width:118px;height:118px;font-size:62px">#3</div>
+  <div class="badge" style="left:574px;top:572px;width:118px;height:118px;font-size:62px">#7</div>
+  <div class="badge" style="left:1130px;top:560px;width:118px;height:118px;font-size:62px">#1</div>
+  <div style="position:absolute;left:0;right:0;top:14px;text-align:center">
+    <span class="punch" style="font-size:170px">DON'T </span><span class="punch red" style="font-size:170px">TOUCH</span>
+  </div>
+</div>
+
+<script>
+const v = (location.hash || '#a').slice(1);
+document.getElementById(v).style.display = 'block';
+</script>
+</body></html>

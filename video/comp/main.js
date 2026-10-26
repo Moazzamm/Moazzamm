@@ -37,7 +37,10 @@
     S.pp = null;
     if (ph && ph.keys.includes('hero')) {
       const base = ['hero', 'detail'].filter(k => ph.keys.includes(k));
-      const sched = [{ t: sc.vo + 1.7, key: 'hero' }];
+      // start after the rank slam, or after a map that begins right after it (no flash-and-vanish)
+      let start = sc.vo + 1.7;
+      for (const b of sc.beats.filter(b => b.type === 'map' && b.t < start + 3)) start = Math.max(start, b.t + b.dur - 0.3);
+      const sched = [{ t: start, key: 'hero' }];
       let bi = 0;
       for (const b of sc.beats.filter(b => ['callout', 'chain', 'photo'].includes(b.type))) {
         let key;
@@ -50,8 +53,8 @@
       const side = sc.beats.filter(b => ['callout', 'chain', 'meter', 'ecg'].includes(b.type)).map(b => b.t);
       const shrink = Math.min(sc.end, ...side) - 0.35, R1 = [110, 132, 860, 806];
       const k = Math.min(1560 / ph.hw[0], 806 / ph.hw[1]), w0 = ph.hw[0] * k, h0 = ph.hw[1] * k;
-      const R0 = shrink - (sc.vo + 1.7) < 2.6 ? R1 : [960 - w0 / 2, 132 + (806 - h0) / 2, w0, h0];
-      S.pp = { sched, R0, R1, shrink, labels: ph.labels || {} };
+      const R0 = shrink - start < 2.6 ? R1 : [960 - w0 / 2, 132 + (806 - h0) / 2, w0, h0];
+      S.pp = { sched, R0, R1, shrink, start, labels: ph.labels || {} };
       document.querySelectorAll('#photoWin i').forEach(e => { e.dataset.k = ''; e.style.opacity = 0; });
     }
     $('#photo').style.backgroundImage = $('#photobg').style.backgroundImage = S.pp ? `url(../build/photos/${sc.id}_bg.jpg)` : 'none';
@@ -153,11 +156,11 @@
     if (S.pp) {
       const P = S.pp, e = eio((t - P.shrink) / .9), R = P.R0.map((v, i) => lerp(v, P.R1[i], e));
       const brace = S.brace ? cl((t - S.brace.t) / .6) : 0;
-      photoA = cl((lt - 1.7) / .6) * sceneFade * (1 - mapA) * (1 - ovA * .85) * (1 - brace * .65);
+      photoA = cl((t - P.start) / .6) * sceneFade * (1 - mapA) * (1 - ovA * .85) * (1 - brace * .65);
       wideA = photoA * (1 - e);
       const pw = $('#photoWin');
       Object.assign(pw.style, { left: R[0].toFixed(1) + 'px', top: R[1].toFixed(1) + 'px', width: R[2].toFixed(1) + 'px', height: R[3].toFixed(1) + 'px' });
-      pw.style.transform = `translateY(${(30 * (1 - eo3((lt - 1.7) / .8))).toFixed(1)}px)`;
+      pw.style.transform = `translateY(${(30 * (1 - eo3((t - P.start) / .8))).toFixed(1)}px)`;
       let j = 0; while (j + 1 < P.sched.length && P.sched[j + 1].t <= t) j++;
       const seg = P.sched[j], prev = P.sched[j - 1], xf = j ? eo3((t - seg.t) / .7) : 1;
       const [A, B] = (j % 2 ? [...pw.querySelectorAll('i')] : [...pw.querySelectorAll('i')].reverse());
