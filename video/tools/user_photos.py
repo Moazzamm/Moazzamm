@@ -13,14 +13,25 @@ OUT = os.path.join(ROOT, "build", "photos")
 
 # sid: (hero source crop, detail source crop, credit). Crops are (file, left, top, right, bottom).
 PHOTOS = {
-    "p10": dict(hero=("2.webp", 735, 201, 1380, 655), detail=("2.webp", 80, 199, 729, 657), credit="Cornell CALS Weed Science"),
-    "p9": dict(hero=("3.webp", 74, 100, 903, 880), detail=("3.webp", 300, 150, 880, 870), credit="Meadow City Nursery"),
-    "p8": dict(hero=("4.webp", 60, 135, 856, 1235), detail=("4.webp", 60, 135, 856, 1235), credit="Pixabay"),
-    "p7": dict(hero=("5.webp", 194, 20, 1138, 1222), detail=("5.webp", 194, 60, 1138, 900), credit="Encyclopaedia Britannica"),
-    "p6": dict(hero=("6.webp", 150, 0, 1180, 790), detail=("6.webp", 330, 0, 1050, 790), credit="Nepal Desk"),
-    "p3": dict(yellow=("9.webp", 330, 60, 900, 772), credit="Kew Science, Plants of the World Online"),
-    "p2": dict(hero=("8.webp", 258, 115, 1112, 1318), detail=("8.webp", 330, 150, 1050, 1050), credit="Giuseppe Mazza, Monaco Nature Encyclopedia"),
-    "p1": dict(hero=("7.webp", 137, 2, 1112, 820), detail=("7.webp", 380, 0, 830, 560), credit="iStock / bdspn"),
+    "p10": dict(hero=("2.webp", 735, 201, 1380, 655), detail=("2.webp", 80, 199, 729, 657), credit="Cornell CALS Weed Science",
+                labels=dict(hero="SPIKY SEED POD", detail="TRUMPET FLOWER")),
+    "p9": dict(hero=("3.webp", 74, 100, 903, 880), detail=("3.webp", 300, 150, 880, 870), credit="Meadow City Nursery",
+               labels=dict(hero="WHITE SNAKEROOT", detail="FLOWER CLUSTERS")),
+    "p8": dict(hero=("4.webp", 60, 135, 856, 1235), detail=("4.webp", 60, 135, 856, 1235), credit="Pixabay",
+               labels=dict(hero="SPOTTED BELLS", detail="FOXGLOVE SPIKE")),
+    "p7": dict(hero=("5.webp", 194, 20, 1138, 1222), detail=("5.webp", 194, 60, 1138, 900), credit="Encyclopaedia Britannica",
+               labels=dict(hero="GLOSSY BLACK BERRIES", detail="BERRIES & STAR CALYX")),
+    "p6": dict(hero=("6.webp", 150, 0, 1180, 790), detail=("6.webp", 330, 0, 1050, 790), credit="Nepal Desk",
+               labels=dict(hero="HOODED BLUE FLOWERS", detail="MONKSHOOD")),
+    "p4": dict(hero=("11.webp", 98, 50, 815, 540), detail=("11.webp", 300, 52, 760, 628), credit="Encyclopaedia Britannica",
+               labels=dict(hero="WATER HEMLOCK", detail="WHITE UMBRELLA FLOWERS")),
+    "p3": dict(hero=("12.webp", 75, 124, 1166, 1225), detail=("12.webp", 330, 300, 890, 1000), yellow=("9.webp", 330, 60, 900, 772),
+               credit="green-bubble.com; Kew Science, Plants of the World Online",
+               labels=dict(hero="COMMON OLEANDER", detail="PINK BLOSSOMS", yellow="YELLOW OLEANDER · SRI LANKA")),
+    "p2": dict(hero=("8.webp", 258, 115, 1112, 1318), detail=("8.webp", 330, 150, 1050, 1050), credit="Giuseppe Mazza, Monaco Nature Encyclopedia",
+               labels=dict(hero="SPINY SEED CAPSULES", detail="STAR-SHAPED LEAF")),
+    "p1": dict(hero=("7.webp", 137, 2, 1112, 820), detail=("7.webp", 380, 0, 830, 560), credit="iStock / bdspn",
+               labels=dict(hero="ROSARY PEA SEEDS", detail="RED & BLACK SEEDS")),
 }
 
 
@@ -49,7 +60,7 @@ def main():
     os.makedirs(OUT, exist_ok=True)
     meta, credits = {}, []
     for sid, spec in PHOTOS.items():
-        keys = [k for k in spec if k != "credit"]
+        keys = [k for k in spec if k not in ("credit", "labels")]
         for key in keys:
             im = load(spec[key])
             if key == "hero":
@@ -58,7 +69,7 @@ def main():
                 ImageEnhance.Brightness(bg).enhance(0.5).save(os.path.join(OUT, f"{sid}_bg.jpg"), quality=85)
             else:
                 sharpen(grade(ImageOps.fit(im, (880, 1100), Image.LANCZOS), 0.97)).save(os.path.join(OUT, f"{sid}_{key}.jpg"), quality=92)
-        meta[sid] = dict(keys=keys, credit=spec["credit"])
+        meta[sid] = dict(keys=keys, credit=spec["credit"], labels=spec.get("labels", {}))
         if "hero" in spec:
             hb = spec["hero"]; meta[sid]["hw"] = [hb[3] - hb[1], hb[4] - hb[2]]
         credits.append(f"• {sid.upper()}: {spec['credit']}")

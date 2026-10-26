@@ -32,23 +32,32 @@
     document.documentElement.style.setProperty('--glow', sc.rank && sc.rank <= 3 ? '#ff2d3d' : '#b6ff3b');
     if (isPlant) { $('#plantWrap').innerHTML = buildPlant(KIND[sc.id], sc.rank); S.plant = $('#plantWrap svg'); }
     const ph = (window.PHOTOS || {})[sc.id];
-    // the opening photo must not hide a map/quote/title that starts right after the rank slam
-    const block = Math.min(99, ...sc.beats.filter(b => ['map', 'quote', 'title', 'tease'].includes(b.type)).map(b => b.t - sc.vo));
-    S.heroEnd = Math.min(6.6, block - 0.05);
-    const hero = ph && ph.keys.includes('hero') && S.heroEnd - 1.7 >= 2.5;
-    $('#photo').style.backgroundImage = hero ? `url(../build/photos/${sc.id}_bg.jpg)` : 'none';
-    $('#photoWin i').style.backgroundImage = hero ? `url(../build/photos/${sc.id}_hero.jpg)` : 'none';
-    if (hero) {  // photo window inside the safe area; left half when info cards appear during the opening
-      const wide = !sc.beats.some(b => (b.type === 'callout' || b.type === 'chain') && b.t - sc.vo < 7);
-      const [mw, mh, cx, cy] = wide ? [1560, 800, 960, 532] : [940, 800, 560, 532];
-      const k = Math.min(mw / ph.hw[0], mh / ph.hw[1]), w = ph.hw[0] * k, h = ph.hw[1] * k;
-      Object.assign($('#photoWin').style, { left: (cx - w / 2) + 'px', top: (cy - h / 2) + 'px', width: w + 'px', height: h + 'px' });
-      Object.assign($('#photoTag').style, { left: (cx - w / 2 + 18) + 'px', top: (cy + h / 2 - 40) + 'px' });
+    // persistent real-photo panel: big while nothing else is on screen, left half once facts arrive,
+    // and a different shot of the plant for each new fact
+    S.pp = null;
+    if (ph && ph.keys.includes('hero')) {
+      const base = ['hero', 'detail'].filter(k => ph.keys.includes(k));
+      const sched = [{ t: sc.vo + 1.7, key: 'hero' }];
+      let bi = 0;
+      for (const b of sc.beats.filter(b => ['callout', 'chain', 'photo'].includes(b.type))) {
+        let key;
+        if (b.type === 'photo') { if (!ph.keys.includes(b.key)) continue; key = b.key; }
+        else { bi = (bi + 1) % base.length; key = base[bi]; }
+        const last = sched[sched.length - 1];
+        if (key === last.key || (b.type !== 'photo' && b.t - last.t < 2.2)) continue;
+        sched.push({ t: b.t, key });
+      }
+      const side = sc.beats.filter(b => ['callout', 'chain', 'meter', 'ecg'].includes(b.type)).map(b => b.t);
+      const shrink = Math.min(sc.end, ...side) - 0.35, R1 = [110, 132, 860, 806];
+      const k = Math.min(1560 / ph.hw[0], 806 / ph.hw[1]), w0 = ph.hw[0] * k, h0 = ph.hw[1] * k;
+      const R0 = shrink - (sc.vo + 1.7) < 2.6 ? R1 : [960 - w0 / 2, 132 + (806 - h0) / 2, w0, h0];
+      S.pp = { sched, R0, R1, shrink, labels: ph.labels || {} };
+      document.querySelectorAll('#photoWin i').forEach(e => { e.dataset.k = ''; e.style.opacity = 0; });
     }
-    $('#photobg').style.backgroundImage = hero ? `url(../build/photos/${sc.id}_bg.jpg)` : 'none';
+    $('#photo').style.backgroundImage = $('#photobg').style.backgroundImage = S.pp ? `url(../build/photos/${sc.id}_bg.jpg)` : 'none';
     $('#photoCredit').textContent = ph ? 'Photo: ' + ph.credit : '';
     $('#photoWin').style.opacity = 0;
-    S.hasPhoto = !!hero;
+    S.hasPhoto = !!S.pp;
     if (sc.id === 'hook') {
       const ks = ['nightshade', 'foxglove', 'oleander', 'castor', 'monkshood'];
       $('#garden').innerHTML = ks.map((k, i) => `<div class="g" style="left:${-60 + i * 400}px;transform:scale(${i % 2 ? .95 : 1.1})">${buildPlant(k, 'g' + i, i + 3)}</div>`).join('');
@@ -94,7 +103,7 @@
     S.ecg = sc.beats.find(b => b.type === 'ecg');
     S.rain = sc.beats.find(b => b.type === 'rain');
     S.brace = sc.beats.find(b => b.type === 'bracelet');
-    S.evid = sc.beats.filter(b => b.type === 'photo' && ph && ph.keys.includes(b.key));
+    S.evid = S.pp ? [] : sc.beats.filter(b => b.type === 'photo' && ph && ph.keys.includes(b.key));
     S.recap = sc.beats.find(b => b.type === 'recap');
     S.endcard = sc.beats.find(b => b.type === 'endcard');
     S.comment = sc.beats.find(b => b.type === 'comment');
@@ -139,20 +148,33 @@
       else ovA = Math.max(ovA, a * .6);
     });
 
-    // hero photo (plant scenes): full-bleed after the rank slam, then crossfade to illustration
-    let photoA = 0;
-    if (S.hasPhoto) {
-      photoA = win(lt, 1.7, S.heroEnd, .6, .7);
-      const k = cl((lt - 1.7) / 5);
-      $('#photo').style.transform = `scale(${(1.02 + .06 * k).toFixed(4)})`;
-      const e = eo3((lt - 1.7) / .8);
-      $('#photoWin').style.transform = `translateY(${(36 * (1 - e)).toFixed(1)}px) scale(${lerp(.955, 1, e).toFixed(4)})`;
-      $('#photoWin i').style.transform = `scale(${(1.02 + .09 * k).toFixed(4)}) translate(${(-10 * k).toFixed(1)}px,${(-6 * k).toFixed(1)}px)`;
-      $('#photobg').style.opacity = (sceneFade * .22 * (1 - mapA)).toFixed(3);
+    // real-photo panel
+    let photoA = 0, wideA = 0;
+    if (S.pp) {
+      const P = S.pp, e = eio((t - P.shrink) / .9), R = P.R0.map((v, i) => lerp(v, P.R1[i], e));
+      const brace = S.brace ? cl((t - S.brace.t) / .6) : 0;
+      photoA = cl((lt - 1.7) / .6) * sceneFade * (1 - mapA) * (1 - ovA * .85) * (1 - brace * .65);
+      wideA = photoA * (1 - e);
+      const pw = $('#photoWin');
+      Object.assign(pw.style, { left: R[0].toFixed(1) + 'px', top: R[1].toFixed(1) + 'px', width: R[2].toFixed(1) + 'px', height: R[3].toFixed(1) + 'px' });
+      pw.style.transform = `translateY(${(30 * (1 - eo3((lt - 1.7) / .8))).toFixed(1)}px)`;
+      let j = 0; while (j + 1 < P.sched.length && P.sched[j + 1].t <= t) j++;
+      const seg = P.sched[j], prev = P.sched[j - 1], xf = j ? eo3((t - seg.t) / .7) : 1;
+      const [A, B] = (j % 2 ? [...pw.querySelectorAll('i')] : [...pw.querySelectorAll('i')].reverse());
+      const kb = i => { const s = P.sched[i], nx = P.sched[i + 1] ? P.sched[i + 1].t + .7 : sc.end, k = cl((t - s.t) / Math.max(3, nx - s.t)), d = i % 2 ? -1 : 1;
+        return `scale(${(1.04 + .1 * k).toFixed(4)}) translate(${(d * (14 - 28 * k)).toFixed(1)}px,${((i % 3 - 1) * (8 - 16 * k)).toFixed(1)}px)`; };
+      const show = (el, i) => { const s = P.sched[i]; if (el.dataset.k !== s.key + i) { el.dataset.k = s.key + i; el.style.backgroundImage = `url(../build/photos/${sc.id}_${s.key}.jpg)`; } el.style.transform = kb(i); };
+      show(B, j); B.style.opacity = xf.toFixed(3); B.style.zIndex = 2;
+      if (prev) { show(A, j - 1); A.style.opacity = xf < 1 ? 1 : 0; A.style.zIndex = 1; } else A.style.opacity = 0;
+      const lab = pw.querySelector('.lab'), txt = P.labels[seg.key] || '';
+      if (lab.dataset.t !== txt) { lab.dataset.t = txt; lab.innerHTML = `<b>▲ REAL PHOTO</b>${txt ? ' · ' + txt : ''}`; }
+      lab.style.opacity = cl((t - seg.t - .3) / .4).toFixed(3);
+      $('#photo').style.transform = `scale(${(1.02 + .06 * cl(st / sdur)).toFixed(4)})`;
+      $('#photobg').style.opacity = (sceneFade * .28 * (1 - mapA)).toFixed(3);
     } else $('#photobg').style.opacity = 0;
-    $('#photo').style.opacity = (photoA * sceneFade).toFixed(3);
-    $('#photoWin').style.opacity = (photoA * sceneFade).toFixed(3);
-    $('#photoTag').style.opacity = (photoA * cl((lt - 2.4) / .4)).toFixed(3);
+    $('#photo').style.opacity = (wideA * .9).toFixed(3);
+    $('#photoWin').style.opacity = photoA.toFixed(3);
+    $('#photoTag').style.opacity = 0;
     $('#photoCredit').style.opacity = (photoA * .9).toFixed(3);
 
     // evidence photo (real photo card over the illustration side)
@@ -175,7 +197,7 @@
       animatePlant(S.plant, eio((lt - drawStart) / 7.5));
       const k = cl(st / sdur);
       const brace = S.brace ? cl((t - S.brace.t) / .6) : 0;
-      $('#plantWrap').style.opacity = (sceneFade * (1 - mapA * .9) * (1 - ovA * .8) * (1 - brace * .6) * (1 - evA * .85)).toFixed(3);
+      $('#plantWrap').style.opacity = ((S.pp ? 0 : 1) * sceneFade * (1 - mapA * .9) * (1 - ovA * .8) * (1 - brace * .6) * (1 - evA * .85)).toFixed(3);
       $('#plantWrap').style.transform = `translate(${(Math.sin(t * .3) * 6).toFixed(1)}px,${(10 - 20 * k).toFixed(1)}px) scale(${(.97 + .06 * k).toFixed(4)}) rotate(${(Math.sin(t * .45) * .5).toFixed(3)}deg)`;
     } else $('#plantWrap').style.opacity = 0;
     if (S.garden) S.garden.forEach((g, i) => { animatePlant(g, eio((t - .3 - i * .5) / 6)); g.parentNode.style.opacity = (.55 * (1 - ovA * .7) * sceneFade).toFixed(3); });
