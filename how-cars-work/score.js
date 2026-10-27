@@ -219,7 +219,7 @@
   // ---------- named moments: `render.js stills @bang`; sync 'av' = verify measures sound AND picture ----------
   const markers = {
     hook: { t: ev.hook, sync: 'av' },
-    six: { t: ev.hookNum, sync: 'av' },
+    six: { t: ev.hookNum, sync: 'v' }, // the narrator's "six thousand" is the sound here, not a drum
     xray: ev.xray,
     labels: ev.labels[0],
     dive: ev.dive,
