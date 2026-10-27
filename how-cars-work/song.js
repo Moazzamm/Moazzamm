@@ -32,9 +32,9 @@ clock.eachStep(0, 28, 16, (t, b, s) => {
     drums.addMono(HC[s % 2], t, s % 4 === 2 ? 0.16 : 0.07, 0.25);
     if (b === 1 && s === 12) drums.addMono(SN, t, 0.22);
   } else if (L === 1) {
-    if (s === 0 || (b === 25 && s === 8)) kick(0.8);
-    if (s % 4 === 2) drums.addMono(HC[0], t, 0.14, -0.25);
-    if (b === 25 && s % 8 === 4) { drums.addMono(CL, t, 0.4); verb.addMono(CL, t, 0.25); }
+    if (b === 25 ? s === 12 : s === 0) kick(0.8);
+    if (s % 4 === 2 && !(b === 25 && s < 4)) drums.addMono(HC[0], t, 0.14, -0.25);
+    if (b === 25 && s === 8) { drums.addMono(CL, t, 0.4); verb.addMono(CL, t, 0.25); }
   } else if (L === 2) {
     if (s === 0 || s === 8 || s === 11) kick(s === 11 ? 0.55 : 0.9);
     if (s % 8 === 4) { drums.addMono(CL, t, 0.55); verb.addMono(CL, t, 0.28); }
@@ -54,18 +54,19 @@ clock.eachStep(0, 28, 16, (t, b, s) => {
 // the roll into the bang ends an 8th early (the held breath)
 for (let i = 0; i < 6; i++) drums.addMono(SN, T(9, 2) + i * BEAT / 4, 0.14 + i * 0.04, 0.05);
 // the roll into the cut to the cylinder
-for (let i = 0; i < 8; i++) drums.addMono(SN, T(4, 2) + i * BEAT / 4, 0.1 + i * 0.03, -0.05);
+for (let i = 0; i < 6; i++) drums.addMono(SN, T(4, 2) + i * BEAT / 4, 0.1 + i * 0.04, -0.05);
 
 // ---------- impacts: picture hits get a real transient ----------
-const big = (t, g = 1) => {
+const big = (t, g = 1, len = 2.2) => {
   drums.addMono(KB, t, 1.0 * g); kicks.push(t);
-  sub.addMono(I.subBoom(2.2), t, 0.55 * g);
+  sub.addMono(I.subBoom(len), t, 0.55 * g);
   drums.addMono(CR, t, 0.32 * g, -0.15); drums.addMono(CR2, t, 0.22 * g, 0.2);
 };
 const mid = (t, g = 1) => { drums.addMono(KB, t, 0.85 * g); drums.addMono(I.tom(95, 0.3), t, 0.45 * g); fx.addMono(I.thwack(), t, 0.35 * g); };
 const stamp = (t, g = 1) => { fx.addMono(I.thud(80, 0.08), t, 0.55 * g); fx.addMono(I.pop(2600, Math.round(t * 10)), t, 0.25 * g); };
-big(ev.hook, 1);
+big(ev.hook, 1, 0.9);
 mid(ev.hookNum, 1);
+drums.addMono(SN, ev.hookNum, 0.4); drums.addMono(CL, ev.hookNum, 0.4); verb.addMono(CL, ev.hookNum, 0.2);
 mid(ev.hookWord, 0.8);
 big(ev.cut, 0.8);
 for (const t of [ev.strokes[0], ev.strokes[1], ev.strokes[3]]) stamp(t, 1);
@@ -157,7 +158,7 @@ for (const w of ev.recapWords) {
 
 // ---------- engine sounds tied to the strokes ----------
 fx.addMono(I.woodTick(0.7), ev.strokes[0], 0.3, -0.3); // intake valve opens
-fx.addMono(I.noiseSweep(1.8, 2600, 380, { q: 1.1, pink: true }), ev.strokes[0] + 0.05, 0.42, -0.25); // air rushing in
+fx.addMono(I.noiseSweep(1.8, 2600, 380, { q: 1.1, pink: true }), ev.strokes[0] + 0.18, 0.42, -0.25); // air rushing in
 fx.addMono(I.woodTick(0.6), ev.strokes[1], 0.35, -0.3); // valve snaps shut
 { // compression: a squeezing tone that rises with the piston, into the held breath
   const len = ev.breath - ev.strokes[1], out = new Float32Array(Math.ceil(len * SR)); let ph = 0;
@@ -220,29 +221,58 @@ fx.addMono(I.noiseSweep(1.4, 500, 5000, { q: 0.9, pink: true }), ev.driveOff + 0
 // ---------- transitions ----------
 fx.addMono(I.noiseSweep(0.55, 400, 6000, { q: 0.8, shape: (x) => x * x, pink: true }), ev.carIn, 0.5, 0.4); // the car streaks in
 fx.addMono(I.noiseSweep(1.5, 600, 4000, { q: 4, shape: (x) => Math.sin(Math.PI * x) }), ev.scan[0], 0.25); // the scanner
-fx.addMono(I.noiseSweep(BEAT * 4, 200, 9000, { q: 0.9, shape: (x) => x * x * x, pink: true }), ev.dive, 0.5); // zoom into the engine
+fx.addMono(I.noiseSweep(ev.dryCut - ev.dive, 200, 9000, { q: 0.9, shape: (x) => x * x * x, pink: true }), ev.dive, 0.5); // zoom into the engine
 fx.addMono(I.noiseSweep(BEAT * 4, 200, 7000, { q: 0.9, shape: (x) => x * x, pink: true }), T(19), 0.35); // spin-up riser
 fx.addMono(I.noiseSweep(0.45, 3000, 300, { q: 0.8, pink: true }), ev.xray - 0.05, 0.3);
 fx.addMono(I.noiseSweep(0.45, 3000, 300, { q: 0.8, pink: true }), ev.recap - 0.02, 0.22);
 fx.addMono(I.noiseSweep(0.45, 3000, 300, { q: 0.8, pink: true }), ev.eff - 0.02, 0.25);
 fx.addMono(I.noiseSweep(0.9, 300, 3000, { q: 0.7, pink: true }), ev.effHit, 0.35); // the heat whoosh
 // the efficiency counter ticks down 100 → 20
-for (let i = 0; i < 12; i++) fx.addMono(I.woodTick(1.2 - i * 0.03), T(24, 1) + i * BEAT / 6, 0.18, 0.1);
+for (let i = 0; i < 9; i++) fx.addMono(I.woodTick(1.2 - i * 0.03), T(24, 1) + i * BEAT / 6, 0.18, 0.1);
+bellAt(ev.pct, m('D6'), 0.3); fx.addMono(I.pop(2400, 77), ev.pct, 0.25);
 // the subline words get a soft fwip
 for (const t of [...ev.strokeSubs, ev.cylSub, ev.speedFact, ev.gearSub, ev.diffSub]) fx.addMono(I.paperFwip(1.3, Math.round(t * 10)), t - 0.03, 0.12);
+
+// ---------- the narrator (assets/vo/*.wav, made by make-vo.py from score.vo) ----------
+const fs = require('fs');
+const voice = bus();
+for (const ln of sc.vo) {
+  const f = path.join(__dirname, 'assets', 'vo', `${ln.id}.wav`);
+  if (!fs.existsSync(f)) { console.warn(`no narration for '${ln.id}' (run make-vo.py)`); continue; }
+  MIX.loadAudio(f, { at: ln.at, length: DURATION }).mixInto(voice, 1);
+}
+MIX.highpass(voice, 90);
+// a broadcast-style compressor: even out the read so every word sits on top of the music
+(function compress(b, { thresholdDb = -26, ratio = 3.5, attack = 0.004, release = 0.09, makeupDb = 9 } = {}) {
+  const a = Math.exp(-1 / (attack * SR)), r = Math.exp(-1 / (release * SR)), mk = Math.pow(10, makeupDb / 20);
+  let env = 0;
+  for (let i = 0; i < b.n; i++) {
+    const x = Math.max(Math.abs(b.L[i]), Math.abs(b.R[i]));
+    env = x > env ? a * env + (1 - a) * x : r * env + (1 - r) * x;
+    const db = 20 * Math.log10(env + 1e-9), over = db - thresholdDb;
+    const g = (over > 0 ? Math.pow(10, (-over * (1 - 1 / ratio)) / 20) : 1) * mk;
+    b.L[i] = Math.tanh(b.L[i] * g * 0.9) / 0.9; b.R[i] = Math.tanh(b.R[i] * g * 0.9) / 0.9;
+  }
+})(voice);
+voice.mixInto(verb, 0.025); // a hint of the same room the music lives in
+// the music steps back while the narrator speaks; the drums less, so the groove keeps driving
+MIX.duck([bass, pad, keys, stab, engine, fx, sub, dly], voice, { depth: 0.76, attack: 0.02, release: 0.35, threshold: 0.05 });
+MIX.duck([drums], voice, { depth: 0.52, attack: 0.02, release: 0.3, threshold: 0.05 });
 
 // ---------- mix ----------
 MIX.sidechain([pad, bass], kicks.filter((t) => (t >= ev.bang && t < ev.cyl) || (t >= ev.gears && t < ev.diff) || (t >= T(26) && t < ev.end)), { depth: 0.5 });
 const stems = {
-  drums, bass, pad, keys, stab, engine, fx, sub,
+  drums, bass, pad, keys, stab, engine, fx, sub, voice,
   verb: reverb(verb, { room: 0.82, damp: 0.35 }),
   dly: pingpong(dly, BEAT * 0.75, 0.35, 4000),
 };
-const GAIN = { drums: 0.42, bass: 0.62, pad: 2.2, keys: 0.95, stab: 2.4, engine: 1.5, fx: 0.8, sub: 0.75, verb: 1, dly: 0.9 };
+const GAIN = { drums: 0.42, bass: 0.62, pad: 2.2, keys: 0.95, stab: 2.4, engine: 1.5, fx: 0.8, sub: 0.75, voice: 2.3, verb: 1, dly: 0.9 };
 const out = path.join(__dirname, 'out');
 const mix = MIX.mixdown(stems, GAIN, { stemDir: process.env.STEMS ? out : null });
 MIX.highpass(mix, 24);
 MIX.gate(mix, ev.breath, ev.bang); // the held breath before the bang is truly silent
+MIX.gate(mix, ev.dryCut, ev.cut); // ...and before the cut into the cylinder
+MIX.gate(mix, ev.clutch, ev.gears); // the clutch: the engine drops out for a 16th before first gear
 MIX.fadeOut(mix, DURATION - 1.4, DURATION);
 const M = MIX.master(mix, parseFloat(process.env.DRIVE || '0.8'), undefined, { lufs: process.env.LUFS ? parseFloat(process.env.LUFS) : -13 });
 MIX.writeWav(path.join(out, 'music.wav'), mix);

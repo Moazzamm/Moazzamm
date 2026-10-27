@@ -75,7 +75,7 @@
     cut: T(5), // hard cut to the cylinder cutaway
     parts: [T(5, 1), T(5, 2), T(5, 3)], // PISTON, VALVES, SPARK PLUG
     strokes: [T(6), T(8), T(10), T(12)], // 1 SUCK, 2 SQUEEZE, 3 BANG, 4 BLOW
-    strokeSubs: [T(6, 2), T(8, 2), T(10, 2), T(12, 2)],
+    strokeSubs: [T(6, 1.5), T(8, 1.5), T(10, 1.5), T(12, 1.5)], // as the narrator starts the sentence
     breath: T(9, 3.5), // an 8th of silence before the bang
     bang: T(10),
     recap: T(14),
@@ -83,22 +83,25 @@
     cyl: T(16),
     cylSub: T(17),
     speed: T(18),
-    accelEnd: T(19, 3),
+    accelEnd: T(19), // 3,000 RPM is reached before the "100 explosions a second" claim lands
     speedFact: T(19),
     gears: T(20),
     gearSub: T(21),
     diff: T(22),
     diffSub: T(23),
     eff: T(24),
-    effHit: T(25),
+    pct: T(24, 2.5), // the counter lands on 20%
+    effHit: T(25, 1), // HEAT lands one beat after the 20% counter, on 'The rest? Mostly heat.'
     chain: [T(26, 0), T(26, 1), T(26, 2), T(26, 3), T(27, 0)], // FUEL → BANG → SPIN → GEARS → WHEELS
     driveOff: T(27, 1),
     end: T(28),
   };
   ev.recapWords = []; // SUCK SQUEEZE BANG BLOW, one per beat, twice
   for (let b = 14; b < 16; b++) for (let k = 0; k < 4; k++) ev.recapWords.push({ t: T(b, k), k });
-  ev.hookPops = []; // the engine bay flickers with explosions on 8ths while the hook reads
-  for (let i = 0; i < 8; i++) ev.hookPops.push(T(1) + i * BEAT / 2);
+  ev.hookPops = []; // the engine bay flickers with explosions on 8ths from the first downbeat
+  for (let i = 1; i < 16; i++) ev.hookPops.push(T(0) + i * BEAT / 2);
+  ev.dryCut = T(4, 3.5); // an 8th of held breath before the cut into the cylinder
+  ev.clutch = T(19, 3.75); // the engine drops out for a 16th before the gear change
 
   // ---------- single-cylinder kinematics: the 720° four-stroke cycle angle phi(t) ----------
   // 0-180 intake (TDC→BDC), 180-360 compression, 360-540 power, 540-720 exhaust.
@@ -187,6 +190,32 @@
   // label pops play a rising arpeggio (the x-ray callouts, the engine parts, the outro chain)
   const LABEL_NOTES = [m('D5'), m('F5'), m('A5'), m('D6'), m('F6')];
 
+  // ---------- the narrator: every line has a start and a hard end (before the next hit) ----------
+  // make-vo.sh synthesizes each line to assets/vo/<id>.wav; song.js places them here and ducks the music.
+  const vo = [
+    { id: 'hook', at: 0.62, end: 4.45, text: 'Your engine can set off six thousand explosions... every minute.' },
+    { id: 'xray', at: T(2, 0.2), end: T(3) - 0.05, text: 'So how does a car actually move?' },
+    { id: 'dive', at: T(4, 0.2), end: T(4, 3.5) - 0.03, text: "Let's look inside the engine." },
+    { id: 'parts', at: T(5, 0.3), end: T(6) - 0.08, text: 'Every cylinder runs four steps.' },
+    { id: 'intake', at: T(6, 0.25), end: T(8) - 0.08, text: 'Suck. The piston drops, pulling in air and fuel.' },
+    { id: 'compress', at: T(8, 0.25), end: ev.breath - 0.05, text: 'Squeeze. It rises, crushing the mix about ten times smaller.' },
+    { id: 'power', at: T(10, 0.6), end: T(12) - 0.08, text: 'Bang! A spark of up to forty thousand volts ignites it.' },
+    { id: 'exhaust', at: T(12, 0.25), end: T(14) - 0.08, text: 'Blow. The piston pushes the burnt gas out the exhaust.' },
+    ...['Suck.', 'Squeeze.', 'Bang!', 'Blow.'].map((w, k) => ({ id: `r${k}`, at: T(14, k) + 0.03, end: T(14, k + 1) + 0.16, text: w, word: true })),
+    { id: 'repeat', at: T(15, 0.1), end: T(16) - 0.08, text: 'Thousands of times a minute.' },
+    { id: 'cyl', at: T(16, 0.3), end: T(18) - 0.08, text: 'Four cylinders take turns firing, spinning the crankshaft.' },
+    { id: 'speed', at: T(18, 0.2), end: ev.speedFact - 0.05, text: 'Rev it to three thousand RPM.' },
+    { id: 'fact', at: ev.speedFact + 0.04, end: T(19, 3.75) - 0.03, text: "That's a hundred explosions a second." },
+    { id: 'gears', at: T(20, 0.3), end: T(22) - 0.08, text: 'Gears trade force for speed: low to launch, high to cruise.' },
+    { id: 'diff', at: T(22, 0.1), end: T(24) + 0.02, text: 'Turning? Outer wheels go farther, so the differential lets them spin faster.' },
+    { id: 'eff', at: T(24, 0.1), end: ev.pct - 0.04, text: 'How much fuel moves you?' },
+    { id: 'pct', at: ev.pct + 0.05, end: ev.effHit - 0.04, text: 'About twenty percent.' },
+    { id: 'heat', at: ev.effHit + 0.12, end: T(26) - 0.06, text: 'The rest? Mostly heat.' },
+    ...['Fuel.', 'Bang!', 'Spin.', 'Gears.', 'Wheels.'].map((w, k) => ({ id: `c${k}`, at: ev.chain[k] + 0.03, end: ev.chain[k] + BEAT + 0.16, text: w, word: true })),
+    { id: 'gas', at: ev.driveOff - 0.02, end: ev.end - 0.05, text: 'Every time you hit the gas.' },
+    { id: 'outro', at: ev.end + 0.35, end: DURATION - 1.3, text: 'Follow for more amazing facts.' },
+  ];
+
   // ---------- named moments: `render.js stills @bang`; sync 'av' = verify measures sound AND picture ----------
   const markers = {
     hook: { t: ev.hook, sync: 'av' },
@@ -217,7 +246,7 @@
   const SCORE = {
     FPS, FORMAT, W, H, SAFE, STYLE, DURATION, clock, T, BEAT, S, m, chords, chordAt, ev, markers,
     phi1, sparks1, phi4, omega4, rpm4, firings, CYL_NOTE, RATIO, gearAt, gearState, rpmGear, rpmDrive,
-    HOOK, plucks, LABEL_NOTES,
+    HOOK, plucks, LABEL_NOTES, vo,
   };
   if (node) module.exports = SCORE; else globalThis.SCORE = SCORE;
 })();

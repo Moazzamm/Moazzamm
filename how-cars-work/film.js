@@ -126,7 +126,7 @@
   // ---------- camera: shakes and flashes on the hits ----------
   const SHAKES = [[ev.hook, 16], [ev.hookNum, 9], [ev.hookWord, 10], [ev.cut, 14], [ev.bang, 36], [ev.recapBangs[0], 12], [ev.recapBangs[1], 12],
     [ev.cyl, 10], [ev.gears, 18], [ev.diff, 8], [ev.effHit, 16], [ev.end, 12]];
-  const FLASHES = [[ev.hook, 0.28, [200, 230, 255]], [ev.cut, 0.3, [220, 240, 255]], [ev.bang, 0.45, [255, 200, 140]], [ev.cyl, 0.22, [220, 240, 255]],
+  const FLASHES = [[ev.hook, 0.28, [200, 230, 255]], [ev.cut, 0.3, [220, 240, 255]], [ev.bang, 0.16, [255, 200, 140]], [ev.cyl, 0.22, [220, 240, 255]],
     [ev.gears, 0.25, [220, 240, 255]], [ev.diff, 0.18, [220, 240, 255]], [ev.effHit, 0.25, [255, 150, 90]], [T(26), 0.2, [220, 240, 255]], [ev.end, 0.25, [220, 240, 255]]];
   function shake(t) {
     let dx = 0, dy = 0;
@@ -546,6 +546,12 @@
   const ENGINE_PT = carPt(CAR, 309, -150);
 
   function sceneHookXray(ctx, t) {
+    const zc = 1 + 0.04 * E.inOutQuad(prog(t, ev.hook, ev.dive - ev.hook));
+    ctx.save(); ctx.translate(540, 1000); ctx.scale(zc, zc); ctx.translate(-540, -1000);
+    sceneHookXrayInner(ctx, t);
+    ctx.restore();
+  }
+  function sceneHookXrayInner(ctx, t) {
     const inXray = t >= ev.xray;
     background(ctx, t, { gy: 1050, ga: inXray ? 0.25 : 0.18 });
     // the car rolls in from the right and stops on the downbeat
@@ -566,7 +572,8 @@
     // the engine bay flickers with the hook's explosions
     let firing = 0;
     for (const p of ev.hookPops) if (t >= p) firing = Math.max(firing, Math.exp(-(t - p) * 14));
-    const o = { ...CAR, x: carX, wheelAng: (carX - CAR.x) / (WR * CAR.s), lights };
+    const idle = t >= ev.hook ? Math.sin(t * TAU * 13) * 1.3 + U.noise1(t * 24, 3) * 1.2 : 0; // a running engine rocks the body
+    const o = { ...CAR, x: carX, y: CAR.y + idle, wheelAng: (carX - CAR.x) / (WR * CAR.s), lights };
     // x-ray: the scanner sweeps, then callouts
     const xs0 = carPt(CAR, -520, 0)[0], xs1 = carPt(CAR, 520, 0)[0];
     const scanP = prog(t, ev.scan[0], ev.scan[1] - ev.scan[0]);
@@ -680,6 +687,16 @@
     const gp = { piston: t >= P[0] && t < ev.strokes[0], valves: t >= P[1] && t < ev.strokes[0], plug: t >= P[2] && t < ev.strokes[0] };
     drawCylinder(ctx, { phi, t, ts, blur, glowParts: gp, fireBoost: 1 });
     ctx.restore();
+    // the blast: a white-hot core and a shockwave ring from the chamber
+    if (sp != null && ts < 0.7) {
+      const big = sp === ev.bang ? 1 : 0.55, cx = ENG.x, cy = ENG.y + 70 * ENG.s;
+      glow(ctx, cx, cy, 650 * big, [255, 214, 150], 0.95 * big * Math.exp(-ts * 7));
+      const p = E.outExpo(clamp(ts / 0.6, 0, 1));
+      ctx.save(); ctx.globalCompositeOperation = 'lighter';
+      ctx.strokeStyle = rgba([255, 170, 80], 0.7 * (1 - p) * big); ctx.lineWidth = 30 * (1 - p) + 2;
+      ctx.beginPath(); ctx.arc(cx, cy, 90 + 1100 * p * big, 0, TAU); ctx.stroke();
+      ctx.restore();
+    }
     // darkness falls during the squeeze, the held breath is nearly black, then the blast lights everything
     if (tension > 0) { ctx.fillStyle = `rgba(0,0,0,${0.35 * E.inQuad(tension) + (t >= ev.breath ? 0.25 : 0)})`; ctx.fillRect(0, 0, W, H); }
     // ---- callouts on the parts (bar 5) ----
@@ -716,7 +733,7 @@
         const i = strokeIdx, t1 = i < 3 ? ev.strokes[i + 1] - 0.15 : ev.recap - 0.15;
         wordsIn(ctx, t, ev.strokeSubs[i], t1, STROKES[i].sub, 1386, { size: 44, hl: STROKES[i].hl });
       } else {
-        wordsIn(ctx, t, ev.recap + 0.1, T(16) - 0.1, 'Suck. Squeeze. Bang. Blow. Thousands of times a minute.', 1386, { size: 44, hl: { Bang: C.orange } });
+        wordsIn(ctx, t, T(15, 0.1), T(16) - 0.1, 'Thousands of times a minute.', 1386, { size: 54, fam: F.black, hl: { Thousands: C.orange } });
       }
     }
   }
@@ -916,7 +933,7 @@
     const hot = t >= ev.effHit ? 1 : 0;
     background(ctx, t, { gy: 920, ga: 0.18, warm: hot * (0.6 + 0.2 * Math.sin(t * 9)) });
     const [sx, sy] = shake(t);
-    const count = lerp(100, 20, E.inOutCubic(prog(t, T(24, 1), T(24, 3) - T(24, 1))));
+    const count = lerp(100, 20, E.inOutCubic(prog(t, T(24, 1), ev.pct - T(24, 1))));
     const bx = 250 + sx, by0 = 620 + sy, bh = 700, bw = 190;
     const motionH = bh * 0.2, lostH = bh * (count - 20) / 100;
     ctx.save();
@@ -954,9 +971,9 @@
     const e = env(t, T(24, 1), ev.end);
     const n = Math.round(count);
     text(ctx, `${n}%`, 700, 1000, { size: 190, color: n <= 20 ? C.cyan : C.white, alpha: e.a, glow: n <= 20 ? 30 : 0, glowColor: 'rgba(62,197,255,0.8)' });
-    wordsIn(ctx, t, T(24, 3), ev.end, 'reaches the wheels', 1070, { size: 42, fam: F.bold, x: 700, maxW: 520 });
+    wordsIn(ctx, t, ev.pct, ev.end, 'reaches the wheels', 1070, { size: 42, fam: F.bold, x: 700, maxW: 520 });
     // labels on the bar
-    const lA = env(t, T(24, 3), ev.end);
+    const lA = env(t, ev.pct, ev.end);
     text(ctx, 'MOTION', bx, by0 + bh - motionH / 2 + 12, { fam: F.mono, size: 32, color: '#03111F', alpha: lA.a, ls: 3 });
     if (t >= ev.effHit) {
       const k = stampK(t, ev.effHit);
@@ -976,8 +993,8 @@
   function sceneOutro(ctx, t) {
     background(ctx, t, { gy: 1050, ga: 0.24 });
     const [sx, sy] = shake(t);
-    const go = prog(t, ev.driveOff, ev.end - ev.driveOff);
-    const carX = CAR.x + 1700 * E.inCubic(go);
+    const go = prog(t, ev.driveOff, ev.end - ev.driveOff - 0.08);
+    const carX = CAR.x - 30 * E.outQuad(prog(t, ev.driveOff - 0.25, 0.25)) * (1 - go) + 1900 * E.inQuart(go);
     const c = ev.chain;
     const lit = (i) => (t >= c[i] ? 0.45 + 0.55 * Math.exp(-(t - c[i]) * 4) : 0);
     const hl = { tank: lit(0), engine: lit(1), shaft: lit(2), spin: t >= c[2] ? 3 : 0.8, gearbox: lit(3), wheels: lit(4) };

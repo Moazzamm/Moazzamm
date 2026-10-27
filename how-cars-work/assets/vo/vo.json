@@ -1,0 +1,257 @@
+{
+ "voice": "am_michael",
+ "lines": [
+  {
+   "id": "hook",
+   "at": 0.62,
+   "dur": 3.685,
+   "window": 3.83,
+   "speed": 1.06,
+   "fits": true,
+   "words": 10
+  },
+  {
+   "id": "xray",
+   "at": 4.6,
+   "dur": 1.765,
+   "window": 1.85,
+   "speed": 1.06,
+   "fits": true,
+   "words": 7
+  },
+  {
+   "id": "dive",
+   "at": 8.6,
+   "dur": 1.575,
+   "window": 1.62,
+   "speed": 1.06,
+   "fits": true,
+   "words": 5
+  },
+  {
+   "id": "parts",
+   "at": 10.65,
+   "dur": 1.755,
+   "window": 1.77,
+   "speed": 1.153,
+   "fits": true,
+   "words": 5
+  },
+  {
+   "id": "intake",
+   "at": 12.625,
+   "dur": 2.745,
+   "window": 3.795,
+   "speed": 1.06,
+   "fits": true,
+   "words": 9
+  },
+  {
+   "id": "compress",
+   "at": 16.625,
+   "dur": 3.565,
+   "window": 3.575,
+   "speed": 1.154,
+   "fits": true,
+   "words": 10
+  },
+  {
+   "id": "power",
+   "at": 20.8,
+   "dur": 3.295,
+   "window": 3.62,
+   "speed": 1.06,
+   "fits": true,
+   "words": 11
+  },
+  {
+   "id": "exhaust",
+   "at": 24.625,
+   "dur": 3.165,
+   "window": 3.795,
+   "speed": 1.06,
+   "fits": true,
+   "words": 10
+  },
+  {
+   "id": "r0",
+   "at": 28.53,
+   "dur": 0.545,
+   "window": 0.63,
+   "speed": 1.124,
+   "fits": true,
+   "words": 1
+  },
+  {
+   "id": "r1",
+   "at": 29.03,
+   "dur": 0.625,
+   "window": 0.63,
+   "speed": 1.228,
+   "fits": true,
+   "words": 1
+  },
+  {
+   "id": "r2",
+   "at": 29.53,
+   "dur": 0.525,
+   "window": 0.63,
+   "speed": 1.124,
+   "fits": true,
+   "words": 1
+  },
+  {
+   "id": "r3",
+   "at": 30.03,
+   "dur": 0.545,
+   "window": 0.63,
+   "speed": 1.124,
+   "fits": true,
+   "words": 1
+  },
+  {
+   "id": "repeat",
+   "at": 30.55,
+   "dur": 1.385,
+   "window": 1.87,
+   "speed": 1.06,
+   "fits": true,
+   "words": 5
+  },
+  {
+   "id": "cyl",
+   "at": 32.65,
+   "dur": 3.185,
+   "window": 3.77,
+   "speed": 1.06,
+   "fits": true,
+   "words": 8
+  },
+  {
+   "id": "speed",
+   "at": 36.6,
+   "dur": 1.835,
+   "window": 1.85,
+   "speed": 1.125,
+   "fits": true,
+   "words": 6
+  },
+  {
+   "id": "fact",
+   "at": 38.54,
+   "dur": 1.755,
+   "window": 1.805,
+   "speed": 1.135,
+   "fits": true,
+   "words": 6
+  },
+  {
+   "id": "gears",
+   "at": 40.65,
+   "dur": 3.705,
+   "window": 3.77,
+   "speed": 1.06,
+   "fits": true,
+   "words": 11
+  },
+  {
+   "id": "diff",
+   "at": 44.55,
+   "dur": 3.855,
+   "window": 3.97,
+   "speed": 1.219,
+   "fits": true,
+   "words": 12
+  },
+  {
+   "id": "eff",
+   "at": 48.55,
+   "dur": 1.155,
+   "window": 1.16,
+   "speed": 1.244,
+   "fits": true,
+   "words": 5
+  },
+  {
+   "id": "pct",
+   "at": 49.8,
+   "dur": 1.125,
+   "window": 1.16,
+   "speed": 1.086,
+   "fits": true,
+   "words": 3
+  },
+  {
+   "id": "heat",
+   "at": 51.12,
+   "dur": 1.225,
+   "window": 1.32,
+   "speed": 1.188,
+   "fits": true,
+   "words": 4
+  },
+  {
+   "id": "c0",
+   "at": 52.53,
+   "dur": 0.585,
+   "window": 0.63,
+   "speed": 1.124,
+   "fits": true,
+   "words": 1
+  },
+  {
+   "id": "c1",
+   "at": 53.03,
+   "dur": 0.525,
+   "window": 0.63,
+   "speed": 1.124,
+   "fits": true,
+   "words": 1
+  },
+  {
+   "id": "c2",
+   "at": 53.53,
+   "dur": 0.595,
+   "window": 0.63,
+   "speed": 1.124,
+   "fits": true,
+   "words": 1
+  },
+  {
+   "id": "c3",
+   "at": 54.03,
+   "dur": 0.585,
+   "window": 0.63,
+   "speed": 1.124,
+   "fits": true,
+   "words": 1
+  },
+  {
+   "id": "c4",
+   "at": 54.53,
+   "dur": 0.625,
+   "window": 0.63,
+   "speed": 1.124,
+   "fits": true,
+   "words": 1
+  },
+  {
+   "id": "gas",
+   "at": 54.98,
+   "dur": 1.465,
+   "window": 1.47,
+   "speed": 1.122,
+   "fits": true,
+   "words": 6
+  },
+  {
+   "id": "outro",
+   "at": 56.85,
+   "dur": 1.845,
+   "window": 1.85,
+   "speed": 1.06,
+   "fits": true,
+   "words": 5
+  }
+ ]
+}
