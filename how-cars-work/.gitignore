@@ -1,0 +1,3 @@
+# render scratch (frames, stems, stills); only the final reel is kept
+out/*
+!out/how-cars-work.mp4
