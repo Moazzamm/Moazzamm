@@ -145,8 +145,8 @@ for e in events:
         tc = t
         while tc < t + dur:
             n = int(0.05 * SR); ttt = np.arange(n) / SR
-            clk = bp(noise(n), 1800, 6500) * np.exp(-ttt / 0.006) + lp(noise(n), 400) * np.exp(-ttt / 0.012) * 0.8
-            add(sfx, clk, tc, 0.10 * (0.7 + 0.6 * rng.random()))
+            clk = bp(noise(n), 1200, 4200) * np.exp(-ttt / 0.005) * (1 - np.exp(-ttt / 0.0015)) + lp(noise(n), 400) * np.exp(-ttt / 0.012) * 0.8
+            add(sfx, clk, tc, 0.055 * (0.7 + 0.6 * rng.random()))
             tc += 0.055 + rng.random() * 0.07
     elif kind == "stamp":
         n = int(0.5 * SR); ttt = np.arange(n) / SR
