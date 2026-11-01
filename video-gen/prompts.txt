@@ -1,0 +1,5 @@
+# One prompt per line. Lines starting with # are ignored.
+# Run:  python make_video.py --batch prompts.txt
+A golden retriever surfing a wave at sunset, slow motion, spray glittering in the light
+Timelapse of a busy Tokyo crossing at night, neon reflections on wet pavement
+Macro shot of coffee being poured into a glass cup, steam rising, warm morning light
