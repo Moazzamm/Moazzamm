@@ -1,0 +1,297 @@
+{
+ "hook": {
+  "dur": 39.848729,
+  "sents": [
+   "April thirtieth, 1943.",
+   "Just after dawn, off the coast of southern Spain, a fisherman spots something floating in the swell.",
+   "A body.",
+   "A British officer, in uniform, his life jacket still on.",
+   "And chained to his belt\u2026 a black leather briefcase.",
+   "Inside that briefcase were the secret plans for the Allied invasion of Europe.",
+   "Or so the Germans would believe.",
+   "Because this man had never fought in the war.",
+   "He had never been an officer.",
+   "He had never even existed.",
+   "He was about to become one of the most important soldiers of the Second World War\u2026 and he was already dead before his mission began.",
+   "This is the story of Operation Mincemeat.",
+   "The day a dead man fooled Hitler."
+  ],
+  "starts": [
+   0.0,
+   2.502,
+   8.415,
+   9.327,
+   10.374,
+   14.578,
+   20.621,
+   22.939,
+   24.009,
+   25.46,
+   28.951,
+   35.356,
+   37.828
+  ]
+ },
+ "problem": {
+  "dur": 31.822667,
+  "sents": [
+   "By early 1943, the Allies had won North Africa.",
+   "And the next target was obvious.",
+   "Sicily.",
+   "The stepping stone to Italy, sitting less than a hundred miles from Tunisia.",
+   "Winston Churchill put it bluntly: anybody but a damned fool would know it's Sicily.",
+   "And that was the problem.",
+   "Well over a hundred thousand men were about to land on an island the enemy already expected them to attack.",
+   "If the Germans reinforced Sicily, the beaches would become a slaughterhouse.",
+   "The Allies didn't just need to hide the truth.",
+   "They needed Hitler to believe a lie."
+  ],
+  "starts": [
+   0.0,
+   3.903,
+   5.787,
+   6.728,
+   10.562,
+   14.232,
+   15.597,
+   22.741,
+   26.928,
+   29.406
+  ]
+ },
+ "idea": {
+  "dur": 32.887938,
+  "sents": [
+   "In London, inside a secret intelligence group known as the Twenty Committee, two officers took up an idea so strange it sounded like fiction.",
+   "In a way, it was.",
+   "It traced back to a memo often credited to a naval intelligence officer named Ian Fleming, the future creator of James Bond.",
+   "The plan: take a dead body.",
+   "Dress it as an officer.",
+   "Give it secret documents.",
+   "And let it wash ashore where the enemy would find it.",
+   "Flight Lieutenant Charles Cholmondeley and Lieutenant Commander Ewen Montagu set out to make it real.",
+   "They called it\u2026 Operation Mincemeat."
+  ],
+  "starts": [
+   0.0,
+   8.391,
+   9.992,
+   17.325,
+   18.209,
+   20.873,
+   22.466,
+   25.093,
+   31.179
+  ]
+ },
+ "body": {
+  "dur": 28.619229,
+  "sents": [
+   "First, they needed a corpse.",
+   "One that could pass for a man who had drowned at sea after a plane crash.",
+   "They consulted Britain's most famous pathologist, Sir Bernard Spilsbury.",
+   "And in January 1943, they found him.",
+   "Glyndwr Michael.",
+   "A homeless Welsh labourer, thirty-four years old, who had died in London after swallowing rat poison.",
+   "No family came forward to claim him.",
+   "And so, in death, Glyndwr Michael was about to be given a new name\u2026 and a war to fight."
+  ],
+  "starts": [
+   0.0,
+   2.631,
+   6.557,
+   11.062,
+   13.233,
+   14.2,
+   21.031,
+   23.367
+  ]
+ },
+ "legend": {
+  "dur": 32.245583,
+  "sents": [
+   "He became Captain, acting Major, William Martin of the Royal Marines.",
+   "And then the team did something extraordinary.",
+   "They built him a life.",
+   "A naval identity card.",
+   "Ticket stubs from a London theatre.",
+   "A bill for an engagement ring.",
+   "A stern letter from his bank manager about an overdraft.",
+   "And love letters, from a fianc\u00e9e named Pam, with a photograph of a smiling young woman who was really an MI5 clerk.",
+   "The team called it wallet litter.",
+   "Every scrap of paper was a tiny brick in a lie that had to survive the eyes of German intelligence."
+  ],
+  "starts": [
+   0.0,
+   4.915,
+   7.47,
+   8.781,
+   10.499,
+   12.608,
+   14.139,
+   17.46,
+   24.512,
+   26.499
+  ]
+ },
+ "letter": {
+  "dur": 29.689271,
+  "sents": [
+   "But the real weapon was in the briefcase.",
+   "A personal letter from Lieutenant General Sir Archibald Nye, one of the most senior officers in the British Army, to General Harold Alexander in Tunisia.",
+   "Casual.",
+   "Friendly.",
+   "Written as one old soldier to another.",
+   "And buried inside it were hints that the real invasion would strike Greece and Sardinia.",
+   "Sicily, the letter implied, was only a cover story.",
+   "The lie was hidden inside a lie."
+  ],
+  "starts": [
+   0.0,
+   2.819,
+   13.333,
+   14.494,
+   17.073,
+   18.678,
+   24.537,
+   26.473
+  ]
+ },
+ "seraph": {
+  "dur": 33.245646,
+  "sents": [
+   "On April nineteenth, 1943, the body was packed in dry ice inside a steel canister labelled optical instruments, and loaded aboard the submarine H.M.S.",
+   "Seraph in Scotland.",
+   "The crew were told it held a secret weather device.",
+   "Only the officers knew the truth.",
+   "Eleven days later, in the darkness before dawn, the Seraph surfaced quietly off the coast of Huelva, in Spain.",
+   "Lieutenant Bill Jewell read Psalm thirty-nine over the body.",
+   "Then they gently pushed Major William Martin into the sea\u2026 and let the tide carry him toward the shore."
+  ],
+  "starts": [
+   0.0,
+   8.261,
+   11.968,
+   14.854,
+   16.903,
+   23.942,
+   27.318
+  ]
+ },
+ "spain": {
+  "dur": 35.033563,
+  "sents": [
+   "Why Spain?",
+   "Officially neutral, but crawling with German agents.",
+   "And in Huelva there was one in particular.",
+   "An Abwehr operative named Adolf Clauss, who the British knew would want to see anything that washed up.",
+   "A fisherman found the body.",
+   "A Spanish autopsy concluded: drowned at sea.",
+   "Then the British demanded the briefcase back.",
+   "Loudly.",
+   "Anxiously.",
+   "Exactly as they would if it really mattered.",
+   "When the documents finally returned, the envelopes looked untouched.",
+   "But under close inspection, the letters told the truth.",
+   "They had been opened, dried, and refolded.",
+   "The Germans had read every word."
+  ],
+  "starts": [
+   0.0,
+   1.435,
+   4.606,
+   6.761,
+   12.194,
+   13.666,
+   16.821,
+   20.07,
+   20.47,
+   23.624,
+   25.341,
+   27.299,
+   30.343,
+   33.202
+  ]
+ },
+ "swallowed": {
+  "dur": 36.060771,
+  "sents": [
+   "A message was sent to Winston Churchill, who was in Washington at the time.",
+   "It read: Mincemeat swallowed whole.",
+   "Through codebreakers at Bletchley Park, the British watched the lie spread through the German high command.",
+   "All the way to Hitler himself.",
+   "And Hitler believed it.",
+   "Even when Mussolini insisted that Sicily was the target, Hitler's mind was made up.",
+   "A panzer division was rushed from France to Greece.",
+   "Field Marshal Erwin Rommel was sent to Athens.",
+   "Defences were reinforced in Sardinia and Corsica.",
+   "Germany was preparing, at enormous cost, for an invasion that would never come."
+  ],
+  "starts": [
+   0.0,
+   5.186,
+   7.422,
+   13.233,
+   15.265,
+   16.629,
+   21.73,
+   24.731,
+   27.554,
+   30.982
+  ]
+ },
+ "husky": {
+  "dur": 33.2555,
+  "sents": [
+   "On July tenth, 1943, the real invasion began.",
+   "More than one hundred and fifty thousand Allied troops came ashore in Sicily in the opening days.",
+   "The largest amphibious assault the world had yet seen.",
+   "Commanders had braced for terrible losses.",
+   "Instead, casualties in the landings were far lower than feared.",
+   "Even two weeks later, some German commanders still believed the main blow was coming elsewhere.",
+   "In thirty-eight days, Sicily fell.",
+   "Mussolini was overthrown.",
+   "And the door to Europe was open."
+  ],
+  "starts": [
+   0.0,
+   3.276,
+   11.039,
+   14.401,
+   16.95,
+   21.447,
+   27.884,
+   29.087,
+   31.105
+  ]
+ },
+ "reveal": {
+  "dur": 38.415792,
+  "sents": [
+   "And the man who made it possible?",
+   "He still lies in a cemetery in Huelva, Spain, beneath a headstone bearing the name William Martin.",
+   "For more than fifty years, his true identity was a secret.",
+   "Then, in 1998, a new line was added to his grave.",
+   "Glyndwr Michael, served as Major William Martin.",
+   "A forgotten man, who died alone and unknown in London\u2026 became a soldier who helped save thousands of lives.",
+   "He never fired a shot.",
+   "He never wore that uniform while he lived.",
+   "But in death, Glyndwr Michael fooled Hitler, and helped change the course of the Second World War.",
+   "They called him the man who never was.",
+   "History says otherwise."
+  ],
+  "starts": [
+   0.0,
+   2.054,
+   7.995,
+   11.245,
+   15.185,
+   18.418,
+   24.708,
+   26.097,
+   28.566,
+   34.2,
+   37.224
+  ]
+ }
+}

@@ -1,0 +1,16 @@
+# large render outputs / intermediates
+*.mp4
+*.wav
+*.pcm
+*.mp3
+*/segs/
+*/raw/
+*/preview/
+*/audio/
+*/data/
+*/fonts/
+*.log
+__pycache__/
+render_progress.txt
+concat.txt
+dl*.txt
