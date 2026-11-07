@@ -58,11 +58,30 @@ for sc in narr["scenes"]:
     sents = [(i, x) for i, p in enumerate(paras) for x in split_sentences(p)]
     lens = [len(x) for _, x in sents]
     total = sum(lens)
+    raw_sil = silences(wav)
+    sil = [((a + b) / 2, b - a) for a, b in raw_sil]
+    # Speech segments = audio minus pauses. Characters map to *speaking* time, not
+    # wall-clock time, so long pauses no longer drag later boundaries out of place.
+    segs, t0 = [], 0.0
+    for a, b in raw_sil:
+        if a > t0:
+            segs.append((t0, a))
+        t0 = b
+    if t0 < dur:
+        segs.append((t0, dur))
+    speech = sum(b - a for a, b in segs)
+
+    def speech_to_time(x):
+        for a, b in segs:
+            if x <= b - a:
+                return a + x
+            x -= b - a
+        return dur
+
     expected, acc = [], 0
     for L in lens[:-1]:
         acc += L
-        expected.append(acc / total * dur)
-    sil = [((a + b) / 2, b - a) for a, b in silences(wav)]
+        expected.append(speech_to_time(acc / total * speech))
     # monotone DP: snap each sentence boundary to a silence, or keep its estimate
     INF = 1e9
     n, m = len(expected), len(sil)
@@ -81,7 +100,7 @@ for sc in narr["scenes"]:
             for k in range(j, m):
                 t, d = sil[k]
                 dev = abs(t - expected[i])
-                if dev > 5:
+                if dev > 3:
                     continue
                 c = best[i][j] + dev - 0.8 * d
                 if c < best[i + 1][k + 1]:
@@ -97,6 +116,15 @@ for sc in narr["scenes"]:
     for i in range(1, n):
         picks[i] = max(picks[i], picks[i - 1] + 0.4)
     bounds = [0.0] + picks + [dur]
+    # Prefer sentence-level alignment from tools/align_llm.py when it matches this script.
+    al = ROOT / f"tools/.tts/align_{sc['id']}.json"
+    if al.exists():
+        a_starts = json.loads(al.read_text())
+        if len(a_starts) == len(sents) and all(0 <= x < dur for x in a_starts):
+            bounds = a_starts + [dur]
+            print(f"  {sc['id']}: using sentence alignment")
+        else:
+            print(f"  {sc['id']}: alignment file stale, using pause-based estimate")
     cues, para_t = [], [None] * len(paras)
     for idx, (pi, text) in enumerate(sents):
         a, b = bounds[idx], bounds[idx + 1]

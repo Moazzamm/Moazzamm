@@ -2,7 +2,7 @@ import React from 'react';
 import {AbsoluteFill, Img, staticFile, useCurrentFrame} from 'remotion';
 import {C, T} from '../theme';
 import {ramp, lerp, window} from '../lib/anim';
-import {paraFrame, type SceneTiming, FPS} from '../lib/timing';
+import {paraFrame, cueFrame, type SceneTiming} from '../lib/timing';
 import {ChapterTag, Credit, Label, Stat} from '../components/Text';
 
 // Canopy profile (schematic). Heights from Timberlake & Bayliss 2016: canopy trees 40–50 m.
@@ -17,11 +17,12 @@ export const ForestView: React.FC<{s: SceneTiming}> = ({s}) => {
   const p = (i: number, o = 0) => paraFrame(s, i, o);
 
   const push = ramp(f, 0, p(1) + 20); // slow push-in from satellite scale
-  const sat = window(f, 0, p(1, 6), 18);
-  const canopy = window(f, p(1, 5), p(2) + 10, 18);
+  const sat = window(f, 0, cueFrame(s, 'They cannot show'), 18);
+  const canopy = window(f, cueFrame(s, 'They cannot show', -0.5), p(2) + 10, 18);
   const timeline = window(f, p(2), p(3) + 8, 16);
   const people = window(f, p(3), p(4) + 8, 16);
-  const coverage = ramp(f, p(4), 18);
+  const coverage = window(f, p(4), p(5) + 10, 18);
+  const bridge = ramp(f, p(5), 18);
 
   return (
     <AbsoluteFill style={{backgroundColor: C.navy}}>
@@ -57,7 +58,7 @@ export const ForestView: React.FC<{s: SceneTiming}> = ({s}) => {
         <svg width={854} height={480} style={{position: 'absolute'}}>
           <rect y={GROUND} width={854} height={40} fill="#2C2A22" />
           {TREES.map(([x, h], i) => {
-            const top = GROUND - h * PX_PER_M * ramp(f, p(1, 5) + i * 3, 20);
+            const top = GROUND - h * PX_PER_M * ramp(f, cueFrame(s, 'They cannot show', -0.5) + i * 3, 20);
             return (
               <g key={i}>
                 <line x1={x} y1={GROUND} x2={x} y2={top + 14} stroke="#6B5A45" strokeWidth={3} />
@@ -75,13 +76,13 @@ export const ForestView: React.FC<{s: SceneTiming}> = ({s}) => {
           ))}
           <line x1={0} x2={620} y1={GROUND - 45 * PX_PER_M} y2={GROUND - 45 * PX_PER_M} stroke={C.cyan} strokeDasharray="3 4" opacity={0.6} />
         </svg>
-        <Label x={680} y={GROUND - 48 * PX_PER_M} at={p(1, 7)} width={160} size={11.5}>
+        <Label x={680} y={GROUND - 48 * PX_PER_M} at={cueFrame(s, 'They cannot show', 1)} width={160} size={11.5}>
           Canopy trees reach 40–50 m
         </Label>
-        <Label x={680} y={GROUND - 22 * PX_PER_M} at={p(1, 8)} width={160} size={11.5} color={C.amber}>
+        <Label x={680} y={GROUND - 22 * PX_PER_M} at={cueFrame(s, 'They cannot show', 2)} width={160} size={11.5} color={C.amber}>
           What lives below is invisible from orbit
         </Label>
-        <Label x={28} y={70} at={p(1, 6)} size={10} color={C.amber}>
+        <Label x={28} y={70} at={cueFrame(s, 'They cannot show')} size={10.5} color={C.amber}>
           SCHEMATIC PROFILE · heights to scale
         </Label>
       </AbsoluteFill>
@@ -99,17 +100,17 @@ export const ForestView: React.FC<{s: SceneTiming}> = ({s}) => {
           <br />
           <span style={{color: C.paperDim}}>first scientific visit</span>
         </Label>
-        <Label x={380} y={124} at={p(2, 3.5)} align="center" size={11.5} width={240}>
+        <Label x={380} y={124} at={cueFrame(s, 'then a larger')} align="center" size={11.5} width={240}>
           Oct 2008
           <br />
           <span style={{color: C.paperDim}}>Kew-led expedition with Mozambican, Malawian &amp; international partners</span>
         </Label>
-        <Label x={700} y={124} at={p(2, 20)} align="center" size={11.5} width={190}>
+        <Label x={700} y={124} at={cueFrame(s, 'By 2016')} align="center" size={11.5} width={190}>
           by 2016
           <br />
           <span style={{color: C.amber}}>13 new species recorded</span>
         </Label>
-        <Stat x={60} y={200} at={p(2, 8)} value="≈ 69–79 km²" caption="of rainforest — estimates differ by method" size={26} width={300} />
+        <Stat x={60} y={200} at={cueFrame(s, 'They documented')} value="≈ 69–79 km²" caption="of rainforest — estimates differ by method" size={26} width={300} />
         <div style={{position: 'absolute', left: 420, top: 196, width: 400}}>
           {[
             ['Atheris mabuensis', 'Mabu forest viper'],
@@ -117,7 +118,7 @@ export const ForestView: React.FC<{s: SceneTiming}> = ({s}) => {
             ['Rhinolophus mabuensis', 'a horseshoe bat'],
             ['Cymothoe sp. & others', 'new butterflies'],
           ].map(([sci, com], i) => (
-            <div key={sci} style={{display: 'flex', gap: 10, borderTop: `1px solid ${C.paperFaint}`, padding: '4px 0', opacity: ramp(f, p(2, 14) + i * 22, 14)}}>
+            <div key={sci} style={{display: 'flex', gap: 10, borderTop: `1px solid ${C.paperFaint}`, padding: '4px 0', opacity: ramp(f, cueFrame(s, 'animals new to science') + i * 22, 14)}}>
               <span style={{...T.label, fontSize: 12, color: C.paper, fontStyle: 'italic', width: 175}}>{sci}</span>
               <span style={{...T.label, fontSize: 12, color: C.paperDim}}>{com}</span>
             </div>
@@ -135,7 +136,7 @@ export const ForestView: React.FC<{s: SceneTiming}> = ({s}) => {
           ['Civil war', 'families reportedly moved into the forest and sheltered there'],
           ['Colonial era', 'tea estates were worked on the lower slopes'],
         ].map(([h, b], i) => (
-          <div key={h} style={{position: 'absolute', left: 60 + i * 250, top: 150, width: 220, opacity: ramp(f, p(3, 3) + i * 40, 16)}}>
+          <div key={h} style={{position: 'absolute', left: 60 + i * 250, top: 150, width: 220, opacity: ramp(f, cueFrame(s, 'Local hunters') + i * 40, 16)}}>
             <div style={{...T.kicker, color: C.cyan}}>{h}</div>
             <div style={{...T.label, color: C.paper, fontSize: 13, marginTop: 6}}>{b}</div>
           </div>
@@ -151,20 +152,27 @@ export const ForestView: React.FC<{s: SceneTiming}> = ({s}) => {
           <circle cx={427} cy={215} r={7} fill={C.cyan} />
         </svg>
         <Label x={440} y={200} at={p(4) + 6} size={11.5}>summit</Label>
-        <Label x={630} y={180} at={p(4, 1.5)} width={200} size={12} color={C.cyan}>
+        <Label x={630} y={180} at={cueFrame(s, 'Even so', 0.5)} width={200} size={12} color={C.cyan}>
           Eastern edge &amp; summit — where most surveys worked
         </Label>
-        <Label x={225} y={180} at={p(4, 4.5)} width={200} size={12} color={C.amber} align="right">
+        <Label x={225} y={180} at={cueFrame(s, 'As of 2016')} width={200} size={12} color={C.amber} align="right">
           Drier western &amp; northern slopes — not visited by scientists as of 2016
         </Label>
-        <Label x={826} y={70} at={p(4)} align="right" size={10} color={C.amber}>
+        <Label x={826} y={70} at={p(4)} align="right" size={10.5} color={C.amber}>
           SCHEMATIC · not a survey map
         </Label>
       </AbsoluteFill>
 
+      {/* Bridge to the return: the theme, stated once */}
+      <AbsoluteFill style={{opacity: bridge}}>
+        <Label x={427} y={170} at={p(5) + 4} align="center" size={22} weight={700} width={700}>
+          Seeing a place <span style={{color: C.amber}}>≠</span> knowing what is there
+        </Label>
+      </AbsoluteFill>
+
       <ChapterTag n="04" word="Forest" place="Mount Mabu, Zambezia, Mozambique" />
-      <Credit at={0} until={p(1, 6)}>Image: NASA/METI/AIST/Japan Space Systems, U.S./Japan ASTER Science Team (public domain)</Credit>
-      <Credit at={p(1, 6)} until={p(5) + 999}>Sources: Bayliss et al. 2014, Oryx 48(2); Timberlake &amp; Bayliss 2016, Mabu management plan</Credit>
+      <Credit at={0} until={cueFrame(s, 'They cannot show')}>Image: NASA/METI/AIST/Japan Space Systems, U.S./Japan ASTER Science Team (public domain)</Credit>
+      <Credit at={cueFrame(s, 'They cannot show')} until={p(5) + 999}>Sources: Bayliss et al. 2014, Oryx 48(2); Timberlake &amp; Bayliss 2016, Mabu management plan</Credit>
     </AbsoluteFill>
   );
 };

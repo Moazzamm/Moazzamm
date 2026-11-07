@@ -1,5 +1,5 @@
 # Earth Looks Fully Explored. It Isn't.
-### Production package: Amazing Facts documentary, 480p, 7 min 22 s
+### Production package: Amazing Facts documentary, 480p, 7 min 19 s (revision 2)
 
 Research cut-off: 7 November 2026. Every changing statistic below shows the date it was checked against.
 
@@ -78,9 +78,9 @@ The candidate list was checked and **Lake Vostok was replaced with Subglacial La
 
 ---
 
-## 4. Narration, ready to record (1,065 words)
+## 4. Narration, ready to record (1,078 words)
 
-*Source of truth: `video/src/data/narration.json`. Paragraph breaks are breath points, and the edit and captions are timed to them. Target pace 150–155 wpm, which gives about 7:05 of voice.*
+*Source of truth: `video/src/data/narration.json`. Paragraph breaks are breath points, and the edit and captions are timed to them. Target pace about 152 wpm, which gives about 6:55 of voice.*
 
 **[OPEN: THE MAP]**
 Open a world map and Earth looks finished. Every coastline is drawn. Every ocean has a name. Even the floor of the Pacific has ridges and mountains on it.
@@ -145,6 +145,8 @@ But Mabu was never a lost forest. It was unknown to biologists, not to people. L
 
 Even so, most surveys have stayed near the eastern edge and the summit. As of 2016, the drier western and northern slopes had not been visited by scientists.
 
+That gap, between seeing a place and knowing it, runs through all four.
+
 **[RETURN]**
 Back to the map. Nothing on it has moved. The Pacific, Antarctica, New Mexico and Mozambique are exactly where they were.
 
@@ -165,36 +167,37 @@ Columns: **N** narration (opening words) · **Shot** · **Asset** · **Animation
 | 0:00–0:11 | "Open a world map…" | Full globe, mid-frame | Natural Earth 110m land (world-atlas) | Globe turns from the Atlantic to the Pacific and settles on the CCZ longitude (*location change*) | "PACIFIC OCEAN" fades in as it settles | Faint room tone | — |
 | 0:11–0:28 | "But most of that seafloor…" | Globe slides left; panel on the right | Same globe + stipple texture | Uniform dot texture fades over the **whole** ocean (it is global, so there is no false boundary). Then a bar fills to 28.7% (*evidence*) | LAYER · ESTIMATED / LAYER · MEASURED / **28.7%** / "not yet mapped in detail" (amber) / "Global share… not as locations" | Room tone | Seabed 2030 (20 Apr 2026); NOAA explainer |
 | 0:28–0:45 | "And the part anyone has actually seen…" | Globe dims to 18%; three squares at the same scale | Vector squares | CCZ square (220 px), then the amber 2,130 km² square (4 px) with a leader line, then a dashed Belgium square (*scale*) | "Every deep-sea camera view since 1958, combined · ≤ 2,130 km² · under 0.001%…" / "All three squares drawn to the same scale" | Room tone | Bell et al. 2025 |
-| 0:45–1:00 | "So a map can be complete…" | Crossfade to flat Equal Earth map | Natural Earth | Four amber markers appear one by one as each barrier word is spoken (*location*) | WATER · CCZ / ICE · Lake Whillans / ROCK · Lechuguilla / FOREST · Mount Mabu | Room tone | — |
-| 1:00–1:04 | (no voice) | Title card | Type only | Two lines fade in | **Earth Looks Fully Explored. / It Isn't.** (amber) | Room tone | — |
-| 1:04–1:17 | "Start in the Pacific…" | Globe zooms from 175 to 900 px radius on the CCZ | Natural Earth | Zoom in (*location/scale*) | "Clarion-Clipperton Zone · approximate centre"; "≈ 6 million km²"; "≈ 5,000 m average depth (NHM, 2023)" | Low ocean rumble fades in | NHM 2023 |
-| 1:17–1:29 | "The barrier here is the water itself…" | **THE DESCENT**: one cross-section, 0–5,500 m linear | Vector | An amber probe descends; depth and pressure counters tick (*scale/cause*) | 200 m · little sunlight / 1,000 m · no sunlight (NOAA) / Probe depth / ≈ atm (turns amber at 500) / "depth scale is linear and constant" | Rumble + designed sonar ping every 7 s | NOAA Ocean Service |
-| 1:29–1:43 | "So scientists work at the end of a cable…" | Same section | Vector | Sonar fan opens with pings travelling down. Then the ROV descends on its tether, then the box corer (*method*) | "Multibeam sonar maps depth across a swath" / "Remotely operated vehicle… drawn ×100s larger than scale" (amber) / "Box corer" | Pings | NOAA; NHM |
-| 1:43–2:01 | "By deep-sea standards…" | Photo left, numbers right | **Real photo:** *Psychropotes semperiana* in situ (CC BY 4.0) | Slow 4% push on the photo. 100-square grid fills: 90 amber outlines, 10 solid (*evidence*) | **5,578** species recorded / "≈ 9 in 10 had no formal scientific name (88–92%)" | Rumble | Rabone et al. 2023 |
-| 2:01–2:20 | "That is the gap…" | Same layout | — | Four ladder rows appear (*evidence*) | Found & photographed ✓ / Sampled ✓ / Formally described ≈10% (amber) / How they live · range: largely unknown (amber) | Rumble | NHM |
-| 2:20–2:27 | "…What happens when the barrier is solid?" | Sonar rings expand to fill the frame | Vector | **Match cut:** sonar rings become radar pulses in the next chapter | "What if the barrier is solid?" | Final ping, then decays | — |
-| 2:28–2:37 | "West Antarctica…" | **ICE**: snow surface, horizon | Vector + drifting snow | Snow streaks drift (immersion, not decoration) | 02 · ICE / Whillans Ice Stream · 84.24° S | Designed wind | Christner 2014 drill site |
-| 2:37–2:53 | "It was found from orbit…" | Same, then camera cuts into the section | Vector | Satellite footprint sweeps; a curve draws (labelled illustrative). At "radar", the view drops into the **ICE CUTAWAY** with radar pulses down through the ice (*method*) | "ICESat (2003–2009) saw the surface rise and fall… Curve is illustrative" / **SCHEMATIC · lake thickness greatly exaggerated** | Wind under | antarcticglaciers.org summary; Fricker et al. |
-| 2:53–3:06 | "In January 2013…" | Section | Vector | Drill descends; depth counter runs 0 → 801 m (*method/time*) | Borehole depth / "Clean hot-water drill · hole ≈ 0.6 m · late Jan 2013 · WISSARD" | Wind, filtered | Christner 2014 |
-| 3:06–3:27 | "At the bottom, a camera found the lake…" | Circular inset (different scale) + stats panel | Vector | Inset opens from the drill bottom (*scale change, labelled*) | "INSET · scale changed" / "≈ 2.2 m of water at the borehole" / **≈130,000 cells per mL** / **≥3,931 types** / energy sources | Wind | Christner 2014 |
-| 3:27–3:44 | "A 2022 inventory…" | South-polar globe | Natural Earth | Globe fades in; only the drill site is marked (*no invented lake dots*) | **675** / **a handful** (amber) / "Lake positions are not plotted here…" | Wind | Livingstone 2022 |
-| 3:44–3:50 | "A drill can reach a lake…" | Navy frame; amber borehole line | Vector | **Match cut:** the drill line becomes the cave survey line | — | Wind fades out | — |
-| 3:50–4:07 | "Beneath Carlsbad Caverns…" | **ROCK**: schematic historic cave | Vector | Cyan chevrons rise through the rubble (*cause: moving air*) | Entrance pit ≈ 27 m / ≈120 m dead-end passage / 1950s · wind / SCHEMATIC | Cave room tone, sparse drips | NPS |
-| 4:07–4:16 | "Cavers began digging…" | Same | Vector | Rubble clears and a passage line descends (*time/event*) | 1984 · digging / **26 May 1986 · breakthrough** (amber) | Drips | NPS |
-| 4:16–4:27 | "No satellite can map this…" | **CAVE SURVEY** method | Vector | Stations S1–S7 connect one shot at a time (*method*) | "Each shot records distance · direction · slope…" / **SCHEMATIC · the survey method, not Lechuguilla's passages** | Drips | General caving survey practice |
-| 4:27–4:40 | "Since 1984, those teams…" | Real survey map | **NPS 2019 overview map** (public domain) | Circular reveal grows outward **from the entrance** over the real surveyed passages. No passage is drawn that isn't on the NPS map (*evidence*) | **> 145 mi** / **489 m** / "2019 map itself is labelled 149 miles; NPS text says 'over 145'" (amber) / "The drawing stops where the survey stops" | Drips | NPS (updated Jul 2025) |
-| 4:37–4:40 | "…dissolved from below by sulfuric acid…" | Photo right, text left | **Real photo:** Pearlsian Gulf (Dave Bunnell, CC BY-SA 2.5) | Slow vertical drift | "Dissolved from below by sulfuric acid" / gypsum chandeliers ≈6 m | Drips | NPS |
-| 4:40–4:55 | "It also holds microbes…" | Type on navy | — | Stats rise in | **> 4 million years** / **14** (amber) antibiotics, incl. daptomycin / "Antibiotic resistance is natural — and ancient." | Drips | Bhullar et al. 2012 |
-| 4:55–5:03 | "The map ends where the survey ends…" | Survey line, finished | Vector | A dashed amber line with "?" draws **after** the last station (*uncertainty, labelled illustrative*) | "last survey station" / "Illustrative only: beyond the last station there may be passage — or none." | Drips | — |
-| 5:03–5:11 | "Underground, nobody can see from above…" | Navy | — | Type | "From above, a forest is visible. Is it known?" | Drips fade | — |
-| 5:12–5:23 | "In 2005, scientists working with Kew…" | **FOREST VIEW**: real satellite image | **ASTER, 4 Oct 2023** (NASA, public domain) | Slow push-in from satellite scale (*location/scale*) | "Satellite image of Mount Mabu, 4 Oct 2023 (ASTER). Not the 2005 Google Earth view." | Canopy rustle (designed) | Mgmt plan 2016 |
-| 5:23–5:36 | "From above, a canopy is a surface…" | Satellite, then canopy profile | ASTER + vector | Panel lists what is seen and what is missed. Trees rise to 40–50 m on a metre axis (*scale*) | From above you can see / You cannot see (amber) / "Canopy trees reach 40–50 m" / SCHEMATIC PROFILE · heights to scale | Rustle | Mgmt plan 2016 |
-| 5:36–6:04 | "So researchers walked in…" | Timeline + species list | Type | Timeline draws Dec 2005 → Oct 2008 → 2016 (*time*) | **≈ 69–79 km²** ("estimates differ by method") / species with Latin names / **13 new species recorded** (amber) | Rustle | Bayliss 2014; mgmt plan |
-| 6:04–6:20 | "But Mabu was never a lost forest…" | Type | — | Three columns appear | **New to biologists ≠ new to people** / Local hunters / Civil war (reported) / Colonial-era tea estates | Rustle | Mgmt plan 2016 |
-| 6:20–6:31 | "Even so, most surveys…" | Schematic massif | Vector | Solid cyan east edge and summit; dashed amber west/north | "Eastern edge & summit — where most surveys worked" / "…not visited by scientists as of 2016" / **SCHEMATIC · not a survey map** | Rustle fades | Mgmt plan 2016 |
-| 6:31–6:41 | "Back to the map…" | **FINAL RETURN**: flat map | Natural Earth | Markers return (*memory of the opening*) | Same four labels | Room tone | — |
-| 6:41–7:04 | "But now it reads in layers…" | Map shifts left; legend on the right | Vector | One legend line per spoken layer, each with its own mark (*evidence types*) | Estimated / Measured / Seen / Sampled / Surveyed / Walked / Known locally | Room tone | — |
-| 7:04–7:22 | "A map tells us where things are…" | Map dims to 15% | — | Two lines, then fade to navy | **Earth isn't unexplored. / It is *unevenly* observed.** | Room tone out | — |
+| 0:45–1:02 | "So a map can be complete…" | Crossfade to flat Equal Earth map | Natural Earth | Four amber markers appear one by one as each barrier word is spoken (*location*) | WATER · CCZ / ICE · Lake Whillans / ROCK · Lechuguilla / FOREST · Mount Mabu | Room tone | — |
+| 1:02–1:06 | (no voice) | Title card | Type only | Two lines fade in | **Earth Looks Fully Explored. / It Isn't.** (amber) | Room tone | — |
+| 1:06–1:19 | "Start in the Pacific…" | Globe zooms from 175 to 900 px radius on the CCZ | Natural Earth | Zoom in (*location/scale*) | "Clarion-Clipperton Zone · approximate centre"; "≈ 6 million km²"; "≈ 5,000 m average depth (NHM, 2023)" | Low ocean rumble fades in | NHM 2023 |
+| 1:19–1:30 | "The barrier here is the water itself…" | **THE DESCENT**: one cross-section, 0–5,500 m linear | Vector | An amber probe descends; depth and pressure counters tick (*scale/cause*) | 200 m · little sunlight / 1,000 m · no sunlight (NOAA) / Probe depth / ≈ atm (turns amber at 500) / "depth scale is linear and constant" | Rumble + designed sonar ping every 7 s | NOAA Ocean Service |
+| 1:30–1:42 | "So scientists work at the end of a cable…" | Same section | Vector | Sonar fan opens with pings travelling down. Then the ROV descends on its tether, then the box corer (*method*) | "Multibeam sonar maps depth across a swath" / "Remotely operated vehicle… drawn ×100s larger than scale" (amber) / "Box corer" | Pings | NOAA; NHM |
+| 1:42–2:03 | "By deep-sea standards…" | Photo left, numbers right | **Real photo:** *Psychropotes semperiana* in situ (CC BY 4.0) | Slow 4% push on the photo. 100-square grid fills: 90 amber outlines, 10 solid (*evidence*) | **5,578** species recorded / "≈ 9 in 10 had no formal scientific name (88–92%)" | Rumble | Rabone et al. 2023 |
+| 2:03–2:19 | "That is the gap…" | Same layout | — | Four ladder rows appear (*evidence*) | Found & photographed ✓ / Sampled ✓ / Formally described ≈10% (amber) / How they live · range: largely unknown (amber) | Rumble | NHM |
+| 2:19–2:26 | "…What happens when the barrier is solid?" | Sonar rings expand to fill the frame | Vector | **Match cut:** sonar rings become radar pulses in the next chapter | "What if the barrier is solid?" | Final ping, then decays | — |
+| 2:27–2:37 | "West Antarctica…" | **ICE**: snow surface, horizon | Vector + drifting snow | Snow streaks drift (immersion, not decoration) | 02 · ICE / Whillans Ice Stream · 84.24° S | Designed wind | Christner 2014 drill site |
+| 2:37–2:52 | "It was found from orbit…" | Same, then camera cuts into the section | Vector | Satellite footprint sweeps; a curve draws (labelled illustrative). At "radar", the view drops into the **ICE CUTAWAY** with radar pulses down through the ice (*method*) | "ICESat (2003–2009) saw the surface rise and fall… Curve is illustrative" / **SCHEMATIC · lake thickness greatly exaggerated** | Wind under | antarcticglaciers.org summary; Fricker et al. |
+| 2:52–3:05 | "In January 2013…" | Section | Vector | Drill descends; depth counter runs 0 → 801 m (*method/time*) | Borehole depth / "Clean hot-water drill · hole ≈ 0.6 m · late Jan 2013 · WISSARD" | Wind, filtered | Christner 2014 |
+| 3:05–3:25 | "At the bottom, a camera found the lake…" | Circular inset (different scale) + stats panel | Vector | Inset opens from the drill bottom (*scale change, labelled*) | "INSET · scale changed" / "≈ 2.2 m of water at the borehole" / **≈130,000 cells per mL** / **≥3,931 types** / energy sources | Wind | Christner 2014 |
+| 3:25–3:42 | "A 2022 inventory…" | South-polar globe | Natural Earth | Globe fades in; only the drill site is marked (*no invented lake dots*) | **675** / **a handful** (amber) / "Lake positions are not plotted here…" | Wind | Livingstone 2022 |
+| 3:42–3:47 | "A drill can reach a lake…" | Navy frame; amber borehole line | Vector | **Match cut:** the drill line becomes the cave survey line | — | Wind fades out | — |
+| 3:47–4:08 | "Beneath Carlsbad Caverns…" | **ROCK**: schematic historic cave | Vector | Cyan chevrons rise through the rubble (*cause: moving air*) | Entrance pit ≈ 27 m / ≈120 m dead-end passage / 1950s · wind / SCHEMATIC | Cave room tone, sparse drips | NPS |
+| 4:08–4:17 | "Cavers began digging…" | Same | Vector | Rubble clears and a passage line descends (*time/event*) | 1984 · digging / **26 May 1986 · breakthrough** (amber) | Drips | NPS |
+| 4:17–4:29 | "No satellite can map this…" | **CAVE SURVEY** method | Vector | Stations S1–S7 connect one shot at a time (*method*) | "Each shot records distance · direction · slope…" / **SCHEMATIC · the survey method, not Lechuguilla's passages** | Drips | General caving survey practice |
+| 4:29–4:45 | "Since 1984, those teams…" | Real survey map | **NPS 2019 overview map** (public domain) | Circular reveal grows outward **from the entrance** over the real surveyed passages. No passage is drawn that isn't on the NPS map (*evidence*) | **> 145 mi** / **489 m** / "2019 map itself is labelled 149 miles; NPS text says 'over 145'" (amber) / "The drawing stops where the survey stops" | Drips | NPS (updated Jul 2025) |
+| 4:39–4:45 | "…dissolved from below by sulfuric acid… gypsum chandeliers…" | Photo left, text right | **Real photo:** Chandelier Ballroom, Lechuguilla (NPS/Max Wisshak, public domain) | Slow 5% push towards the caver (*scale*) | "Dissolved from below by sulfuric acid" / gypsum chandeliers ≈6 m / "Note the caver for scale" | Drips | NPS |
+| 4:45–4:59 | "It also holds microbes…" | Type on navy | — | Stats rise in | **> 4 million years** / **14** (amber) antibiotics, incl. daptomycin / "Antibiotic resistance is natural — and ancient." | Drips | Bhullar et al. 2012 |
+| 4:59–5:06 | "The map ends where the survey ends…" | Survey line, finished | Vector | A dashed amber line with "?" draws **after** the last station (*uncertainty, labelled illustrative*) | "last survey station" / "Illustrative only: beyond the last station there may be passage — or none." | Drips | — |
+| 5:06–5:15 | "Underground, nobody can see from above…" | Navy | — | Type | "From above, a forest is visible. Is it known?" | Drips fade | — |
+| 5:15–5:26 | "In 2005, scientists working with Kew…" | **FOREST VIEW**: real satellite image | **ASTER, 4 Oct 2023** (NASA, public domain) | Slow push-in from satellite scale (*location/scale*) | "Satellite image of Mount Mabu, 4 Oct 2023 (ASTER). Not the 2005 Google Earth view." | Canopy rustle (designed) | Mgmt plan 2016 |
+| 5:26–5:39 | "From above, a canopy is a surface…" | Satellite, then canopy profile | ASTER + vector | Panel lists what is seen and what is missed. Trees rise to 40–50 m on a metre axis (*scale*) | From above you can see / You cannot see (amber) / "Canopy trees reach 40–50 m" / SCHEMATIC PROFILE · heights to scale | Rustle | Mgmt plan 2016 |
+| 5:39–6:08 | "So researchers walked in…" | Timeline + species list | Type | Timeline draws Dec 2005 → Oct 2008 → 2016 (*time*) | **≈ 69–79 km²** ("estimates differ by method") / species with Latin names / **13 new species recorded** (amber) | Rustle | Bayliss 2014; mgmt plan |
+| 6:08–6:22 | "But Mabu was never a lost forest…" | Type | — | Three columns appear | **New to biologists ≠ new to people** / Local hunters / Civil war (reported) / Colonial-era tea estates | Rustle | Mgmt plan 2016 |
+| 6:22–6:31 | "Even so, most surveys…" | Schematic massif | Vector | Solid cyan east edge and summit; dashed amber west/north | "Eastern edge & summit — where most surveys worked" / "…not visited by scientists as of 2016" / **SCHEMATIC · not a survey map** | Rustle fades | Mgmt plan 2016 |
+| 6:31–6:37 | "That gap, between seeing a place and knowing it, runs through all four." | Navy, type only | — | Single line fades in (*theme stated once, bridges to the return*) | **Seeing a place ≠ knowing what is there** | Rustle fades | — |
+| 6:37–6:46 | "Back to the map…" | **FINAL RETURN**: flat map | Natural Earth | Markers return (*memory of the opening*) | Same four labels | Room tone | — |
+| 6:46–7:05 | "But now it reads in layers…" | Map shifts left; legend on the right | Vector | One legend line per spoken layer, each with its own mark (*evidence types*) | Estimated / Measured / Seen / Sampled / Surveyed / Walked / Known locally | Room tone | — |
+| 7:05–7:19 | "A map tells us where things are…" | Map dims to 15% | — | Two lines, then fade to navy | **Earth isn't unexplored. / It is *unevenly* observed.** | Room tone out | — |
 
 ---
 
@@ -226,21 +229,21 @@ Licences were checked on the Wikimedia Commons file pages on 7 Nov 2026 (read th
 | A1 | Lechuguilla Cave overview map, July 2019 (NPS) | 4:27 | <https://commons.wikimedia.org/wiki/File:Lechuguilla-Cave-Overview-20190715.jpg>; original from <https://home.nps.gov/cave/learn/nature/> | **Public domain** (US federal work, 17 USC §105) | ✅ verified, in cut |
 | A2 | *Psychropotes semperiana* in situ, CCZ (panel a) | 1:43 | <https://commons.wikimedia.org/wiki/File:Psychropotes_semperiana._Specimen_NHM_220.jpg>; from Glover et al. 2016, *Biodiversity Data Journal* 4: e7251 | **CC BY 4.0**. Credit: Smith & Amon 2013, in Glover et al. 2016 | ✅ verified, in cut (cropped) |
 | A3 | Mount Mabu, ASTER, 4 Oct 2023 | 5:12 | <https://commons.wikimedia.org/wiki/File:Mount_Mabu,_Mozambique_(ASTER).jpg> | **Public domain** (NASA). Credit: NASA/METI/AIST/Japan Space Systems, U.S./Japan ASTER Science Team | ✅ verified, in cut. *Do not reuse the Commons caption's "15 dung beetles / 25 species" claim; it is unverified.* |
-| A4 | Lechuguilla, Pearlsian Gulf (Dave Bunnell) | 4:37 | <https://commons.wikimedia.org/wiki/File:Lechuguilla_Cave_Pearlsian_Gulf.jpg> | **CC BY-SA 2.5**. Attribution is required. ⚠️ Share-alike: get a legal opinion on whether it applies to a monetised video, or replace with a public-domain NPS photo. | ✅ licence verified, ⚠️ reuse decision pending |
+| A4 | Chandelier Ballroom, Lechuguilla Cave (NPS Photo/Max Wisshak) | 4:39 | NPGallery asset 327FAE28-155D-451F-67474C4791796877: <https://npgallery.nps.gov/AssetDetail/327FAE28-155D-451F-67474C4791796877> (in the album "Lechuguilla Cave") | **Public domain** ("Constraints Information: Public domain") | ✅ verified, in cut. *Replaces the CC BY-SA 2.5 Dave Bunnell photo used in revision 1. NPGallery was blocked from the build container, so the image was cropped from a page capture (688×494 px). For a larger master, download the 3588×2592 original from the asset page.* |
 | A5 | Mount Mabu field photo (Conradie et al. 2016, Fig. 2) | not used | <https://commons.wikimedia.org/wiki/File:Mount_Mabu_(10.3897-zse.92.9948)_Figure_2_(cropped).jpg> | **CC BY 4.0** | ✅ licence verified, ❌ download rate-limited; add in the edit |
 | A6 | World land and borders | Map scenes | npm `world-atlas@2.0.2` (Natural Earth 1:110m) | **Public domain** (Natural Earth) | ✅ in cut |
-| A7 | Narration | All | Gemini TTS ("Charon" voice; three model versions because of quota) | Synthetic **scratch** voice | ⚠️ replace with a recorded human VO before publishing |
+| A7 | Narration | All | Gemini TTS, one model (`gemini-3.8-flash-tts`, "Charon" voice), script text only, every scene time-stretched to about 152 wpm | Synthetic **scratch** voice | ⚠️ replace with a recorded human VO before publishing |
 | A8 | Ambience beds | All | Synthesised with ffmpeg (`video/tools/ambience.sh`) | Original | ✅ designed sound. **Not** presented as expedition audio. |
 | A9 | Deep-sea ROV video, Pacific abyssal plain | Suggested for 1:29 | NOAA Ocean Exploration video portal, <https://oceanexplorer.noaa.gov> (Okeanos Explorer dives) | Usually public domain (NOAA) | ❓ **unverified**: pick a specific clip and confirm it is in or near the CCZ |
 | A10 | WISSARD drilling / borehole camera stills | Suggested for 2:53 | US Antarctic Program photo library, <https://photolibrary.usap.gov> | Terms vary per image | ❓ **unverified** |
 | A11 | Kew Mabu expedition photos | Suggested for 5:36 | Royal Botanic Gardens, Kew | © Kew, permission needed | ❓ **unverified** |
-| A12 | NPS Lechuguilla photo gallery | Alternative to A4 | <https://www.nps.gov/cave/> | Many photos are by private cavers and **not** public domain; check each credit | ❓ **unverified** |
+| A12 | NPS Lechuguilla photo gallery | More cave imagery | <https://www.nps.gov/cave/> | Many photos are by private cavers and **not** public domain; check each credit | ❓ **unverified** |
 
 ---
 
 ## 8. Remotion implementation (built: `video/`)
 
-**Format:** 854 × 480, 30 fps, H.264 CRF 23, AAC 160 kb/s. Total 13,262 frames (7:22.1).
+**Format:** 854 × 480, 30 fps, H.264 CRF 23, AAC 160 kb/s. Total 13,171 frames (7:19.0).
 
 **Structure**
 ```
@@ -253,14 +256,21 @@ video/
   src/lib/geo.ts            ← Natural Earth land/borders + the four coordinates
   src/components/           ← Captions, Grain/Vignette, ChapterTag, Label, Stat, Credit
   src/scenes/               ← MapReveal, Descent, IceCutaway, CaveSurvey, ForestView, FinalReturn, TitleCard
-  tools/tts.sh              ← scratch narration (Gemini TTS)
-  tools/build_timing.py     ← silence detection → paragraph/sentence timing
+  tools/tts.sh              ← scratch narration (Gemini TTS, text only, paced to ~152 wpm in post)
+  tools/build_timing.py     ← scene lengths + sentence timing (uses align_llm.py output when present)
+  tools/align_llm.py        ← sentence start times from Gemini, snapped to detected pauses
   tools/ambience.sh         ← designed ambience beds, normalised to about −40 LUFS
-  tools/stt_check.sh        ← transcribes the VO and diffs it against the script
+  tools/stt_check.sh        ← transcribes each VO's first 8 s and full text, then diffs against the script
   tools/stills.mjs          ← QA stills at chosen frames
 ```
 
-**Timing model.** Each scene is 0.8 s lead-in + VO length + 1.4 s tail. `build_timing.py` runs `ffmpeg silencedetect` on each VO file. A monotone dynamic-programming pass snaps every sentence boundary to the nearest real pause, so captions and paragraph-keyed visuals follow the actual read. This is not forced alignment: re-run it after recording a new VO and spot-check in Studio.
+**Timing model.** Each scene is 0.8 s lead-in + VO length + 1.4 s tail.
+- Sentence start times come from `align_llm.py`. It gives Gemini the audio plus the exact sentence list, then snaps each returned time to the nearest detected pause (within 0.6 s).
+- If no alignment file is present, `build_timing.py` falls back to a pause-based estimate that maps characters to *speaking* time.
+- Every important reveal is keyed with `cueFrame(scene, "words…")` to the sentence that mentions it, not to a fixed offset. A new VO at a different pace keeps every number on its spoken line.
+- Revision 2 checked twelve key sentence starts by transcribing 2.6 s of audio at each cue time. Eleven were confirmed; the twelfth was blocked by API quota.
+
+After recording the human VO: run `build_timing.py`, then `align_llm.py <scene>` for each scene, then `build_timing.py` again.
 
 **Reusable scenes.** `Globe` (orthographic, props for rotation, radius, centre, stipple and dim) and `FlatMap` (Equal Earth with markers) are shared by the opening, the Descent zoom and the final return. That is how the ending visibly reuses the opening map.
 
@@ -322,7 +332,7 @@ ffmpeg -i out/raw-480p.mp4 -vf "noise=alls=5:allf=t" -c:v libx264 -crf 23 -prese
 | "about sixty centimetres", "roughly eight hundred metres", "about two metres deep" | Solid | Christner 2014: about 0.6 m; 801 ± 1 m; about 2.2 m *at the time of sampling*. The lake fills and drains, so the depth changes. |
 | "130,000 cells per mL", "at least 3,931" | Solid | Christner 2014 (water column 1.3 × 10⁵; ≥3,931 OTUs). OTUs are *not* species. The script says "distinct microbial types". |
 | "675 subglacial lakes… only a handful sampled directly" | 675 solid **as of 2022** and likely to grow; "handful" is a qualitative judgment | Directly sampled lakes known to me: Whillans (2013), Mercer (2018–19); Vostok was reached in 2012 but with contaminated samples. Check for newer drilling campaigns before publishing. |
-| Lake area "≈ 59 km²" (on screen) | Medium confidence | Taken from a secondary summary (antarcticglaciers.org); the lake's extent varies. Verify against Fricker et al. before publishing. |
+| Lake area | **Removed** in revision 2 | The ≈59 km² figure came only from a secondary summary, so it is no longer shown. |
 | Lechuguilla "more than 145 miles… 233 km… 489 m" | **Changing**, and sources disagree | NPS page (updated 28 Jul 2025) says >145 mi. NPS 2019 map says 149 mi. An older NPS PDF says >150 mi. Wikipedia infobox says 138.3 mi. The script uses the official page text and the screen notes the conflict. |
 | "gypsum chandeliers six metres long" | Solid | NPS: 20 ft |
 | "isolated… over four million years", "fourteen different commercial drugs" | Solid | Bhullar 2012. Applies to the sampled section and to *some* strains. Not "the cave killed MRSA" (a claim made in the reference video). |
@@ -345,27 +355,42 @@ ffmpeg -i out/raw-480p.mp4 -vf "noise=alls=5:allf=t" -c:v libx264 -crf 23 -prese
 **Transitions.**
 - Water → Ice uses a question plus the sonar-to-radar match cut. Strong.
 - Ice → Rock ("some spaces can only be entered on foot") and Rock → Forest ("in a forest, we can") both answer each other. Good.
-- Forest → Return is the weakest. It ends on a dated fact with no bridge line. *Fix option:* add "That gap, between seeing a place and knowing it, runs through all four." (+4 s).
+- Forest → Return: *fixed in revision 2.* The bridge line "That gap, between seeing a place and knowing it, runs through all four." is now spoken over a single on-screen line.
 
 **Readability.**
-- At 480p, 9.5–10.5 px credit and footnote text is at the limit of legibility. It is legible in the stills, but on a phone it will be soft. For a 1080p master, scale all `T` sizes by 2.25 rather than up-scaling this render.
+- Revision 2 raised the minimum text size to 10.5 px (credits and footnotes). That is still the limit of legibility at 480p. It is legible in the stills, but on a phone it will be soft. For a 1080p master, scale all `T` sizes by 2.25 rather than up-scaling this render.
 - The 4 px "seen" square is intentionally tiny. It has a leader line and a label, so it doesn't rely on being spotted.
 
 **Unsupported claims.**
 - None were found in the narration after the audit.
-- One on-screen value (lake ≈ 59 km²) rests on a secondary source and is flagged above.
+- Revision 2 removed the only on-screen value that rested on a secondary source (lake area).
 - The ice-surface curve and the dashed cave extension are labelled illustrative on screen.
 
 **Sound.**
 - All ambience is designed (filtered noise, sine pings) and sits about 20 dB under the narration. None of it is presented as a recording.
 - No music.
-- The scratch narration uses three Gemini TTS model versions, because of free-tier quota limits, so the timbre shifts slightly between chapters. **Replace it with a single human read.**
+- The scratch narration now uses one Gemini TTS model and voice for all chapters, time-stretched to an even ~152 wpm (the closing is slightly slower). It is still synthetic: **replace it with a human read** for release.
 
 **Production feasibility.**
-- Everything in the cut is built from verified-licence imagery plus vectors, so it can be published once A4 (share-alike) and A7 (synthetic voice) are resolved.
+- Everything in the cut is built from verified-licence imagery plus vectors, so it can be published once the synthetic voice (A7) is replaced with a human read.
 - The suggested NOAA, USAP and Kew footage (A9–A11) would improve immersion. Insert them without changing timing: each slot is a full-frame image window in an existing scene.
 
 **Meaning without audio.**
 - Every key number appears on screen with its date or source.
 - The chapter tags carry the structure.
 - The burned-in captions carry the argument.
+
+
+---
+
+## 12. Revision 2: fixes applied
+
+| Issue | Fix |
+|---|---|
+| **Revision 1 (critical): the TTS model read its style instructions aloud** at the start of the Water, Ice and Return chapters ("Read the following as a calm, curious documentary narrator…"). The first transcription check missed it. | All tracks were regenerated with the script text only. `stt_check.sh` now also transcribes each track's first 8 s with a neutral prompt. All six tracks were verified to open on the script's first words, and their full transcripts match the script. |
+| Narration mixed three TTS models, so the timbre and pace shifted between chapters | One model and voice throughout. Each scene is time-stretched to about 152 wpm. |
+| Closing text appeared before it was spoken, and other reveals could drift | Captions use sentence-level alignment, and all key reveals are keyed to their sentence (`cueFrame`). |
+| Cave photo had a CC BY-SA 2.5 (share-alike) licence | Replaced with a public-domain NPS photo of the Chandelier Ballroom, which now matches the narration about the chandeliers. |
+| No bridge from the Forest chapter into the ending | Added the line "That gap, between seeing a place and knowing it, runs through all four." with an on-screen card. |
+| Lake area "≈ 59 km²" rested on a secondary source | Removed from the screen. |
+| Small text hard to read at 480p | Credits and footnotes raised to at least 10.5 px. |

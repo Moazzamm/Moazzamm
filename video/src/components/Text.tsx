@@ -28,7 +28,7 @@ export const Credit: React.FC<{children: React.ReactNode; at: number; until?: nu
         [left ? 'left' : 'right']: 28,
         top: 382,
         ...T.small,
-        fontSize: 9.5,
+        fontSize: 10.5,
         color: C.paperDim,
         opacity: o,
         maxWidth: 520,

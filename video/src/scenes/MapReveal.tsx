@@ -3,7 +3,7 @@ import {AbsoluteFill, useCurrentFrame} from 'remotion';
 import {geoEqualEarth, geoGraticule10, geoOrthographic, geoPath} from 'd3-geo';
 import {C, T} from '../theme';
 import {ramp, lerp, window} from '../lib/anim';
-import {paraFrame, type SceneTiming, FPS} from '../lib/timing';
+import {paraFrame, cueFrame, type SceneTiming} from '../lib/timing';
 import {LAND, BORDERS, PLACES} from '../lib/geo';
 import {Credit, Label} from '../components/Text';
 
@@ -94,7 +94,7 @@ export const MapReveal: React.FC<{s: SceneTiming}> = ({s}) => {
   // P3: switch to a flat map that can show all four places at once.
   const flat = ramp(f, p3 - 10, 30);
 
-  const bar = ramp(f, p1 + Math.round(8.5 * FPS), 40);
+  const bar = ramp(f, cueFrame(s, 'As of April 2026', 0.5), 40);
 
   // To-scale squares. Scale: 220 px = side of a 6,000,000 km² square (2,449 km).
   const pxPerKm = 220 / Math.sqrt(6_000_000);
@@ -118,21 +118,21 @@ export const MapReveal: React.FC<{s: SceneTiming}> = ({s}) => {
           <br />
           Most of the seafloor&apos;s shape is inferred from satellite altimetry — sea-surface height, not direct sounding.
         </Label>
-        <Label x={490} y={185} at={p1 + Math.round(8 * FPS)} width={330}>
+        <Label x={490} y={185} at={cueFrame(s, 'As of April 2026')} width={330}>
           <span style={{...T.kicker, color: C.cyan}}>Layer · measured</span>
           <br />
           Ocean floor mapped to modern standards
         </Label>
-        <div style={{position: 'absolute', left: 490, top: 236, width: 300, height: 16, border: `1px dashed ${C.amber}`, opacity: ramp(f, p1 + Math.round(8 * FPS), 14)}}>
+        <div style={{position: 'absolute', left: 490, top: 236, width: 300, height: 16, border: `1px dashed ${C.amber}`, opacity: ramp(f, cueFrame(s, 'As of April 2026'), 14)}}>
           <div style={{width: `${28.7 * bar}%`, height: '100%', background: C.cyan}} />
         </div>
-        <Label x={490} y={258} at={p1 + Math.round(9.5 * FPS)} color={C.cyan} size={22} weight={700}>
+        <Label x={490} y={258} at={cueFrame(s, 'As of April 2026', 1.5)} color={C.cyan} size={22} weight={700}>
           28.7%
         </Label>
-        <Label x={790} y={262} at={p1 + Math.round(10 * FPS)} color={C.amber} size={11} align="right" width={180}>
+        <Label x={790} y={262} at={cueFrame(s, 'As of April 2026', 2)} color={C.amber} size={11} align="right" width={180}>
           not yet mapped in detail
         </Label>
-        <Label x={490} y={300} at={p1 + Math.round(10 * FPS)} color={C.paperDim} size={10.5} width={320}>
+        <Label x={490} y={300} at={cueFrame(s, 'As of April 2026', 2)} color={C.paperDim} size={10.5} width={320}>
           Global share as of 20 April 2026 (Seabed 2030). Shown as a proportion, not as locations.
         </Label>
       </div>
@@ -141,21 +141,21 @@ export const MapReveal: React.FC<{s: SceneTiming}> = ({s}) => {
       <div style={{opacity: window(f, p2 + 8, p3 + 4)}}>
         <svg width={854} height={480} style={{position: 'absolute'}}>
           <rect x={130} y={95} width={220} height={220} fill="none" stroke={C.cyan} strokeWidth={1.2} opacity={ramp(f, p2 + 10, 20)} />
-          <rect x={520} y={200 - belgium / 2} width={belgium} height={belgium} fill="none" stroke={C.paper} strokeDasharray="2 2" opacity={ramp(f, p2 + Math.round(9 * FPS), 16)} />
-          <rect x={480} y={200 - seen / 2} width={seen} height={seen} fill={C.amber} opacity={ramp(f, p2 + Math.round(4 * FPS), 16)} />
-          <line x1={480 + seen / 2} y1={200 - seen} x2={480 + seen / 2} y2={150} stroke={C.amber} strokeWidth={0.8} opacity={ramp(f, p2 + Math.round(4.3 * FPS), 16)} />
+          <rect x={520} y={200 - belgium / 2} width={belgium} height={belgium} fill="none" stroke={C.paper} strokeDasharray="2 2" opacity={ramp(f, cueFrame(s, 'Every look since 1958'), 16)} />
+          <rect x={480} y={200 - seen / 2} width={seen} height={seen} fill={C.amber} opacity={ramp(f, cueFrame(s, 'A 2025 study'), 16)} />
+          <line x1={480 + seen / 2} y1={200 - seen} x2={480 + seen / 2} y2={150} stroke={C.amber} strokeWidth={0.8} opacity={ramp(f, cueFrame(s, 'A 2025 study', 0.3), 16)} />
         </svg>
         <Label x={130} y={322} at={p2 + 16} width={240} size={12}>
           Clarion-Clipperton Zone, Pacific
           <br />
           <span style={{color: C.paperDim, fontSize: 11}}>≈ 6,000,000 km² (for scale)</span>
         </Label>
-        <Label x={420} y={92} at={p2 + Math.round(4.3 * FPS)} width={380} color={C.amber} size={12.5}>
+        <Label x={420} y={92} at={cueFrame(s, 'A 2025 study', 0.3)} width={380} color={C.amber} size={12.5}>
           Every deep-sea camera view since 1958, combined
           <br />
           <span style={{color: C.paperDim, fontSize: 11}}>≤ 2,130 km² · under 0.001% of the deep seafloor (≥200 m)</span>
         </Label>
-        <Label x={545} y={190} at={p2 + Math.round(9 * FPS)} size={11.5} color={C.paperDim}>
+        <Label x={545} y={190} at={cueFrame(s, 'Every look since 1958')} size={11.5} color={C.paperDim}>
           Belgium (≈ 30,700 km²)
         </Label>
         <Label x={420} y={330} at={p2 + 30} size={10.5} color={C.paperDim} width={380}>
@@ -163,7 +163,7 @@ export const MapReveal: React.FC<{s: SceneTiming}> = ({s}) => {
         </Label>
       </div>
 
-      <FlatMap opacity={flat} frame={f} markersAt={[p3 + Math.round(5.5 * FPS), p3 + Math.round(6.2 * FPS), p3 + Math.round(6.9 * FPS), p3 + Math.round(7.6 * FPS)]} />
+      <FlatMap opacity={flat} frame={f} markersAt={[cueFrame(s, 'Water, ice, rock'), cueFrame(s, 'Water, ice, rock', 0.6), cueFrame(s, 'Water, ice, rock', 1.1), cueFrame(s, 'Water, ice, rock', 1.7)]} />
 
       <Credit at={10} until={p2}>Map data: Natural Earth via world-atlas (public domain)</Credit>
     </AbsoluteFill>

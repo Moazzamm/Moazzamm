@@ -2,7 +2,7 @@ import React from 'react';
 import {AbsoluteFill, Img, staticFile, useCurrentFrame} from 'remotion';
 import {C, T} from '../theme';
 import {ramp, lerp, window} from '../lib/anim';
-import {paraFrame, type SceneTiming, FPS} from '../lib/timing';
+import {paraFrame, cueFrame, type SceneTiming, FPS} from '../lib/timing';
 import {ChapterTag, Credit, Label, Stat} from '../components/Text';
 
 // Example survey stations for the METHOD diagram (schematic, not Lechuguilla's passages).
@@ -15,13 +15,13 @@ export const CaveSurvey: React.FC<{s: SceneTiming}> = ({s}) => {
   const p = (i: number, o = 0) => paraFrame(s, i, o);
 
   const intro = window(f, 0, p(2) + 6, 16);
-  const wind = f > p(0, 9) && f < p(2) ? 1 : 0;
-  const breakthrough = ramp(f, p(1, 4), 30);
+  const wind = f > cueFrame(s, 'But in the 1950s') && f < p(2) ? 1 : 0;
+  const breakthrough = ramp(f, cueFrame(s, 'On May 26'), 30);
   const method = window(f, p(2), p(3) + 8, 16);
   const survey = ramp(f, p(2) + 20, Math.round(7 * FPS));
-  const map = window(f, p(3), p(3, 9.5), 16);
+  const map = window(f, p(3), cueFrame(s, 'The cave was dissolved', 0.5), 16);
   const reveal = ramp(f, p(3) + 6, Math.round(6.5 * FPS));
-  const photo = window(f, p(3, 9), p(4) + 8, 16);
+  const photo = window(f, cueFrame(s, 'The cave was dissolved'), p(4) + 8, 16);
   const microbes = window(f, p(4), p(5) + 8, 16);
   const end = window(f, p(5), p(6, 4), 16);
   const outro = ramp(f, p(6), 40);
@@ -44,7 +44,7 @@ export const CaveSurvey: React.FC<{s: SceneTiming}> = ({s}) => {
           ))}
           {/* wind rising through the rubble */}
           {[0, 1, 2, 3].map((k) => {
-            const t = (((f - p(0, 9)) / 45 + k / 4) % 1 + 1) % 1;
+            const t = (((f - cueFrame(s, 'But in the 1950s')) / 45 + k / 4) % 1 + 1) % 1;
             return (
               <path key={k} d={`M${400 + k * 22} ${300 - t * 70} l -5 7 m 5 -7 l 5 7`} stroke={C.cyan} strokeWidth={1.4} fill="none" opacity={wind * Math.sin(t * Math.PI)} />
             );
@@ -58,16 +58,16 @@ export const CaveSurvey: React.FC<{s: SceneTiming}> = ({s}) => {
         <Label x={480} y={196} at={p(0, 3)} until={p(2)} size={11}>
           ≈ 120 m (400 ft) of dead-end passage
         </Label>
-        <Label x={520} y={300} at={p(0, 9)} until={p(1)} size={11.5} width={300} color={C.cyan}>
+        <Label x={520} y={300} at={cueFrame(s, 'But in the 1950s')} until={p(1)} size={11.5} width={300} color={C.cyan}>
           1950s · cavers hear wind roaring up through the rubble floor
         </Label>
         <Label x={520} y={300} at={p(1)} until={p(2)} size={11.5} width={300}>
           1984 · digging begins, with park permission
         </Label>
-        <Label x={520} y={330} at={p(1, 4)} until={p(2)} size={13} weight={600} width={300} color={C.amber}>
+        <Label x={520} y={330} at={cueFrame(s, 'On May 26')} until={p(2)} size={13} weight={600} width={300} color={C.amber}>
           26 May 1986 · breakthrough into large walking passages
         </Label>
-        <Label x={826} y={125} at={p(0, 2)} until={p(2)} align="right" size={10} color={C.amber} bg>
+        <Label x={826} y={125} at={p(0, 2)} until={p(2)} align="right" size={10.5} color={C.amber} bg>
           SCHEMATIC · not to scale
         </Label>
       </AbsoluteFill>
@@ -95,7 +95,7 @@ export const CaveSurvey: React.FC<{s: SceneTiming}> = ({s}) => {
           <div style={{...T.label, color: C.paper, fontSize: 12.5, marginTop: 4}}>distance · direction · slope</div>
           <div style={{...T.small, color: C.paperDim, marginTop: 4}}>plus a hand sketch of the passage around each station</div>
         </div>
-        <Label x={826} y={70} at={p(2) + 6} align="right" size={10} color={C.amber}>
+        <Label x={826} y={70} at={p(2) + 6} align="right" size={10.5} color={C.amber}>
           SCHEMATIC · the survey method, not Lechuguilla&apos;s passages
         </Label>
       </AbsoluteFill>
@@ -116,35 +116,38 @@ export const CaveSurvey: React.FC<{s: SceneTiming}> = ({s}) => {
         </div>
         <Stat x={660} y={80} at={p(3, 2)} value="> 145 mi" caption="surveyed since 1984 (≈ 233 km) · NPS page, updated July 2025" size={26} width={170} />
         <Stat x={660} y={185} at={p(3, 4)} value="489 m" caption="surveyed depth (1,604 ft)" size={26} width={170} />
-        <Label x={660} y={270} at={p(3, 5)} width={170} size={10} color={C.amber}>
+        <Label x={660} y={270} at={p(3, 5)} width={170} size={10.5} color={C.amber}>
           The 2019 map itself is labelled 149 miles; NPS text says &ldquo;over 145&rdquo;.
         </Label>
-        <Label x={27} y={356} at={p(3, 1)} width={610} size={10} color={C.paperDim}>
+        <Label x={27} y={356} at={p(3, 1)} width={610} size={10.5} color={C.paperDim}>
           Plan view of every surveyed passage. The drawing stops where the survey stops.
         </Label>
       </AbsoluteFill>
 
-      {/* P3 (end): photograph */}
+      {/* P3 (end): photograph — the gypsum chandeliers the narration describes */}
       <AbsoluteFill style={{opacity: photo}}>
-        <div style={{position: 'absolute', right: 0, top: 0, width: 360, height: 372, overflow: 'hidden'}}>
-          <Img src={staticFile('img/cave_pearlsian_gulf.jpg')} style={{width: 360, position: 'absolute', top: lerp(-40, -110, ramp(f, p(3, 9), 300))}} />
+        <div style={{position: 'absolute', left: 28, top: 70, width: 450, height: 323, overflow: 'hidden', borderRadius: 2}}>
+          <Img
+            src={staticFile('img/cave_chandeliers_nps.jpg')}
+            style={{width: 450, transform: `scale(${1 + 0.05 * ramp(f, cueFrame(s, 'The cave was dissolved'), 300)})`, transformOrigin: '70% 55%'}}
+          />
         </div>
-        <Label x={40} y={140} at={p(3, 9.5)} width={400} size={16} weight={600}>
+        <Label x={505} y={120} at={cueFrame(s, 'The cave was dissolved', 0.5)} width={320} size={16} weight={600}>
           Dissolved from below by sulfuric acid
         </Label>
-        <Label x={40} y={172} at={p(3, 11)} width={400} size={12.5} color={C.paperDim}>
+        <Label x={505} y={156} at={cueFrame(s, 'The cave was dissolved', 2)} width={320} size={12.5} color={C.paperDim}>
           Gypsum &ldquo;chandeliers&rdquo; up to about 6 m (20 ft) long hang in parts of the cave.
         </Label>
-        <Label x={40} y={360} at={p(3, 10)} width={420} size={10.5} color={C.paperDim}>
-          Photo: Pearlsian Gulf, Lechuguilla Cave
+        <Label x={505} y={220} at={cueFrame(s, 'The cave was dissolved', 1)} width={320} size={11} color={C.paperDim}>
+          Photo: the Chandelier Ballroom, Lechuguilla Cave. Note the caver for scale (right of centre).
         </Label>
       </AbsoluteFill>
 
       {/* P4: microbes */}
       <AbsoluteFill style={{opacity: microbes}}>
         <Stat x={60} y={90} at={p(4) + 8} value="> 4 million years" caption="that cave section has been isolated from surface input" size={30} width={420} />
-        <Stat x={60} y={180} at={p(4, 4)} value="14" caption="commercial antibiotics some cave strains already resisted — incl. daptomycin, a drug of last resort" size={44} color={C.amber} width={420} />
-        <Label x={60} y={300} at={p(4, 9)} width={500} size={14} weight={600}>
+        <Stat x={60} y={180} at={cueFrame(s, 'researchers found bacteria')} value="14" caption="commercial antibiotics some cave strains already resisted — incl. daptomycin, a drug of last resort" size={44} color={C.amber} width={420} />
+        <Label x={60} y={300} at={cueFrame(s, 'Resistance, it turns out')} width={500} size={14} weight={600}>
           Antibiotic resistance is natural — and ancient.
         </Label>
       </AbsoluteFill>
@@ -184,8 +187,8 @@ export const CaveSurvey: React.FC<{s: SceneTiming}> = ({s}) => {
       </AbsoluteFill>
 
       <ChapterTag n="03" word="Rock" place="Lechuguilla Cave, Carlsbad Caverns NP, New Mexico" />
-      <Credit at={p(3)} until={p(3, 9.5)}>Map: U.S. National Park Service, Lechuguilla Cave overview, July 2019 (public domain)</Credit>
-      <Credit at={p(3, 9.5)} until={p(4) + 8}>Photo: Dave Bunnell / Under Earth Images, CC BY-SA 2.5 · Facts: NPS</Credit>
+      <Credit at={p(3)} until={cueFrame(s, 'The cave was dissolved', 0.5)}>Map: U.S. National Park Service, Lechuguilla Cave overview, July 2019 (public domain)</Credit>
+      <Credit at={cueFrame(s, 'The cave was dissolved', 0.5)} until={p(4) + 8}>Photo: NPS / Max Wisshak (public domain, NPGallery) · Facts: NPS</Credit>
       <Credit at={p(4)} until={p(5) + 8}>Bhullar et al. 2012, PLOS ONE 7(4): e34953</Credit>
       <Credit at={0} until={p(2)}>History: NPS, Carlsbad Caverns NP</Credit>
     </AbsoluteFill>

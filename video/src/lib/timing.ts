@@ -25,3 +25,11 @@ export const sceneById = (id: string) => TIMING.scenes.find((s) => s.id === id)!
 // Frame at which paragraph i starts (plus an optional offset in seconds).
 export const paraFrame = (s: SceneTiming, i: number, offsetSec = 0) =>
   Math.round((s.paras[Math.min(i, s.paras.length - 1)].start + offsetSec) * FPS);
+
+// Frame at which the sentence containing `text` starts. Keys a visual to the exact spoken
+// words, so reveals stay in sync even if the narration is re-recorded at a different pace.
+export const cueFrame = (s: SceneTiming, text: string, offsetSec = 0) => {
+  const c = s.cues.find((q) => q.text.includes(text));
+  if (!c) throw new Error(`cueFrame: no cue containing "${text}" in scene ${s.id}`);
+  return Math.round((c.start + offsetSec) * FPS);
+};

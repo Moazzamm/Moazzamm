@@ -2,7 +2,7 @@ import React from 'react';
 import {AbsoluteFill, useCurrentFrame} from 'remotion';
 import {C, T} from '../theme';
 import {ramp, window} from '../lib/anim';
-import {paraFrame, type SceneTiming} from '../lib/timing';
+import {paraFrame, cueFrame, type SceneTiming} from '../lib/timing';
 import {FlatMap} from './MapReveal';
 import {Credit, Label} from '../components/Text';
 
@@ -32,7 +32,7 @@ const Mark: React.FC<{m: (typeof LAYERS)[number]['mark']}> = ({m}) => (
 export const FinalReturn: React.FC<{s: SceneTiming}> = ({s}) => {
   const f = useCurrentFrame();
   const p = (i: number, o = 0) => paraFrame(s, i, o);
-  const layersStart = p(1, 2.2);
+  const layersStart = cueFrame(s, 'Seafloor shapes');
   const step = (p(2) - layersStart) / (LAYERS.length + 0.5);
   const close = ramp(f, p(2) - 6, 24);
   const fadeOut = ramp(f, s.durationInFrames - 45, 40);
@@ -59,14 +59,14 @@ export const FinalReturn: React.FC<{s: SceneTiming}> = ({s}) => {
       </div>
 
       <AbsoluteFill style={{opacity: 1 - fadeOut}}>
-        <Label x={427} y={150} at={p(2, 4.5)} align="center" size={26} weight={700} width={700}>
+        <Label x={427} y={150} at={cueFrame(s, "Earth isn't unexplored")} align="center" size={26} weight={700} width={700}>
           Earth isn&apos;t unexplored.
         </Label>
-        <Label x={427} y={190} at={p(2, 6)} align="center" size={26} weight={700} width={700}>
+        <Label x={427} y={190} at={cueFrame(s, 'It is unevenly observed')} align="center" size={26} weight={700} width={700}>
           It is <span style={{color: C.amber}}>unevenly</span> observed.
         </Label>
       </AbsoluteFill>
-      <Credit at={p(2, 9)}>Sources and licences: see description · Narration in this cut is a synthetic scratch voice</Credit>
+      <Credit at={cueFrame(s, 'And the most interesting')}>Sources and licences: see description · Narration in this cut is a synthetic scratch voice</Credit>
     </AbsoluteFill>
   );
 };

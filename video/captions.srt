@@ -1,459 +1,463 @@
 1
-00:00:00,800 --> 00:00:03,923
+00:00:00,800 --> 00:00:03,708
 Open a world map and Earth looks finished.
 
 2
-00:00:03,923 --> 00:00:05,799
+00:00:03,708 --> 00:00:05,523
 Every coastline is drawn.
 
 3
-00:00:05,799 --> 00:00:07,534
+00:00:05,523 --> 00:00:07,499
 Every ocean has a name.
 
 4
-00:00:07,534 --> 00:00:11,454
+00:00:07,499 --> 00:00:11,731
 Even the floor of the Pacific has ridges and mountains on it.
 
 5
-00:00:11,454 --> 00:00:15,476
+00:00:11,731 --> 00:00:15,311
 But most of that seafloor has never been mapped in detail.
 
 6
-00:00:15,476 --> 00:00:18,368
+00:00:15,311 --> 00:00:17,533
 Much of its shape is estimated from satellites,
 
 7
-00:00:18,368 --> 00:00:21,583
+00:00:17,533 --> 00:00:21,609
 which detect tiny bumps in the height of the sea surface.
 
 8
-00:00:21,583 --> 00:00:23,900
+00:00:21,609 --> 00:00:22,983
 As of April 2026,
 
 9
-00:00:23,900 --> 00:00:28,143
+00:00:22,983 --> 00:00:28,246
 about twenty-nine percent of the ocean floor had been mapped to modern standards.
 
 10
-00:00:28,143 --> 00:00:32,930
+00:00:28,246 --> 00:00:33,136
 And the part anyone has actually seen with a camera is far smaller.
 
 11
-00:00:32,930 --> 00:00:38,295
+00:00:33,136 --> 00:00:38,576
 A 2025 study put it at less than a thousandth of one percent of the deep seafloor.
 
 12
-00:00:38,295 --> 00:00:44,664
+00:00:38,576 --> 00:00:45,569
 Every look since 1958, combined, covers an area about a tenth the size of Belgium.
 
 13
-00:00:44,664 --> 00:00:49,671
+00:00:45,569 --> 00:00:50,912
 So a map can be complete and still say very little about what is there.
 
 14
-00:00:49,671 --> 00:00:54,918
+00:00:50,912 --> 00:00:57,070
 Water, ice, rock and forest each hide that gap in a different way.
 
 15
-00:00:54,918 --> 00:00:58,829
+00:00:57,070 --> 00:01:01,566
 Follow all four, and this same map will start to look very different.
 
 16
-00:01:04,533 --> 00:01:07,777
+00:01:07,267 --> 00:01:10,703
 Start in the Pacific, between Hawaii and Mexico.
 
 17
-00:01:07,777 --> 00:01:14,571
+00:01:10,703 --> 00:01:16,212
 The Clarion-Clipperton Zone is a muddy abyssal plain of roughly six million square kilometres,
 
 18
-00:01:14,571 --> 00:01:16,672
+00:01:16,212 --> 00:01:19,725
 on average about five kilometres down.
 
 19
-00:01:16,672 --> 00:01:19,516
+00:01:19,725 --> 00:01:22,054
 The barrier here is the water itself.
 
 20
-00:01:19,516 --> 00:01:21,461
+00:01:22,054 --> 00:01:25,004
 Sunlight fades out within the top thousand metres.
 
 21
-00:01:21,461 --> 00:01:28,555
+00:01:25,004 --> 00:01:30,519
 At five thousand, the pressure is roughly five hundred times what you feel at the surface.
 
 22
-00:01:28,555 --> 00:01:31,080
+00:01:30,519 --> 00:01:32,821
 So scientists work at the end of a cable.
 
 23
-00:01:31,080 --> 00:01:33,874
+00:01:32,821 --> 00:01:36,202
 Ship-mounted sonar maps the plain in long swaths.
 
 24
-00:01:33,874 --> 00:01:40,414
+00:01:36,202 --> 00:01:40,043
 Remotely operated vehicles film the seafloor and collect animals.
 
 25
-00:01:40,414 --> 00:01:43,421
+00:01:40,043 --> 00:01:42,988
 Box corers bring up squares of mud.
 
 26
-00:01:43,421 --> 00:01:46,580
+00:01:42,988 --> 00:01:46,166
 By deep-sea standards, this is well-studied ground.
 
 27
-00:01:46,580 --> 00:01:48,334
+00:01:46,166 --> 00:01:49,119
 Expeditions have come here since the 1960s.
 
 28
-00:01:48,334 --> 00:01:49,079
+00:01:49,119 --> 00:01:50,472
 In 2023,
 
 29
-00:01:49,079 --> 00:01:55,993
+00:01:50,472 --> 00:01:56,475
 researchers at London's Natural History Museum combined more than a hundred thousand records into one checklist.
 
 30
-00:01:55,993 --> 00:01:58,378
+00:01:56,475 --> 00:02:00,132
 They counted 5,578 species.
 
 31
-00:01:58,378 --> 00:02:00,880
+00:02:00,132 --> 00:02:03,550
 Roughly nine in ten had no scientific name.
 
 32
-00:02:00,880 --> 00:02:04,149
+00:02:03,550 --> 00:02:06,273
 That is the gap in its clearest form.
 
 33
-00:02:04,149 --> 00:02:06,728
+00:02:06,273 --> 00:02:09,188
 These animals were found, photographed and preserved,
 
 34
-00:02:06,728 --> 00:02:09,180
+00:02:09,188 --> 00:02:11,831
 yet most have never been formally described.
 
 35
-00:02:09,180 --> 00:02:13,915
+00:02:11,831 --> 00:02:15,661
 How they live, and how far they range, is largely unknown.
 
 36
-00:02:13,915 --> 00:02:20,193
+00:02:15,661 --> 00:02:19,950
 And that matters, because parts of this plain are being explored for mining.
 
 37
-00:02:20,193 --> 00:02:23,226
+00:02:19,950 --> 00:02:22,903
 The ocean at least lets sound and cables through.
 
 38
-00:02:23,226 --> 00:02:25,643
+00:02:22,903 --> 00:02:25,408
 What happens when the barrier is solid?
 
 39
-00:02:27,833 --> 00:02:31,247
+00:02:27,600 --> 00:02:29,550
 West Antarctica.
 
 40
-00:02:31,247 --> 00:02:35,020
+00:02:29,550 --> 00:02:33,883
 The Whillans Ice Stream looks like an endless, flat sheet of snow.
 
 41
-00:02:35,020 --> 00:02:37,422
+00:02:33,883 --> 00:02:37,063
 Nothing on the surface marks the lake beneath it.
 
 42
-00:02:37,422 --> 00:02:38,616
+00:02:37,063 --> 00:02:38,721
 It was found from orbit.
 
 43
-00:02:38,616 --> 00:02:40,866
+00:02:38,721 --> 00:02:39,501
 In the 2000s,
 
 44
-00:02:40,866 --> 00:02:45,780
+00:02:39,501 --> 00:02:46,787
 NASA's ICESat satellite measured the ice surface here rising and falling as water filled and drained below.
 
 45
-00:02:45,780 --> 00:02:50,028
+00:02:46,787 --> 00:02:50,312
 Radar and seismic surveys then traced the lake's outline.
 
 46
-00:02:50,028 --> 00:02:53,085
+00:02:50,312 --> 00:02:52,812
 But an outline is not a sample.
 
 47
-00:02:53,085 --> 00:03:01,855
+00:02:52,812 --> 00:03:01,359
 In January 2013, the WISSARD project melted a borehole about sixty centimetres wide through roughly eight hundred metres of ice,
 
 48
-00:03:01,855 --> 00:03:06,303
+00:03:01,359 --> 00:03:05,163
 using a hot-water drill designed to keep surface microbes out.
 
 49
-00:03:06,303 --> 00:03:09,016
+00:03:05,163 --> 00:03:07,834
 At the bottom, a camera found the lake.
 
 50
-00:03:09,016 --> 00:03:12,029
+00:03:07,834 --> 00:03:11,012
 At the borehole, it was only about two metres deep.
 
 51
-00:03:12,029 --> 00:03:17,962
+00:03:11,012 --> 00:03:17,307
 And it was inhabited: around one hundred and thirty thousand microbial cells in every millilitre of water,
 
 52
-00:03:17,962 --> 00:03:24,668
+00:03:17,307 --> 00:03:22,860
 and at least 3,931 distinct microbial types identified by their DNA.
 
 53
-00:03:24,668 --> 00:03:27,398
+00:03:22,860 --> 00:03:25,955
 Many draw energy from chemicals, not sunlight.
 
 54
-00:03:27,398 --> 00:03:30,284
+00:03:25,955 --> 00:03:31,228
 A 2022 inventory lists 675 subglacial lakes in Antarctica.
 
 55
-00:03:30,284 --> 00:03:35,214
+00:03:31,228 --> 00:03:34,086
 Only a handful have ever been sampled directly.
 
 56
-00:03:35,214 --> 00:03:37,550
+00:03:34,086 --> 00:03:37,283
 One borehole describes one point in one lake.
 
 57
-00:03:37,550 --> 00:03:44,250
+00:03:37,283 --> 00:03:42,178
 How these waters connect, and how their life varies, is still largely open.
 
 58
-00:03:44,250 --> 00:03:45,995
+00:03:42,178 --> 00:03:43,692
 A drill can reach a lake.
 
 59
-00:03:45,995 --> 00:03:48,320
+00:03:43,692 --> 00:03:46,543
 But some spaces can only be entered on foot.
 
 60
-00:03:50,533 --> 00:03:56,238
+00:03:48,733 --> 00:03:55,140
 Beneath Carlsbad Caverns National Park in New Mexico, Lechuguilla Cave was long considered minor:
 
 61
-00:03:56,238 --> 00:03:59,753
+00:03:55,140 --> 00:03:59,218
 a deep entrance pit and a few hundred feet of dead-end passage.
 
 62
-00:03:59,753 --> 00:04:04,386
+00:03:59,218 --> 00:04:04,652
 But in the 1950s, cavers heard wind roaring up through the rubble on its floor.
 
 63
-00:04:04,386 --> 00:04:07,301
+00:04:04,652 --> 00:04:08,263
 Moving air meant open space somewhere below.
 
 64
-00:04:07,301 --> 00:04:11,313
+00:04:08,263 --> 00:04:11,884
 Cavers began digging, with park permission, in 1984.
 
 65
-00:04:11,313 --> 00:04:16,101
+00:04:11,884 --> 00:04:17,758
 On May 26, 1986, they broke through into large walking passages.
 
 66
-00:04:16,101 --> 00:04:17,956
+00:04:17,758 --> 00:04:19,585
 No satellite can map this.
 
 67
-00:04:17,956 --> 00:04:20,878
+00:04:19,585 --> 00:04:23,042
 Every line on Lechuguilla's map was measured by people: distance,
 
 68
-00:04:20,878 --> 00:04:26,846
+00:04:23,042 --> 00:04:29,749
 direction and slope from one survey point to the next, sketched by hand, often while crawling.
 
 69
-00:04:26,846 --> 00:04:31,052
+00:04:29,749 --> 00:04:36,637
 Since 1984, those teams have mapped more than 145 miles of passage,
 
 70
-00:04:31,052 --> 00:04:33,413
+00:04:36,637 --> 00:04:39,428
 about 233 kilometres, reaching 489 metres deep.
 
 71
-00:04:33,413 --> 00:04:35,865
+00:04:39,428 --> 00:04:42,237
 The cave was dissolved from below by sulfuric acid,
 
 72
-00:04:35,865 --> 00:04:40,140
+00:04:42,237 --> 00:04:45,913
 and it holds gypsum chandeliers six metres long.
 
 73
-00:04:40,140 --> 00:04:41,705
+00:04:45,913 --> 00:04:47,430
 It also holds microbes.
 
 74
-00:04:41,705 --> 00:04:43,568
+00:04:47,430 --> 00:04:50,795
 In a section isolated from the surface for over four million years,
 
 75
-00:04:43,568 --> 00:04:52,100
+00:04:50,795 --> 00:04:56,767
 researchers found bacteria already resistant to antibiotics, some to fourteen different commercial drugs.
 
 76
-00:04:52,100 --> 00:04:54,649
+00:04:56,767 --> 00:04:59,057
 Resistance, it turns out, is ancient.
 
 77
-00:04:54,649 --> 00:04:56,932
+00:04:59,057 --> 00:05:01,020
 The map ends where the survey ends.
 
 78
-00:04:56,932 --> 00:05:00,327
+00:05:01,020 --> 00:05:04,615
 Past the last measured point there may be more passage, or none.
 
 79
-00:05:00,327 --> 00:05:02,845
+00:05:04,615 --> 00:05:06,949
 Survey teams still go back to find out.
 
 80
-00:05:02,845 --> 00:05:05,433
+00:05:06,949 --> 00:05:09,326
 Underground, nobody can see from above.
 
 81
-00:05:05,433 --> 00:05:06,895
+00:05:09,326 --> 00:05:10,879
 In a forest, we can.
 
 82
-00:05:06,895 --> 00:05:09,704
+00:05:10,879 --> 00:05:13,634
 So how can a forest still surprise scientists?
 
 83
-00:05:11,900 --> 00:05:13,195
+00:05:15,833 --> 00:05:17,213
 In 2005,
 
 84
-00:05:13,195 --> 00:05:22,620
+00:05:17,213 --> 00:05:26,675
 scientists working with Kew Gardens were scanning Google Earth for highland forests in Mozambique when they noticed a dark green patch on a mountain called Mabu.
 
 85
-00:05:22,620 --> 00:05:25,693
+00:05:26,675 --> 00:05:29,200
 From above, a canopy is a surface.
 
 86
-00:05:25,693 --> 00:05:29,670
+00:05:29,200 --> 00:05:32,995
 Satellite images show its extent, its texture, its edges.
 
 87
-00:05:29,670 --> 00:05:31,740
+00:05:32,995 --> 00:05:35,277
 They cannot show a chameleon on a twig,
 
 88
-00:05:31,740 --> 00:05:35,638
+00:05:35,277 --> 00:05:39,148
 or what lives beneath trees forty to fifty metres tall.
 
 89
-00:05:35,638 --> 00:05:40,271
+00:05:39,148 --> 00:05:43,298
 So researchers walked in: a first visit in December 2005,
 
 90
-00:05:40,271 --> 00:05:46,661
+00:05:43,298 --> 00:05:50,235
 then a larger Kew-led expedition in 2008 with Mozambican, Malawian and international partners.
 
 91
-00:05:46,661 --> 00:05:54,257
+00:05:50,235 --> 00:05:57,486
 They documented what is probably the largest medium-altitude rainforest in southern Africa, some seventy to eighty square kilometres,
 
 92
-00:05:54,257 --> 00:06:01,719
+00:05:57,486 --> 00:06:04,650
 and animals new to science: the Mabu forest viper, a pygmy chameleon, a horseshoe bat, new butterflies.
 
 93
-00:06:01,719 --> 00:06:04,253
+00:06:04,650 --> 00:06:08,569
 By 2016, thirteen new species had been recorded.
 
 94
-00:06:04,253 --> 00:06:05,584
+00:06:08,569 --> 00:06:11,533
 But Mabu was never a lost forest.
 
 95
-00:06:05,584 --> 00:06:08,486
+00:06:11,533 --> 00:06:14,002
 It was unknown to biologists, not to people.
 
 96
-00:06:08,486 --> 00:06:15,207
+00:06:14,002 --> 00:06:17,787
 Local hunters knew its animals and helped researchers record them.
 
 97
-00:06:15,207 --> 00:06:19,860
+00:06:17,787 --> 00:06:22,572
 During Mozambique's civil war, families reportedly sheltered inside the forest.
 
 98
-00:06:19,860 --> 00:06:24,452
+00:06:22,572 --> 00:06:26,562
 Even so, most surveys have stayed near the eastern edge and the summit.
 
 99
-00:06:24,452 --> 00:06:29,335
+00:06:26,562 --> 00:06:31,901
 As of 2016, the drier western and northern slopes had not been visited by scientists.
 
 100
-00:06:31,533 --> 00:06:32,876
-Back to the map.
+00:06:31,901 --> 00:06:36,360
+That gap, between seeing a place and knowing it, runs through all four.
 
 101
-00:06:32,876 --> 00:06:34,890
-Nothing on it has moved.
+00:06:38,567 --> 00:06:39,850
+Back to the map.
 
 102
-00:06:34,890 --> 00:06:41,232
-The Pacific, Antarctica, New Mexico and Mozambique are exactly where they were.
+00:06:39,850 --> 00:06:40,563
+Nothing on it has moved.
 
 103
-00:06:41,232 --> 00:06:43,560
-But now it reads in layers.
+00:06:40,563 --> 00:06:46,034
+The Pacific, Antarctica, New Mexico and Mozambique are exactly where they were.
 
 104
-00:06:43,560 --> 00:06:46,934
-Seafloor shapes estimated from satellites.
+00:06:46,034 --> 00:06:47,941
+But now it reads in layers.
 
 105
-00:06:46,934 --> 00:06:48,548
-Swaths measured by sonar.
+00:06:47,941 --> 00:06:50,660
+Seafloor shapes estimated from satellites.
 
 106
-00:06:48,548 --> 00:06:51,438
-Narrow tracks where a camera passed.
+00:06:50,660 --> 00:06:52,716
+Swaths measured by sonar.
 
 107
-00:06:51,438 --> 00:06:55,947
-A borehole sixty centimetres wide.
+00:06:52,716 --> 00:06:55,059
+Narrow tracks where a camera passed.
 
 108
-00:06:55,947 --> 00:06:57,807
-Passages measured by hand.
+00:06:55,059 --> 00:06:57,568
+A borehole sixty centimetres wide.
 
 109
-00:06:57,807 --> 00:06:59,980
-Forest edges walked by scientists,
+00:06:57,568 --> 00:06:59,666
+Passages measured by hand.
 
 110
-00:06:59,980 --> 00:07:04,082
-inside landscapes long known to the people who live there.
+00:06:59,666 --> 00:07:00,963
+Forest edges walked by scientists,
 
 111
-00:07:04,082 --> 00:07:09,280
-A map tells us where things are.
+00:07:00,963 --> 00:07:05,277
+inside landscapes long known to the people who live there.
 
 112
-00:07:09,280 --> 00:07:11,236
-It rarely tells us how we know.
+00:07:05,277 --> 00:07:07,334
+A map tells us where things are.
 
 113
-00:07:11,236 --> 00:07:13,253
-Earth isn't unexplored.
+00:07:07,334 --> 00:07:09,718
+It rarely tells us how we know.
 
 114
-00:07:13,253 --> 00:07:15,041
-It is unevenly observed.
+00:07:09,718 --> 00:07:11,621
+Earth isn't unexplored.
 
 115
-00:07:15,041 --> 00:07:20,654
+00:07:11,621 --> 00:07:14,095
+It is unevenly observed.
+
+116
+00:07:14,095 --> 00:07:17,648
 And the most interesting questions still begin at the last measured point.

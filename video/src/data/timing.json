@@ -6,115 +6,115 @@
    "id": "open",
    "title": "The Map Reveal",
    "vo": "audio/vo_open.flac",
-   "voDur": 58.029,
+   "voDur": 60.766,
    "leadIn": 0.8,
-   "durationInFrames": 1807,
+   "durationInFrames": 1889,
    "paras": [
     {
      "start": 0.8,
-     "end": 11.454
+     "end": 11.731
     },
     {
-     "start": 11.454,
-     "end": 28.143
+     "start": 11.731,
+     "end": 28.246
     },
     {
-     "start": 28.143,
-     "end": 44.664
+     "start": 28.246,
+     "end": 45.569
     },
     {
-     "start": 44.664,
-     "end": 58.829
+     "start": 45.569,
+     "end": 61.566
     }
    ],
    "cues": [
     {
      "start": 0.8,
-     "end": 3.923,
+     "end": 3.708,
      "text": "Open a world map and Earth looks finished.",
      "para": 0
     },
     {
-     "start": 3.923,
-     "end": 5.799,
+     "start": 3.708,
+     "end": 5.523,
      "text": "Every coastline is drawn.",
      "para": 0
     },
     {
-     "start": 5.799,
-     "end": 7.534,
+     "start": 5.523,
+     "end": 7.499,
      "text": "Every ocean has a name.",
      "para": 0
     },
     {
-     "start": 7.534,
-     "end": 11.454,
+     "start": 7.499,
+     "end": 11.731,
      "text": "Even the floor of the Pacific has ridges and mountains on it.",
      "para": 0
     },
     {
-     "start": 11.454,
-     "end": 15.476,
+     "start": 11.731,
+     "end": 15.311,
      "text": "But most of that seafloor has never been mapped in detail.",
      "para": 1
     },
     {
-     "start": 15.476,
-     "end": 18.368,
+     "start": 15.311,
+     "end": 17.533,
      "text": "Much of its shape is estimated from satellites,",
      "para": 1
     },
     {
-     "start": 18.368,
-     "end": 21.583,
+     "start": 17.533,
+     "end": 21.609,
      "text": "which detect tiny bumps in the height of the sea surface.",
      "para": 1
     },
     {
-     "start": 21.583,
-     "end": 23.9,
+     "start": 21.609,
+     "end": 22.983,
      "text": "As of April 2026,",
      "para": 1
     },
     {
-     "start": 23.9,
-     "end": 28.143,
+     "start": 22.983,
+     "end": 28.246,
      "text": "about twenty-nine percent of the ocean floor had been mapped to modern standards.",
      "para": 1
     },
     {
-     "start": 28.143,
-     "end": 32.93,
+     "start": 28.246,
+     "end": 33.136,
      "text": "And the part anyone has actually seen with a camera is far smaller.",
      "para": 2
     },
     {
-     "start": 32.93,
-     "end": 38.295,
+     "start": 33.136,
+     "end": 38.576,
      "text": "A 2025 study put it at less than a thousandth of one percent of the deep seafloor.",
      "para": 2
     },
     {
-     "start": 38.295,
-     "end": 44.664,
+     "start": 38.576,
+     "end": 45.569,
      "text": "Every look since 1958, combined, covers an area about a tenth the size of Belgium.",
      "para": 2
     },
     {
-     "start": 44.664,
-     "end": 49.671,
+     "start": 45.569,
+     "end": 50.912,
      "text": "So a map can be complete and still say very little about what is there.",
      "para": 3
     },
     {
-     "start": 49.671,
-     "end": 54.918,
+     "start": 50.912,
+     "end": 57.07,
      "text": "Water, ice, rock and forest each hide that gap in a different way.",
      "para": 3
     },
     {
-     "start": 54.918,
-     "end": 58.829,
+     "start": 57.07,
+     "end": 61.566,
      "text": "Follow all four, and this same map will start to look very different.",
      "para": 3
     }
@@ -124,171 +124,171 @@
    "id": "ocean",
    "title": "Water",
    "vo": "audio/vo_ocean.flac",
-   "voDur": 81.11,
+   "voDur": 78.141,
    "leadIn": 0.8,
-   "durationInFrames": 2499,
+   "durationInFrames": 2410,
    "paras": [
     {
      "start": 0.8,
-     "end": 12.939
+     "end": 13.258
     },
     {
-     "start": 12.939,
-     "end": 24.822
+     "start": 13.258,
+     "end": 24.052
     },
     {
-     "start": 24.822,
-     "end": 39.688
+     "start": 24.052,
+     "end": 36.521
     },
     {
-     "start": 39.688,
-     "end": 57.147
+     "start": 36.521,
+     "end": 57.083
     },
     {
-     "start": 57.147,
-     "end": 76.46
+     "start": 57.083,
+     "end": 73.483
     },
     {
-     "start": 76.46,
-     "end": 81.91
+     "start": 73.483,
+     "end": 78.941
     }
    ],
    "cues": [
     {
      "start": 0.8,
-     "end": 4.044,
+     "end": 4.236,
      "text": "Start in the Pacific, between Hawaii and Mexico.",
      "para": 0
     },
     {
-     "start": 4.044,
-     "end": 10.838,
+     "start": 4.236,
+     "end": 9.745,
      "text": "The Clarion-Clipperton Zone is a muddy abyssal plain of roughly six million square kilometres,",
      "para": 0
     },
     {
-     "start": 10.838,
-     "end": 12.939,
+     "start": 9.745,
+     "end": 13.258,
      "text": "on average about five kilometres down.",
      "para": 0
     },
     {
-     "start": 12.939,
-     "end": 15.783,
+     "start": 13.258,
+     "end": 15.587,
      "text": "The barrier here is the water itself.",
      "para": 1
     },
     {
-     "start": 15.783,
-     "end": 17.728,
+     "start": 15.587,
+     "end": 18.537,
      "text": "Sunlight fades out within the top thousand metres.",
      "para": 1
     },
     {
-     "start": 17.728,
-     "end": 24.822,
+     "start": 18.537,
+     "end": 24.052,
      "text": "At five thousand, the pressure is roughly five hundred times what you feel at the surface.",
      "para": 1
     },
     {
-     "start": 24.822,
-     "end": 27.347,
+     "start": 24.052,
+     "end": 26.354,
      "text": "So scientists work at the end of a cable.",
      "para": 2
     },
     {
-     "start": 27.347,
-     "end": 30.141,
+     "start": 26.354,
+     "end": 29.735,
      "text": "Ship-mounted sonar maps the plain in long swaths.",
      "para": 2
     },
     {
-     "start": 30.141,
-     "end": 36.681,
+     "start": 29.735,
+     "end": 33.576,
      "text": "Remotely operated vehicles film the seafloor and collect animals.",
      "para": 2
     },
     {
-     "start": 36.681,
-     "end": 39.688,
+     "start": 33.576,
+     "end": 36.521,
      "text": "Box corers bring up squares of mud.",
      "para": 2
     },
     {
-     "start": 39.688,
-     "end": 42.847,
+     "start": 36.521,
+     "end": 39.699,
      "text": "By deep-sea standards, this is well-studied ground.",
      "para": 3
     },
     {
-     "start": 42.847,
-     "end": 44.601,
+     "start": 39.699,
+     "end": 42.652,
      "text": "Expeditions have come here since the 1960s.",
      "para": 3
     },
     {
-     "start": 44.601,
-     "end": 45.346,
+     "start": 42.652,
+     "end": 44.005,
      "text": "In 2023,",
      "para": 3
     },
     {
-     "start": 45.346,
-     "end": 52.26,
+     "start": 44.005,
+     "end": 50.008,
      "text": "researchers at London's Natural History Museum combined more than a hundred thousand records into one checklist.",
      "para": 3
     },
     {
-     "start": 52.26,
-     "end": 54.645,
+     "start": 50.008,
+     "end": 53.665,
      "text": "They counted 5,578 species.",
      "para": 3
     },
     {
-     "start": 54.645,
-     "end": 57.147,
+     "start": 53.665,
+     "end": 57.083,
      "text": "Roughly nine in ten had no scientific name.",
      "para": 3
     },
     {
-     "start": 57.147,
-     "end": 60.416,
+     "start": 57.083,
+     "end": 59.806,
      "text": "That is the gap in its clearest form.",
      "para": 4
     },
     {
-     "start": 60.416,
-     "end": 62.995,
+     "start": 59.806,
+     "end": 62.721,
      "text": "These animals were found, photographed and preserved,",
      "para": 4
     },
     {
-     "start": 62.995,
-     "end": 65.447,
+     "start": 62.721,
+     "end": 65.364,
      "text": "yet most have never been formally described.",
      "para": 4
     },
     {
-     "start": 65.447,
-     "end": 70.182,
+     "start": 65.364,
+     "end": 69.194,
      "text": "How they live, and how far they range, is largely unknown.",
      "para": 4
     },
     {
-     "start": 70.182,
-     "end": 76.46,
+     "start": 69.194,
+     "end": 73.483,
      "text": "And that matters, because parts of this plain are being explored for mining.",
      "para": 4
     },
     {
-     "start": 76.46,
-     "end": 79.493,
+     "start": 73.483,
+     "end": 76.436,
      "text": "The ocean at least lets sound and cables through.",
      "para": 5
     },
     {
-     "start": 79.493,
-     "end": 81.91,
+     "start": 76.436,
+     "end": 78.941,
      "text": "What happens when the barrier is solid?",
      "para": 5
     }
@@ -298,159 +298,159 @@
    "id": "ice",
    "title": "Ice",
    "vo": "audio/vo_ice.flac",
-   "voDur": 80.487,
+   "voDur": 78.943,
    "leadIn": 0.8,
-   "durationInFrames": 2481,
+   "durationInFrames": 2434,
    "paras": [
     {
      "start": 0.8,
-     "end": 10.389
+     "end": 10.263
     },
     {
-     "start": 10.389,
-     "end": 26.052
+     "start": 10.263,
+     "end": 26.012
     },
     {
-     "start": 26.052,
-     "end": 39.27
+     "start": 26.012,
+     "end": 38.363
     },
     {
-     "start": 39.27,
-     "end": 60.365
+     "start": 38.363,
+     "end": 59.155
     },
     {
-     "start": 60.365,
-     "end": 77.217
+     "start": 59.155,
+     "end": 75.378
     },
     {
-     "start": 77.217,
-     "end": 81.287
+     "start": 75.378,
+     "end": 79.743
     }
    ],
    "cues": [
     {
      "start": 0.8,
-     "end": 4.214,
+     "end": 2.75,
      "text": "West Antarctica.",
      "para": 0
     },
     {
-     "start": 4.214,
-     "end": 7.987,
+     "start": 2.75,
+     "end": 7.083,
      "text": "The Whillans Ice Stream looks like an endless, flat sheet of snow.",
      "para": 0
     },
     {
-     "start": 7.987,
-     "end": 10.389,
+     "start": 7.083,
+     "end": 10.263,
      "text": "Nothing on the surface marks the lake beneath it.",
      "para": 0
     },
     {
-     "start": 10.389,
-     "end": 11.583,
+     "start": 10.263,
+     "end": 11.921,
      "text": "It was found from orbit.",
      "para": 1
     },
     {
-     "start": 11.583,
-     "end": 13.833,
+     "start": 11.921,
+     "end": 12.701,
      "text": "In the 2000s,",
      "para": 1
     },
     {
-     "start": 13.833,
-     "end": 18.747,
+     "start": 12.701,
+     "end": 19.987,
      "text": "NASA's ICESat satellite measured the ice surface here rising and falling as water filled and drained below.",
      "para": 1
     },
     {
-     "start": 18.747,
-     "end": 22.995,
+     "start": 19.987,
+     "end": 23.512,
      "text": "Radar and seismic surveys then traced the lake's outline.",
      "para": 1
     },
     {
-     "start": 22.995,
-     "end": 26.052,
+     "start": 23.512,
+     "end": 26.012,
      "text": "But an outline is not a sample.",
      "para": 1
     },
     {
-     "start": 26.052,
-     "end": 34.822,
+     "start": 26.012,
+     "end": 34.559,
      "text": "In January 2013, the WISSARD project melted a borehole about sixty centimetres wide through roughly eight hundred metres of ice,",
      "para": 2
     },
     {
-     "start": 34.822,
-     "end": 39.27,
+     "start": 34.559,
+     "end": 38.363,
      "text": "using a hot-water drill designed to keep surface microbes out.",
      "para": 2
     },
     {
-     "start": 39.27,
-     "end": 41.983,
+     "start": 38.363,
+     "end": 41.034,
      "text": "At the bottom, a camera found the lake.",
      "para": 3
     },
     {
-     "start": 41.983,
-     "end": 44.996,
+     "start": 41.034,
+     "end": 44.212,
      "text": "At the borehole, it was only about two metres deep.",
      "para": 3
     },
     {
-     "start": 44.996,
-     "end": 50.929,
+     "start": 44.212,
+     "end": 50.507,
      "text": "And it was inhabited: around one hundred and thirty thousand microbial cells in every millilitre of water,",
      "para": 3
     },
     {
-     "start": 50.929,
-     "end": 57.635,
+     "start": 50.507,
+     "end": 56.06,
      "text": "and at least 3,931 distinct microbial types identified by their DNA.",
      "para": 3
     },
     {
-     "start": 57.635,
-     "end": 60.365,
+     "start": 56.06,
+     "end": 59.155,
      "text": "Many draw energy from chemicals, not sunlight.",
      "para": 3
     },
     {
-     "start": 60.365,
-     "end": 63.251,
+     "start": 59.155,
+     "end": 64.428,
      "text": "A 2022 inventory lists 675 subglacial lakes in Antarctica.",
      "para": 4
     },
     {
-     "start": 63.251,
-     "end": 68.181,
+     "start": 64.428,
+     "end": 67.286,
      "text": "Only a handful have ever been sampled directly.",
      "para": 4
     },
     {
-     "start": 68.181,
-     "end": 70.517,
+     "start": 67.286,
+     "end": 70.483,
      "text": "One borehole describes one point in one lake.",
      "para": 4
     },
     {
-     "start": 70.517,
-     "end": 77.217,
+     "start": 70.483,
+     "end": 75.378,
      "text": "How these waters connect, and how their life varies, is still largely open.",
      "para": 4
     },
     {
-     "start": 77.217,
-     "end": 78.962,
+     "start": 75.378,
+     "end": 76.892,
      "text": "A drill can reach a lake.",
      "para": 5
     },
     {
-     "start": 78.962,
-     "end": 81.287,
+     "start": 76.892,
+     "end": 79.743,
      "text": "But some spaces can only be entered on foot.",
      "para": 5
     }
@@ -460,175 +460,175 @@
    "id": "cave",
    "title": "Rock",
    "vo": "audio/vo_cave.flac",
-   "voDur": 79.171,
+   "voDur": 84.901,
    "leadIn": 0.8,
-   "durationInFrames": 2441,
+   "durationInFrames": 2613,
    "paras": [
     {
      "start": 0.8,
-     "end": 17.568
+     "end": 20.33
     },
     {
-     "start": 17.568,
-     "end": 26.368
+     "start": 20.33,
+     "end": 29.825
     },
     {
-     "start": 26.368,
-     "end": 37.113
+     "start": 29.825,
+     "end": 41.816
     },
     {
-     "start": 37.113,
-     "end": 50.407
+     "start": 41.816,
+     "end": 57.98
     },
     {
-     "start": 50.407,
-     "end": 64.916
+     "start": 57.98,
+     "end": 71.124
     },
     {
-     "start": 64.916,
-     "end": 73.112
+     "start": 71.124,
+     "end": 79.016
     },
     {
-     "start": 73.112,
-     "end": 79.971
+     "start": 79.016,
+     "end": 85.701
     }
    ],
    "cues": [
     {
      "start": 0.8,
-     "end": 6.505,
+     "end": 7.207,
      "text": "Beneath Carlsbad Caverns National Park in New Mexico, Lechuguilla Cave was long considered minor:",
      "para": 0
     },
     {
-     "start": 6.505,
-     "end": 10.02,
+     "start": 7.207,
+     "end": 11.285,
      "text": "a deep entrance pit and a few hundred feet of dead-end passage.",
      "para": 0
     },
     {
-     "start": 10.02,
-     "end": 14.653,
+     "start": 11.285,
+     "end": 16.719,
      "text": "But in the 1950s, cavers heard wind roaring up through the rubble on its floor.",
      "para": 0
     },
     {
-     "start": 14.653,
-     "end": 17.568,
+     "start": 16.719,
+     "end": 20.33,
      "text": "Moving air meant open space somewhere below.",
      "para": 0
     },
     {
-     "start": 17.568,
-     "end": 21.58,
+     "start": 20.33,
+     "end": 23.951,
      "text": "Cavers began digging, with park permission, in 1984.",
      "para": 1
     },
     {
-     "start": 21.58,
-     "end": 26.368,
+     "start": 23.951,
+     "end": 29.825,
      "text": "On May 26, 1986, they broke through into large walking passages.",
      "para": 1
     },
     {
-     "start": 26.368,
-     "end": 28.223,
+     "start": 29.825,
+     "end": 31.652,
      "text": "No satellite can map this.",
      "para": 2
     },
     {
-     "start": 28.223,
-     "end": 31.145,
+     "start": 31.652,
+     "end": 35.109,
      "text": "Every line on Lechuguilla's map was measured by people: distance,",
      "para": 2
     },
     {
-     "start": 31.145,
-     "end": 37.113,
+     "start": 35.109,
+     "end": 41.816,
      "text": "direction and slope from one survey point to the next, sketched by hand, often while crawling.",
      "para": 2
     },
     {
-     "start": 37.113,
-     "end": 41.319,
+     "start": 41.816,
+     "end": 48.704,
      "text": "Since 1984, those teams have mapped more than 145 miles of passage,",
      "para": 3
     },
     {
-     "start": 41.319,
-     "end": 43.68,
+     "start": 48.704,
+     "end": 51.495,
      "text": "about 233 kilometres, reaching 489 metres deep.",
      "para": 3
     },
     {
-     "start": 43.68,
-     "end": 46.132,
+     "start": 51.495,
+     "end": 54.304,
      "text": "The cave was dissolved from below by sulfuric acid,",
      "para": 3
     },
     {
-     "start": 46.132,
-     "end": 50.407,
+     "start": 54.304,
+     "end": 57.98,
      "text": "and it holds gypsum chandeliers six metres long.",
      "para": 3
     },
     {
-     "start": 50.407,
-     "end": 51.972,
+     "start": 57.98,
+     "end": 59.497,
      "text": "It also holds microbes.",
      "para": 4
     },
     {
-     "start": 51.972,
-     "end": 53.835,
+     "start": 59.497,
+     "end": 62.862,
      "text": "In a section isolated from the surface for over four million years,",
      "para": 4
     },
     {
-     "start": 53.835,
-     "end": 62.367,
+     "start": 62.862,
+     "end": 68.834,
      "text": "researchers found bacteria already resistant to antibiotics, some to fourteen different commercial drugs.",
      "para": 4
     },
     {
-     "start": 62.367,
-     "end": 64.916,
+     "start": 68.834,
+     "end": 71.124,
      "text": "Resistance, it turns out, is ancient.",
      "para": 4
     },
     {
-     "start": 64.916,
-     "end": 67.199,
+     "start": 71.124,
+     "end": 73.087,
      "text": "The map ends where the survey ends.",
      "para": 5
     },
     {
-     "start": 67.199,
-     "end": 70.594,
+     "start": 73.087,
+     "end": 76.682,
      "text": "Past the last measured point there may be more passage, or none.",
      "para": 5
     },
     {
-     "start": 70.594,
-     "end": 73.112,
+     "start": 76.682,
+     "end": 79.016,
      "text": "Survey teams still go back to find out.",
      "para": 5
     },
     {
-     "start": 73.112,
-     "end": 75.7,
+     "start": 79.016,
+     "end": 81.393,
      "text": "Underground, nobody can see from above.",
      "para": 6
     },
     {
-     "start": 75.7,
-     "end": 77.162,
+     "start": 81.393,
+     "end": 82.946,
      "text": "In a forest, we can.",
      "para": 6
     },
     {
-     "start": 77.162,
-     "end": 79.971,
+     "start": 82.946,
+     "end": 85.701,
      "text": "So how can a forest still surprise scientists?",
      "para": 6
     }
@@ -638,133 +638,143 @@
    "id": "forest",
    "title": "Forest",
    "vo": "audio/vo_forest.flac",
-   "voDur": 77.435,
+   "voDur": 80.527,
    "leadIn": 0.8,
-   "durationInFrames": 2389,
+   "durationInFrames": 2482,
    "paras": [
     {
      "start": 0.8,
-     "end": 11.52
+     "end": 11.642
     },
     {
-     "start": 11.52,
-     "end": 24.538
+     "start": 11.642,
+     "end": 24.115
     },
     {
-     "start": 24.538,
-     "end": 53.153
+     "start": 24.115,
+     "end": 53.536
     },
     {
-     "start": 53.153,
-     "end": 68.76
+     "start": 53.536,
+     "end": 67.539
     },
     {
-     "start": 68.76,
-     "end": 78.235
+     "start": 67.539,
+     "end": 76.868
+    },
+    {
+     "start": 76.868,
+     "end": 81.327
     }
    ],
    "cues": [
     {
      "start": 0.8,
-     "end": 2.095,
+     "end": 2.18,
      "text": "In 2005,",
      "para": 0
     },
     {
-     "start": 2.095,
-     "end": 11.52,
+     "start": 2.18,
+     "end": 11.642,
      "text": "scientists working with Kew Gardens were scanning Google Earth for highland forests in Mozambique when they noticed a dark green patch on a mountain called Mabu.",
      "para": 0
     },
     {
-     "start": 11.52,
-     "end": 14.593,
+     "start": 11.642,
+     "end": 14.167,
      "text": "From above, a canopy is a surface.",
      "para": 1
     },
     {
-     "start": 14.593,
-     "end": 18.57,
+     "start": 14.167,
+     "end": 17.962,
      "text": "Satellite images show its extent, its texture, its edges.",
      "para": 1
     },
     {
-     "start": 18.57,
-     "end": 20.64,
+     "start": 17.962,
+     "end": 20.244,
      "text": "They cannot show a chameleon on a twig,",
      "para": 1
     },
     {
-     "start": 20.64,
-     "end": 24.538,
+     "start": 20.244,
+     "end": 24.115,
      "text": "or what lives beneath trees forty to fifty metres tall.",
      "para": 1
     },
     {
-     "start": 24.538,
-     "end": 29.171,
+     "start": 24.115,
+     "end": 28.265,
      "text": "So researchers walked in: a first visit in December 2005,",
      "para": 2
     },
     {
-     "start": 29.171,
-     "end": 35.561,
+     "start": 28.265,
+     "end": 35.202,
      "text": "then a larger Kew-led expedition in 2008 with Mozambican, Malawian and international partners.",
      "para": 2
     },
     {
-     "start": 35.561,
-     "end": 43.157,
+     "start": 35.202,
+     "end": 42.453,
      "text": "They documented what is probably the largest medium-altitude rainforest in southern Africa, some seventy to eighty square kilometres,",
      "para": 2
     },
     {
-     "start": 43.157,
-     "end": 50.619,
+     "start": 42.453,
+     "end": 49.617,
      "text": "and animals new to science: the Mabu forest viper, a pygmy chameleon, a horseshoe bat, new butterflies.",
      "para": 2
     },
     {
-     "start": 50.619,
-     "end": 53.153,
+     "start": 49.617,
+     "end": 53.536,
      "text": "By 2016, thirteen new species had been recorded.",
      "para": 2
     },
     {
-     "start": 53.153,
-     "end": 54.484,
+     "start": 53.536,
+     "end": 56.5,
      "text": "But Mabu was never a lost forest.",
      "para": 3
     },
     {
-     "start": 54.484,
-     "end": 57.386,
+     "start": 56.5,
+     "end": 58.969,
      "text": "It was unknown to biologists, not to people.",
      "para": 3
     },
     {
-     "start": 57.386,
-     "end": 64.107,
+     "start": 58.969,
+     "end": 62.754,
      "text": "Local hunters knew its animals and helped researchers record them.",
      "para": 3
     },
     {
-     "start": 64.107,
-     "end": 68.76,
+     "start": 62.754,
+     "end": 67.539,
      "text": "During Mozambique's civil war, families reportedly sheltered inside the forest.",
      "para": 3
     },
     {
-     "start": 68.76,
-     "end": 73.352,
+     "start": 67.539,
+     "end": 71.529,
      "text": "Even so, most surveys have stayed near the eastern edge and the summit.",
      "para": 4
     },
     {
-     "start": 73.352,
-     "end": 78.235,
+     "start": 71.529,
+     "end": 76.868,
      "text": "As of 2016, the drier western and northern slopes had not been visited by scientists.",
      "para": 4
+    },
+    {
+     "start": 76.868,
+     "end": 81.327,
+     "text": "That gap, between seeing a place and knowing it, runs through all four.",
+     "para": 5
     }
    ]
   },
@@ -772,122 +782,122 @@
    "id": "final",
    "title": "The Return",
    "vo": "audio/vo_final.flac",
-   "voDur": 49.121,
+   "voDur": 39.081,
    "leadIn": 0.8,
-   "durationInFrames": 1540,
+   "durationInFrames": 1238,
    "paras": [
     {
      "start": 0.8,
-     "end": 10.499
+     "end": 8.267
     },
     {
-     "start": 10.499,
-     "end": 33.349
+     "start": 8.267,
+     "end": 27.51
     },
     {
-     "start": 33.349,
-     "end": 49.921
+     "start": 27.51,
+     "end": 39.881
     }
    ],
    "cues": [
     {
      "start": 0.8,
-     "end": 2.143,
+     "end": 2.083,
      "text": "Back to the map.",
      "para": 0
     },
     {
-     "start": 2.143,
-     "end": 4.157,
+     "start": 2.083,
+     "end": 2.796,
      "text": "Nothing on it has moved.",
      "para": 0
     },
     {
-     "start": 4.157,
-     "end": 10.499,
+     "start": 2.796,
+     "end": 8.267,
      "text": "The Pacific, Antarctica, New Mexico and Mozambique are exactly where they were.",
      "para": 0
     },
     {
-     "start": 10.499,
-     "end": 12.827,
+     "start": 8.267,
+     "end": 10.174,
      "text": "But now it reads in layers.",
      "para": 1
     },
     {
-     "start": 12.827,
-     "end": 16.201,
+     "start": 10.174,
+     "end": 12.893,
      "text": "Seafloor shapes estimated from satellites.",
      "para": 1
     },
     {
-     "start": 16.201,
-     "end": 17.815,
+     "start": 12.893,
+     "end": 14.949,
      "text": "Swaths measured by sonar.",
      "para": 1
     },
     {
-     "start": 17.815,
-     "end": 20.705,
+     "start": 14.949,
+     "end": 17.292,
      "text": "Narrow tracks where a camera passed.",
      "para": 1
     },
     {
-     "start": 20.705,
-     "end": 25.214,
+     "start": 17.292,
+     "end": 19.801,
      "text": "A borehole sixty centimetres wide.",
      "para": 1
     },
     {
-     "start": 25.214,
-     "end": 27.074,
+     "start": 19.801,
+     "end": 21.899,
      "text": "Passages measured by hand.",
      "para": 1
     },
     {
-     "start": 27.074,
-     "end": 29.247,
+     "start": 21.899,
+     "end": 23.196,
      "text": "Forest edges walked by scientists,",
      "para": 1
     },
     {
-     "start": 29.247,
-     "end": 33.349,
+     "start": 23.196,
+     "end": 27.51,
      "text": "inside landscapes long known to the people who live there.",
      "para": 1
     },
     {
-     "start": 33.349,
-     "end": 38.547,
+     "start": 27.51,
+     "end": 29.567,
      "text": "A map tells us where things are.",
      "para": 2
     },
     {
-     "start": 38.547,
-     "end": 40.503,
+     "start": 29.567,
+     "end": 31.951,
      "text": "It rarely tells us how we know.",
      "para": 2
     },
     {
-     "start": 40.503,
-     "end": 42.52,
+     "start": 31.951,
+     "end": 33.854,
      "text": "Earth isn't unexplored.",
      "para": 2
     },
     {
-     "start": 42.52,
-     "end": 44.308,
+     "start": 33.854,
+     "end": 36.328,
      "text": "It is unevenly observed.",
      "para": 2
     },
     {
-     "start": 44.308,
-     "end": 49.921,
+     "start": 36.328,
+     "end": 39.881,
      "text": "And the most interesting questions still begin at the last measured point.",
      "para": 2
     }
    ]
   }
  ],
- "totalFrames": 13262
+ "totalFrames": 13171
 }

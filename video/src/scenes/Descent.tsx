@@ -2,7 +2,7 @@ import React from 'react';
 import {AbsoluteFill, Img, staticFile, useCurrentFrame} from 'remotion';
 import {C, T} from '../theme';
 import {ramp, lerp, window} from '../lib/anim';
-import {paraFrame, type SceneTiming, FPS} from '../lib/timing';
+import {paraFrame, cueFrame, type SceneTiming, FPS} from '../lib/timing';
 import {Globe} from './MapReveal';
 import {ChapterTag, Credit, Label, Stat} from '../components/Text';
 
@@ -25,13 +25,13 @@ export const Descent: React.FC<{s: SceneTiming}> = ({s}) => {
   const depth = probe * FLOOR;
   // P2 — sonar swath, then ROV, then box corer.
   const swath = ramp(f, p(2) + 10, 40);
-  const rov = ramp(f, p(2, 4), 90);
-  const corer = ramp(f, p(2, 9), 50);
+  const rov = ramp(f, cueFrame(s, 'Remotely operated'), 90);
+  const corer = ramp(f, cueFrame(s, 'Box corers'), 50);
   // P3/P4 — specimen photo + numbers; P5 — sonar rings expand into the next chapter.
   const section = window(f, p(1) - 20, p(3) + 10, 20);
   const outro = ramp(f, p(5), Math.round(3.5 * FPS));
 
-  const waffle = ramp(f, p(3, 9), 45);
+  const waffle = ramp(f, cueFrame(s, 'Roughly nine in ten'), 45);
 
   return (
     <AbsoluteFill style={{backgroundColor: C.navy}}>
@@ -94,13 +94,13 @@ export const Descent: React.FC<{s: SceneTiming}> = ({s}) => {
             );
           })}
           {/* ROV on its tether (enlarged — see label) */}
-          <g opacity={ramp(f, p(2, 4), 12) * window(f, p(2), p(3) + 10, 12)}>
+          <g opacity={ramp(f, cueFrame(s, 'Remotely operated'), 12) * window(f, p(2), p(3) + 10, 12)}>
             <line x1={SHIP_X + 10} y1={Y0 + 4} x2={640} y2={lerp(Y0 + 10, yOf(FLOOR) - 12, rov)} stroke={C.paperDim} strokeWidth={0.8} />
             <rect x={630} y={lerp(Y0 + 10, yOf(FLOOR) - 12, rov) - 6} width={20} height={12} rx={2} fill={C.amber} />
             <circle cx={652} cy={lerp(Y0 + 10, yOf(FLOOR) - 12, rov)} r={2} fill={C.paper} />
           </g>
           {/* Box corer */}
-          <g opacity={ramp(f, p(2, 9), 12) * window(f, p(2), p(3) + 10, 12)}>
+          <g opacity={ramp(f, cueFrame(s, 'Box corers'), 12) * window(f, p(2), p(3) + 10, 12)}>
             <line x1={SHIP_X - 12} y1={Y0 + 4} x2={300} y2={lerp(Y0 + 10, yOf(FLOOR) - 8, corer)} stroke={C.paperDim} strokeWidth={0.8} />
             <rect x={294} y={lerp(Y0 + 10, yOf(FLOOR) - 8, corer) - 4} width={12} height={10} fill="none" stroke={C.paper} />
           </g>
@@ -132,12 +132,12 @@ export const Descent: React.FC<{s: SceneTiming}> = ({s}) => {
         <Label x={SHIP_X - 150} y={150} at={p(2) + 25} until={p(3) + 10} width={140} size={11.5} align="left">
           Multibeam sonar maps depth across a swath
         </Label>
-        <Label x={662} y={yOf(FLOOR) - 52} at={p(2, 5)} until={p(3) + 10} width={170} size={11.5}>
+        <Label x={662} y={yOf(FLOOR) - 52} at={cueFrame(s, 'Remotely operated', 1)} until={p(3) + 10} width={170} size={11.5}>
           Remotely operated vehicle — films and collects
           <br />
           <span style={{color: C.amber, fontSize: 10}}>drawn ×100s larger than scale</span>
         </Label>
-        <Label x={190} y={yOf(FLOOR) - 52} at={p(2, 9.5)} until={p(3) + 10} width={150} size={11.5}>
+        <Label x={190} y={yOf(FLOOR) - 52} at={cueFrame(s, 'Box corers', 0.5)} until={p(3) + 10} width={150} size={11.5}>
           Box corer — lifts a block of seafloor mud
         </Label>
       </AbsoluteFill>
@@ -153,13 +153,13 @@ export const Descent: React.FC<{s: SceneTiming}> = ({s}) => {
         <Label x={28} y={258} at={p(3) + 10} width={380} size={11} color={C.paperDim}>
           Sea cucumber <i>Psychropotes semperiana</i>, photographed alive on the CCZ seafloor.
         </Label>
-        <Stat x={450} y={62} at={p(3, 6)} value="5,578" caption="species recorded in the CCZ checklist" />
+        <Stat x={450} y={62} at={cueFrame(s, 'They counted')} value="5,578" caption="species recorded in the CCZ checklist" />
         <svg width={854} height={480} style={{position: 'absolute'}}>
           {Array.from({length: 100}).map((_, i) => {
             const named = i >= 90;
             const x = 452 + (i % 20) * 15;
             const y = 140 + Math.floor(i / 20) * 15;
-            const o = ramp(f, p(3, 9) + i * 0.6, 6) * (named ? 1 : 1);
+            const o = ramp(f, cueFrame(s, 'Roughly nine in ten') + i * 0.6, 6) * (named ? 1 : 1);
             return named ? (
               <rect key={i} x={x} y={y} width={11} height={11} fill={C.paper} opacity={o} />
             ) : (
@@ -167,7 +167,7 @@ export const Descent: React.FC<{s: SceneTiming}> = ({s}) => {
             );
           })}
         </svg>
-        <Label x={452} y={218} at={p(3, 11)} width={330} size={12.5}>
+        <Label x={452} y={218} at={cueFrame(s, 'Roughly nine in ten', 1.5)} width={330} size={12.5}>
           <span style={{color: C.amber}}>□ ≈ 9 in 10 had no formal scientific name</span> (88–92%)
           <br />
           <span style={{color: C.paper}}>■ ≈ 1 in 10 formally described</span>

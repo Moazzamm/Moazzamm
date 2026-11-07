@@ -3,7 +3,7 @@ import {AbsoluteFill, useCurrentFrame} from 'remotion';
 import {geoOrthographic, geoPath} from 'd3-geo';
 import {C, T} from '../theme';
 import {ramp, lerp, window} from '../lib/anim';
-import {paraFrame, type SceneTiming, FPS} from '../lib/timing';
+import {paraFrame, cueFrame, type SceneTiming, FPS} from '../lib/timing';
 import {LAND, PLACES} from '../lib/geo';
 import {ChapterTag, Credit, Label, Stat} from '../components/Text';
 
@@ -23,9 +23,9 @@ export const IceCutaway: React.FC<{s: SceneTiming}> = ({s}) => {
   const p = (i: number, o = 0) => paraFrame(s, i, o);
 
   // P0 surface view → P1 cut into the section (camera moves down; motivated by "beneath").
-  const cut = ramp(f, p(1, 7), 40);
+  const cut = ramp(f, cueFrame(s, 'Radar and seismic', -0.8), 40);
   const sat = ramp(f, p(1), Math.round(7 * FPS));
-  const radar = f > p(1, 8.5) && f < p(2) ? 1 : 0;
+  const radar = f > cueFrame(s, 'Radar and seismic', 0.5) && f < p(2) ? 1 : 0;
   const drill = ramp(f, p(2) + 10, Math.round(9 * FPS));
   const inset = ramp(f, p(3), 24);
   const polar = ramp(f, p(4) - 6, 24);
@@ -59,12 +59,12 @@ export const IceCutaway: React.FC<{s: SceneTiming}> = ({s}) => {
             return <line key={i} x1={x} y1={y} x2={x + 26} y2={y - 1} stroke="#FFFFFF" strokeWidth={0.8} opacity={0.35} />;
           })}
           {/* ICESat (schematic): laser footprint sweeping the surface */}
-          <g opacity={window(f, p(1), p(1, 8), 12)}>
+          <g opacity={window(f, p(1), cueFrame(s, 'Radar and seismic'), 12)}>
             <rect x={lerp(80, 760, sat) - 8} y={52} width={16} height={8} fill={C.paper} />
             <line x1={lerp(80, 760, sat)} y1={60} x2={lerp(80, 760, sat)} y2={300} stroke={C.cyan} strokeWidth={1} opacity={0.8} />
           </g>
         </svg>
-        <div style={{position: 'absolute', right: 28, top: 70, width: 230, opacity: window(f, p(1, 1), p(1, 8), 12)}}>
+        <div style={{position: 'absolute', right: 28, top: 70, width: 230, opacity: window(f, cueFrame(s, 'NASA'), cueFrame(s, 'Radar and seismic'), 12)}}>
           <div style={{...T.kicker, color: C.cyan}}>Ice-surface height (schematic)</div>
           <svg width={230} height={60}>
             <path
@@ -94,26 +94,26 @@ export const IceCutaway: React.FC<{s: SceneTiming}> = ({s}) => {
           <path d={`M180 ${BASE} Q427 ${BASE + 26} 690 ${BASE}`} fill="none" stroke={C.cyan} />
           {/* radar pulses (match cut from sonar) */}
           {[0, 1, 2].map((k) => {
-            const t = (((f - p(1, 8.5)) / 40 + k / 3) % 1 + 1) % 1;
+            const t = (((f - cueFrame(s, 'Radar and seismic', 0.5)) / 40 + k / 3) % 1 + 1) % 1;
             return <path key={k} d={`M${300} ${SURF + (BASE - SURF) * t} Q 427 ${SURF + (BASE - SURF) * t + 10} 554 ${SURF + (BASE - SURF) * t}`} stroke={C.navy} fill="none" strokeWidth={1.2} opacity={radar * (1 - t)} />;
           })}
           {/* borehole */}
           <rect x={DRILL_X - 2} y={SURF} width={4} height={(BASE + 12 - SURF) * drill} fill={C.navy} opacity={drill > 0 ? 1 : 0} />
           <rect x={DRILL_X - 9} y={SURF - 22} width={18} height={22} fill={C.amber} opacity={ramp(f, p(2), 12)} />
         </svg>
-        <Label x={28} y={SURF + 6} at={p(1, 8)} size={11} color={C.navy}>
+        <Label x={28} y={SURF + 6} at={cueFrame(s, 'Radar and seismic')} size={11} color={C.navy}>
           Ice ≈ 800 m thick
         </Label>
-        <Label x={700} y={BASE + 6} at={p(1, 9)} size={11} color={C.cyan} weight={600}>
+        <Label x={700} y={BASE + 6} at={cueFrame(s, 'Radar and seismic', 0.8)} size={11} color={C.cyan} weight={600}>
           Subglacial Lake Whillans
         </Label>
-        <Label x={28} y={BASE + 30} at={p(1, 9)} size={10.5} color={C.paperDim}>
+        <Label x={28} y={BASE + 30} at={cueFrame(s, 'Radar and seismic', 0.8)} size={10.5} color={C.paperDim}>
           Sediment / bedrock
         </Label>
-        <Label x={826} y={SURF - 40} at={p(1, 9)} align="right" size={10} color={C.amber} bg>
+        <Label x={826} y={SURF - 40} at={cueFrame(s, 'Radar and seismic', 0.8)} align="right" size={10.5} color={C.amber} bg>
           SCHEMATIC · lake thickness greatly exaggerated
         </Label>
-        <Label x={600} y={SURF + 40} at={p(1, 10)} until={p(2)} size={11.5} width={220} color={C.navy}>
+        <Label x={600} y={SURF + 40} at={cueFrame(s, 'Radar and seismic', 1.5)} until={p(2)} size={11.5} width={220} color={C.navy}>
           Radar and seismic surveys traced the lake&apos;s outline
         </Label>
         <div style={{position: 'absolute', left: DRILL_X + 18, top: SURF + 12, opacity: window(f, p(2) + 10, p(3) + 20, 12)}}>
@@ -141,10 +141,10 @@ export const IceCutaway: React.FC<{s: SceneTiming}> = ({s}) => {
           </g>
           <line x1={262} y1={220} x2={262} y2={275} stroke={C.amber} />
         </svg>
-        <Label x={110} y={141} at={p(3) + 6} size={10} color={C.amber} bg>
+        <Label x={110} y={141} at={p(3) + 6} size={10.5} color={C.amber} bg>
           INSET · scale changed
         </Label>
-        <Label x={268} y={238} at={p(3, 3)} size={11.5} color={C.amber} weight={600} bg>
+        <Label x={268} y={238} at={cueFrame(s, 'At the borehole, it was only')} size={11.5} color={C.amber} weight={600} bg>
           ≈ 2.2 m of water
           <br />
           <span style={{fontWeight: 400, color: C.paperDim}}>at the borehole</span>
@@ -152,9 +152,9 @@ export const IceCutaway: React.FC<{s: SceneTiming}> = ({s}) => {
       </AbsoluteFill>
       <AbsoluteFill style={{opacity: window(f, p(3) + 10, p(4) + 4, 14), backgroundColor: 'rgba(11,20,38,0.0)'}}>
         <div style={{position: 'absolute', left: 520, top: 128, width: 300, height: 182, padding: 10, background: 'rgba(11,20,38,0.88)'}}>
-          <Stat x={12} y={8} at={p(3, 5)} value="≈ 130,000" caption="microbial cells per millilitre of lake water" size={28} width={290} />
-          <Stat x={12} y={78} at={p(3, 9.5)} value="≥ 3,931" caption="distinct microbial types, identified by DNA (OTUs)" size={28} width={290} />
-          <Label x={12} y={146} at={p(3, 15)} width={280} size={11.5} color={C.paper}>
+          <Stat x={12} y={8} at={cueFrame(s, 'And it was inhabited')} value="≈ 130,000" caption="microbial cells per millilitre of lake water" size={28} width={290} />
+          <Stat x={12} y={78} at={cueFrame(s, 'at least 3,931')} value="≥ 3,931" caption="distinct microbial types, identified by DNA (OTUs)" size={28} width={290} />
+          <Label x={12} y={146} at={cueFrame(s, 'Many draw energy')} width={280} size={11.5} color={C.paper}>
             Many related to microbes that draw energy from ammonium, iron or sulfur compounds — not sunlight
           </Label>
         </div>
@@ -172,9 +172,9 @@ export const IceCutaway: React.FC<{s: SceneTiming}> = ({s}) => {
           Whillans drill site
         </Label>
         <Stat x={500} y={110} at={p(4) + 12} value="675" caption="subglacial lakes in Antarctica's 2022 inventory (Livingstone et al.)" size={44} width={300} />
-        <Stat x={500} y={210} at={p(4, 3)} value="a handful" caption="sampled directly by drilling" size={30} color={C.amber} width={300} />
-        <Label x={500} y={290} at={p(4, 6)} width={300} size={10.5} color={C.paperDim}>
-          Lake positions are not plotted here. One borehole = one point in one lake (≈ 59 km² in area).
+        <Stat x={500} y={210} at={cueFrame(s, 'Only a handful')} value="a handful" caption="sampled directly by drilling" size={30} color={C.amber} width={300} />
+        <Label x={500} y={290} at={cueFrame(s, 'One borehole describes')} width={300} size={10.5} color={C.paperDim}>
+          Lake positions are not plotted here. One borehole samples one point in one lake.
         </Label>
       </AbsoluteFill>
 
