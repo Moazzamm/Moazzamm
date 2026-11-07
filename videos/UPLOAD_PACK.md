@@ -5,7 +5,7 @@
 
 ## 12 Things Your Body Does That Sound Fake (But Are 100% True)
 
-**Final file:** `videos/out/body.mp4` · length 6:08 · 1080p30
+**Final file:** `videos/out/body.mp4` · length 6:47 · 1080p30 · narrator: Kokoro-82M am_michael (Apache-2.0)
 
 **Alternative titles:** Your Body Is Doing Something Insane Right Now / 12 Body Facts That Sound Fake (But Are 100% True) / You Glow in the Dark (and 11 Other Weird Body Facts)
 
@@ -19,18 +19,18 @@ Which fact surprised you most? Tell me in the comments.
 
 Chapters:
 0:00 Intro
-0:25 #12 You're Taller In The Morning
-0:51 #11 Your Stomach Eats Itself
-1:17 #10 Your Skeleton Is Being Eaten
-1:42 #9 You Glow In The Dark
-2:09 #8 There's A Hole In Your Vision
-2:40 #7 The Muscle You Might Not Have
-3:08 #6 You Have A Second Brain
-3:37 #5 Your Brain Is An Energy Hog
-4:00 #4 Your Veins Could Circle The Earth
-4:21 #3 A Factory Running Nonstop
-4:46 #2 Your DNA Could Reach The Sun
-5:08 #1 You Are Made Of Stars
+0:28 #12 You're Taller In The Morning
+0:58 #11 Your Stomach Eats Itself
+1:25 #10 Your Skeleton Is Being Eaten
+1:51 #9 You Glow In The Dark
+2:21 #8 There's A Hole In Your Vision
+2:57 #7 The Muscle You Might Not Have
+3:30 #6 You Have A Second Brain
+4:05 #5 Your Brain Is An Energy Hog
+4:32 #4 Your Veins Could Circle The Earth
+4:56 #3 A Factory Running Nonstop
+5:22 #2 Your DNA Could Reach The Sun
+5:44 #1 You Are Made Of Stars
 
 Sources: peer-reviewed research and NASA, NOAA and university summaries (facts simplified for a general audience).
 Stock footage: Pexels (pexels.com). Clips used: pexels.com/video/10171402, pexels.com/video/10187920, pexels.com/video/10188155, pexels.com/video/10755267, pexels.com/video/11334954, pexels.com/video/12271148, pexels.com/video/12645675, pexels.com/video/13808077, pexels.com/video/13818901, pexels.com/video/17178637, pexels.com/video/17827958, pexels.com/video/19853888, pexels.com/video/25776363, pexels.com/video/29184317, pexels.com/video/30769473, pexels.com/video/3191933, pexels.com/video/32063954, pexels.com/video/32198166, pexels.com/video/32681111, pexels.com/video/34869248, pexels.com/video/34910580, pexels.com/video/35062805, pexels.com/video/35072412, pexels.com/video/35073459, pexels.com/video/35211221, pexels.com/video/35217626, pexels.com/video/35218024, pexels.com/video/35219401, pexels.com/video/35319007, pexels.com/video/35541074, pexels.com/video/35634993, pexels.com/video/35636096, pexels.com/video/35637540, pexels.com/video/35967934, pexels.com/video/35977508, pexels.com/video/37101560, pexels.com/video/3868626, pexels.com/video/3916505, pexels.com/video/3941289, pexels.com/video/40057909, pexels.com/video/4065475, pexels.com/video/4121127, pexels.com/video/4236039, pexels.com/video/4333476, pexels.com/video/4440942, pexels.com/video/4519059, pexels.com/video/4698492, pexels.com/video/4820522, pexels.com/video/4999693, pexels.com/video/5299577, pexels.com/video/5322668, pexels.com/video/5647308, pexels.com/video/5724098, pexels.com/video/5983697, pexels.com/video/5987685, pexels.com/video/6036323, pexels.com/video/6541396, pexels.com/video/6542669, pexels.com/video/6565155, pexels.com/video/6613121, pexels.com/video/6620874, pexels.com/video/6658332, pexels.com/video/6753381, pexels.com/video/7297872, pexels.com/video/7584434, pexels.com/video/7584599, pexels.com/video/7615703, pexels.com/video/7727176, pexels.com/video/7949247, pexels.com/video/8115432, pexels.com/video/8116553, pexels.com/video/8325995, pexels.com/video/8413556, pexels.com/video/8514712, pexels.com/video/854106, pexels.com/video/854323, pexels.com/video/854518, pexels.com/video/855944, pexels.com/video/8644889, pexels.com/video/9244228, pexels.com/video/9465177, pexels.com/video/9943158
@@ -101,7 +101,7 @@ If this blew your mind, wait until you see what's happening beneath your feet ri
 
 ## 12 Facts About Earth That Sound Fake (But Are 100% True)
 
-**Final file:** `videos/out/earth.mp4` · length 6:09 · 1080p30
+**Final file:** `videos/out/earth.mp4` · length 6:34 · 1080p30 · narrator: Kokoro-82M am_michael (Apache-2.0)
 
 **Alternative titles:** Earth Is Far Stranger Than You Think / 12 Earth Facts That Sound Fake (But Are 100% True) / There's an Ocean Hidden Inside the Earth
 
@@ -115,18 +115,18 @@ Which fact surprised you most? Tell me in the comments.
 
 Chapters:
 0:00 Intro
-0:27 #12 Everest Isn't The Highest Point
-0:51 #11 44 Lightning Strikes A Second
-1:15 #10 The Sahara Was Green
-1:41 #9 Everest Was Once Under The Sea
-2:05 #8 A Sun Beneath Your Feet
-2:32 #7 The Moon Is Leaving Us
-2:55 #6 You're Moving Insanely Fast
-3:21 #5 The Lake That Killed A Valley
-3:56 #4 We Know Mars Better Than Our Oceans
-4:18 #3 Earth Is Leaking Into Space
-4:42 #2 North Isn't Staying Put
-5:06 #1 A Hidden Ocean Inside The Earth
+0:30 #12 Everest Isn't The Highest Point
+0:55 #11 44 Lightning Strikes A Second
+1:21 #10 The Sahara Was Green
+1:48 #9 Everest Was Once Under The Sea
+2:15 #8 A Sun Beneath Your Feet
+2:43 #7 The Moon Is Leaving Us
+3:08 #6 You're Moving Insanely Fast
+3:38 #5 The Lake That Killed A Valley
+4:15 #4 We Know Mars Better Than Our Oceans
+4:38 #3 Earth Is Leaking Into Space
+5:05 #2 North Isn't Staying Put
+5:32 #1 A Hidden Ocean Inside The Earth
 
 Sources: peer-reviewed research and NASA, NOAA and university summaries (facts simplified for a general audience).
 Stock footage: Pexels (pexels.com). Clips used: pexels.com/video/10171402, pexels.com/video/10409075, pexels.com/video/10755267, pexels.com/video/12278285, pexels.com/video/12465390, pexels.com/video/13205825, pexels.com/video/13282838, pexels.com/video/13302178, pexels.com/video/13667758, pexels.com/video/13818901, pexels.com/video/14429239, pexels.com/video/17145872, pexels.com/video/17145874, pexels.com/video/17629657, pexels.com/video/17675069, pexels.com/video/18851812, pexels.com/video/20216773, pexels.com/video/27385907, pexels.com/video/28153586, pexels.com/video/29632834, pexels.com/video/29633606, pexels.com/video/29633667, pexels.com/video/30069853, pexels.com/video/30124245, pexels.com/video/30295405, pexels.com/video/30449615, pexels.com/video/30543126, pexels.com/video/30683869, pexels.com/video/30785084, pexels.com/video/31401354, pexels.com/video/31661097, pexels.com/video/31672569, pexels.com/video/31879939, pexels.com/video/32063954, pexels.com/video/32515216, pexels.com/video/32680837, pexels.com/video/32681111, pexels.com/video/32694433, pexels.com/video/33762472, pexels.com/video/33938964, pexels.com/video/34293583, pexels.com/video/35482884, pexels.com/video/35772371, pexels.com/video/35969886, pexels.com/video/35997575, pexels.com/video/37533724, pexels.com/video/37669026, pexels.com/video/38451639, pexels.com/video/38579846, pexels.com/video/39876446, pexels.com/video/4698492, pexels.com/video/4814999, pexels.com/video/4999693, pexels.com/video/5121751, pexels.com/video/5121753, pexels.com/video/5214219, pexels.com/video/5322668, pexels.com/video/5358448, pexels.com/video/5442713, pexels.com/video/5700940, pexels.com/video/5921369, pexels.com/video/6082656, pexels.com/video/6133268, pexels.com/video/6459951, pexels.com/video/6997856, pexels.com/video/7615707, pexels.com/video/7663572, pexels.com/video/854518, pexels.com/video/856857, pexels.com/video/8644889, pexels.com/video/9278554, pexels.com/video/9320060, pexels.com/video/9686535
