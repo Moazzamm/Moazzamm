@@ -1,11 +1,11 @@
 import React from 'react';
-import {AbsoluteFill, useCurrentFrame, useVideoConfig} from 'remotion';
+import {AbsoluteFill, Img, staticFile, useCurrentFrame, useVideoConfig} from 'remotion';
 import {C, DISPLAY, TEXT} from '../theme';
 import {ramp, lerp, win, easeOut, shake, pop, rnd} from '../lib/anim';
 import {beats, cueFrame, type SceneTiming} from '../lib/timing';
 import {Snailfish, Amphipod, Isopod, ColossalSquid, Glow} from '../components/Creatures';
 import {ZoneTitle} from '../components/Ocean';
-import {BigStat, Tag, Panel} from '../components/Ui';
+import {BigStat, Tag, Panel, RealInsert} from '../components/Ui';
 
 // ---------- WHY ----------
 export const whyDepth = (s: SceneTiming, f: number) => lerp(2600, 4200, ramp(f, 0, s.durationInFrames, 0, 1, (t) => t));
@@ -122,7 +122,7 @@ export const Trench: React.FC<{s: SceneTiming}> = ({s}) => {
   const f = useCurrentFrame();
   const b = beats(s, {
     six: ['Six thousand metres'], hadal: ['The hadal zone'], press: ['At eight thousand'], yet: ['And yet, in 2023'], deepest: ['The deepest fish ever'],
-    may: ['It may be about'], tmao: ['Fish rely on a molecule'], est: ['Scientists estimate that'], line: ["That's the invisible line"], below: ['Below it'], only: ['Only shrimp-like'],
+    may: ['It may be about'], tmao: ['Fish rely on a molecule'], est: ['Scientists estimate that'], line: ["That's the invisible line"], below: ['Below it'], only: ['Only shrimp-like'], bottom: ['all the way to the bottom'],
   });
   const sh = shake(f, b.line, 10, 22);
   const walls = (side: number) => {
@@ -151,6 +151,9 @@ export const Trench: React.FC<{s: SceneTiming}> = ({s}) => {
         <BigStat x={640} y={500} at={b.deepest} value="8,336 M" label="deepest fish ever filmed · Izu-Ogasawara Trench" size={70} color={C.cyan} />
         <Tag x={640} y={24} at={b.yet} align="center" size={12} color={C.dim}>Illustration · real footage revealed 2023 by Univ. of Western Australia & Tokyo Univ. of Marine Science and Technology</Tag>
       </AbsoluteFill>
+
+      <RealInsert src="img/snailfish_gerringer_2017.jpg" at={b.deepest + 40} until={b.tmao + 6} x={330} y={120} w={620} h={324} dim={0.45} zoom={[1.0, 1.15]} origin="40% 50%"
+        label="Real hadal snailfish at a baited camera · Mariana Trench" credit="Gerringer et al. 2017, Zootaxa · CC BY 3.0 · cropped" />
 
       {/* TMAO explainer */}
       <AbsoluteFill style={{opacity: win(f, b.tmao, b.line + 6, 10)}}>
@@ -183,6 +186,8 @@ export const Trench: React.FC<{s: SceneTiming}> = ({s}) => {
         </svg>
         <Tag x={640} y={660} at={s.durationInFrames - 100} align="center" size={18} color={C.amber}>Challenger Deep · ≈ 10,935 m</Tag>
       </AbsoluteFill>
+      <RealInsert src="img/trieste_1960_noaa.jpg" at={b.bottom} until={s.durationInFrames - 2} x={200} y={50} w={260} h={421} dim={0.35} tilt={2} zoom={[1.0, 1.08]}
+        label="1960 · Walsh & Piccard, first to reach the Challenger Deep" credit="NOAA Ship Collection · public domain" />
     </AbsoluteFill>
   );
 };
@@ -222,6 +227,14 @@ export const End: React.FC<{s: SceneTiming}> = ({s}) => {
         <BigStat x={820} y={210} at={b.humbling + 30} value="< 0.001%" label="of the deep seafloor ever seen by cameras" size={90} color={C.cyan} />
         <Tag x={820} y={350} at={b.humbling + 50} align="center" size={13} color={C.dim}>Bell et al., Science Advances, 2025</Tag>
         <Tag x={820} y={420} at={b.every} align="center" size={18} color={C.white}>every giant here was found by looking deeper</Tag>
+        {['spider_crab_krentzel', 'oarfish_1996_usnavy', 'greenland_shark_noaa_2013', 'isopod_noaa_okeanos'].map((n, i) => {
+          const p = pop(f, b.every + 20 + i * 9);
+          return (
+            <div key={n} style={{position: 'absolute', left: 480 + i * 174, top: 462, width: 160, height: 107, opacity: f > b.every + 20 + i * 9 ? 1 : 0, transform: `translateY(${(1 - p) * 30}px) scale(${p}) rotate(${(i % 2 ? 3 : -3) * (1 - p) + (i % 2 ? 1.5 : -1.5)}deg)`, border: '3px solid rgba(255,255,255,0.92)', borderRadius: 5, overflow: 'hidden', boxShadow: '0 14px 30px rgba(0,0,0,0.8)'}}>
+              <Img src={staticFile(`img/${n}.jpg`)} style={{width: '100%', height: '100%', objectFit: 'cover'}} />
+            </div>
+          );
+        })}
       </AbsoluteFill>
       <AbsoluteFill style={{opacity: ramp(f, b.real, 12), alignItems: 'center', justifyContent: 'center', flexDirection: 'column'}}>
         <div style={{fontFamily: DISPLAY, fontWeight: 300, fontSize: 40, color: C.dim, letterSpacing: 2, opacity: ramp(f, b.real, 12)}}>not how big they get…</div>

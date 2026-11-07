@@ -4,7 +4,7 @@ import {C, DISPLAY} from '../theme';
 import {ramp, lerp, win, easeOut, pop, shake} from '../lib/anim';
 import {beats, cueFrame, type SceneTiming} from '../lib/timing';
 import {ColossalSquid, Diver, ROVLight, SpiderCrab, Oarfish, GreenlandShark, Isopod, Glow} from '../components/Creatures';
-import {BigStat, Tag, ScaleBar} from '../components/Ui';
+import {BigStat, Tag, ScaleBar, RealInsert} from '../components/Ui';
 
 // ---------- HOOK (dive depth ~600 m, where the juvenile was filmed) ----------
 export const hookDepth = () => 600;
@@ -41,6 +41,8 @@ export const Hook: React.FC<{s: SceneTiming}> = ({s}) => {
         <BigStat x={760} y={460} at={b.baby} until={b.adults} value="≈ 30 cm" label="juvenile" size={48} color={C.cyan} />
         <Tag x={60} y={90} at={b.squid} until={b.adults} size={12} color={C.dim}>Illustration · real footage: Schmidt Ocean Institute</Tag>
       </AbsoluteFill>
+      <RealInsert src="img/rov_deep_discoverer_noaa.jpg" at={60} until={b.squid - 2} x={560} y={96} w={450} h={300} dim={0.35} tilt={2} origin="30% 60%"
+        label="A deep-sea robot (ROV), like the one that filmed it" credit="NOAA Ocean Exploration, 2015 · public domain" />
 
       {/* adult scale reveal */}
       <AbsoluteFill style={{opacity: win(f, b.adults - 2, b.rule + 4, 10), transform: `translate(${sh.x}px, ${sh.y}px) scale(${lerp(1.4, 1, pull) * (1 + eyeZoom * 1.6)})`, transformOrigin: `${380 + 182}px 360px`}}>
@@ -106,6 +108,8 @@ export const Sunlight: React.FC<{s: SceneTiming}> = ({s}) => {
         </svg>
         <Tag x={600} y={252} at={b.longer} align="center" size={14} color={C.dim}>two people, end to end (3.5 m)</Tag>
       </AbsoluteFill>
+      <RealInsert src="img/spider_crab_krentzel.jpg" at={b.largest} until={s.durationInFrames - 2} x={330} y={138} w={620} h={415} origin="45% 60%"
+        label="A real Japanese spider crab · Shedd Aquarium, Chicago" credit="Photo: Dallas Krentzel · CC BY 2.0" />
       <BigStat x={50} y={40} at={b.largest} until={b.only + 20} value="LARGEST CRAB ALIVE" label="Japanese spider crab" size={40} color={C.white} align="left" />
     </AbsoluteFill>
   );

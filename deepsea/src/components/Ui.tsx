@@ -74,26 +74,52 @@ export const Tag: React.FC<{x: number; y: number; at: number; until?: number; ch
 };
 
 // Real footage / photo insert with a cinematic frame, slow push and credit.
-export const RealInsert: React.FC<{src: string; video?: boolean; at: number; until: number; credit: string; x?: number; y?: number; w?: number; h?: number; zoom?: [number, number]; origin?: string; startFrom?: number}> = ({
-  src, video, at, until, credit, x = 0, y = 0, w = 1280, h = 720, zoom = [1.04, 1.16], origin = '50% 50%', startFrom = 0,
-}) => {
+// Real photo / footage. Framed mode = a big "photo card" that pops in over a dimmed scene,
+// with a slow Ken Burns move, a REAL PHOTO badge and a readable label + credit strip.
+// Framed cards are kept inside x 40–1010 / y 40–590: clear of the depth meter (right)
+// and the captions (bottom).
+export const RealInsert: React.FC<{
+  src: string; video?: boolean; at: number; until: number; credit: string; label?: string;
+  x?: number; y?: number; w?: number; h?: number; zoom?: [number, number]; origin?: string; startFrom?: number;
+  tilt?: number; dim?: number;
+}> = ({src, video, at, until, credit, label, x = 0, y = 0, w = 1280, h = 720, zoom = [1.04, 1.16], origin = '50% 50%', startFrom = 0, tilt = -2, dim = 0.6}) => {
   const f = useCurrentFrame();
-  if (f < at || f > until) return null;
-  const o = Math.min(ramp(f, at, 10), 1 - ramp(f, until - 10, 10));
+  if (f < at - 1 || f > until) return null;
+  const o = Math.min(ramp(f, at, 10), 1 - ramp(f, until - 12, 12));
   const z = lerp(zoom[0], zoom[1], (f - at) / Math.max(1, until - at));
   const framed = x !== 0 || y !== 0 || w !== 1280;
+  const p = pop(f, at);
+  const media = video ? (
+    <OffthreadVideo src={staticFile(src)} startFrom={startFrom} muted style={{width: '100%', height: '100%', objectFit: 'cover'}} />
+  ) : (
+    <Img src={staticFile(src)} style={{width: '100%', height: '100%', objectFit: 'cover'}} />
+  );
+  const badge = (
+    <div style={{position: 'absolute', left: 12, top: 12, fontFamily: TEXT, fontWeight: 800, fontSize: 13, letterSpacing: 2.5, color: '#00151A', background: C.cyan, padding: '4px 9px', borderRadius: 3, boxShadow: '0 2px 10px rgba(0,0,0,0.5)'}}>{video ? '● REAL FOOTAGE' : '● REAL PHOTO'}</div>
+  );
+  if (!framed) {
+    return (
+      <AbsoluteFill style={{opacity: o}}>
+        <div style={{width: '100%', height: '100%', transform: `scale(${z})`, transformOrigin: origin}}>{media}</div>
+        <AbsoluteFill style={{background: 'linear-gradient(rgba(0,0,0,0.45), transparent 22%, transparent 70%, rgba(0,0,0,0.6))'}} />
+        <div style={{position: 'absolute', left: 40, top: 40}}>{badge}</div>
+        {label ? <div style={{position: 'absolute', left: 52, top: 84, fontFamily: TEXT, fontWeight: 700, fontSize: 22, color: '#fff', textShadow: '0 2px 8px #000'}}>{label}</div> : null}
+        <div style={{position: 'absolute', left: 52, top: label ? 116 : 84, fontFamily: TEXT, fontSize: 13, color: 'rgba(255,255,255,0.85)', textShadow: '0 1px 4px #000'}}>{credit}</div>
+      </AbsoluteFill>
+    );
+  }
   return (
-    <div style={{position: 'absolute', left: x, top: y, width: w, height: h, overflow: 'hidden', opacity: o, borderRadius: framed ? 6 : 0, boxShadow: framed ? '0 20px 60px rgba(0,0,0,0.7)' : undefined, border: framed ? '1px solid rgba(255,255,255,0.25)' : undefined}}>
-      <div style={{width: '100%', height: '100%', transform: `scale(${z})`, transformOrigin: origin}}>
-        {video ? (
-          <OffthreadVideo src={staticFile(src)} startFrom={startFrom} muted style={{width: '100%', height: '100%', objectFit: 'cover'}} />
-        ) : (
-          <Img src={staticFile(src)} style={{width: '100%', height: '100%', objectFit: 'cover'}} />
-        )}
+    <AbsoluteFill style={{opacity: o}}>
+      <AbsoluteFill style={{background: `radial-gradient(circle at ${x + w / 2}px ${y + h / 2}px, rgba(0,4,10,${dim * 0.75}), rgba(0,4,10,${dim}))`}} />
+      <div style={{position: 'absolute', left: x, top: y, width: w, height: h, transform: `translateY(${(1 - p) * 40}px) scale(${lerp(0.86, 1, p)}) rotate(${tilt * (1 - p) * 2 + tilt * 0.25}deg)`, transformOrigin: '50% 60%', borderRadius: 8, overflow: 'hidden', border: '3px solid rgba(255,255,255,0.92)', boxShadow: `0 30px 80px rgba(0,0,0,0.85), 0 0 0 1px rgba(0,0,0,0.6), 0 0 40px rgba(92,242,224,0.18)`, background: '#000'}}>
+        <div style={{width: '100%', height: '100%', transform: `scale(${z})`, transformOrigin: origin}}>{media}</div>
+        {badge}
+        <div style={{position: 'absolute', left: 0, right: 0, bottom: 0, padding: label ? '28px 14px 9px' : '20px 12px 7px', background: 'linear-gradient(transparent, rgba(0,0,0,0.82))'}}>
+          {label ? <div style={{fontFamily: TEXT, fontWeight: 700, fontSize: 18, color: '#fff', lineHeight: 1.2, textShadow: '0 1px 4px #000'}}>{label}</div> : null}
+          <div style={{fontFamily: TEXT, fontSize: 12, color: 'rgba(255,255,255,0.82)', marginTop: label ? 3 : 0}}>{credit}</div>
+        </div>
       </div>
-      <div style={{position: 'absolute', left: 14, top: 14, fontFamily: TEXT, fontWeight: 800, fontSize: 13, letterSpacing: 2.5, color: '#00151A', background: C.cyan, padding: '4px 9px'}}>{video ? 'REAL FOOTAGE' : 'REAL PHOTO'}</div>
-      <div style={{position: 'absolute', right: 10, bottom: 8, fontFamily: TEXT, fontSize: 12, color: 'rgba(255,255,255,0.85)', textShadow: '0 1px 3px #000'}}>{credit}</div>
-    </div>
+    </AbsoluteFill>
   );
 };
 

@@ -67,11 +67,27 @@ A **live depth gauge** runs the whole time, a reason to keep watching until the 
 
 On-screen honesty labels: "Illustration" on the drawn creatures and dramatised scenes, "scale approximate" on the siphonophore, "schematic" on the TMAO graphic, "illustrative" on the fuel bars, and "believed" on the eye-size claim. The depth gauge shows dive progress. Habitat depths are stated only where a source gives them (600 m squid, 8,336 m snailfish, 8,200–8,400 m line, Challenger Deep).
 
-## Real imagery (public domain, US government work)
-| File | Credit |
-|---|---|
-| Bathynomus giganteus hi-res.jpg | NOAA Okeanos Explorer (Commons) |
-| Expl9984 (Greenland shark), 16 Aug 2013 | NOAA Okeanos Explorer, 2013 Northeast U.S. Canyons Expedition (Commons; captured from the file page because of rate limits) |
+## Real imagery (licences checked on Wikimedia Commons, 7 Nov 2026)
+There are 9 real photos. Each appears as a large framed card that pops in over a dimmed scene, with a slow zoom, a **REAL PHOTO** badge, and a label and credit strip. Cards stay inside x 40–1010 and y 40–590, clear of the captions and the depth gauge. Each is held for about 4–8 s, and the ending recaps four of them as a photo wall.
+
+| Scene | File (Commons) | Shown with the line | Licence and credit on screen |
+|---|---|---|---|
+| Hook | NOAAS Okeanos Explorer (R 337) deploys Deep Discoverer off Puerto Rico April 2015.png | "a robot six hundred metres beneath…" (labelled "*like* the one that filmed it") | Public domain, NOAA Ocean Exploration |
+| Sunlight | Giant Japanese spider crab … Shedd Aquarium, Chicago (6802024350).jpg | "The Japanese spider crab is the largest crab alive" | **CC BY 2.0**, Dallas Krentzel |
+| Twilight | Giant Oarfish.jpg (7 m oarfish, San Diego, 1996; *All Hands*, Apr 1997) | "The giant oarfish can grow to about eight metres" | Public domain, U.S. Navy |
+| Twilight | Physonect siphonophore Puerto Rico April 2015.png | "It's a colony … each with its own job" (labelled as a *smaller* species) | Public domain, NOAA OER |
+| Midnight | Expl9984 (Greenland shark), 2013 | Greenland shark section | Public domain, NOAA Okeanos Explorer |
+| Midnight | Bathynomus giganteus hi-res.jpg | "The giant isopod" / the aquarium story | Public domain, NOAA Okeanos Explorer |
+| Trench | Pseudoliparis swirei.png (panel B, cropped) | After "the deepest fish ever filmed" (labelled as a Mariana Trench snailfish, not the 8,336 m fish) | **CC BY 3.0**, Gerringer et al. 2017, *Zootaxa* ("cropped" is noted on screen) |
+| Trench | Bathyscaphe Trieste Piccard-Walsh.jpg (1960) | "…all the way to the bottom of the Challenger Deep" | Public domain, NOAA Ship Collection |
+
+The two CC BY images allow commercial use with attribution. The credits are on screen and should also go in the video description:
+- "Giant Japanese spider crab" by Dallas Krentzel, CC BY 2.0 (https://creativecommons.org/licenses/by/2.0/)
+- *Pseudoliparis swirei* figure, Gerringer et al. 2017, CC BY 3.0 (https://creativecommons.org/licenses/by/3.0/), cropped
+
+Captions added with the photos: the Trieste with Walsh and Piccard reached the Challenger Deep on 23 Jan 1960 (NOAA/U.S. Navy). The oarfish in the photo was 7 m (23 ft) long (Commons/*All Hands*).
+
+Wikimedia rate-limited direct downloads (HTTP 429), so four of these images were captured from their Commons file pages and cropped to the photo. CC BY-SA images (the Deep Discoverer Flickr photo and other spider crab photos) were skipped to keep licensing simple.
 
 Not used, licence-restricted: Schmidt Ocean Institute squid and siphonophore footage (CC BY-NC-SA, not suitable for a monetised video) and the UWA snailfish footage (© UWA). These are referenced in the narration and recreated as labelled illustrations.
 

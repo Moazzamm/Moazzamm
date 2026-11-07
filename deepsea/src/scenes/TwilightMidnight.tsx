@@ -38,6 +38,8 @@ export const Twilight: React.FC<{s: SceneTiming}> = ({s}) => {
         <Tag x={760} y={660} at={b.oar} align="center" size={13} color={C.dim}>you</Tag>
         <Tag x={640} y={200} at={b.seen} until={b.even} size={16} color={C.coral}>hangs upright · red fin rippling</Tag>
       </AbsoluteFill>
+      <RealInsert src="img/oarfish_1996_usnavy.jpg" at={b.oar + 35} until={b.seen - 4} x={90} y={130} w={900} h={320} zoom={[1.02, 1.1]} tilt={-1}
+        label="A real 7-metre giant oarfish · found near San Diego, 1996" credit="U.S. Navy photo · public domain" />
 
       {/* giant siphonophore: spiral, then unrolled next to a blue whale */}
       <AbsoluteFill style={{opacity: siphIn * (1 - ramp(f, b.colony + 50, 12)), transform: `translate(${sh.x}px, ${sh.y}px) scale(${lerp(1, 3.2, zoomColony)})`, transformOrigin: '640px 330px'}}>
@@ -52,6 +54,8 @@ export const Twilight: React.FC<{s: SceneTiming}> = ({s}) => {
       <Tag x={640} y={540} at={b.whale} until={b.twist} align="center" size={18}>blue whale ≈ 30 m</Tag>
       <BigStat x={640} y={560} at={b.twist} until={b.colony + 60} value="NOT ONE ANIMAL" label="a colony of tiny clones" size={56} color={C.amber} />
       <Tag x={40} y={24} at={b.in2020} until={b.colony + 60} size={12} color={C.dim}>Illustration · scale approximate</Tag>
+      <RealInsert src="img/siphonophore_noaa_2015.jpg" at={b.colony + 40} until={s.durationInFrames - 2} x={300} y={86} w={680} h={384} origin="78% 40%" zoom={[1.0, 1.18]}
+        label="A real siphonophore (a smaller species) · each segment is its own animal" credit="NOAA Ocean Exploration, 2015 · public domain" />
     </AbsoluteFill>
   );
 };
@@ -94,7 +98,8 @@ export const Midnight: React.FC<{s: SceneTiming}> = ({s}) => {
         <Diver x={sharkX + 600} y={520} h={160} />
         <BigStat x={640} y={70} at={b.grow} value="6+ M LONG" label="grows < 1 cm a year" size={56} color={C.white} />
       </AbsoluteFill>
-      <RealInsert src="img/greenland_shark_noaa_2013.jpg" at={b.grow + 70} until={b.dated + 4} credit="NOAA Okeanos Explorer, 2013 · public domain" x={680} y={420} w={520} h={250} />
+      <RealInsert src="img/greenland_shark_noaa_2013.jpg" at={b.grow + 30} until={b.dated + 14} x={330} y={150} w={620} h={347} tilt={2}
+        label="A real Greenland shark · NOAA expedition, 2013" credit="NOAA Okeanos Explorer · public domain" />
 
       {/* age timeline */}
       <AbsoluteFill style={{opacity: win(f, b.dated, b.floor + 4, 10)}}>
@@ -128,11 +133,12 @@ export const Midnight: React.FC<{s: SceneTiming}> = ({s}) => {
           </AbsoluteFill>
           <BigStat x={640} y={70} at={b.iso} value="≈ 50 CM" label="giant isopod · same scale" size={60} color={C.cyan} />
         </AbsoluteFill>
-        <RealInsert src="img/isopod_noaa_okeanos.jpg" at={b.iso + 50} until={b.aquarium + 4} credit="NOAA Okeanos Explorer · public domain" zoom={[1.02, 1.2]} origin="55% 50%" />
-        <AbsoluteFill style={{opacity: ramp(f, b.aquarium, 10)}}>
+        <RealInsert src="img/isopod_noaa_okeanos.jpg" at={b.iso + 20} until={b.aquarium + 150} x={180} y={60} w={820} h={461} zoom={[1.02, 1.2]} origin="55% 50%"
+          label="A real giant isopod on the deep seafloor" credit="NOAA Okeanos Explorer · public domain" />
+        <AbsoluteFill style={{opacity: ramp(f, b.aquarium + 140, 10)}}>
           <AbsoluteFill style={{background: 'rgba(1,6,14,0.6)'}} />
           <Isopod x={640} y={430} len={360} />
-          <Panel x={420} y={70} w={440} h={150} at={b.aquarium}>
+          <Panel x={420} y={70} w={440} h={150} at={b.aquarium + 140}>
             <div style={{textAlign: 'center', paddingTop: 18}}>
               <div style={{fontFamily: TEXT, fontWeight: 700, fontSize: 14, letterSpacing: 2.5, color: C.cyan}}>TOBA AQUARIUM, JAPAN · LAST MEAL: JAN 2009</div>
               <div style={{fontFamily: DISPLAY, fontWeight: 800, fontSize: 64, color: C.white, marginTop: 6}}>{f > b.refused ? `${days.toLocaleString('en-US')} days` : '—'}</div>
