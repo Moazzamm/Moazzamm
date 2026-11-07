@@ -1,0 +1,102 @@
+{
+  "id": "body",
+  "title": "12 Things Your Body Does That Sound Fake (But Are 100% True)",
+  "intro_title": ["12 THINGS YOUR BODY DOES", "THAT SOUND FAKE"],
+  "music_prompt": "Instrumental cinematic documentary underscore, curious and mysterious, warm analog synth arpeggios, soft pulsing bass, light electronic percussion, gentle building tension, modern science-explainer vibe, 100 bpm",
+  "next_title": "12 Facts About Earth That Sound Fake",
+  "sections": [
+    {"id": "intro", "lines": [
+      {"t": "Right now, as you watch this, your body is glowing.", "v": ["glow", "dark_portrait"]},
+      {"t": "Your stomach is trying to eat itself.", "v": ["acid"]},
+      {"t": "And your bones are being quietly dissolved... and rebuilt.", "v": ["xray", "cells"]},
+      {"t": "It sounds like science fiction. It's not. It's just a normal day inside you.", "v": ["dna", "heart"]},
+      {"t": "Here are twelve things your body does that sound completely fake, but are one hundred percent true.", "v": ["mirror"], "fx": {"intro": true}},
+      {"t": "And stay until number one, because it will change the way you see yourself in the mirror.", "v": ["galaxy", "eye"]}
+    ]},
+    {"id": "f12", "num": 12, "head": "YOU'RE TALLER IN THE MORNING", "lines": [
+      {"t": "Number twelve. You are taller in the morning than you are at night.", "v": ["wake"]},
+      {"t": "Between the bones of your spine sit soft, gel-filled discs.", "v": ["spine"]},
+      {"t": "All day long, gravity squeezes them, and you shrink by about a centimeter.", "v": ["walk_city"], "fx": {"stat": ["-1 CM", "lost to gravity every day"]}},
+      {"t": "When you lie down to sleep, the discs soak fluid back up, and you grow again.", "v": ["sleep"]},
+      {"t": "Astronauts take this to the extreme. Without gravity, their spines stretch so much they can come home up to five centimeters taller... at least for a while.", "v": ["astronaut", "space_station"], "fx": {"stat": ["+5 CM", "astronaut height gain in space"]}}
+    ]},
+    {"id": "f11", "num": 11, "head": "YOUR STOMACH EATS ITSELF", "lines": [
+      {"t": "Number eleven. Your stomach is constantly trying to digest itself.", "v": ["stomach"]},
+      {"t": "Stomach acid is so strong it can corrode some metals.", "v": ["acid"], "fx": {"stat": ["pH 1.5", "strong enough to corrode metal"]}},
+      {"t": "So why doesn't it burn a hole straight through you?", "v": ["cells"]},
+      {"t": "Because your stomach is coated in a thick layer of protective mucus, and the cells underneath are replaced every few days.", "v": ["microscope", "cells"]},
+      {"t": "You are basically growing a brand new stomach lining every week, just to stay one step ahead of your own acid.", "v": ["food"]}
+    ]},
+    {"id": "f10", "num": 10, "head": "YOUR SKELETON IS BEING EATEN", "lines": [
+      {"t": "Number ten. Your skeleton is being eaten alive. On purpose.", "v": ["xray"]},
+      {"t": "Inside your bones, cells called osteoclasts dissolve old bone, while osteoblasts build fresh bone in its place.", "v": ["microscope", "cells"]},
+      {"t": "This never stops. Your body replaces roughly ten percent of your skeleton every single year.", "v": ["skeleton"], "fx": {"stat": ["10%", "of your skeleton rebuilt every year"]}},
+      {"t": "Which means the skeleton you have today is not the one you had ten years ago.", "v": ["mirror"]}
+    ]},
+    {"id": "f9", "num": 9, "head": "YOU GLOW IN THE DARK", "lines": [
+      {"t": "Number nine. You glow in the dark.", "v": ["glow"]},
+      {"t": "In 2009, scientists in Japan used ultra-sensitive cameras to film people in total darkness.", "v": ["camera", "dark_portrait"]},
+      {"t": "And they discovered that the human body actually gives off visible light.", "v": ["glow"]},
+      {"t": "It comes from chemical reactions inside your cells. It's brightest around your face, and it peaks in the late afternoon.", "v": ["dark_portrait", "sunset_city"]},
+      {"t": "So why have you never seen it? Because it's about a thousand times too weak for your eyes to detect.", "v": ["eye"], "fx": {"stat": ["1,000x", "too faint for human eyes"]}}
+    ]},
+    {"id": "f8", "num": 8, "head": "THERE'S A HOLE IN YOUR VISION", "lines": [
+      {"t": "Number eight. Right now, there is a hole in your vision, and your brain is hiding it from you.", "v": ["eye"]},
+      {"t": "Every eye has a blind spot, where the optic nerve connects to the back of the eye. There are no light sensors there at all.", "v": ["eye_exam", "neurons"]},
+      {"t": "So your brain simply paints over the gap with whatever it guesses should be there.", "v": ["brain"]},
+      {"t": "And it gets weirder. Every time your eyes jump from one point to another, your brain briefly blocks what you see, so you don't notice the blur.", "v": ["eye", "city_blur"]},
+      {"t": "Add it all up, and you spend a surprising part of every day effectively blind. And you never notice.", "v": ["crowd"]}
+    ]},
+    {"id": "f7", "num": 7, "head": "THE MUSCLE YOU MIGHT NOT HAVE", "lines": [
+      {"t": "Number seven. Let's try something. Hold your palm up, touch your pinky to your thumb, and tilt your hand forward slightly.", "v": ["hand"]},
+      {"t": "Do you see a raised tendon running down the middle of your wrist?", "v": ["hand"]},
+      {"t": "That's the palmaris longus, a leftover muscle from our distant ancestors.", "v": ["monkey"]},
+      {"t": "About fourteen percent of people don't have it at all, and they don't miss it.", "v": ["crowd"], "fx": {"stat": ["14%", "of people don't have it"]}},
+      {"t": "It's so unnecessary that surgeons often borrow it to repair other parts of the body.", "v": ["surgery"]},
+      {"t": "So, do you have it? Tell me in the comments.", "v": ["hand"], "fx": {"comment": true}}
+    ]},
+    {"id": "f6", "num": 6, "head": "YOU HAVE A SECOND BRAIN", "lines": [
+      {"t": "Number six. You have a second brain, and it's in your gut.", "v": ["neurons"]},
+      {"t": "Your digestive system is lined with around five hundred million neurons. That's more than your entire spinal cord.", "v": ["neurons", "spine"], "fx": {"stat": ["500,000,000", "neurons in your gut"]}},
+      {"t": "It can run completely on its own, without any instructions from your brain.", "v": ["brain"]},
+      {"t": "And about ninety percent of your body's serotonin, a chemical tied to your mood, is made in your gut.", "v": ["food", "happy"], "fx": {"stat": ["90%", "of serotonin is made in your gut"]}},
+      {"t": "So when you feel butterflies in your stomach... that's not just a figure of speech.", "v": ["nervous"]},
+      {"t": "And if you think that's strange, wait until you hear number three.", "v": ["blood"]}
+    ]},
+    {"id": "f5", "num": 5, "head": "YOUR BRAIN IS AN ENERGY HOG", "lines": [
+      {"t": "Number five. Your brain is the most expensive thing you own.", "v": ["brain"]},
+      {"t": "It makes up only about two percent of your body weight, but it burns around twenty percent of your energy.", "v": ["brain", "running"], "fx": {"stat": ["20%", "of your energy, from 2% of your weight"]}},
+      {"t": "Even when you're doing absolutely nothing, it runs on about twenty watts. Roughly the same as a dim light bulb.", "v": ["bulb"], "fx": {"stat": ["20 W", "the power of a dim light bulb"]}},
+      {"t": "It's also the reason you can't tickle yourself. Your brain predicts your own touch, and cancels it out before you feel it.", "v": ["laugh"]}
+    ]},
+    {"id": "f4", "num": 4, "head": "YOUR VEINS COULD CIRCLE THE EARTH", "lines": [
+      {"t": "Number four. If you laid every blood vessel in your body end to end, it would stretch about one hundred thousand kilometers.", "v": ["blood"], "fx": {"stat": ["100,000 KM", "of blood vessels inside you"]}},
+      {"t": "That's enough to wrap around the Earth two and a half times.", "v": ["earth"]},
+      {"t": "And your heart pushes blood through all of it, beating about a hundred thousand times a day.", "v": ["heart", "ecg"], "fx": {"stat": ["100,000", "heartbeats every day"]}},
+      {"t": "Over a lifetime, that's nearly three billion beats, without a single day off.", "v": ["running", "old_couple"]}
+    ]},
+    {"id": "f3", "num": 3, "head": "A FACTORY RUNNING NONSTOP", "lines": [
+      {"t": "Number three. In the time it takes you to hear this sentence, your body will make around ten million new red blood cells.", "v": ["blood"]},
+      {"t": "That's more than two million every second, built deep inside the marrow of your bones.", "v": ["skeleton", "cells"], "fx": {"stat": ["2,000,000", "new red blood cells every second"]}},
+      {"t": "Each cell lives for about four months, racing around your body more than a hundred thousand times.", "v": ["blood", "veins"]},
+      {"t": "Then it's broken down, and its iron is recycled to build the next generation.", "v": ["microscope"]}
+    ]},
+    {"id": "f2", "num": 2, "head": "YOUR DNA COULD REACH THE SUN", "lines": [
+      {"t": "Number two. Every cell in your body that has a nucleus holds about two meters of DNA.", "v": ["dna"], "fx": {"stat": ["2 M", "of DNA in a single cell"]}},
+      {"t": "All of it, folded into a space far smaller than the width of a hair.", "v": ["microscope", "hair"]},
+      {"t": "Now multiply that by the trillions of cells that carry it.", "v": ["cells"]},
+      {"t": "Stretched end to end, the DNA in your body would reach the Sun and back... dozens of times.", "v": ["sun", "dna"]}
+    ]},
+    {"id": "f1", "num": 1, "head": "YOU ARE MADE OF STARS", "lines": [
+      {"t": "And number one. You are almost entirely empty space.", "v": ["atom"]},
+      {"t": "Every atom in your body is a tiny nucleus surrounded by a vast emptiness.", "v": ["atom", "particles"]},
+      {"t": "If you squeezed the empty space out of every human on Earth, all eight billion of us would fit inside something the size of a sugar cube.", "v": ["crowd", "sugar"], "fx": {"stat": ["8 BILLION", "people in one sugar cube"]}},
+      {"t": "And those atoms? The calcium in your bones and the iron in your blood were forged inside ancient stars that exploded billions of years before Earth existed.", "v": ["galaxy", "nebula"]},
+      {"t": "So the next time you look in the mirror, remember. You're not just looking at a person.", "v": ["mirror"]},
+      {"t": "You're looking at stardust... that learned how to think.", "v": ["eye", "galaxy"]}
+    ]},
+    {"id": "outro", "lines": [
+      {"t": "If this blew your mind, wait until you see what's happening beneath your feet right now. That video is on your screen. I'll see you there.", "v": ["earth"], "fx": {"end": true}}
+    ]}
+  ]
+}

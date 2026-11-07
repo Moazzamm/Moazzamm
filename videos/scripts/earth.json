@@ -1,0 +1,97 @@
+{
+  "id": "earth",
+  "title": "12 Facts About Earth That Sound Fake (But Are 100% True)",
+  "intro_title": ["12 FACTS ABOUT EARTH", "THAT SOUND FAKE"],
+  "music_prompt": "Instrumental epic cinematic documentary score, awe and wonder with dark tension, deep pulsing synth bass, evolving strings, soft taiko percussion, slow build, nature documentary vibe, 90 bpm",
+  "next_title": "12 Things Your Body Does That Sound Fake",
+  "sections": [
+    {"id": "intro", "lines": [
+      {"t": "The ground beneath your feet is moving.", "v": ["cracked"]},
+      {"t": "The planet you're standing on is racing through space at over eight hundred thousand kilometers an hour.", "v": ["earth_space", "stars"]},
+      {"t": "And somewhere deep below you, it's as hot as the surface of the Sun.", "v": ["lava"]},
+      {"t": "Earth is the only home we've ever known, and it is far stranger than you think.", "v": ["earth_space", "aerial_ocean"]},
+      {"t": "Here are twelve facts about our planet that sound completely fake, but are one hundred percent true.", "v": ["mountain"], "fx": {"intro": true}},
+      {"t": "And number one sounds like it belongs in a science-fiction movie.", "v": ["cave", "lightning"]}
+    ]},
+    {"id": "f12", "num": 12, "head": "EVEREST ISN'T THE HIGHEST POINT", "lines": [
+      {"t": "Number twelve. Mount Everest is not the point on Earth that's closest to space.", "v": ["everest"]},
+      {"t": "Because Earth isn't a perfect ball. It spins so fast that it bulges out at the equator.", "v": ["earth_space"]},
+      {"t": "And that bulge gives a volcano in Ecuador, called Chimborazo, a huge advantage.", "v": ["volcano_snow"]},
+      {"t": "Measured from the center of the Earth, its peak sits about two kilometers farther out than the top of Everest.", "v": ["mountain", "clouds_above"], "fx": {"stat": ["+2 KM", "Chimborazo beats Everest from Earth's center"]}}
+    ]},
+    {"id": "f11", "num": 11, "head": "44 LIGHTNING STRIKES A SECOND", "lines": [
+      {"t": "Number eleven. Somewhere on Earth, lightning strikes about forty-four times every second.", "v": ["lightning"], "fx": {"stat": ["44", "lightning strikes every second"]}},
+      {"t": "That's well over a billion strikes every year.", "v": ["lightning", "storm"]},
+      {"t": "A single bolt can heat the air around it to around thirty thousand degrees Celsius. That's about five times hotter than the surface of the Sun.", "v": ["lightning", "sun"], "fx": {"stat": ["30,000 °C", "5x hotter than the Sun's surface"]}},
+      {"t": "By the time this video ends, our planet will have been hit by lightning more than fifteen thousand times.", "v": ["storm"]}
+    ]},
+    {"id": "f10", "num": 10, "head": "THE SAHARA WAS GREEN", "lines": [
+      {"t": "Number ten. The Sahara, the largest hot desert on Earth, was once green.", "v": ["sahara"]},
+      {"t": "Around ten thousand years ago, it was covered in grasslands and lakes, home to hippos, giraffes and crocodiles.", "v": ["savanna", "hippo"]},
+      {"t": "And even today, the desert keeps another forest alive.", "v": ["sahara"]},
+      {"t": "Every year, millions of tons of Saharan dust blow across the Atlantic Ocean, and fertilize the Amazon rainforest.", "v": ["dust", "amazon"]}
+    ]},
+    {"id": "f9", "num": 9, "head": "EVEREST WAS ONCE UNDER THE SEA", "lines": [
+      {"t": "Number nine. The top of Mount Everest used to be the bottom of the ocean.", "v": ["everest"]},
+      {"t": "Climbers near the summit walk over limestone packed with the fossils of ancient sea creatures.", "v": ["climbers", "fossil"]},
+      {"t": "Hundreds of millions of years ago, that rock was a seafloor.", "v": ["coral"]},
+      {"t": "Then India slammed into Asia, and pushed it nearly nine kilometers into the sky.", "v": ["mountain"]},
+      {"t": "Keep that in mind, because number five is genuinely disturbing.", "v": ["lake_fog"]}
+    ]},
+    {"id": "f8", "num": 8, "head": "A SUN BENEATH YOUR FEET", "lines": [
+      {"t": "Number eight. The center of the Earth is roughly as hot as the surface of the Sun.", "v": ["lava", "sun"], "fx": {"stat": ["5,200 °C", "temperature of Earth's inner core"]}},
+      {"t": "Down there sits a ball of iron and nickel, nearly two and a half thousand kilometers wide.", "v": ["molten"]},
+      {"t": "It's hot enough to melt any metal. But the pressure is so crushing, more than three million times the air pressure you feel right now, that it stays solid.", "v": ["molten", "lava"]},
+      {"t": "A ball of solid metal, as hot as the Sun, spinning beneath you right now.", "v": ["earth_space"]}
+    ]},
+    {"id": "f7", "num": 7, "head": "THE MOON IS LEAVING US", "lines": [
+      {"t": "Number seven. Earth's days are getting longer.", "v": ["sunset"]},
+      {"t": "The Moon's gravity acts like a brake, slowly dragging on our planet's spin.", "v": ["moon"]},
+      {"t": "About one point four billion years ago, a day on Earth lasted just eighteen hours.", "v": ["timelapse_sky"], "fx": {"stat": ["18 HOURS", "length of a day 1.4 billion years ago"]}},
+      {"t": "And as Earth slows down, the Moon is drifting away from us, about three point eight centimeters every year. That's about as fast as your fingernails grow.", "v": ["moon"], "fx": {"stat": ["3.8 CM", "the Moon drifts away every year"]}}
+    ]},
+    {"id": "f6", "num": 6, "head": "YOU'RE MOVING INSANELY FAST", "lines": [
+      {"t": "Number six. Even when you're sitting perfectly still, you're moving incredibly fast.", "v": ["city_people"]},
+      {"t": "At the equator, Earth spins at about one thousand six hundred and seventy kilometers an hour.", "v": ["earth_space"], "fx": {"stat": ["1,670 KM/H", "Earth's spin at the equator"]}},
+      {"t": "It orbits the Sun at more than one hundred thousand kilometers an hour.", "v": ["sun", "stars"], "fx": {"stat": ["107,000 KM/H", "Earth's speed around the Sun"]}},
+      {"t": "And our whole solar system is swinging around the galaxy at over eight hundred thousand.", "v": ["milky_way"], "fx": {"stat": ["828,000 KM/H", "our speed around the galaxy"]}},
+      {"t": "In the time you've spent watching this video, you've already traveled tens of thousands of kilometers.", "v": ["stars"]}
+    ]},
+    {"id": "f5", "num": 5, "head": "THE LAKE THAT KILLED A VALLEY", "lines": [
+      {"t": "Number five. In 1986, a lake in Cameroon killed more than seventeen hundred people in a single night.", "v": ["lake_fog"], "fx": {"stat": ["1,746", "lives lost in a single night"]}},
+      {"t": "Lake Nyos sits on top of an old volcano, and for years, carbon dioxide had been quietly seeping into its deep water.", "v": ["crater_lake", "lake_fog"]},
+      {"t": "Then, one night in August, the lake suddenly released it, all at once.", "v": ["fog"]},
+      {"t": "A massive invisible cloud of gas rolled down into the surrounding valleys, pushing away the oxygen.", "v": ["fog", "valley"]},
+      {"t": "Villages went silent. Today, pipes pump gas out of the lake, to stop it from ever building up like that again.", "v": ["village", "lake_fog"]}
+    ]},
+    {"id": "f4", "num": 4, "head": "WE KNOW MARS BETTER THAN OUR OCEANS", "lines": [
+      {"t": "Number four. We have better maps of the surface of Mars than we do of our own ocean floor.", "v": ["mars", "ocean_deep"]},
+      {"t": "Roughly three quarters of the seafloor has never been mapped in high detail.", "v": ["ocean_deep"], "fx": {"stat": ["75%", "of the seafloor not mapped in detail"]}},
+      {"t": "The deepest point, the Challenger Deep, is nearly eleven kilometers down.", "v": ["deep_sea"]},
+      {"t": "Drop Mount Everest in there, and its peak would still sit more than two kilometers underwater.", "v": ["everest", "ocean_deep"]}
+    ]},
+    {"id": "f3", "num": 3, "head": "EARTH IS LEAKING INTO SPACE", "lines": [
+      {"t": "Number three. Earth is slowly leaking into space.", "v": ["atmosphere"]},
+      {"t": "Every day, roughly ninety tons of our atmosphere escape, mostly hydrogen and helium drifting off into the void.", "v": ["atmosphere", "earth_space"], "fx": {"stat": ["90 TONS", "of atmosphere lost every day"]}},
+      {"t": "At the same time, space is raining down on us. Tons of cosmic dust and tiny meteors hit our planet every single day.", "v": ["meteor"]},
+      {"t": "Don't worry, though. At this rate, our atmosphere will last for billions of years.", "v": ["aerial_ocean"]}
+    ]},
+    {"id": "f2", "num": 2, "head": "NORTH ISN'T STAYING PUT", "lines": [
+      {"t": "Number two. Magnetic north is on the move.", "v": ["compass"]},
+      {"t": "The magnetic north pole has wandered from northern Canada toward Siberia, at times racing more than fifty kilometers a year.", "v": ["arctic", "aurora"], "fx": {"stat": ["50+ KM", "magnetic north moved in a single year"]}},
+      {"t": "And over Earth's history, the magnetic field has completely flipped hundreds of times.", "v": ["aurora"]},
+      {"t": "The last full flip happened about seven hundred and eighty thousand years ago. Back then, a compass would have pointed south.", "v": ["compass", "aurora"]}
+    ]},
+    {"id": "f1", "num": 1, "head": "A HIDDEN OCEAN INSIDE THE EARTH", "lines": [
+      {"t": "And number one. There may be a hidden ocean inside the Earth.", "v": ["cave"]},
+      {"t": "Hundreds of kilometers below the surface lies a blue mineral called ringwoodite.", "v": ["crystal"]},
+      {"t": "And it can trap water inside its crystal structure.", "v": ["crystal", "water_drop"]},
+      {"t": "Scientists estimate that this deep layer of rock could hold as much water as all of Earth's oceans combined... possibly even more.", "v": ["aerial_ocean", "waves"], "fx": {"stat": ["1-3x", "the water of all oceans, locked in rock"]}},
+      {"t": "Not a liquid sea, but an ocean's worth of water, locked inside stone, right beneath your feet.", "v": ["cave", "cracked"]},
+      {"t": "So the next time you stand on solid ground, remember. It's moving, it's spinning, it's leaking into space... and it may be hiding an ocean.", "v": ["mountain", "earth_space"]}
+    ]},
+    {"id": "outro", "lines": [
+      {"t": "And if you think Earth is strange, wait until you see what your own body is doing right now. That video is on your screen. I'll see you there.", "v": ["earth_space"], "fx": {"end": true}}
+    ]}
+  ]
+}
