@@ -149,7 +149,7 @@ for l in lines_out:
     if fx.get("comment"):
         comment = {"from": f(l["s"]), "dur": f(l["e"] - l["s"] + 1.2)}
     if fx.get("end"):
-        end = {"from": f(l["s"] + 0.2), "dur": N - f(l["s"] + 0.2), "next": d["next_title"]}; block.append((l["e"] + 0.1, total))
+        end = {"from": f(l["s"] + 0.2), "dur": N - f(l["s"] + 0.2), "next": d["next_title"]}; block.append((l["s"] + 0.2, total))
 
 def blocked(x): return any(a <= x < b for a, b in block)
 for l in lines_out:
@@ -164,6 +164,7 @@ for gi, g in enumerate(captions):
     a = g[0]["s"]; b = captions[gi + 1][0]["s"] if gi + 1 < len(captions) else g[-1]["e"] + 0.3
     b = min(b, g[-1]["e"] + 0.45)
     if blocked(a): continue
+    if end and f(b) > end["from"]: b = end["from"] / FPS
     clean = lambda w: re.sub(r"\.\.\.|[.,;:]", "", w).upper().replace("’", "'")
     cap_out.append({"from": f(a), "dur": max(4, f(b) - f(a)),
                     "words": [{"w": clean(w["w"]), "at": f(w["s"]) - f(a)} for w in g]})
