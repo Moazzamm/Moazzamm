@@ -1,0 +1,816 @@
+{
+ "fps": 30,
+ "titleCardFrames": 90,
+ "scenes": [
+  {
+   "id": "intro",
+   "title": "intro",
+   "num": null,
+   "vo": "audio/vo_intro.flac",
+   "voDur": 28.71,
+   "leadIn": 0.5,
+   "durationInFrames": 903,
+   "paras": [
+    {
+     "start": 0.5,
+     "end": 11.286
+    },
+    {
+     "start": 11.286,
+     "end": 29.21
+    }
+   ],
+   "cues": [
+    {
+     "start": 0.5,
+     "end": 5.138,
+     "text": "There's a storm on Jupiter so big that Earth would fit inside it.",
+     "para": 0
+    },
+    {
+     "start": 5.138,
+     "end": 8.276,
+     "text": "It has been raging since at least the 1800s.",
+     "para": 0
+    },
+    {
+     "start": 8.276,
+     "end": 11.286,
+     "text": "And it's only number five on this list.",
+     "para": 0
+    },
+    {
+     "start": 11.286,
+     "end": 14.006,
+     "text": "Because out there are objects so huge,",
+     "para": 1
+    },
+    {
+     "start": 14.006,
+     "end": 18.475,
+     "text": "so dense and so violent that they barely seem possible.",
+     "para": 1
+    },
+    {
+     "start": 18.475,
+     "end": 21.786,
+     "text": "From a mountain three times taller than Everest,",
+     "para": 1
+    },
+    {
+     "start": 21.786,
+     "end": 25.565,
+     "text": "to light that has been travelling for thirteen and a half billion years.",
+     "para": 1
+    },
+    {
+     "start": 25.565,
+     "end": 29.21,
+     "text": "These are seven of the most extreme things in the universe.",
+     "para": 1
+    }
+   ]
+  },
+  {
+   "id": "n7",
+   "title": "Olympus Mons",
+   "num": 7,
+   "vo": "audio/vo_n7.flac",
+   "voDur": 35.292,
+   "leadIn": 2.1,
+   "durationInFrames": 1149,
+   "paras": [
+    {
+     "start": 2.1,
+     "end": 8.994
+    },
+    {
+     "start": 8.994,
+     "end": 16.695
+    },
+    {
+     "start": 16.695,
+     "end": 26.97
+    },
+    {
+     "start": 26.97,
+     "end": 37.392
+    }
+   ],
+   "cues": [
+    {
+     "start": 2.1,
+     "end": 3.338,
+     "text": "Number seven.",
+     "para": 0
+    },
+    {
+     "start": 3.338,
+     "end": 4.3,
+     "text": "Olympus Mons.",
+     "para": 0
+    },
+    {
+     "start": 4.3,
+     "end": 8.994,
+     "text": "On Mars, there's a volcano that makes Everest look tiny.",
+     "para": 0
+    },
+    {
+     "start": 8.994,
+     "end": 12.886,
+     "text": "It rises about twenty-five kilometres above the plains around it.",
+     "para": 1
+    },
+    {
+     "start": 12.886,
+     "end": 16.695,
+     "text": "That's nearly three Mount Everests stacked on top of each other.",
+     "para": 1
+    },
+    {
+     "start": 16.695,
+     "end": 18.27,
+     "text": "And it's not just tall.",
+     "para": 2
+    },
+    {
+     "start": 18.27,
+     "end": 23.036,
+     "text": "Its base is about six hundred kilometres wide, roughly the size of Arizona,",
+     "para": 2
+    },
+    {
+     "start": 23.036,
+     "end": 26.97,
+     "text": "and its edges drop away in cliffs up to six kilometres high.",
+     "para": 2
+    },
+    {
+     "start": 26.97,
+     "end": 28.559,
+     "text": "How did it get so big?",
+     "para": 3
+    },
+    {
+     "start": 28.559,
+     "end": 31.1,
+     "text": "Mars has no moving tectonic plates.",
+     "para": 3
+    },
+    {
+     "start": 31.1,
+     "end": 33.21,
+     "text": "So the volcano sat over the same hot spot,",
+     "para": 3
+    },
+    {
+     "start": 33.21,
+     "end": 37.392,
+     "text": "piling up lava again and again, for an incredibly long time.",
+     "para": 3
+    }
+   ]
+  },
+  {
+   "id": "n6",
+   "title": "Saturn's Hexagon",
+   "num": 6,
+   "vo": "audio/vo_n6.flac",
+   "voDur": 34.915,
+   "leadIn": 2.1,
+   "durationInFrames": 1137,
+   "paras": [
+    {
+     "start": 2.1,
+     "end": 6.307
+    },
+    {
+     "start": 6.307,
+     "end": 18.062
+    },
+    {
+     "start": 18.062,
+     "end": 24.767
+    },
+    {
+     "start": 24.767,
+     "end": 37.015
+    }
+   ],
+   "cues": [
+    {
+     "start": 2.1,
+     "end": 3.58,
+     "text": "Number six.",
+     "para": 0
+    },
+    {
+     "start": 3.58,
+     "end": 6.307,
+     "text": "A storm with straight edges.",
+     "para": 0
+    },
+    {
+     "start": 6.307,
+     "end": 9.369,
+     "text": "Nature almost never makes perfect shapes this big.",
+     "para": 1
+    },
+    {
+     "start": 9.369,
+     "end": 10.539,
+     "text": "But at Saturn's north pole,",
+     "para": 1
+    },
+    {
+     "start": 10.539,
+     "end": 15.169,
+     "text": "there's a six-sided jet stream about thirty thousand kilometres across.",
+     "para": 1
+    },
+    {
+     "start": 15.169,
+     "end": 18.062,
+     "text": "You could line up more than two Earths inside it.",
+     "para": 1
+    },
+    {
+     "start": 18.062,
+     "end": 21.449,
+     "text": "Winds race around it at over three hundred kilometres an hour,",
+     "para": 2
+    },
+    {
+     "start": 21.449,
+     "end": 24.767,
+     "text": "with a giant hurricane spinning at the very centre.",
+     "para": 2
+    },
+    {
+     "start": 24.767,
+     "end": 28.069,
+     "text": "The Voyager probes first spotted it in the early 1980s.",
+     "para": 3
+    },
+    {
+     "start": 28.069,
+     "end": 31.886,
+     "text": "Decades later, when Cassini arrived, it was still there.",
+     "para": 3
+    },
+    {
+     "start": 31.886,
+     "end": 37.015,
+     "text": "Scientists think it forms where winds of different speeds meet and bend the jet stream into waves.",
+     "para": 3
+    }
+   ]
+  },
+  {
+   "id": "n5",
+   "title": "The Great Red Spot",
+   "num": 5,
+   "vo": "audio/vo_n5.flac",
+   "voDur": 27.644,
+   "leadIn": 2.1,
+   "durationInFrames": 919,
+   "paras": [
+    {
+     "start": 2.1,
+     "end": 4.927
+    },
+    {
+     "start": 4.927,
+     "end": 14.707
+    },
+    {
+     "start": 14.707,
+     "end": 21.453
+    },
+    {
+     "start": 21.453,
+     "end": 29.744
+    }
+   ],
+   "cues": [
+    {
+     "start": 2.1,
+     "end": 3.137,
+     "text": "Number five.",
+     "para": 0
+    },
+    {
+     "start": 3.137,
+     "end": 4.927,
+     "text": "The Great Red Spot.",
+     "para": 0
+    },
+    {
+     "start": 4.927,
+     "end": 7.574,
+     "text": "This storm on Jupiter is wider than our entire planet.",
+     "para": 1
+    },
+    {
+     "start": 7.574,
+     "end": 9.828,
+     "text": "When NASA measured it in 2017,",
+     "para": 1
+    },
+    {
+     "start": 9.828,
+     "end": 12.618,
+     "text": "it was about sixteen thousand kilometres across.",
+     "para": 1
+    },
+    {
+     "start": 12.618,
+     "end": 14.707,
+     "text": "That's one point three Earths.",
+     "para": 1
+    },
+    {
+     "start": 14.707,
+     "end": 15.543,
+     "text": "But here's the twist.",
+     "para": 2
+    },
+    {
+     "start": 15.543,
+     "end": 18.018,
+     "text": "It's shrinking.",
+     "para": 2
+    },
+    {
+     "start": 18.018,
+     "end": 21.453,
+     "text": "In the nineteenth century, it was well over two Earths wide.",
+     "para": 2
+    },
+    {
+     "start": 21.453,
+     "end": 26.916,
+     "text": "NASA's Juno spacecraft also found that its roots plunge more than three hundred kilometres down.",
+     "para": 3
+    },
+    {
+     "start": 26.916,
+     "end": 29.744,
+     "text": "That's fifty to a hundred times deeper than Earth's oceans.",
+     "para": 3
+    }
+   ]
+  },
+  {
+   "id": "n4",
+   "title": "Neutron Stars",
+   "num": 4,
+   "vo": "audio/vo_n4.flac",
+   "voDur": 34.16,
+   "leadIn": 2.1,
+   "durationInFrames": 1115,
+   "paras": [
+    {
+     "start": 2.1,
+     "end": 6.226
+    },
+    {
+     "start": 6.226,
+     "end": 17.826
+    },
+    {
+     "start": 17.826,
+     "end": 28.813
+    },
+    {
+     "start": 28.813,
+     "end": 36.26
+    }
+   ],
+   "cues": [
+    {
+     "start": 2.1,
+     "end": 3.431,
+     "text": "Number four.",
+     "para": 0
+    },
+    {
+     "start": 3.431,
+     "end": 6.226,
+     "text": "A sugar cube you could never lift.",
+     "para": 0
+    },
+    {
+     "start": 6.226,
+     "end": 7.374,
+     "text": "When a giant star dies,",
+     "para": 1
+    },
+    {
+     "start": 7.374,
+     "end": 11.286,
+     "text": "its core can collapse into a neutron star.",
+     "para": 1
+    },
+    {
+     "start": 11.286,
+     "end": 14.349,
+     "text": "Around one and a half times the mass of our Sun,",
+     "para": 1
+    },
+    {
+     "start": 14.349,
+     "end": 17.826,
+     "text": "crushed into a ball about the size of a city.",
+     "para": 1
+    },
+    {
+     "start": 17.826,
+     "end": 21.738,
+     "text": "This is the densest material we can directly observe.",
+     "para": 2
+    },
+    {
+     "start": 21.738,
+     "end": 26.536,
+     "text": "A piece the size of a sugar cube would weigh about a billion tonnes on Earth.",
+     "para": 2
+    },
+    {
+     "start": 26.536,
+     "end": 28.813,
+     "text": "That's as much as a mountain.",
+     "para": 2
+    },
+    {
+     "start": 28.813,
+     "end": 32.394,
+     "text": "And some neutron stars spin hundreds of times every second,",
+     "para": 3
+    },
+    {
+     "start": 32.394,
+     "end": 36.26,
+     "text": "sweeping beams of radiation across space like a cosmic lighthouse.",
+     "para": 3
+    }
+   ]
+  },
+  {
+   "id": "n3",
+   "title": "Magnetars",
+   "num": 3,
+   "vo": "audio/vo_n3.flac",
+   "voDur": 36.389,
+   "leadIn": 2.1,
+   "durationInFrames": 1182,
+   "paras": [
+    {
+     "start": 2.1,
+     "end": 6.013
+    },
+    {
+     "start": 6.013,
+     "end": 16.31
+    },
+    {
+     "start": 16.31,
+     "end": 31.944
+    },
+    {
+     "start": 31.944,
+     "end": 38.489
+    }
+   ],
+   "cues": [
+    {
+     "start": 2.1,
+     "end": 4.839,
+     "text": "Number three takes that and turns it up.",
+     "para": 0
+    },
+    {
+     "start": 4.839,
+     "end": 6.013,
+     "text": "A magnetar.",
+     "para": 0
+    },
+    {
+     "start": 6.013,
+     "end": 11.301,
+     "text": "This is a neutron star with the strongest magnetic field known in the universe.",
+     "para": 1
+    },
+    {
+     "start": 11.301,
+     "end": 12.971,
+     "text": "Put one a sixth of the way to the Moon,",
+     "para": 1
+    },
+    {
+     "start": 12.971,
+     "end": 16.31,
+     "text": "and it would wipe every credit card on Earth.",
+     "para": 1
+    },
+    {
+     "start": 16.31,
+     "end": 18.411,
+     "text": "On December twenty-seventh, 2004,",
+     "para": 2
+    },
+    {
+     "start": 18.411,
+     "end": 23.165,
+     "text": "a magnetar called SGR 1806-20 erupted.",
+     "para": 2
+    },
+    {
+     "start": 23.165,
+     "end": 26.681,
+     "text": "It was about fifty thousand light-years away, across the galaxy.",
+     "para": 2
+    },
+    {
+     "start": 26.681,
+     "end": 31.944,
+     "text": "And the flash still reached Earth strongly enough to light up our upper atmosphere.",
+     "para": 2
+    },
+    {
+     "start": 31.944,
+     "end": 33.351,
+     "text": "In just a tenth of a second,",
+     "para": 3
+    },
+    {
+     "start": 33.351,
+     "end": 38.489,
+     "text": "it released more energy than our Sun gives off in one hundred and fifty thousand years.",
+     "para": 3
+    }
+   ]
+  },
+  {
+   "id": "n2",
+   "title": "M87*",
+   "num": 2,
+   "vo": "audio/vo_n2.flac",
+   "voDur": 32.758,
+   "leadIn": 2.1,
+   "durationInFrames": 1073,
+   "paras": [
+    {
+     "start": 2.1,
+     "end": 6.693
+    },
+    {
+     "start": 6.693,
+     "end": 17.873
+    },
+    {
+     "start": 17.873,
+     "end": 23.244
+    },
+    {
+     "start": 23.244,
+     "end": 34.858
+    }
+   ],
+   "cues": [
+    {
+     "start": 2.1,
+     "end": 3.155,
+     "text": "Number two.",
+     "para": 0
+    },
+    {
+     "start": 3.155,
+     "end": 6.693,
+     "text": "The first black hole humanity ever photographed.",
+     "para": 0
+    },
+    {
+     "start": 6.693,
+     "end": 11.014,
+     "text": "In 2019, a team linking radio telescopes across the planet,",
+     "para": 1
+    },
+    {
+     "start": 11.014,
+     "end": 13.574,
+     "text": "the Event Horizon Telescope, revealed this.",
+     "para": 1
+    },
+    {
+     "start": 13.574,
+     "end": 17.873,
+     "text": "The shadow of the black hole at the heart of the galaxy M87.",
+     "para": 1
+    },
+    {
+     "start": 17.873,
+     "end": 19.914,
+     "text": "It's fifty-five million light-years away,",
+     "para": 2
+    },
+    {
+     "start": 19.914,
+     "end": 23.244,
+     "text": "and it holds the mass of six and a half billion Suns.",
+     "para": 2
+    },
+    {
+     "start": 23.244,
+     "end": 26.359,
+     "text": "Its event horizon, the point of no return,",
+     "para": 3
+    },
+    {
+     "start": 26.359,
+     "end": 29.425,
+     "text": "is just under forty billion kilometres across.",
+     "para": 3
+    },
+    {
+     "start": 29.425,
+     "end": 30.624,
+     "text": "Drop it into our solar system,",
+     "para": 3
+    },
+    {
+     "start": 30.624,
+     "end": 34.858,
+     "text": "and it would swallow the orbits of every single planet, with room to spare.",
+     "para": 3
+    }
+   ]
+  },
+  {
+   "id": "n1",
+   "title": "MoM-z14",
+   "num": 1,
+   "vo": "audio/vo_n1.flac",
+   "voDur": 38.522,
+   "leadIn": 2.1,
+   "durationInFrames": 1246,
+   "paras": [
+    {
+     "start": 2.1,
+     "end": 6.598
+    },
+    {
+     "start": 6.598,
+     "end": 17.894
+    },
+    {
+     "start": 17.894,
+     "end": 25.978
+    },
+    {
+     "start": 25.978,
+     "end": 40.622
+    }
+   ],
+   "cues": [
+    {
+     "start": 2.1,
+     "end": 3.457,
+     "text": "And number one.",
+     "para": 0
+    },
+    {
+     "start": 3.457,
+     "end": 6.598,
+     "text": "The most distant galaxy ever confirmed.",
+     "para": 0
+    },
+    {
+     "start": 6.598,
+     "end": 8.625,
+     "text": "It's called MoM-z14,",
+     "para": 1
+    },
+    {
+     "start": 8.625,
+     "end": 13.428,
+     "text": "and the James Webb Space Telescope caught its light in 2025.",
+     "para": 1
+    },
+    {
+     "start": 13.428,
+     "end": 17.894,
+     "text": "That light has been travelling for about thirteen and a half billion years.",
+     "para": 1
+    },
+    {
+     "start": 17.894,
+     "end": 22.995,
+     "text": "It left this galaxy when the universe was only around two hundred and eighty million years old.",
+     "para": 2
+    },
+    {
+     "start": 22.995,
+     "end": 25.978,
+     "text": "That's about two percent of its age today.",
+     "para": 2
+    },
+    {
+     "start": 25.978,
+     "end": 28.909,
+     "text": "So you're not seeing this galaxy as it is now.",
+     "para": 3
+    },
+    {
+     "start": 28.909,
+     "end": 31.945,
+     "text": "You're seeing it as a baby, at the dawn of the universe,",
+     "para": 3
+    },
+    {
+     "start": 31.945,
+     "end": 35.251,
+     "text": "long before the Sun or the Earth existed.",
+     "para": 3
+    },
+    {
+     "start": 35.251,
+     "end": 37.101,
+     "text": "And it's surprisingly bright,",
+     "para": 3
+    },
+    {
+     "start": 37.101,
+     "end": 40.622,
+     "text": "brighter than many astronomers expected a galaxy that young could be.",
+     "para": 3
+    }
+   ]
+  },
+  {
+   "id": "outro",
+   "title": "outro",
+   "num": null,
+   "vo": "audio/vo_outro.flac",
+   "voDur": 18.909,
+   "leadIn": 0.5,
+   "durationInFrames": 609,
+   "paras": [
+    {
+     "start": 0.5,
+     "end": 11.98
+    },
+    {
+     "start": 11.98,
+     "end": 19.409
+    }
+   ],
+   "cues": [
+    {
+     "start": 0.5,
+     "end": 4.888,
+     "text": "A mountain, a storm, a hexagon, a sugar cube,",
+     "para": 0
+    },
+    {
+     "start": 4.888,
+     "end": 9.388,
+     "text": "a flash, a shadow, and a speck of ancient light.",
+     "para": 0
+    },
+    {
+     "start": 9.388,
+     "end": 11.98,
+     "text": "Every single one is real.",
+     "para": 0
+    },
+    {
+     "start": 11.98,
+     "end": 13.753,
+     "text": "Which one surprised you the most?",
+     "para": 1
+    },
+    {
+     "start": 13.753,
+     "end": 15.099,
+     "text": "Tell us in the comments.",
+     "para": 1
+    },
+    {
+     "start": 15.099,
+     "end": 18.49,
+     "text": "And if you want more of the universe at its most extreme,",
+     "para": 1
+    },
+    {
+     "start": 18.49,
+     "end": 19.409,
+     "text": "you know what to do.",
+     "para": 1
+    }
+   ]
+  }
+ ],
+ "totalFrames": 9423
+}
