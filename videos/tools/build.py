@@ -142,7 +142,11 @@ for s in sec_times:
 for l in lines_out:
     fx = l["fx"]
     if "stat" in fx:
-        a = l["s"] + 0.35; b = min(l["e"] + 0.5, a + 4.2); b = max(b, a + 2.4)
+        a = l["s"] + 0.35
+        for c in cards:  # never let a stat pop up under a fact title card
+            cs, ce = c["from"] / FPS, (c["from"] + c["dur"]) / FPS
+            if a < ce and a + 2.4 > cs: a = ce + 0.1
+        b = min(max(l["e"] + 0.5, a + 2.4), a + 4.2); b = max(b, a + 2.4)
         stats.append({"from": f(a), "dur": f(b - a), "value": fx["stat"][0], "label": fx["stat"][1]})
     if fx.get("intro"):
         intro = {"from": f(l["s"]), "dur": f(l["e"] - l["s"] + 0.6), "lines": d["intro_title"]}; block.append((l["s"], l["e"] + 0.6))
