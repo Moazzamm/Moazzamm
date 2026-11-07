@@ -1,0 +1,71 @@
+{
+  "scenes": [
+    {
+      "id": "open",
+      "title": "The Map Reveal",
+      "paragraphs": [
+        "Open a world map and Earth looks finished. Every coastline is drawn. Every ocean has a name. Even the floor of the Pacific has ridges and mountains on it.",
+        "But most of that seafloor has never been mapped in detail. Much of its shape is estimated from satellites, which detect tiny bumps in the height of the sea surface. As of April 2026, about twenty-nine percent of the ocean floor had been mapped to modern standards.",
+        "And the part anyone has actually seen with a camera is far smaller. A 2025 study put it at less than a thousandth of one percent of the deep seafloor. Every look since 1958, combined, covers an area about a tenth the size of Belgium.",
+        "So a map can be complete and still say very little about what is there. Water, ice, rock and forest each hide that gap in a different way. Follow all four, and this same map will start to look very different."
+      ]
+    },
+    {
+      "id": "ocean",
+      "title": "Water",
+      "paragraphs": [
+        "Start in the Pacific, between Hawaii and Mexico. The Clarion-Clipperton Zone is a muddy abyssal plain of roughly six million square kilometres, on average about five kilometres down.",
+        "The barrier here is the water itself. Sunlight fades out within the top thousand metres. At five thousand, the pressure is roughly five hundred times what you feel at the surface.",
+        "So scientists work at the end of a cable. Ship-mounted sonar maps the plain in long swaths. Remotely operated vehicles film the seafloor and collect animals. Box corers bring up squares of mud.",
+        "By deep-sea standards, this is well-studied ground. Expeditions have come here since the 1960s. In 2023, researchers at London's Natural History Museum combined more than a hundred thousand records into one checklist. They counted 5,578 species. Roughly nine in ten had no scientific name.",
+        "That is the gap in its clearest form. These animals were found, photographed and preserved, yet most have never been formally described. How they live, and how far they range, is largely unknown. And that matters, because parts of this plain are being explored for mining.",
+        "The ocean at least lets sound and cables through. What happens when the barrier is solid?"
+      ]
+    },
+    {
+      "id": "ice",
+      "title": "Ice",
+      "paragraphs": [
+        "West Antarctica. The Whillans Ice Stream looks like an endless, flat sheet of snow. Nothing on the surface marks the lake beneath it.",
+        "It was found from orbit. In the 2000s, NASA's ICESat satellite measured the ice surface here rising and falling as water filled and drained below. Radar and seismic surveys then traced the lake's outline. But an outline is not a sample.",
+        "In January 2013, the WISSARD project melted a borehole about sixty centimetres wide through roughly eight hundred metres of ice, using a hot-water drill designed to keep surface microbes out.",
+        "At the bottom, a camera found the lake. At the borehole, it was only about two metres deep. And it was inhabited: around one hundred and thirty thousand microbial cells in every millilitre of water, and at least 3,931 distinct microbial types identified by their DNA. Many draw energy from chemicals, not sunlight.",
+        "A 2022 inventory lists 675 subglacial lakes in Antarctica. Only a handful have ever been sampled directly. One borehole describes one point in one lake. How these waters connect, and how their life varies, is still largely open.",
+        "A drill can reach a lake. But some spaces can only be entered on foot."
+      ]
+    },
+    {
+      "id": "cave",
+      "title": "Rock",
+      "paragraphs": [
+        "Beneath Carlsbad Caverns National Park in New Mexico, Lechuguilla Cave was long considered minor: a deep entrance pit and a few hundred feet of dead-end passage. But in the 1950s, cavers heard wind roaring up through the rubble on its floor. Moving air meant open space somewhere below.",
+        "Cavers began digging, with park permission, in 1984. On May 26, 1986, they broke through into large walking passages.",
+        "No satellite can map this. Every line on Lechuguilla's map was measured by people: distance, direction and slope from one survey point to the next, sketched by hand, often while crawling.",
+        "Since 1984, those teams have mapped more than 145 miles of passage, about 233 kilometres, reaching 489 metres deep. The cave was dissolved from below by sulfuric acid, and it holds gypsum chandeliers six metres long.",
+        "It also holds microbes. In a section isolated from the surface for over four million years, researchers found bacteria already resistant to antibiotics, some to fourteen different commercial drugs. Resistance, it turns out, is ancient.",
+        "The map ends where the survey ends. Past the last measured point there may be more passage, or none. Survey teams still go back to find out.",
+        "Underground, nobody can see from above. In a forest, we can. So how can a forest still surprise scientists?"
+      ]
+    },
+    {
+      "id": "forest",
+      "title": "Forest",
+      "paragraphs": [
+        "In 2005, scientists working with Kew Gardens were scanning Google Earth for highland forests in Mozambique when they noticed a dark green patch on a mountain called Mabu.",
+        "From above, a canopy is a surface. Satellite images show its extent, its texture, its edges. They cannot show a chameleon on a twig, or what lives beneath trees forty to fifty metres tall.",
+        "So researchers walked in: a first visit in December 2005, then a larger Kew-led expedition in 2008 with Mozambican, Malawian and international partners. They documented what is probably the largest medium-altitude rainforest in southern Africa, some seventy to eighty square kilometres, and animals new to science: the Mabu forest viper, a pygmy chameleon, a horseshoe bat, new butterflies. By 2016, thirteen new species had been recorded.",
+        "But Mabu was never a lost forest. It was unknown to biologists, not to people. Local hunters knew its animals and helped researchers record them. During Mozambique's civil war, families reportedly sheltered inside the forest.",
+        "Even so, most surveys have stayed near the eastern edge and the summit. As of 2016, the drier western and northern slopes had not been visited by scientists."
+      ]
+    },
+    {
+      "id": "final",
+      "title": "The Return",
+      "paragraphs": [
+        "Back to the map. Nothing on it has moved. The Pacific, Antarctica, New Mexico and Mozambique are exactly where they were.",
+        "But now it reads in layers. Seafloor shapes estimated from satellites. Swaths measured by sonar. Narrow tracks where a camera passed. A borehole sixty centimetres wide. Passages measured by hand. Forest edges walked by scientists, inside landscapes long known to the people who live there.",
+        "A map tells us where things are. It rarely tells us how we know. Earth isn't unexplored. It is unevenly observed. And the most interesting questions still begin at the last measured point."
+      ]
+    }
+  ]
+}
