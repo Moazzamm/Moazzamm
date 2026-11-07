@@ -1,0 +1,46 @@
+HEAD hook: In March 2025, a robot 600m beneath the Southern Ocean filmed something nobody had ever seen 
+hook ratio=0.922 refwords 110 hypwords 107
+   replace REF: six hundred metres | HYP: 600m
+   replace REF: thirty centimetres | HYP: 30 cm
+   replace REF: seven metres | HYP: 7m
+   replace REF: tonne | HYP: ton
+   replace REF: eight kilometres | HYP: 8 km
+HEAD sunlight: 0 meters. Sunlight, warmth and life at the size we expect. But within a few hundred meters, 
+sunlight ratio=0.936 refwords 70 hypwords 71
+   replace REF: metres | HYP: meters
+   replace REF: metres | HYP: meters
+   replace REF: seafloor | HYP: sea floor
+   replace REF: metres | HYP: meters
+HEAD twilight: 200 meters. Most of the sunlight is gone. Welcome to the twilight zone. 
+twilight ratio=0.932 refwords 133 hypwords 131
+   replace REF: two hundred metres | HYP: 200 m
+   replace REF: oarfish | HYP: orfish
+   replace REF: eight metres | HYP: 8 m
+   replace REF: oarfish | HYP: orfish
+   replace REF: forty five metres | HYP: 45 m
+HEAD midnight: 1,000 meters. The last of the sunlight is gone. From here down, the only light comes from the animals themselves. 
+midnight ratio=0.905 refwords 173 hypwords 165
+   replace REF: one thousand metres | HYP: 1000 m
+   replace REF: six metres | HYP: 6 m
+   replace REF: centimetre | HYP: cm
+   replace REF: two hundred | HYP: 272
+   replace REF: seventy two and five hundred and twelve | HYP: 512
+   replace REF: seafloor | HYP: sea floor
+   replace REF: metre | HYP: meter
+   replace REF: five | HYP: 5
+   replace REF: forty three | HYP: 43
+HEAD why: So why are there so 
+why ratio=0.978 refwords 178 hypwords 178
+   replace REF: two thousand | HYP: 2000
+   replace REF: seafloor | HYP: sea floor
+   replace REF: millimetre | HYP: millimeter
+HEAD trench: 6,000 meters. We entered the trenches, the hadal zone, named after Hades. At 8,000 meters 
+trench ratio=0.112 refwords 149 hypwords 12
+   replace REF: six thousand metres | HYP: 6000 m
+   replace REF: enter | HYP: entered
+   delete REF: at eight thousand metres the water pressure is around eight hundred times what you feel at the surface and yet in 2023 scientists revealed footage of a small pale snailfish swimming at eight thousand  | HYP: 
+HEAD end: And here's the most humbling part. Scientists estimate that we have seen less than a thousandth of 1% 
+end ratio=0.963 refwords 81 hypwords 81
+   replace REF: one percent | HYP: 1
+   replace REF: seafloor | HYP: sea floor
+DONE

@@ -1,0 +1,902 @@
+{
+ "fps": 30,
+ "titleCardFrames": 120,
+ "scenes": [
+  {
+   "id": "hook",
+   "title": "hook",
+   "num": null,
+   "vo": "audio/vo_hook.flac",
+   "voDur": 43.185,
+   "leadIn": 0.6,
+   "durationInFrames": 1344,
+   "paras": [
+    {
+     "start": 0.6,
+     "end": 12.618
+    },
+    {
+     "start": 12.618,
+     "end": 25.799
+    },
+    {
+     "start": 25.799,
+     "end": 43.785
+    }
+   ],
+   "cues": [
+    {
+     "start": 0.6,
+     "end": 2.506,
+     "text": "In March 2025,",
+     "para": 0
+    },
+    {
+     "start": 2.506,
+     "end": 10.338,
+     "text": "a robot six hundred metres beneath the Southern Ocean filmed something nobody had ever seen alive in the wild.",
+     "para": 0
+    },
+    {
+     "start": 10.338,
+     "end": 12.618,
+     "text": "A colossal squid.",
+     "para": 0
+    },
+    {
+     "start": 12.618,
+     "end": 15.982,
+     "text": "It was only a baby, about thirty centimetres long.",
+     "para": 1
+    },
+    {
+     "start": 15.982,
+     "end": 18.751,
+     "text": "But adults are thought to reach around seven metres,",
+     "para": 1
+    },
+    {
+     "start": 18.751,
+     "end": 21.577,
+     "text": "and weigh up to half a tonne.",
+     "para": 1
+    },
+    {
+     "start": 21.577,
+     "end": 25.799,
+     "text": "Their eyes are believed to be the largest of any animal alive.",
+     "para": 1
+    },
+    {
+     "start": 25.799,
+     "end": 28.958,
+     "text": "And that's the strange rule of the deep sea.",
+     "para": 2
+    },
+    {
+     "start": 28.958,
+     "end": 33.535,
+     "text": "The further down you go, the more often you meet giants.",
+     "para": 2
+    },
+    {
+     "start": 33.535,
+     "end": 34.978,
+     "text": "So let's dive.",
+     "para": 2
+    },
+    {
+     "start": 34.978,
+     "end": 36.431,
+     "text": "All the way down.",
+     "para": 2
+    },
+    {
+     "start": 36.431,
+     "end": 38.003,
+     "text": "To find out why.",
+     "para": 2
+    },
+    {
+     "start": 38.003,
+     "end": 40.326,
+     "text": "And to find the invisible line,",
+     "para": 2
+    },
+    {
+     "start": 40.326,
+     "end": 43.785,
+     "text": "about eight kilometres down, where even fish give up.",
+     "para": 2
+    }
+   ]
+  },
+  {
+   "id": "sunlight",
+   "title": "sunlight",
+   "num": null,
+   "vo": "audio/vo_sunlight.flac",
+   "voDur": 27.214,
+   "leadIn": 1.3,
+   "durationInFrames": 885,
+   "paras": [
+    {
+     "start": 1.3,
+     "end": 7.321
+    },
+    {
+     "start": 7.321,
+     "end": 27.241
+    },
+    {
+     "start": 27.241,
+     "end": 28.514
+    }
+   ],
+   "cues": [
+    {
+     "start": 1.3,
+     "end": 2.82,
+     "text": "Zero metres.",
+     "para": 0
+    },
+    {
+     "start": 2.82,
+     "end": 7.321,
+     "text": "Sunlight, warmth, and life at the size we expect.",
+     "para": 0
+    },
+    {
+     "start": 7.321,
+     "end": 9.414,
+     "text": "But within a few hundred metres,",
+     "para": 1
+    },
+    {
+     "start": 9.414,
+     "end": 12.36,
+     "text": "the ocean starts playing with scale.",
+     "para": 1
+    },
+    {
+     "start": 12.36,
+     "end": 13.856,
+     "text": "Off the coast of Japan,",
+     "para": 1
+    },
+    {
+     "start": 13.856,
+     "end": 20.029,
+     "text": "a crab walks the seafloor on legs that can stretch almost four metres from claw to claw.",
+     "para": 1
+    },
+    {
+     "start": 20.029,
+     "end": 23.29,
+     "text": "That's longer than two people lying end to end.",
+     "para": 1
+    },
+    {
+     "start": 23.29,
+     "end": 27.241,
+     "text": "The Japanese spider crab is the largest crab alive.",
+     "para": 1
+    },
+    {
+     "start": 27.241,
+     "end": 28.514,
+     "text": "And it's only the beginning.",
+     "para": 2
+    }
+   ]
+  },
+  {
+   "id": "twilight",
+   "title": "twilight",
+   "num": null,
+   "vo": "audio/vo_twilight.flac",
+   "voDur": 50.792,
+   "leadIn": 1.3,
+   "durationInFrames": 1593,
+   "paras": [
+    {
+     "start": 1.3,
+     "end": 8.086
+    },
+    {
+     "start": 8.086,
+     "end": 24.401
+    },
+    {
+     "start": 24.401,
+     "end": 43.576
+    },
+    {
+     "start": 43.576,
+     "end": 52.092
+    }
+   ],
+   "cues": [
+    {
+     "start": 1.3,
+     "end": 2.971,
+     "text": "Two hundred metres.",
+     "para": 0
+    },
+    {
+     "start": 2.971,
+     "end": 5.383,
+     "text": "Most of the sunlight is gone.",
+     "para": 0
+    },
+    {
+     "start": 5.383,
+     "end": 8.086,
+     "text": "Welcome to the twilight zone.",
+     "para": 0
+    },
+    {
+     "start": 8.086,
+     "end": 11.484,
+     "text": "Here lives a fish that looks like a silver ribbon.",
+     "para": 1
+    },
+    {
+     "start": 11.484,
+     "end": 15.08,
+     "text": "The giant oarfish can grow to about eight metres,",
+     "para": 1
+    },
+    {
+     "start": 15.08,
+     "end": 17.521,
+     "text": "the longest bony fish on Earth.",
+     "para": 1
+    },
+    {
+     "start": 17.521,
+     "end": 20.261,
+     "text": "It has been seen hanging upright in the water,",
+     "para": 1
+    },
+    {
+     "start": 20.261,
+     "end": 24.401,
+     "text": "rippling a red fin along its back, like a living banner.",
+     "para": 1
+    },
+    {
+     "start": 24.401,
+     "end": 28.181,
+     "text": "But even the oarfish isn't the longest thing out here.",
+     "para": 2
+    },
+    {
+     "start": 28.181,
+     "end": 34.67,
+     "text": "In 2020, explorers in deep canyons off Western Australia came across a siphonophore,",
+     "para": 2
+    },
+    {
+     "start": 34.67,
+     "end": 36.957,
+     "text": "coiled into a giant spiral.",
+     "para": 2
+    },
+    {
+     "start": 36.957,
+     "end": 40.714,
+     "text": "Its outer ring was estimated at around forty-five metres.",
+     "para": 2
+    },
+    {
+     "start": 40.714,
+     "end": 43.576,
+     "text": "That's longer than a blue whale.",
+     "para": 2
+    },
+    {
+     "start": 43.576,
+     "end": 44.459,
+     "text": "And here's the twist.",
+     "para": 3
+    },
+    {
+     "start": 44.459,
+     "end": 46.212,
+     "text": "It isn't one animal.",
+     "para": 3
+    },
+    {
+     "start": 46.212,
+     "end": 48.94,
+     "text": "It's a colony of countless tiny clones,",
+     "para": 3
+    },
+    {
+     "start": 48.94,
+     "end": 52.092,
+     "text": "each with its own job, working together as one body.",
+     "para": 3
+    }
+   ]
+  },
+  {
+   "id": "midnight",
+   "title": "midnight",
+   "num": null,
+   "vo": "audio/vo_midnight.flac",
+   "voDur": 67.583,
+   "leadIn": 1.3,
+   "durationInFrames": 2096,
+   "paras": [
+    {
+     "start": 1.3,
+     "end": 19.713
+    },
+    {
+     "start": 19.713,
+     "end": 23.108
+    },
+    {
+     "start": 23.108,
+     "end": 48.698
+    },
+    {
+     "start": 48.698,
+     "end": 68.883
+    }
+   ],
+   "cues": [
+    {
+     "start": 1.3,
+     "end": 3.349,
+     "text": "One thousand metres.",
+     "para": 0
+    },
+    {
+     "start": 3.349,
+     "end": 6.006,
+     "text": "The last of the sunlight is gone.",
+     "para": 0
+    },
+    {
+     "start": 6.006,
+     "end": 7.051,
+     "text": "From here down,",
+     "para": 0
+    },
+    {
+     "start": 7.051,
+     "end": 10.388,
+     "text": "the only light comes from the animals themselves.",
+     "para": 0
+    },
+    {
+     "start": 10.388,
+     "end": 14.019,
+     "text": "The water is close to freezing, and food is rare.",
+     "para": 0
+    },
+    {
+     "start": 14.019,
+     "end": 15.98,
+     "text": "Most of it is marine snow,",
+     "para": 0
+    },
+    {
+     "start": 15.98,
+     "end": 19.713,
+     "text": "flakes of dead material drifting down from above.",
+     "para": 0
+    },
+    {
+     "start": 19.713,
+     "end": 23.108,
+     "text": "This is where the giants get strange.",
+     "para": 1
+    },
+    {
+     "start": 23.108,
+     "end": 24.66,
+     "text": "In the cold,",
+     "para": 2
+    },
+    {
+     "start": 24.66,
+     "end": 27.954,
+     "text": "dark waters of the far north lives the Greenland shark.",
+     "para": 2
+    },
+    {
+     "start": 27.954,
+     "end": 31.18,
+     "text": "It can grow over six metres long,",
+     "para": 2
+    },
+    {
+     "start": 31.18,
+     "end": 33.521,
+     "text": "but it grows less than a centimetre a year.",
+     "para": 2
+    },
+    {
+     "start": 33.521,
+     "end": 37.56,
+     "text": "When scientists carbon-dated the lenses of their eyes,",
+     "para": 2
+    },
+    {
+     "start": 37.56,
+     "end": 43.478,
+     "text": "the biggest one came out somewhere between two hundred and seventy-two and five hundred and twelve years old.",
+     "para": 2
+    },
+    {
+     "start": 43.478,
+     "end": 45.48,
+     "text": "Even at the low end,",
+     "para": 2
+    },
+    {
+     "start": 45.48,
+     "end": 48.698,
+     "text": "it was born before the United States existed.",
+     "para": 2
+    },
+    {
+     "start": 48.698,
+     "end": 52.191,
+     "text": "On the seafloor, you'll find something oddly familiar.",
+     "para": 3
+    },
+    {
+     "start": 52.191,
+     "end": 54.771,
+     "text": "A relative of the little woodlouse in your garden,",
+     "para": 3
+    },
+    {
+     "start": 54.771,
+     "end": 57.203,
+     "text": "grown to nearly half a metre.",
+     "para": 3
+    },
+    {
+     "start": 57.203,
+     "end": 59.29,
+     "text": "The giant isopod.",
+     "para": 3
+    },
+    {
+     "start": 59.29,
+     "end": 64.833,
+     "text": "One, at an aquarium in Japan, ate a single fish in January 2009.",
+     "para": 3
+    },
+    {
+     "start": 64.833,
+     "end": 68.883,
+     "text": "Then it refused food for five years and forty-three days.",
+     "para": 3
+    }
+   ]
+  },
+  {
+   "id": "why",
+   "title": "why",
+   "num": null,
+   "vo": "audio/vo_why.flac",
+   "voDur": 68.812,
+   "leadIn": 1.3,
+   "durationInFrames": 2133,
+   "paras": [
+    {
+     "start": 1.3,
+     "end": 13.401
+    },
+    {
+     "start": 13.401,
+     "end": 22.175
+    },
+    {
+     "start": 22.175,
+     "end": 33.096
+    },
+    {
+     "start": 33.096,
+     "end": 46.199
+    },
+    {
+     "start": 46.199,
+     "end": 52.382
+    },
+    {
+     "start": 52.382,
+     "end": 70.112
+    }
+   ],
+   "cues": [
+    {
+     "start": 1.3,
+     "end": 4.421,
+     "text": "So why are there so many giants down here?",
+     "para": 0
+    },
+    {
+     "start": 4.421,
+     "end": 7.463,
+     "text": "Scientists call it deep-sea gigantism.",
+     "para": 0
+    },
+    {
+     "start": 7.463,
+     "end": 11.227,
+     "text": "And the honest answer is, there's no single explanation.",
+     "para": 0
+    },
+    {
+     "start": 11.227,
+     "end": 13.401,
+     "text": "There are four leading ideas.",
+     "para": 0
+    },
+    {
+     "start": 13.401,
+     "end": 14.077,
+     "text": "One.",
+     "para": 1
+    },
+    {
+     "start": 14.077,
+     "end": 15.068,
+     "text": "The cold.",
+     "para": 1
+    },
+    {
+     "start": 15.068,
+     "end": 17.982,
+     "text": "Near-freezing water slows everything down.",
+     "para": 1
+    },
+    {
+     "start": 17.982,
+     "end": 22.175,
+     "text": "Animals grow slowly, live longer, and keep on growing.",
+     "para": 1
+    },
+    {
+     "start": 22.175,
+     "end": 22.897,
+     "text": "Two.",
+     "para": 2
+    },
+    {
+     "start": 22.897,
+     "end": 23.922,
+     "text": "Oxygen.",
+     "para": 2
+    },
+    {
+     "start": 23.922,
+     "end": 25.818,
+     "text": "Cold water can hold more of it,",
+     "para": 2
+    },
+    {
+     "start": 25.818,
+     "end": 33.096,
+     "text": "and a major study of almost two thousand species of amphipods found that their maximum size rises with oxygen.",
+     "para": 2
+    },
+    {
+     "start": 33.096,
+     "end": 33.937,
+     "text": "Three.",
+     "para": 3
+    },
+    {
+     "start": 33.937,
+     "end": 34.859,
+     "text": "Hunger.",
+     "para": 3
+    },
+    {
+     "start": 34.859,
+     "end": 37.638,
+     "text": "A bigger body burns less energy per kilogram,",
+     "para": 3
+    },
+    {
+     "start": 37.638,
+     "end": 39.219,
+     "text": "and stores more fuel.",
+     "para": 3
+    },
+    {
+     "start": 39.219,
+     "end": 41.33,
+     "text": "When your next meal could be months away,",
+     "para": 3
+    },
+    {
+     "start": 41.33,
+     "end": 43.381,
+     "text": "size is a survival strategy.",
+     "para": 3
+    },
+    {
+     "start": 43.381,
+     "end": 46.199,
+     "text": "Just ask that isopod.",
+     "para": 3
+    },
+    {
+     "start": 46.199,
+     "end": 46.499,
+     "text": "Four.",
+     "para": 4
+    },
+    {
+     "start": 46.499,
+     "end": 47.218,
+     "text": "Time.",
+     "para": 4
+    },
+    {
+     "start": 47.218,
+     "end": 49.712,
+     "text": "With fewer predators and very long lives,",
+     "para": 4
+    },
+    {
+     "start": 49.712,
+     "end": 52.382,
+     "text": "there is simply more time to get big.",
+     "para": 4
+    },
+    {
+     "start": 52.382,
+     "end": 54.795,
+     "text": "But here's what most videos won't tell you.",
+     "para": 5
+    },
+    {
+     "start": 54.795,
+     "end": 57.067,
+     "text": "Giants are not the rule down here.",
+     "para": 5
+    },
+    {
+     "start": 57.067,
+     "end": 59.396,
+     "text": "Most life on the deep seafloor is tiny,",
+     "para": 5
+    },
+    {
+     "start": 59.396,
+     "end": 61.147,
+     "text": "smaller than a millimetre.",
+     "para": 5
+    },
+    {
+     "start": 61.147,
+     "end": 63.458,
+     "text": "Gigantism shows up in certain groups,",
+     "para": 5
+    },
+    {
+     "start": 63.458,
+     "end": 66.031,
+     "text": "like crustaceans, squid and some fish.",
+     "para": 5
+    },
+    {
+     "start": 66.031,
+     "end": 68.085,
+     "text": "The deep doesn't make everything big.",
+     "para": 5
+    },
+    {
+     "start": 68.085,
+     "end": 70.112,
+     "text": "It makes a few things enormous.",
+     "para": 5
+    }
+   ]
+  },
+  {
+   "id": "trench",
+   "title": "trench",
+   "num": null,
+   "vo": "audio/vo_trench.flac",
+   "voDur": 58.396,
+   "leadIn": 1.3,
+   "durationInFrames": 1821,
+   "paras": [
+    {
+     "start": 1.3,
+     "end": 14.962
+    },
+    {
+     "start": 14.962,
+     "end": 29.021
+    },
+    {
+     "start": 29.021,
+     "end": 45.693
+    },
+    {
+     "start": 45.693,
+     "end": 59.696
+    }
+   ],
+   "cues": [
+    {
+     "start": 1.3,
+     "end": 3.125,
+     "text": "Six thousand metres.",
+     "para": 0
+    },
+    {
+     "start": 3.125,
+     "end": 4.857,
+     "text": "We enter the trenches.",
+     "para": 0
+    },
+    {
+     "start": 4.857,
+     "end": 6.802,
+     "text": "The hadal zone, named after Hades.",
+     "para": 0
+    },
+    {
+     "start": 6.802,
+     "end": 8.662,
+     "text": "At eight thousand metres,",
+     "para": 0
+    },
+    {
+     "start": 8.662,
+     "end": 14.962,
+     "text": "the water pressure is around eight hundred times what you feel at the surface.",
+     "para": 0
+    },
+    {
+     "start": 14.962,
+     "end": 23.552,
+     "text": "And yet, in 2023, scientists revealed footage of a small, pale snailfish swimming at eight thousand,",
+     "para": 1
+    },
+    {
+     "start": 23.552,
+     "end": 26.143,
+     "text": "three hundred and thirty-six metres, in a trench off Japan.",
+     "para": 1
+    },
+    {
+     "start": 26.143,
+     "end": 29.021,
+     "text": "The deepest fish ever filmed.",
+     "para": 1
+    },
+    {
+     "start": 29.021,
+     "end": 31.891,
+     "text": "It may be about as deep as a fish can go.",
+     "para": 2
+    },
+    {
+     "start": 31.891,
+     "end": 37.108,
+     "text": "Fish rely on a molecule called TMAO to keep their proteins working under pressure.",
+     "para": 2
+    },
+    {
+     "start": 37.108,
+     "end": 42.821,
+     "text": "Scientists estimate that somewhere between eight thousand two hundred and eight thousand four hundred metres,",
+     "para": 2
+    },
+    {
+     "start": 42.821,
+     "end": 45.693,
+     "text": "a fish can no longer hold enough of it.",
+     "para": 2
+    },
+    {
+     "start": 45.693,
+     "end": 47.811,
+     "text": "That's the invisible line.",
+     "para": 3
+    },
+    {
+     "start": 47.811,
+     "end": 50.816,
+     "text": "Below it, no fish has ever been found.",
+     "para": 3
+    },
+    {
+     "start": 50.816,
+     "end": 55.132,
+     "text": "Only shrimp-like amphipods, other invertebrates and microbes carry on,",
+     "para": 3
+    },
+    {
+     "start": 55.132,
+     "end": 59.696,
+     "text": "all the way to the bottom of the Challenger Deep, nearly eleven kilometres down.",
+     "para": 3
+    }
+   ]
+  },
+  {
+   "id": "end",
+   "title": "end",
+   "num": null,
+   "vo": "audio/vo_end.flac",
+   "voDur": 29.981,
+   "leadIn": 1.3,
+   "durationInFrames": 968,
+   "paras": [
+    {
+     "start": 1.3,
+     "end": 18.102
+    },
+    {
+     "start": 18.102,
+     "end": 26.001
+    },
+    {
+     "start": 26.001,
+     "end": 31.281
+    }
+   ],
+   "cues": [
+    {
+     "start": 1.3,
+     "end": 3.961,
+     "text": "And here's the most humbling part.",
+     "para": 0
+    },
+    {
+     "start": 3.961,
+     "end": 11.956,
+     "text": "Scientists estimate that we have seen less than a thousandth of one percent of the deep seafloor with cameras.",
+     "para": 0
+    },
+    {
+     "start": 11.956,
+     "end": 18.102,
+     "text": "Every giant in this video was found by someone who looked a little deeper than before.",
+     "para": 0
+    },
+    {
+     "start": 18.102,
+     "end": 21.899,
+     "text": "So the real question isn't how big they get.",
+     "para": 1
+    },
+    {
+     "start": 21.899,
+     "end": 26.001,
+     "text": "It's what's still down there, that we haven't met yet.",
+     "para": 1
+    },
+    {
+     "start": 26.001,
+     "end": 28.686,
+     "text": "If this dive blew your mind, subscribe.",
+     "para": 2
+    },
+    {
+     "start": 28.686,
+     "end": 31.281,
+     "text": "We'll take you somewhere even stranger next time.",
+     "para": 2
+    }
+   ]
+  }
+ ],
+ "totalFrames": 10960
+}
