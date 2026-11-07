@@ -5,8 +5,11 @@ cd "$(dirname "$0")/.."
 v=$1; N=$(python3 -c "import json;print(json.load(open('build/$v/timeline.json'))['durationInFrames'])")
 E=$(python3 -c "import json;print(json.load(open('build/$v/timeline.json'))['end']['from']-45)")
 CH=/opt/pw-browsers/chromium_headless_shell-1243/chrome-headless-shell-linux64/chrome-headless-shell
-until grep -q "Encoded $N/$N" build/render_$v.log && [ -f out/${v}_silent.mp4 ]; do sleep 10; done
-sleep 20; pkill -f "out/${v}_silent.mp4"; pkill -f chrome-headless-shell; sleep 2
+frames() { ffprobe -v error -select_streams v -count_packets -show_entries stream=nb_read_packets -of csv=p=0 "$1" 2>/dev/null | tr -d ,; }
+# done when the render process exits, or the file is complete (all N frames) and unchanged for 60s
+until ! pgrep -f "out/${v}_silent.mp4" >/dev/null || { [ "$(frames out/${v}_silent.mp4)" = "$N" ] && [ -z "$(find out/${v}_silent.mp4 -newermt '-60 seconds')" ]; }; do sleep 15; done
+[ "$(frames out/${v}_silent.mp4)" = "$N" ] || { echo "FAIL $v frames=$(frames out/${v}_silent.mp4) expected=$N" >> build/finish.log; exit 1; }
+pkill -f "out/${v}_silent.mp4"; sleep 2
 npx remotion render remotion/index.jsx Facts build/${v}_end_raw.mp4 --props=build/$v/timeline.json --frames=$E-$((N-1)) \
   --concurrency=4 --crf=16 --browser-executable=$CH --log=error > build/render_${v}_end.log 2>&1
 T=$(python3 -c "import json;print(json.load(open('scripts/$v.json'))['title'])")
