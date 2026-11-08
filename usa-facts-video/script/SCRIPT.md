@@ -1,0 +1,55 @@
+# Narration script: 10 USA Facts That Sound Fake
+
+Read this script if you want to re-record the voiceover in your own voice (about 1,100 words, roughly 6:20 of speech).
+
+## Cold open
+
+Hidden behind Mount Rushmore is a secret room. Hawaii is moving toward Japan... right now. And one American state is the farthest north, the farthest west, and the farthest east... all at the same time. These are ten facts about the USA that sound completely fake, but every single one is true. And number one? It breaks a rule you learned in school.
+
+## #10 · The penny is dead
+
+Number ten. America stopped making the penny. On November twelfth, 2025, the U.S. Mint in Philadelphia struck its final one-cent coin for circulation, ending 232 years of production. Why? Because every single penny cost about three point seven cents to make. The government was literally losing money... every time it made money. Pennies are still legal tender, but no new ones are coming. And if you think that's a strange money story, wait until you hear who designed the American flag.
+
+## #9 · A flag designed for homework
+
+Number nine. The flag you know today was designed by a seventeen-year-old... for a school project. In 1958, Ohio high schooler Bob Heft sewed a fifty-star flag for his history class. His teacher gave it a B-minus. Bob sent his design to his congressman, and when Alaska and Hawaii became states, it was picked as the official flag of the United States. His teacher changed the grade... to an A. That flag has now flown longer than any other version in American history.
+
+## #8 · Point Roberts
+
+Number eight. There's a piece of America you can't drive to... without leaving the country. This is Point Roberts, Washington. In 1846, the border with Canada was drawn straight along the forty-ninth parallel, and it sliced right through the tip of this peninsula, leaving a tiny chunk of the U.S. stranded below the line. To drive anywhere else in America, residents have to cross into Canada, then back into the U.S. Older kids who go to school in Blaine cross an international border four times, every single school day.
+
+## #7 · The Statue of Liberty was brown
+
+Number seven. The Statue of Liberty wasn't always green. When she was unveiled in 1886, Lady Liberty was a shiny, reddish brown. The color of a brand-new penny. Her skin is copper, only about as thick as two pennies stacked together. Over the next twenty or so years, rain, wind and salty sea air reacted with that copper, and slowly formed a green layer called patina. And here's the twist: that patina isn't damage. It's a shield that protects the metal underneath. The most famous statue in the world is wearing armor made from her own corrosion.
+
+## #6 · The Great Lakes
+
+Number six. The Great Lakes hold about twenty-one percent of all the fresh surface water on planet Earth. One fifth of the world's supply... in just five lakes. How much is that? If you poured it all out over the lower forty-eight states, the entire country would be underwater, about nine and a half feet deep. That's almost up to a basketball hoop. And Lake Superior alone could hold all of the other Great Lakes, plus three more Lake Eries.
+
+## Myth buster
+
+Quick myth-buster before the top five. You've probably heard that one out of every five miles of U.S. interstate must be perfectly straight, so planes can land on it in an emergency. It sounds genius. But it's completely false. The Federal Highway Administration says no law, rule or policy has ever required it. Okay. Now... the top five.
+
+## #5 · Whitney vs. Badwater
+
+Number five. The highest point and the lowest point in the lower forty-eight are only about eighty-five miles apart. On one side, Mount Whitney, towering fourteen thousand, five hundred and five feet into the sky. On the other, Badwater Basin in Death Valley, two hundred and eighty-two feet below sea level. That's a drop of almost fifteen thousand feet. And Death Valley also holds the record for the hottest air temperature ever measured on Earth. One hundred and thirty-four degrees Fahrenheit, back in 1913.
+
+## #4 · The Grand Canyon time machine
+
+Number four. The Grand Canyon is a time machine. As you hike down, every layer of rock is older than the one above it. The rocks at the rim are about two hundred and seventy million years old. That's older than the dinosaurs. But at the very bottom, beside the Colorado River, the rocks are nearly one point eight billion years old. That's almost forty percent of Earth's entire history, stacked up like pages in a book. And the river that carved it all? It only started cutting this canyon around five to six million years ago.
+
+## #3 · Hawaii is moving to Japan
+
+Number three. Hawaii is moving toward Japan. Right now. The islands sit on the Pacific Plate, a giant slab of Earth's crust drifting northwest at about four inches every year. Deep below, a hotspot of magma stays in one place, like a candle under a moving sheet of paper, burning new islands into existence as the plate slides over it. That's why the Big Island is the youngest, with active volcanoes, while older islands like Kauai have gone quiet. At this speed, the Big Island would reach Japan in about sixty-three million years.
+
+## #2 · Mount Rushmore's secret room
+
+Number two. There's a secret room hidden behind Mount Rushmore. Sculptor Gutzon Borglum dreamed of a Hall of Records, a vault to tell future civilizations who Americans were. In 1938, workers started blasting a tunnel into the rock behind Lincoln's head. But the money ran out. Borglum died in 1941, and the room was left unfinished. Then in 1998, almost sixty years later, they finally sealed something inside. A titanium vault, holding sixteen porcelain panels that tell the story of America and the monument, covered by a twelve-hundred-pound granite slab. It's closed to the public. It's a message meant for people thousands of years from now.
+
+## #1 · The easternmost state
+
+And number one. Quick question. What's the easternmost state in America? Maine, right? That's what most of us learned in school. But the real answer... is Alaska. Alaska is the northernmost state, the westernmost state, and technically, the easternmost state too. Here's how. Alaska's Aleutian Islands stretch so far west that they cross the hundred-and-eightieth meridian, the line that splits the Western and Eastern Hemispheres. So a few of Alaska's islands sit in the Eastern Hemisphere, making them the farthest east points in the entire country. And it gets weirder. In the Bering Strait, America's Little Diomede Island sits just two point four miles from Russia's Big Diomede. But the International Date Line runs between them, so Big Diomede is almost a full day ahead. They're nicknamed Yesterday Island and Tomorrow Island.
+
+## Outro
+
+So, which one of these did you not know? Tell me in the comments. And if you love facts that sound fake but are actually true, hit subscribe. There's a lot more where these came from.
