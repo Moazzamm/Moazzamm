@@ -8,7 +8,8 @@ See **[YOUTUBE_UPLOAD_KIT.md](YOUTUBE_UPLOAD_KIT.md)** for the title, descriptio
 ```bash
 npm i
 npx remotion studio            # preview & tweak in the browser
-npm run render                 # full video  -> out/usa-facts-video.mp4
+python3 tools/render_split.py  # full video  -> out/usa-facts-video.mp4 (fast: 3D parts use software WebGL, the rest the default renderer)
+npm run render                 # simpler single-pass render (slow without a GPU)
 npm run thumbs                 # thumbnails  -> out/thumb-*.jpg
 ```
 No GPU? `npm run render` already passes `--gl=swangle`. In a cloud container, also add `--browser-executable=<path to chrome>`.

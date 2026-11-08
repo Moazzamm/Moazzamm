@@ -16,7 +16,7 @@ def cue(i, phrase):
         if all(norm(ws[k + j]["w"]).startswith(t[j]) for j in range(len(t))):
             return start[i] + HEAD + round(ws[k]["s"] * FPS)
     raise SystemExit(f"cue missing {i} {phrase}")
-gl3d = [(cue("f4", "As you hike") - 4, cue("f4", "That's almost") + 10), (cue("f3", "Deep below") - 4, cue("f3", "At this speed") + 10)]
+gl3d = [(cue("f4", "As you hike") - 4, cue("f4", "That's almost") + 10), (cue("f3", "Deep below") + 2, cue("f3", "At this speed") + 7)]
 segs, cur = [], 0
 for a, b in gl3d:
     segs.append((cur, a - 1, "angle")); segs.append((a, b, "swangle")); cur = b + 1
@@ -29,7 +29,7 @@ for n, (a, b, gl) in enumerate(segs):
     if only and str(n) not in only: continue
     out = f"out/parts/p{n}.mp4"
     cmd = ["npx", "remotion", "render", "USAFacts", out, f"--frames={a}-{b}", f"--gl={gl}", f"--browser-executable={B}",
-           "--concurrency=4", "--crf=18", "--muted", "--x264-preset=medium"]
+           "--concurrency=4" if gl == "angle" else "--concurrency=2", "--timeout=120000", "--crf=18", "--muted", "--x264-preset=medium"]
     print(">>", n, a, b, gl, flush=True)
     subprocess.run(cmd, check=True, stdout=open(f"/tmp/claude-0/part{n}.log", "w"), stderr=subprocess.STDOUT)
 if not only:
@@ -38,5 +38,5 @@ if not only:
                    stdout=open("/tmp/claude-0/audio.log", "w"), stderr=subprocess.STDOUT)
     subprocess.run(["ffmpeg", "-v", "error", "-y", "-f", "concat", "-safe", "0", "-i", "out/parts/list.txt", "-i", "out/parts/audio.wav",
                     "-map", "0:v", "-map", "1:a", "-c:v", "copy", "-c:a", "aac", "-b:a", "192k", "-movflags", "+faststart", "-shortest",
-                    "out/usa-facts-video.mp4"], check=True)
+                    "-af", "loudnorm=I=-14:TP=-1.5:LRA=11", "out/usa-facts-video.mp4"], check=True)
     print("DONE out/usa-facts-video.mp4")
