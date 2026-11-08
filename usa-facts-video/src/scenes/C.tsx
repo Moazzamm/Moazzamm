@@ -228,7 +228,7 @@ export const F3: React.FC = () => {
   const prog = lerp(f, [tDeep, c("older islands") + 30], [0, 1]);
   return (
     <SceneShell id={id} n={3}>
-      <Layer a={0} b={tDeep + 6} fade={6} style={bg(50, 50)}>
+      <Layer a={0} b={tDeep} fade={6} style={bg(50, 50)}>
         <PacificGlobe arrow={ramp(f, c("Hawaii is"), 50)} scale={lerp(f, [0, tPlate + 30], [700, 820])} />
         <AbsoluteFill style={{ alignItems: "center", paddingTop: 150 }}>
           <Headline text="Hawaii is moving to *Japan*" at={c("Hawaii is")} size={96} out={tPlate} />
@@ -243,7 +243,7 @@ export const F3: React.FC = () => {
           </div>
         </Layer>
       </Layer>
-      <Layer a={tDeep} b={tSpeed + 6} fade={6} style={{ background: "linear-gradient(#0d2246, #0a0f1c)" }}>
+      <Layer a={tDeep + 3} b={tSpeed + 6} fade={6} style={{ background: "linear-gradient(#0d2246, #0a0f1c)" }}>
         <HotspotScene progress={prog} glow={ramp(f, c("hotspot"), 15)} />
         {ISLAND_NAMES.map((n, i) => {
           const born = [0, 0.22, 0.45, 0.68][i];
@@ -272,7 +272,7 @@ export const F3: React.FC = () => {
         </Layer>
         <Sfx src="boom.wav" at={c("hotspot")} volume={0.35} />
       </Layer>
-      <Layer a={tSpeed} b={end} fade={6} style={bg(50, 50)}>
+      <Layer a={tSpeed + 9} b={end} fade={6} style={bg(50, 50)}>
         <PacificGlobe arrow={ramp(f, tSpeed, 60)} scale={820} />
         <div style={{ position: "absolute", left: 120, top: 200 }}>
           <Panel at={c("63")} style={{ padding: 26 }}>
