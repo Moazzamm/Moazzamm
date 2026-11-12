@@ -1,0 +1,44 @@
+{
+ "voice": "Puck",
+ "style": "Narrate like an energetic, friendly YouTube science explainer, clear and conversational, with curiosity and good pacing:",
+ "sections": [
+  [
+   "Every time you ask ChatGPT a question, it has no idea what it's about to say. Not the full answer. Not even the next sentence. It is guessing. One word at a time.",
+   "And yet that guessing machine can write poems, fix code, and pass a law exam. So how? Give me six minutes. No math, no jargon. By the end, you'll understand A.I. better than most people who use it every day."
+  ],
+  [
+   "Start with your phone. When you type I'm on my, your keyboard suggests way. That's autocomplete. It has seen millions of messages, so it knows what usually comes next.",
+   "A large language model, or L.L.M., is that same idea, scaled up to an absurd level. You give it text. It predicts the next word. Then it adds that word to the text, and predicts again. And again. And again.",
+   "That's the whole trick. ChatGPT, Claude, Gemini... they are all playing one game: guess what comes next. The magic is in how good the guesses are."
+  ],
+  [
+   "But here's the first surprise. The A.I. never actually sees words. Computers only understand numbers.",
+   "So your sentence gets chopped into small pieces called tokens. A token is a word, or a chunk of a word. Then every token is turned into a long list of numbers.",
+   "Think of those numbers as coordinates on a giant map of meaning. On this map, cat sits close to dog. Paris sits close to France. And both are very far from banana.",
+   "The map is so precise that you can do math with ideas. Take king, subtract man, add woman... and you land right next to queen. Nobody taught it that. It figured it out. And how it figured it out is the wildest part."
+  ],
+  [
+   "It's called training. Engineers took a huge slice of the internet. Books, articles, websites, code. More text than you could read in thousands of lifetimes.",
+   "Then they made the model play a game. Hide the next word. Make it guess. If it's wrong, nudge it a tiny bit toward the right answer. Now repeat that... trillions of times.",
+   "Inside the model are billions of little dials, called parameters. Every wrong guess turns those dials slightly. Nobody programs grammar. Nobody types in facts. The dials just slowly settle into a shape that predicts human language.",
+   "This takes months, warehouses full of computer chips, and many millions of dollars. But guessing the next word well requires one more ingredient. And it's the reason A.I. suddenly got good."
+  ],
+  [
+   "Read this sentence. The trophy didn't fit in the suitcase because it was too big. What does it mean? The trophy, obviously. But a computer has no idea.",
+   "In 2017, eight researchers at Google published a paper with a strange title: Attention Is All You Need. Their idea, called the transformer, lets every word look at every other word at the same time, and decide which ones matter.",
+   "So when the model reaches the word it, attention lights up trophy, and dims suitcase. That is how it follows your meaning across a whole conversation. And that transformer? It's the T in ChatGPT."
+  ],
+  [
+   "Now you can understand A.I.'s biggest flaw. It is trained to produce what sounds right. Not what is right.",
+   "It isn't looking facts up in a database. It's predicting plausible words. So sometimes it confidently invents things. This is called hallucination.",
+   "In 2023, a New York lawyer used ChatGPT to write a court filing. It cited six legal cases. None of them existed. The A.I. made them up, and the lawyers were fined five thousand dollars.",
+   "There's also a little randomness built in. The model doesn't always pick the most likely word. That's why the same question can give you a different answer every time."
+  ],
+  [
+   "So, let's put it together. Your words become tokens. Tokens become numbers on a map of meaning. Attention works out what matters. And the model predicts one word, then the next, then the next.",
+   "Is that really thinking? Honestly, even the experts are still arguing about it. But now you know what's actually happening behind the screen.",
+   "And if a machine that only guesses the next word can already do this... wait until you see what happens when it can use tools on its own. That's the next video. I'll see you there."
+  ]
+ ],
+ "model": "gemini-3.1-flash-tts-preview"
+}

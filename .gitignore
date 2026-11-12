@@ -1,0 +1,10 @@
+videos/*.mp4
+videos/*/
+!videos/v1/
+!videos/v2/
+videos/v*/*
+!videos/v*/text.json
+!videos/v*/shots.py
+videos/photos/
+videos/work/
+videos/q.json
