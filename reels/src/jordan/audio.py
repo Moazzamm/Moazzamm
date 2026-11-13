@@ -227,6 +227,32 @@ for i, (k, h) in TRANS.items():
     w = filt(rng.standard_normal((n, 2)), 300, 4000) * (np.sin(np.pi * u) ** 2)[:, None]
     place(buses["fx"], w, tc - 0.6, 0.18)
 
+# ---------------------------------------------------------------- natural sound, timed to the new edit
+def step_stone(seed):
+    r = np.random.default_rng(seed); n = int(0.18 * SR); tt = np.arange(n) / SR
+    return (filt(r.standard_normal(n), 300, 3500) * np.exp(-tt * 45) + np.sin(2 * np.pi * 110 * tt) * np.exp(-tt * 50) * 0.5)
+for k, ts in enumerate(np.arange(0.12, 4 * BEAT - 0.1, 0.52)):                      # footsteps echoing in the Siq
+    place(buses["amb"], step_stone(800 + k) * (0.8 + 0.2 * rng.uniform()), float(ts), 0.22, -0.1 if k % 2 else 0.1)
+crowd = filt(rng.standard_normal(N), 250, 1800) * (0.6 + 0.4 * np.sin(2 * np.pi * 1.7 * t) * np.sin(2 * np.pi * 0.43 * t))
+crowd *= np.clip((t - 2.3) / 0.5, 0, 1) * np.clip((5.6 - t) / 0.4, 0, 1)
+buses["amb"] += np.stack([crowd, np.roll(crowd, 500)], 1) * 0.02                       # murmur at the Treasury
+j0, j1 = 17 * BEAT, 19 * BEAT                                                           # jeep engine
+eng = np.sin(2 * np.pi * np.cumsum(38 + 4 * np.sin(2 * np.pi * 0.8 * t)) / SR) + 0.5 * filt(rng.standard_normal(N), 60, 400)
+eng *= np.clip((t - j0 + 0.15) / 0.3, 0, 1) * np.clip((j1 + 0.1 - t) / 0.3, 0, 1)
+buses["amb"] += np.stack([eng, eng], 1) * 0.05
+c0, c1 = 20 * BEAT, 24 * BEAT                                                           # Amman city hum + distant horn
+city = filt(rng.standard_normal(N), 80, 900) * np.clip((t - c0 + 0.2) / 0.3, 0, 1) * np.clip((c1 - t) / 0.3, 0, 1)
+buses["amb"] += np.stack([city, np.roll(city, 800)], 1) * 0.045
+n = int(0.35 * SR); tt = np.arange(n) / SR
+horn = (np.sign(np.sin(2 * np.pi * 410 * tt)) + np.sign(np.sin(2 * np.pi * 515 * tt))) * np.minimum(tt / 0.02, 1) * np.clip((0.35 - tt) / 0.05, 0, 1)
+place(buses["amb"], filt(horn, 300, 2500), c0 + 1.1, 0.012, 0.6)
+# recap montage: driving 16th tek-ka through the last groove bar + hits on every cut
+b0 = GROOVE + 5 * BAR
+for k, tr in enumerate(np.arange(b0, b0 + BAR - 1e-6, X)):
+    place(buses["perc"], tek(0.35 + 0.35 * (k / 16), soft=k % 2 == 1), float(tr) + rng.normal(0, 0.004), 0.75, -0.2)
+for k, tc in enumerate(np.arange(b0, b0 + BAR - 1e-6, BEAT)):
+    place(buses["perc"], doum(0.9), float(tc), 0.8, -0.1)
+
 # ---------------------------------------------------------------- mix
 def make_ir(sec, seed, damp):
     r = np.random.default_rng(seed); n = int(sec * SR); tt = np.arange(n) / SR; x = r.standard_normal((n, 2))

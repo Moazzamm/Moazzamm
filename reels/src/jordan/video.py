@@ -45,8 +45,8 @@ def remap(i):
 # ------------------------------------------------------------------ grade: warm desert gold, deep shadows, teal sky
 LUMA = np.array([0.2126, 0.7152, 0.0722], np.float32)
 OAX = np.array([0.70, -0.08, -0.62], np.float32); OAX /= np.linalg.norm(OAX)
-LOOK = {0: dict(exp=1.05, warm=0.02, wb=0.0, golden=0.03), 2: dict(sat=1.0), 3: dict(sat=0.98, warm=0.03), 5: dict(sat=0.95), 6: dict(warm=0.03),
-        8: dict(sat=1.0), 11: dict(warm=0.05, sat=1.0), 12: dict(warm=0.05, sat=1.0), 13: dict(wb=0.0, golden=0.05, gam=0.9, nsat=1.2)}
+LOOK = {18: dict(wb=0.0, golden=0.03), 99: dict(exp=1.05, warm=0.02, wb=0.0, golden=0.03), 2: dict(sat=1.0), 3: dict(sat=0.98, warm=0.03), 5: dict(sat=0.95), 6: dict(warm=0.03),
+        8: dict(sat=1.0), 11: dict(warm=0.05, sat=1.0), 12: dict(warm=0.05, sat=1.0), 19: dict(wb=0.0, golden=0.05, gam=0.9, nsat=1.2)}
 
 def levels(mm):
     ks = np.linspace(0, len(mm) - 1, 6).astype(int)
@@ -142,7 +142,7 @@ ENDT = sprite([("الأردن", F("ArefRuqaa-Bold.ttf", 180), True, 0, 0, WHITE,
                ("LAND OF CIVILISATIONS", F("Montserrat[wght].ttf", 22, 400), False, 9, 462, WHITE, 0.85)])
 TAGSPR = [(a, b, sprite([(ar, F("ReemKufi[wght].ttf", 92, 500), True, 0, 0, WHITE, 1.0),
                           ("line", 172, 44, GOLD),
-                          (en, F("Montserrat[wght].ttf", 25, 500), False, 13, 196, GOLD, 1.0)], glow=0.6)) for a, b, ar, en in TAGS]
+                          (en, F("Montserrat[wght].ttf", 25, 500), False, 13, 196, GOLD, 1.0)], glow=0.6)) for a, b, ar, en in TAGS + [PETRA_TAG]]
 
 def overlay(img, spr, cy, alpha, scale=1.0, blur=0.0, dy=0.0):
     if alpha <= 0.003: return
@@ -166,6 +166,7 @@ rr = np.sqrt(((xx - W / 2) / (W / 2)) ** 2 + ((yy - H / 2) / (H / 2)) ** 2)
 VIG = (1 - 0.12 * np.clip((rr - 0.55) / 0.9, 0, 1) ** 1.7)[..., None].astype(np.float32)
 LOWER = (np.clip((yy - H * 0.58) / (H * 0.3), 0, 1) ** 1.5)[..., None].astype(np.float32)
 UPPER = (np.clip((H * 0.45 - yy) / (H * 0.33), 0, 1) ** 1.3)[..., None].astype(np.float32)
+ELL = np.exp(-(((xx - W / 2) / (W * 0.42)) ** 2 + ((yy - H * 0.33) / (H * 0.13)) ** 2))[..., None].astype(np.float32)
 rng = np.random.default_rng(2)
 GRAIN = [cv2.GaussianBlur(rng.standard_normal((H, W)).astype(np.float32), (0, 0), 0.75)[..., None] for _ in range(5)]
 
@@ -182,13 +183,13 @@ def render(t, MM, LV, n=0):
     ta, _, _, _ = reveal(t, *TITLE_T)
     ea, _, _, _ = reveal(t, *END_T, fi=1.1, fo=0.6)
     tg = max([reveal(t, a, b, 0.5, 0.35)[0] for a, b, _ in TAGSPR] + [0])
-    img = img * (1 - 0.40 * UPPER * max(ta, ea, tg))
+    img = img * (1 - 0.40 * UPPER * max(ta, ea, tg)) * (1 - 0.42 * ELL * max(ta, ea))
     img = img * VIG + GRAIN[n % 5] * 0.008
     a, bl, sc, dy = reveal(t, *TITLE_T); overlay(img, TITLE, H * 0.33, a, sc, bl, dy)
     for (ta_, tb_, spr) in TAGSPR:
         a, bl, sc, dy = reveal(t, ta_, tb_, 0.5, 0.35); overlay(img, spr, H * 0.175, a, sc, bl, dy)
     a, bl, sc, dy = reveal(t, *END_T, fi=1.1, fo=0.6); overlay(img, ENDT, H * 0.34, a, sc, bl, dy)
-    img = img * (min(t / 0.6, 1.0) ** 1.5) * (min((DUR - t) / 0.9, 1.0) ** 1.4)
+    img = img * (min(t / 0.12, 1.0) ** 1.5) * (min((DUR - t) / 0.9, 1.0) ** 1.4)
     return (np.clip(img, 0, 1) * 255 + 0.5).astype(np.uint8)
 
 if __name__ == "__main__":
