@@ -45,8 +45,8 @@ def remap(i):
 # ------------------------------------------------------------------ grade: warm desert gold, deep shadows, teal sky
 LUMA = np.array([0.2126, 0.7152, 0.0722], np.float32)
 OAX = np.array([0.70, -0.08, -0.62], np.float32); OAX /= np.linalg.norm(OAX)
-LOOK = {0: dict(exp=1.05, warm=0.02), 2: dict(sat=1.0), 3: dict(sat=0.98, warm=0.03), 5: dict(sat=0.95), 6: dict(warm=0.03),
-        8: dict(sat=1.0), 11: dict(warm=0.05, sat=1.0), 12: dict(warm=0.05, sat=1.0), 13: dict(exp=1.15, warm=0.03, sat=1.15)}
+LOOK = {0: dict(exp=1.05, warm=0.02, wb=0.0, golden=0.03), 2: dict(sat=1.0), 3: dict(sat=0.98, warm=0.03), 5: dict(sat=0.95), 6: dict(warm=0.03),
+        8: dict(sat=1.0), 11: dict(warm=0.05, sat=1.0), 12: dict(warm=0.05, sat=1.0), 13: dict(wb=0.0, golden=0.05, gam=0.9, nsat=1.2)}
 
 def levels(mm):
     ks = np.linspace(0, len(mm) - 1, 6).astype(int)
@@ -55,29 +55,29 @@ def levels(mm):
     return float(lo * 0.9), float(max(hi, 0.55) + (1 - max(hi, 0.55)) * 0.3)
 
 def grade(a, i, lv):
+    """natural documentary look: neutral white balance, open shadows, clean highlights, true colour"""
     P = LOOK.get(i, {})
     lo, hi = lv
-    a = np.clip((a - lo) / (hi - lo), 0, 1) * P.get("exp", 1.0)
-    w = 0.035 + P.get("warm", 0.0)
-    a = a * np.array([1 + w, 1 + w * 0.25, 1 - w * 1.6], np.float32)
+    a = np.clip((a - lo) / (hi - lo), 0, 1)
+    # auto exposure towards a bright, natural mid-level
+    L = a @ LUMA
+    mid = float(np.median(L[::6, ::6]))
+    gam = np.clip(np.log(0.46) / np.log(max(mid, 1e-3)), 0.62, 1.25) * P.get("gam", 1.0)
+    a = a ** gam
+    # gray-world nudge to neutral (keeps desert warm, removes heavy casts)
+    m = a[::8, ::8].reshape(-1, 3).mean(0); g = m.mean() / np.maximum(m, 1e-3)
+    a = a * (1 + (g - 1) * P.get("wb", 0.35)) * np.array([1.015, 1.0, 0.985], np.float32) * np.array([1 + P.get("golden", 0), 1 + P.get("golden", 0) * 0.35, 1 - P.get("golden", 0) * 1.2], np.float32)
     L = (a @ LUMA)[..., None]
-    ch = a - L
-    co = (ch @ OAX)[..., None]
-    co = np.where(co < 0, co * 0.85, co * 1.25)
-    ch = OAX * co + (ch - OAX * co) * 0.4                              # everything onto amber <-> teal
-    a = L + ch * P.get("sat", 1.08)
-    sh = np.clip(1 - L * 2.0, 0, 1) ** 1.6; hl = np.clip(L * 1.6 - 0.6, 0, 1)
-    a = a + sh * np.array([-0.012, 0.010, 0.020], np.float32) + hl * np.array([0.030, 0.014, -0.022], np.float32)
+    a = L + (a - L) * P.get("nsat", 1.08)                                  # natural saturation
     a = np.clip(a, 0, 1)
-    a = a - 0.055 * np.sin(2 * np.pi * a) * 0.9                           # soft S-curve
+    a = a + 0.10 * a * (1 - a) * (2 * a - 1) * -0.0                         # (placeholder: no S-crush)
+    a = a - 0.035 * np.sin(2 * np.pi * a)                                   # gentle contrast
     a = np.clip(a, 0, 1)
-    a = 1 - (1 - a) ** 1.08                                               # gentle highlight shoulder
-    a = 0.014 + a * 0.975                                                 # matte blacks
     sm = cv2.resize(a, (W // 8, H // 8), interpolation=cv2.INTER_AREA)
-    g = cv2.GaussianBlur(np.clip((sm - 0.70) / 0.30, 0, 1) * sm, (0, 0), 7) * np.array([1.0, 0.86, 0.66], np.float32)
-    a = 1 - (1 - a) * (1 - cv2.resize(g, (W, H), interpolation=cv2.INTER_LINEAR) * 0.32)
-    bl = cv2.GaussianBlur(a, (0, 0), 1.5)
-    return np.clip(a + (a - bl) * 0.35, 0, 1)
+    g2 = cv2.GaussianBlur(np.clip((sm - 0.8) / 0.2, 0, 1) * sm, (0, 0), 6)
+    a = 1 - (1 - a) * (1 - cv2.resize(g2, (W, H), interpolation=cv2.INTER_LINEAR) * 0.12)
+    bl = cv2.GaussianBlur(a, (0, 0), 1.4)
+    return np.clip(a + (a - bl) * 0.45, 0, 1)
 
 def shot_index(ts):
     for i, s in enumerate(SHOTS):
@@ -163,7 +163,7 @@ def reveal(t, a, b, fi=0.9, fo=0.45):
 # ------------------------------------------------------------------ overlays
 yy, xx = np.mgrid[0:H, 0:W].astype(np.float32)
 rr = np.sqrt(((xx - W / 2) / (W / 2)) ** 2 + ((yy - H / 2) / (H / 2)) ** 2)
-VIG = (1 - 0.30 * np.clip((rr - 0.55) / 0.9, 0, 1) ** 1.7)[..., None].astype(np.float32)
+VIG = (1 - 0.12 * np.clip((rr - 0.55) / 0.9, 0, 1) ** 1.7)[..., None].astype(np.float32)
 LOWER = (np.clip((yy - H * 0.58) / (H * 0.3), 0, 1) ** 1.5)[..., None].astype(np.float32)
 UPPER = (np.clip((H * 0.45 - yy) / (H * 0.33), 0, 1) ** 1.3)[..., None].astype(np.float32)
 rng = np.random.default_rng(2)
@@ -183,7 +183,7 @@ def render(t, MM, LV, n=0):
     ea, _, _, _ = reveal(t, *END_T, fi=1.1, fo=0.6)
     tg = max([reveal(t, a, b, 0.5, 0.35)[0] for a, b, _ in TAGSPR] + [0])
     img = img * (1 - 0.40 * UPPER * max(ta, ea, tg))
-    img = img * VIG + GRAIN[n % 5] * 0.017
+    img = img * VIG + GRAIN[n % 5] * 0.008
     a, bl, sc, dy = reveal(t, *TITLE_T); overlay(img, TITLE, H * 0.33, a, sc, bl, dy)
     for (ta_, tb_, spr) in TAGSPR:
         a, bl, sc, dy = reveal(t, ta_, tb_, 0.5, 0.35); overlay(img, spr, H * 0.175, a, sc, bl, dy)
