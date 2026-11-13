@@ -32,3 +32,5 @@ stock footage (Maldives, Indonesia, Fiji, Curaçao and unlabelled locations) sta
 | About 86% forest cover | same |
 | Barren Island is South Asia's only active volcano | incredibleindia.gov.in, "Barren Island" |
 | Four sea turtle species nest here (leatherback, green, hawksbill, olive ridley) | not re-checked against a source in this session |
+
+`andaman-nicobar-reel-notext.mp4` / `cover-notext.jpg` — same cut and music with no on-screen text.
