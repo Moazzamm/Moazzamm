@@ -34,3 +34,25 @@ stock footage (Maldives, Indonesia, Fiji, Curaçao and unlabelled locations) sta
 | Four sea turtle species nest here (leatherback, green, hawksbill, olive ridley) | not re-checked against a source in this session |
 
 `andaman-nicobar-reel-notext.mp4` / `cover-notext.jpg` — same cut and music with no on-screen text.
+
+---
+
+# v2 — genuine Andaman & Nicobar material only
+
+`andaman-nicobar-reel-v2-genuine.mp4` — 1080x1920, 30 fps, 22.3 s, no text, no people. Cover: `cover-v2.jpg`.
+Six of the eight shots are still photographs with a camera move; two are video.
+
+Music: "Call to Adventure" by Kevin MacLeod (incompetech.com), CC BY 4.0 — credit required.
+
+| Shot | What it is | Source and credit | Licence |
+|---|---|---|---|
+| 1, 8 | Island aerial, Kadamtala (photo) | Pexels photo 14313849 | Pexels licence |
+| 2 | Aerial of forest and creeks (photo) | Wikimedia Commons, "Aerial photograph of the Andaman" — PJeganathan | CC BY-SA 4.0 |
+| 3 | Mangrove creek from a boat (video) | Pixabay video 24719 — vkhima (tagged Andaman) | Pixabay licence |
+| 4 | Mangroves in the sea, Havelock (photo) | Wikimedia Commons, "Mangrove on a beach in Havelock Island, Andaman, India" — Mvbellad | CC BY-SA 4.0 |
+| 5 | Natural Bridge, Neil Island (photo) | Wikimedia Commons, "Natural Coral Bridge in Andaman" — Amalpratip | CC BY-SA 4.0 |
+| 6 | Clownfish in anemone (video) | Pixabay video 129697 — enjoy_your_life (tagged Andaman) | Pixabay licence |
+| 7 | Storm over Radhanagar Beach, Havelock (photo) | Wikimedia Commons, "RadhaNagar Beach, Havelock Island, Andaman & Nicobar Islands" — Shristi Shreyasi | CC BY-SA 4.0 |
+
+The four Wikimedia photos are CC BY-SA 4.0: credit each author when posting, and the licence's share-alike
+term applies to adaptations. A distant person was edited out of the Radhanagar photo.
