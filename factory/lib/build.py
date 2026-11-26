@@ -173,6 +173,23 @@ def build(vid):
             if len(chunk) >= 4 or n_chars > 22 or txt[-1] in PUNCT or j == len(words) - 1:
                 caps.append({"s": chunk[0]["s"], "e": chunk[-1]["e"] + 0.3, "words": chunk}); chunk = []
         gap = 0.35 if seg["type"] != "hook" else 0.25
+        for k in range(len(seg_beats) - 1):  # globe shots need >= 3.4 s
+            if seg_beats[k].get("map") and seg_beats[k + 1]["s"] < seg_beats[k]["s"] + 3.4:
+                seg_beats[k + 1]["s"] = round(seg_beats[k]["s"] + 3.4, 3)
+                for j in range(k + 2, len(seg_beats)):
+                    if seg_beats[j]["s"] < seg_beats[j - 1]["s"] + 1.2:
+                        seg_beats[j]["s"] = round(seg_beats[j - 1]["s"] + 1.2, 3)
+        last = seg_beats[-1]
+        if last.get("fx") and not (last["fx"].get("end") or last["fx"].get("sub")):
+            gap += max(0.0, 2.6 - (seg_e + 0.35 - last["s"]))  # let the punchline overlay land
+        # mid-segment overlays get >= 2.4 s before the next cut
+        for k in range(len(seg_beats) - 1):
+            b0, b1 = seg_beats[k], seg_beats[k + 1]
+            if b0.get("fx") and b1["s"] - b0["s"] < 2.4 and b0["s"] + 2.4 < seg_e - 0.8:
+                b1["s"] = round(b0["s"] + 2.4, 3)
+                for j in range(k + 2, len(seg_beats)):
+                    if seg_beats[j]["s"] < seg_beats[j - 1]["s"] + 1.2:
+                        seg_beats[j]["s"] = round(seg_beats[j - 1]["s"] + 1.2, 3)
         t = seg_e + gap
     dur = t + 5.0
     # beat ends, split long beats, item ends
@@ -187,10 +204,15 @@ def build(vid):
     out = []
     for b in beats:
         d = b["e"] - b["s"]
-        if d > MAX_BEAT and b.get("img") and not (b.get("fx") or {}).get("end"):
-            n = int(d // MAX_BEAT) + 1
-            for k in range(n):
-                nb = dict(b, s=round(b["s"] + d * k / n, 3), e=round(b["s"] + d * (k + 1) / n, 3))
+        fx = b.get("fx") or {}
+        keep = 4.4 if fx else 0.0  # an overlay keeps its shot for at least 4.4 s
+        if d > MAX_BEAT + keep and b.get("img") and not (fx.get("end") or fx.get("sub")):
+            first = keep if keep else d / (int(d // MAX_BEAT) + 1)
+            rest = d - first
+            n = max(1, int(rest // MAX_BEAT) + (1 if rest % MAX_BEAT > 0.5 else 0))
+            cuts = [b["s"], b["s"] + first] + [b["s"] + first + rest * k / n for k in range(1, n)] + [b["e"]]
+            for k in range(len(cuts) - 1):
+                nb = dict(b, s=round(cuts[k], 3), e=round(cuts[k + 1], 3))
                 if k > 0:
                     nb["k"] = motion(rng, detail=True); nb["fx"] = None
                 out.append(nb)
