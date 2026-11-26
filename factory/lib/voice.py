@@ -75,7 +75,7 @@ def synth(vid):
 
 
 _model = None
-TTS_MODEL = "gemini-2.5-flash-preview-tts"
+TTS_MODEL = os.environ.get("TTS_MODEL", "gemini-2.5-flash-preview-tts")
 NUM = {str(i): w for i, w in enumerate("zero one two three four five six seven eight nine ten eleven twelve".split())}
 
 
@@ -133,13 +133,17 @@ def synth_chunks(vid, n_groups=2, split_at=None):
             for i in range(pos, len(toks) - 2):
                 if not toks[i]:
                     continue
-                win = [t for t in toks[i:i + len(target) + 2] if t][:len(target)]
-                r = difflib.SequenceMatcher(None, win, target).ratio()
+                tstr = "".join(target)
+                acc = ""
+                for t in toks[i:i + len(target) + 4]:
+                    if len(acc) >= len(tstr): break
+                    acc += t
+                r = difflib.SequenceMatcher(None, acc, tstr).ratio()
                 if r > best + 1e-9:
                     best, bi = r, i
                 if best == 1.0:
                     break
-            if best < 0.6:
+            if best < 0.5:
                 raise RuntimeError(f"{vid}: could not locate segment {seg['id']} (best {best:.2f})")
             while bi > pos and not toks[bi - 1]:
                 bi -= 1  # include a leading "Number"
@@ -170,6 +174,6 @@ if __name__ == "__main__":
     mode, vids = sys.argv[1], sys.argv[2:]
     for v in vids:
         if mode == "chunks":
-            synth_chunks(v, split_at=[5] if v == "congo" else None); align(v)
+            synth_chunks(v, n_groups=1 if v in ("space", "wonders") else 2, split_at=[5] if v == "congo" else None); align(v)
         else:
             (synth if mode == "tts" else align)(v)

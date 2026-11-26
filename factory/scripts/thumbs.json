@@ -87,5 +87,106 @@
     "bg": "#2EC5FF"
    }
   ]
+ },
+ "space": {
+  "src": "hook_0",
+  "side": "left",
+  "zoom": 1.12,
+  "origin": "75% 50%",
+  "bright": 1.1,
+  "lines": [
+   {
+    "t": "IT'S COMING",
+    "size": 120
+   },
+   {
+    "t": "APRIL 13, 2029",
+    "size": 104,
+    "bg": "#B98CFF"
+   }
+  ],
+  "badge": "FRIDAY THE 13TH"
+ },
+ "wonders": {
+  "src": "i10_4",
+  "side": "left",
+  "zoom": 1.05,
+  "origin": "60% 50%",
+  "bright": 1.05,
+  "lines": [
+   {
+    "t": "NOT",
+    "size": 130
+   },
+   {
+    "t": "PHOTOSHOPPED",
+    "size": 120,
+    "bg": "#FF5FA2"
+   }
+  ],
+  "badge": "100% REAL"
+ },
+ "animals": {
+  "src": "i2_0",
+  "side": "left",
+  "zoom": 1.12,
+  "origin": "65% 50%",
+  "bright": 1.1,
+  "lines": [
+   {
+    "t": "IT PUNCHES",
+    "size": 120
+   },
+   {
+    "t": "LIKE A",
+    "size": 120
+   },
+   {
+    "t": "BULLET",
+    "size": 170,
+    "bg": "#7CFF4F"
+   }
+  ]
+ },
+ "ancient": {
+  "src": "i1_0",
+  "side": "left",
+  "zoom": 1.1,
+  "origin": "60% 50%",
+  "bright": 1.05,
+  "lines": [
+   {
+    "t": "OLDER THAN",
+    "size": 118
+   },
+   {
+    "t": "THE PYRAMIDS",
+    "size": 118,
+    "bg": "#E8B04B"
+   }
+  ],
+  "badge": "BY 7,000 YEARS"
+ },
+ "mega": {
+  "src": "hook_0",
+  "side": "left",
+  "zoom": 1.1,
+  "origin": "60% 50%",
+  "bright": 1.05,
+  "lines": [
+   {
+    "t": "THIS DAM",
+    "size": 125
+   },
+   {
+    "t": "SLOWED",
+    "size": 125
+   },
+   {
+    "t": "THE EARTH",
+    "size": 140,
+    "bg": "#FF8A00"
+   }
+  ]
  }
 }

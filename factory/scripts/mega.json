@@ -1,0 +1,128 @@
+{
+ "id": "mega",
+ "title": "10 Megaprojects That Shouldn't Be Possible",
+ "series": "MEGA ENGINEERING",
+ "accent": "#FF8A00",
+ "music": "dark",
+ "next": "animals",
+ "segments": [
+  {"id": "hook", "type": "hook",
+   "vo": "China built a dam so heavy that it slowed down the rotation of the Earth. Dubai built islands out of sand pulled from the sea floor. Engineers sent a telescope 1.5 million kilometres from Earth, and it had to unfold itself perfectly in space, with no way to fix it if anything went wrong. These are ten megaprojects that shouldn't be possible.",
+   "beats": [
+    ["@", {"p": "three gorges dam"}],
+    ["slowed down the rotation", {"p": "earth rotation space"}],
+    ["Dubai built islands", {"p": "palm jumeirah"}],
+    ["sea floor", {"p": "dubai aerial"}],
+    ["sent a telescope", {"p": "james webb telescope"}],
+    ["unfold itself", {"p": "space telescope"}],
+    ["These are ten", {"p": "skyscraper construction"}, {"title": "10 MEGAPROJECTS THAT SHOULDN'T BE POSSIBLE"}]
+   ]},
+  {"id": "i10", "type": "item", "rank": 10, "name": "ISLANDS MADE TO ORDER", "place": "PALM JUMEIRAH · DUBAI", "pin": [55.14, 25.11],
+   "vo": "Number ten: the Palm Jumeirah. Dubai needed more beachfront, so it built it. Ships dredged around 94 million cubic metres of sand from the sea floor and sprayed it into the shape of a giant palm tree, protected by a breakwater made of around 7 million tonnes of rock. And here's the twist: Dubai is surrounded by desert, but desert sand is useless for this. Its grains are worn too smooth and round by the wind to lock together. Sea sand was the only option.",
+   "beats": [
+    ["@", {"p": "palm jumeirah"}],
+    ["built it", {"p": "palm jumeirah aerial"}],
+    ["Ships dredged", {"p": "dredging ship"}, {"stat": ["94 MILLION M³", "OF SAND FROM THE SEA FLOOR"]}],
+    ["breakwater", {"p": "rock breakwater sea"}],
+    ["surrounded by desert", {"p": "dubai desert dunes"}],
+    ["useless for this", {"p": "sand macro"}, {"text": "DESERT SAND IS TOO SMOOTH"}]
+   ]},
+  {"id": "i9", "type": "item", "rank": 9, "name": "SEE THE SUNSET TWICE", "place": "BURJ KHALIFA · DUBAI", "pin": [55.27, 25.2],
+   "vo": "Number nine: the Burj Khalifa, the tallest building in the world at 828 meters. It's so tall that you can watch the sunset from the ground, take one of its high-speed elevators to the top, and watch the sun set a second time. It's so tall that during Ramadan, residents on the highest floors are told to break their fast a few minutes later than people on the ground, because they can still see the sun.",
+   "beats": [
+    ["@", {"p": "burj khalifa"}],
+    ["tallest building", {"p": "burj khalifa clouds"}, {"stat": ["828 M", "THE TALLEST BUILDING ON EARTH"]}],
+    ["watch the sunset", {"p": "dubai sunset"}],
+    ["high-speed elevators", {"p": "elevator glass"}],
+    ["a second time", {"p": "burj khalifa sunset"}, {"text": "TWO SUNSETS. ONE EVENING."}],
+    ["during Ramadan", {"p": "dubai night skyline"}]
+   ]},
+  {"id": "i8", "type": "item", "rank": 8, "name": "THE 164-KILOMETRE BRIDGE", "place": "DANYANG–KUNSHAN · CHINA", "pin": [120.0, 31.6],
+   "vo": "Number eight: the Danyang to Kunshan Grand Bridge in China, the longest bridge in the world. It stretches about 164 kilometres, carrying high-speed trains across rice paddies, rivers and lakes. If you drove its length at highway speed, it would take you around an hour and a half. Around 10,000 workers built it in about four years.",
+   "beats": [
+    ["@", {"p": "long bridge aerial"}],
+    ["longest bridge", {"p": "high speed train bridge"}, {"stat": ["164 KM", "THE LONGEST BRIDGE ON EARTH"]}],
+    ["rice paddies", {"p": "china rice fields aerial"}],
+    ["highway speed", {"p": "bridge over lake"}],
+    ["10,000 workers", {"p": "construction workers"}]
+   ]},
+  {"id": "i7", "type": "item", "rank": 7, "name": "THROUGH THE ALPS", "place": "GOTTHARD BASE TUNNEL · SWITZERLAND", "pin": [8.75, 46.6],
+   "vo": "Number seven: the Gotthard Base Tunnel, the longest railway tunnel in the world at 57 kilometres. In places, there are more than two kilometres of mountain above it, and the rock inside reached temperatures of around 45 degrees Celsius. It took 17 years to build. Engineers dug out around 28 million tonnes of rock, roughly the weight of five Great Pyramids of Giza.",
+   "beats": [
+    ["@", {"p": "swiss alps"}],
+    ["longest railway tunnel", {"p": "train tunnel"}, {"stat": ["57 KM", "THE LONGEST RAILWAY TUNNEL"]}],
+    ["two kilometres of mountain", {"p": "alps mountain peak"}],
+    ["17 years", {"p": "tunnel construction"}],
+    ["28 million tonnes", {"p": "pyramids giza"}, {"text": "= 5 GREAT PYRAMIDS OF ROCK"}]
+   ]},
+  {"id": "i6", "type": "item", "rank": 6, "name": "THE DAM THAT SLOWED THE EARTH", "place": "THREE GORGES DAM · CHINA", "pin": [111.0, 30.82],
+   "vo": "Number six: the Three Gorges Dam, the largest power station on the planet. Its reservoir stretches more than 600 kilometres up the Yangtze River and holds about 39 trillion kilograms of water. NASA scientists calculated that moving that much mass higher up has a tiny effect on the whole planet: it slows Earth's rotation, making each day about 0.06 microseconds longer. Humans built something big enough to change the length of a day.",
+   "beats": [
+    ["@", {"p": "three gorges dam"}],
+    ["largest power station", {"p": "dam water release"}, {"stat": ["22,500 MW", "THE LARGEST POWER STATION ON EARTH"]}],
+    ["Yangtze River", {"p": "yangtze river"}],
+    ["NASA scientists", {"p": "earth from space"}],
+    ["slows Earth's rotation", {"p": "earth rotation"}, {"text": "+0.06 MICROSECONDS PER DAY"}],
+    ["length of a day", {"p": "dam aerial"}]
+   ]},
+  {"id": "i5", "type": "item", "rank": 5, "name": "THE SHORTCUT THAT COST THOUSANDS OF LIVES", "place": "PANAMA CANAL", "pin": [-79.68, 9.08],
+   "vo": "Number five: the Panama Canal. Cutting through 80 kilometres of jungle and mountains took two attempts. The French tried first, and failed, as yellow fever and malaria swept through the workers. The Americans finished it in 1914. In total, tens of thousands of people are thought to have died building it. Today, locks lift giant ships about 26 meters up and over the land, saving them a trip of thousands of kilometres around South America.",
+   "beats": [
+    ["@", {"p": "panama canal"}],
+    ["80 kilometres of jungle", {"p": "panama jungle"}],
+    ["The French tried", {"p": "mosquito"}],
+    ["finished it in", {"map": {"view": "world", "lat": 9.08, "lon": -79.68, "label": "PANAMA CANAL · OPENED 1914"}}],
+    ["tens of thousands", {"p": "canal locks"}, {"stat": ["~25,000", "ESTIMATED DEATHS DURING CONSTRUCTION"]}],
+    ["locks lift", {"p": "container ship canal"}]
+   ]},
+  {"id": "i4", "type": "item", "rank": 4, "name": "MEETING UNDER THE SEA", "place": "CHANNEL TUNNEL · UK / FRANCE", "pin": [1.5, 51.0],
+   "vo": "Number four: the Channel Tunnel between Britain and France. About 50 kilometres long, with around 38 kilometres under the sea, the longest undersea section of any tunnel in the world. British and French crews dug toward each other from opposite sides. When they finally broke through in 1990, their tunnels lined up to within about 36 centimetres. After digging around 20 kilometres each, mostly under the seabed.",
+   "beats": [
+    ["@", {"p": "eurostar train"}],
+    ["38 kilometres under the sea", {"p": "english channel cliffs"}],
+    ["dug toward each other", {"p": "tunnel boring machine"}],
+    ["broke through", {"map": {"view": "europe", "lat": 51.0, "lon": 1.5, "label": "CHANNEL TUNNEL · UK ⇄ FRANCE"}}],
+    ["lined up to within", {"p": "tunnel light"}, {"stat": ["36 CM", "OFF — AFTER 20 KM OF DIGGING EACH"]}]
+   ]},
+  {"id": "cta", "type": "cta",
+   "vo": "If you're enjoying this, hit subscribe. It honestly helps a small channel like this one. Okay. The top three are out of this world. Literally.",
+   "beats": [["@", {"p": "city skyline night"}, {"sub": true}]]},
+  {"id": "i3", "type": "item", "rank": 3, "name": "A HOUSE IN SPACE", "place": "INTERNATIONAL SPACE STATION",
+   "vo": "The International Space Station is the biggest structure humans have ever put into space: roughly the size of a football field, and weighing about 420 tonnes. It was assembled piece by piece in orbit over many years, by astronauts from many countries. It circles Earth about every 90 minutes at around 28,000 kilometres an hour, so the crew sees about 16 sunrises every single day. It's often called the most expensive object ever built.",
+   "beats": [
+    ["@", {"p": "international space station"}],
+    ["size of a football field", {"p": "space station earth"}, {"stat": ["420 TONNES", "THE SIZE OF A FOOTBALL FIELD"]}],
+    ["assembled piece by piece", {"p": "astronaut spacewalk"}],
+    ["circles Earth", {"p": "earth sunrise from space"}, {"text": "16 SUNRISES EVERY DAY"}],
+    ["most expensive", {"p": "space station orbit"}]
+   ]},
+  {"id": "i2", "type": "item", "rank": 2, "name": "THE COLDEST PLACE IN THE UNIVERSE", "place": "LARGE HADRON COLLIDER · CERN", "pin": [6.05, 46.23],
+   "vo": "Number two: the Large Hadron Collider, a 27-kilometre ring buried about 100 meters under the border of France and Switzerland. Its magnets are cooled to minus 271 degrees Celsius, colder than outer space. Inside, particles race around the ring more than 11,000 times every second, at 99.9999991% of the speed of light, before smashing into each other. In 2012, it found the Higgs boson, a particle that had been predicted almost 50 years earlier.",
+   "beats": [
+    ["@", {"p": "cern"}],
+    ["27-kilometre ring", {"map": {"view": "europe", "lat": 46.23, "lon": 6.05, "label": "CERN · FRANCE–SWITZERLAND BORDER", "rings": true}}],
+    ["Its magnets", {"p": "particle accelerator"}, {"stat": ["−271°C", "COLDER THAN OUTER SPACE"]}],
+    ["particles race", {"p": "light trails tunnel"}],
+    ["99.9999991%", {"p": "particle collision"}, {"text": "11,000 LAPS. PER SECOND."}],
+    ["Higgs boson", {"p": "science laboratory"}]
+   ]},
+  {"id": "i1", "type": "item", "rank": 1, "name": "THE TELESCOPE THAT COULDN'T FAIL", "place": "JAMES WEBB SPACE TELESCOPE",
+   "vo": "And number one: the James Webb Space Telescope. Its mirror is 6.5 meters wide, too big to fit in a rocket, so it was folded up like origami. After launch, it travelled 1.5 million kilometres from Earth and unfolded itself, including a sunshield the size of a tennis court. Engineers counted 344 single points of failure: any one of them could have ended the mission, and nobody could go up and fix it. Every single one worked. Today it sees light from galaxies that formed more than 13 billion years ago, close to the dawn of time.",
+   "beats": [
+    ["@", {"p": "james webb telescope"}],
+    ["folded up like origami", {"p": "gold mirror"}],
+    ["1.5 million kilometres", {"p": "space telescope"}, {"stat": ["1.5 MILLION KM", "FROM EARTH"]}],
+    ["sunshield", {"p": "space telescope sunshield"}],
+    ["344 single points", {"p": "rocket launch"}, {"stat": ["344", "SINGLE POINTS OF FAILURE"]}],
+    ["Every single one worked", {"p": "rocket launch night"}, {"text": "EVERY SINGLE ONE WORKED."}],
+    ["light from galaxies", {"p": "deep field galaxies"}],
+    ["dawn of time", {"p": "nebula colorful"}]
+   ]},
+  {"id": "outro", "type": "outro",
+   "vo": "Humans can build almost anything. But nature had superpowers long before we had engineers. Ten animals with real superpowers, including one with three hearts and blue blood. It's right here on your screen. See you there.",
+   "beats": [
+    ["@", {"p": "city skyline sunset"}],
+    ["nature had superpowers", {"use": "next"}, {"end": true}]
+   ]}
+ ]
+}

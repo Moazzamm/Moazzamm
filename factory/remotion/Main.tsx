@@ -143,6 +143,40 @@ const Compare: React.FC<{rows: [string, number][]; unit: string; t: number; acce
   );
 };
 
+
+const Timeline: React.FC<{rows: [number, string][]; hl: number; t: number; accent: string}> = ({rows, hl, t, accent}) => {
+  const y0 = Math.min(...rows.map((r) => r[0])) - 400, y1 = Math.max(...rows.map((r) => r[0])) + 150;
+  const X = (yr: number) => 160 + ((yr - y0) / (y1 - y0)) * 1600;
+  const draw = interpolate(t, [0.1, 1.4], [0, 1], {...C, easing: EO});
+  const fmtY = (yr: number) => (yr >= 2000 ? 'TODAY' : yr < 0 ? `${Math.abs(yr).toLocaleString('en-US')} BC` : `${yr} AD`);
+  return (
+    <AbsoluteFill>
+      <svg width={1920} height={1080} style={{position: 'absolute'}}>
+        <line x1={160} y1={560} x2={160 + 1600 * draw} y2={560} stroke="#fff" strokeOpacity={0.8} strokeWidth={6} />
+        {rows.map(([yr], i) => {
+          const x = X(yr), on = 160 + 1600 * draw >= x - 2;
+          const pop = interpolate(t, [0.1 + 1.3 * ((x - 160) / 1600), 0.35 + 1.3 * ((x - 160) / 1600)], [0, 1], {...C, easing: EO});
+          const ph = (t * 1.2) % 1;
+          return (<g key={i} opacity={on ? 1 : 0}>
+            {i === hl && <circle cx={x} cy={560} r={22 + ph * 50} fill="none" stroke={accent} strokeWidth={4} opacity={(1 - ph) * pop} />}
+            <circle cx={x} cy={560} r={(i === hl ? 22 : 14) * pop} fill={i === hl ? accent : '#fff'} stroke="#000" strokeWidth={3} />
+          </g>);
+        })}
+      </svg>
+      {rows.map(([yr, lab], i) => {
+        const x = X(yr), up = i % 2 === 0;
+        const a = interpolate(t, [0.3 + 1.3 * ((x - 160) / 1600), 0.6 + 1.3 * ((x - 160) / 1600)], [0, 1], {...C, easing: EO});
+        return (<div key={i} style={{position: 'absolute', left: x - 200, width: 400, top: up ? 380 : 600, textAlign: 'center', opacity: a,
+          transform: `translateY(${(1 - a) * (up ? 20 : -20)}px)`}}>
+          {!up && <div style={{fontFamily: 'Anton', fontSize: 44, color: i === hl ? accent : '#fff'}}>{fmtY(yr)}</div>}
+          <div style={{fontFamily: 'Inter', fontWeight: 900, fontSize: i === hl ? 40 : 30, color: '#fff', letterSpacing: 2, textShadow: '0 4px 16px #000'}}>{lab}</div>
+          {up && <div style={{fontFamily: 'Anton', fontSize: 44, color: i === hl ? accent : '#fff'}}>{fmtY(yr)}</div>}
+        </div>);
+      })}
+    </AbsoluteFill>
+  );
+};
+
 const RankCard: React.FC<{it: Item; t: number; accent: string}> = ({it, t, accent}) => {
   const {fps} = useVideoConfig();
   const sp = spring({frame: Math.round(t * fps), fps, config: {damping: 11, mass: 0.9, stiffness: 160}});
@@ -163,6 +197,8 @@ const RankCard: React.FC<{it: Item; t: number; accent: string}> = ({it, t, accen
           borderTop: `4px solid ${accent}`, paddingTop: 14}}>{it.place}</div>
       </AbsoluteFill>
       <AbsoluteFill style={{background: '#fff', opacity: flash}} />
+      <AbsoluteFill style={{mixBlendMode: 'screen', opacity: interpolate(t, [0, 0.2, 0.9, 1.3], [0, 0.85, 0.5, 0], C),
+        background: `radial-gradient(ellipse 45% 70% at ${interpolate(t, [0, 1.3], [-15, 115], C)}% 45%, ${accent}cc 0%, rgba(255,170,90,0.45) 35%, rgba(0,0,0,0) 70%)`}} />
     </AbsoluteFill>
   );
 };
@@ -190,12 +226,12 @@ const Ladder: React.FC<{cur: number; t: number; accent: string}> = ({cur, accent
   </div>
 );
 
-const Captions: React.FC<{caps: any[]; t: number; accent: string}> = ({caps, t, accent}) => {
+const Captions: React.FC<{caps: any[]; t: number; accent: string; lift?: boolean}> = ({caps, t, accent, lift}) => {
   const c = caps.find((x) => t >= x.s && t < x.e);
   if (!c) return null;
   const a = interpolate(t, [c.s, c.s + 0.12], [0, 1], C);
   return (
-    <div style={{position: 'absolute', bottom: 92, width: '100%', display: 'flex', justifyContent: 'center', opacity: a}}>
+    <div style={{position: 'absolute', bottom: lift ? 150 : 92, width: '100%', display: 'flex', justifyContent: 'center', opacity: a}}>
       <div style={{display: 'flex', columnGap: 24, rowGap: 4, flexWrap: 'wrap', justifyContent: 'center', maxWidth: 1500, padding: '0 40px'}}>
         {c.words.map((w: any, i: number) => {
           const on = t >= w.s && t < w.e + 0.05;
@@ -281,6 +317,7 @@ export const Main: React.FC<any> = (tl) => {
             {fx.stat && <Stat v={fx.stat[0]} label={fx.stat[1]} t={lt - 0.15} d={d - 0.15} accent={tl.accent} />}
             {fx.text && <Kinetic text={fx.text} t={lt - 0.1} d={d - 0.1} accent={tl.accent} />}
             {fx.title && <Title text={fx.title} series={tl.series} t={lt} accent={tl.accent} />}
+            {fx.timeline && <Timeline rows={fx.timeline} hl={fx.hl ?? 0} t={lt} accent={tl.accent} />}
             {fx.compare && <Compare rows={fx.compare} unit={fx.unit} t={lt} accent={tl.accent} />}
             {fx.sub && <Subscribe t={lt} d={d} accent={tl.accent} />}
             {fx.end && <EndCard t={lt} tl={tl} />}
@@ -290,7 +327,14 @@ export const Main: React.FC<any> = (tl) => {
       {item && !inCard && <Ladder cur={item.rank} t={t} accent={tl.accent} />}
       {item && <Chip it={item} t={t - item.s} accent={tl.accent} />}
       {item && inCard && <RankCard it={item} t={t - item.s} accent={tl.accent} />}
-      {!inCard && !vis.some((b) => b.fx?.title && t >= b.s) && <Captions caps={tl.captions} t={t} accent={tl.accent} />}
+      {(() => {
+        const tb = beats.find((b) => b.fx?.title);
+        if (!tb || t > tb.s + 0.6) return null;
+        const h = 128 * interpolate(t, [tb.s - 0.1, tb.s + 0.45], [1, 0], {...C, easing: EO}) * interpolate(t, [0, 0.6], [0.4, 1], C);
+        return <><div style={{position: 'absolute', left: 0, right: 0, top: 0, height: h, background: '#000'}} />
+          <div style={{position: 'absolute', left: 0, right: 0, bottom: 0, height: h, background: '#000'}} /></>;
+      })()}
+      {!inCard && !vis.some((b) => b.fx?.title && t >= b.s) && <Captions caps={tl.captions} t={t} accent={tl.accent} lift={beats.some((b) => b.fx?.title && t < b.s)} />}
       <AbsoluteFill style={{backgroundImage: `url(${staticFile('grain.png')})`, backgroundPosition: `${(frame * 137) % 512}px ${(frame * 291) % 512}px`, opacity: 0.045, mixBlendMode: 'overlay'}} />
     </AbsoluteFill>
   );

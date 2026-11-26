@@ -49,7 +49,7 @@ export const Globe: React.FC<{m: any; t: number; dur: number; accent: string}> =
         {m.zealandia && <path d={path({type: 'Polygon', coordinates: [ZEALANDIA.slice().reverse()]} as any) || ''} fill={accent} fillOpacity={0.28 * draw} stroke={accent} strokeWidth={3} strokeDasharray="10 8" />}
         {m.equator && <path d={path({type: 'LineString', coordinates: Array.from({length: 73}, (_, i) => [-180 + i * 5, 0])} as any) || ''} fill="none" stroke={accent} strokeWidth={4} strokeDasharray="14 10" opacity={draw} />}
         {m.spread && SPREAD.map((d, i) => <path key={i} d={arc([m.lon, m.lat], d)} fill="none" stroke={accent} strokeWidth={3} opacity={0.85} />)}
-        {m.from && <path d={arc(m.from, [m.lon, m.lat])} fill="none" stroke={accent} strokeWidth={5} />}
+        {m.from && <path d={arc(m.from, m.to ?? [m.lon, m.lat])} fill="none" stroke={accent} strokeWidth={5} />}
         {m.rings && [0.6, 1.2, 1.8].map((rr, i) => <path key={i} d={path(geoCircle().center([m.lon, m.lat]).radius(rr * draw)() as any) || ''} fill={accent} fillOpacity={0.08} stroke={accent} strokeWidth={2.5} />)}
         {[0, 1, 2].map((i) => {
           const ph = ((t * 0.9 + i / 3) % 1);

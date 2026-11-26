@@ -1,0 +1,131 @@
+{
+ "id": "ancient",
+ "title": "10 Ancient Mysteries Scientists Still Can't Solve",
+ "series": "LOST HISTORY",
+ "accent": "#E8B04B",
+ "music": "dark",
+ "next": "mega",
+ "segments": [
+  {"id": "hook", "type": "hook",
+   "vo": "Somewhere in Turkey, there's a temple built 6,000 years before Stonehenge, by people who hadn't even invented farming yet. Inside the Great Pyramid, scientists found a giant hidden chamber that no one has ever entered. And there's a 600-year-old book that no codebreaker on Earth has ever been able to read. These are ten ancient mysteries that scientists still can't solve.",
+   "beats": [
+    ["@", {"p": "gobekli tepe"}],
+    ["6,000 years before", {"p": "ancient stone pillars"}, {"timeline": [[-9600, "GÖBEKLI TEPE"], [-3000, "STONEHENGE"], [-2560, "GREAT PYRAMID"], [2026, "TODAY"]], "hl": 0}],
+    ["Inside the Great Pyramid", {"p": "great pyramid giza"}],
+    ["hidden chamber", {"p": "pyramid interior corridor"}],
+    ["600-year-old book", {"p": "ancient manuscript"}],
+    ["no codebreaker", {"p": "old book pages"}],
+    ["These are ten", {"p": "ancient ruins sunset"}, {"title": "10 ANCIENT MYSTERIES SCIENCE CAN'T SOLVE"}]
+   ]},
+  {"id": "i10", "type": "item", "rank": 10, "name": "THE HEADS HAVE BODIES", "place": "EASTER ISLAND · CHILE", "pin": [-109.35, -27.11],
+   "vo": "Number ten: Easter Island, one of the most remote inhabited places on Earth. Its people carved nearly a thousand giant stone statues called moai. Most people think of them as giant heads. But when archaeologists dug around some of them, they found something surprising: full bodies hidden under the ground, some covered in carved symbols. And how a small island population moved statues weighing up to around 80 tonnes, without wheels or large animals, is still debated. One popular theory? They 'walked' them upright, rocking them forward with ropes.",
+   "beats": [
+    ["@", {"p": "easter island moai"}],
+    ["most remote", {"map": {"view": "world", "lat": -27.11, "lon": -109.35, "label": "RAPA NUI · 3,500 KM FROM ANYWHERE"}}],
+    ["nearly a thousand", {"p": "moai statues row"}, {"stat": ["~1,000", "GIANT STONE STATUES"]}],
+    ["giant heads", {"p": "moai head"}],
+    ["full bodies", {"p": "moai close up"}, {"text": "THE HEADS HAVE BODIES"}],
+    ["how a small island", {"p": "easter island landscape"}],
+    ["walked them", {"p": "moai sunset"}]
+   ]},
+  {"id": "i9", "type": "item", "rank": 9, "name": "DRAWINGS FOR THE GODS", "place": "NAZCA DESERT · PERU", "pin": [-75.1, -14.73],
+   "vo": "Number nine: the Nazca Lines in Peru. Around 2,000 years ago, people scraped hundreds of giant figures into the desert floor: a monkey, a hummingbird, a spider, and lines that run straight for kilometres. Many are so big they only make sense from the air. And they're still being found. In 2024, researchers using artificial intelligence discovered 303 new figures in just six months. Why were they made, for gods who could see them from above? Nobody knows for sure.",
+   "beats": [
+    ["@", {"p": "nazca lines"}],
+    ["scraped hundreds", {"p": "nazca desert"}],
+    ["a monkey", {"p": "nazca hummingbird"}],
+    ["only make sense from the air", {"p": "desert aerial lines"}],
+    ["In 2024", {"p": "artificial intelligence"}, {"stat": ["303", "NEW FIGURES FOUND BY AI IN 6 MONTHS"]}],
+    ["Why were they made", {"p": "nazca lines aerial"}]
+   ]},
+  {"id": "i8", "type": "item", "rank": 8, "name": "WALLS NO BLADE CAN ENTER", "place": "SACSAYHUAMÁN · PERU", "pin": [-71.98, -13.51],
+   "vo": "Number eight: Sacsayhuamán, above the Inca capital of Cusco. Its walls are made of enormous stones, some estimated at well over 100 tonnes, cut into irregular shapes with many angles. And yet they fit together so perfectly, without any mortar, that you can't slide a knife blade between them. These walls have survived centuries of powerful earthquakes that toppled colonial buildings built on top of them. Exactly how the Inca shaped and fitted them so precisely is still argued about today.",
+   "beats": [
+    ["@", {"p": "sacsayhuaman"}],
+    ["enormous stones", {"p": "inca stone wall"}, {"stat": ["100+ TONNES", "SOME OF ITS STONES"]}],
+    ["fit together so perfectly", {"p": "inca masonry"}, {"text": "NO MORTAR. NO GAPS."}],
+    ["powerful earthquakes", {"p": "cusco"}],
+    ["Exactly how", {"p": "machu picchu"}]
+   ]},
+  {"id": "i7", "type": "item", "rank": 7, "name": "THE STONES TOO BIG TO MOVE", "place": "BAALBEK · LEBANON", "pin": [36.2, 34.0],
+   "vo": "Number seven: Baalbek, in Lebanon. The Roman temple complex here sits on some of the largest stone blocks ever cut by humans. Three of them, known as the Trilithon, weigh around 800 tonnes each, and they were lifted into place in the wall. In a nearby quarry lies an even bigger block, around 1,000 tonnes, that was never moved. And in 2014, archaeologists found another one beneath it, estimated at around 1,650 tonnes. How the Romans planned to move them, nobody can say for sure.",
+   "beats": [
+    ["@", {"p": "baalbek"}],
+    ["largest stone blocks", {"p": "baalbek temple columns"}],
+    ["Trilithon", {"p": "roman temple ruins"}, {"stat": ["800 TONNES", "EACH — LIFTED INTO A WALL"]}],
+    ["nearby quarry", {"p": "giant stone block"}],
+    ["in 2014", {"map": {"view": "europe", "lat": 34.0, "lon": 36.2, "label": "BAALBEK · LEBANON"}}],
+    ["nobody can say", {"p": "ancient roman ruins"}, {"text": "~1,650 TONNES. ONE STONE."}]
+   ]},
+  {"id": "i6", "type": "item", "rank": 6, "name": "THE STONE FROM 700 KM AWAY", "place": "STONEHENGE · ENGLAND", "pin": [-1.83, 51.18],
+   "vo": "Number six: Stonehenge. We've known for a long time that its smaller bluestones were hauled more than 200 kilometres from Wales, about 5,000 years ago. But in 2024, a study revealed something even stranger. The six-tonne Altar Stone at its centre came from the far north-east of Scotland, more than 700 kilometres away. How Neolithic people moved it that far, by land or by sea, is a complete mystery.",
+   "beats": [
+    ["@", {"p": "stonehenge"}],
+    ["smaller bluestones", {"p": "stonehenge sunset"}],
+    ["in 2024", {"p": "stonehenge stones close"}],
+    ["Altar Stone", {"map": {"view": "europe", "lat": 51.18, "lon": -1.83, "label": "ALTAR STONE: FROM NE SCOTLAND → STONEHENGE", "from": [-2.9, 57.6]}}],
+    ["How Neolithic people", {"p": "stonehenge fog"}, {"stat": ["700+ KM", "THE ALTAR STONE TRAVELLED"]}]
+   ]},
+  {"id": "i5", "type": "item", "rank": 5, "name": "THE CITY UNDERGROUND", "place": "DERINKUYU · TURKEY", "pin": [34.73, 38.37],
+   "vo": "Number five. In 1963, a man in Cappadocia, Turkey, knocked down a wall in his home during renovations, and found a tunnel behind it. That tunnel led to Derinkuyu: an entire underground city, carved around 85 meters down into the rock, with many levels. It had ventilation shafts, wells, stables, chapels and storage rooms, and it could shelter thousands of people along with their animals. Huge rolling stone doors sealed it from the inside. Who started digging it, and when, is still uncertain.",
+   "beats": [
+    ["@", {"p": "cappadocia"}],
+    ["knocked down a wall", {"p": "old stone house"}],
+    ["entire underground city", {"p": "derinkuyu"}, {"stat": ["~85 M", "DEEP — CARVED INTO SOLID ROCK"]}],
+    ["ventilation shafts", {"p": "underground tunnel"}],
+    ["thousands of people", {"p": "cave city"}],
+    ["rolling stone doors", {"p": "stone door"}],
+    ["Who started digging", {"p": "cappadocia sunrise"}]
+   ]},
+  {"id": "i4", "type": "item", "rank": 4, "name": "THE GREAT PYRAMID'S SECRET", "place": "GIZA · EGYPT", "pin": [31.13, 29.98],
+   "vo": "Number four: the Great Pyramid of Giza. It's made of around 2.3 million blocks, and it was the tallest human-made structure on Earth for nearly 4,000 years. Its sides are aligned to true north with an error of only a tiny fraction of a degree. And in 2017, scientists using cosmic-ray particles to see inside it detected a huge empty space above the Grand Gallery, at least 30 meters long. Nobody has been inside it. Nobody knows what it's for.",
+   "beats": [
+    ["@", {"p": "great pyramid giza"}],
+    ["2.3 million blocks", {"p": "pyramid stone blocks"}, {"stat": ["2.3 MILLION", "STONE BLOCKS"]}],
+    ["tallest human-made", {"p": "pyramids giza aerial"}],
+    ["true north", {"p": "pyramid desert stars"}],
+    ["cosmic-ray particles", {"p": "pyramid interior corridor"}],
+    ["huge empty space", {"p": "dark corridor"}, {"text": "A HIDDEN VOID. 30+ METERS."}],
+    ["Nobody has been inside", {"p": "pyramid night"}]
+   ]},
+  {"id": "cta", "type": "cta",
+   "vo": "Quick favour: if you love mysteries like these, subscribe. It helps this channel more than you know. Now, the top three.",
+   "beats": [["@", {"p": "ancient ruins"}, {"sub": true}]]},
+  {"id": "i3", "type": "item", "rank": 3, "name": "THE BOOK NO ONE CAN READ", "place": "THE VOYNICH MANUSCRIPT",
+   "vo": "Number three: the Voynich manuscript. Its pages were carbon-dated to the early 1400s. It's filled with an unknown alphabet, drawings of plants that don't seem to exist, star charts, and strange scenes. Some of the best codebreakers in history, including experts who cracked enemy codes in the Second World War, tried to read it. All of them failed. To this day, nobody knows if it's a lost language, a cipher, or an elaborate hoax.",
+   "beats": [
+    ["@", {"p": "ancient manuscript"}],
+    ["carbon-dated", {"p": "old parchment"}, {"stat": ["600 YEARS", "AND STILL UNREADABLE"]}],
+    ["unknown alphabet", {"p": "old handwriting"}],
+    ["drawings of plants", {"p": "botanical illustration vintage"}],
+    ["Second World War", {"p": "enigma machine"}],
+    ["All of them failed", {"p": "old library"}, {"text": "ALL OF THEM FAILED."}]
+   ]},
+  {"id": "i2", "type": "item", "rank": 2, "name": "THE SILENT CIVILISATION", "place": "INDUS VALLEY · PAKISTAN & INDIA", "pin": [68.13, 27.33],
+   "vo": "Number two: the Indus Valley Civilisation. Around 4,500 years ago, in what's now Pakistan and India, it had planned cities with straight streets, brick houses, public baths, and covered drains: sanitation many cities wouldn't match for thousands of years. It covered a larger area than ancient Egypt or Mesopotamia. Its people left thousands of inscriptions on seals and pottery. But their writing has never been deciphered. We can walk through their cities... but we can't read a single word they wrote.",
+   "beats": [
+    ["@", {"p": "mohenjo daro"}],
+    ["planned cities", {"p": "ancient brick ruins"}],
+    ["covered drains", {"p": "ancient city ruins"}],
+    ["larger area", {"map": {"view": "asia", "lat": 27.33, "lon": 68.13, "label": "MOHENJO-DARO · INDUS VALLEY"}}],
+    ["thousands of inscriptions", {"p": "ancient seal stamp"}],
+    ["never been deciphered", {"p": "ancient symbols carved"}, {"text": "NOT A SINGLE WORD."}]
+   ]},
+  {"id": "i1", "type": "item", "rank": 1, "name": "THE TEMPLE THAT REWROTE HISTORY", "place": "GÖBEKLI TEPE · TURKEY", "pin": [38.92, 37.22],
+   "vo": "And number one: Göbekli Tepe, in south-eastern Turkey. Its giant carved stone pillars, some over five meters tall and covered in foxes, boars and vultures, were raised around 11,600 years ago. That's about 6,000 years before Stonehenge, and 7,000 years before the pyramids. It was built before farming, before writing, before the wheel, by people we thought were simple hunter-gatherers. And then, for reasons no one understands, they deliberately buried it. Göbekli Tepe means we may have the story of civilisation completely backwards.",
+   "beats": [
+    ["@", {"p": "gobekli tepe"}],
+    ["giant carved stone pillars", {"p": "gobekli tepe pillars"}],
+    ["raised around", {"bg": "dark"}, {"timeline": [[-9600, "GÖBEKLI TEPE"], [-3000, "STONEHENGE"], [-2560, "GREAT PYRAMID"], [2026, "TODAY"]], "hl": 0}],
+    ["built before farming", {"p": "ancient stone carving animal"}],
+    ["deliberately buried", {"p": "archaeological excavation"}],
+    ["completely backwards", {"p": "gobekli tepe sunset"}, {"text": "HISTORY, BACKWARDS."}]
+   ]},
+  {"id": "outro", "type": "outro",
+   "vo": "Ancient people moved mountains of stone. But modern engineers have built things that seem just as impossible. A dam that slowed down the Earth itself. That video is right here on your screen. See you there.",
+   "beats": [
+    ["@", {"p": "ancient ruins night sky"}],
+    ["modern engineers", {"use": "next"}, {"end": true}]
+   ]}
+ ]
+}

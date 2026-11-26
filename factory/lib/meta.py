@@ -38,6 +38,24 @@ META = {
     },
 }
 
+META.update({
+    "space": {"titles": ["10 Terrifying Things Hiding in Space", "Something Is Pulling Our Galaxy (and 9 More Terrifying Space Facts)", "The Scariest Things in the Universe, Ranked"],
+              "hook": "On Friday the 13th, April 2029, an asteroid will pass closer to Earth than our TV satellites. There's a planet where it rains glass sideways, a magnetar that could wipe every credit card on Earth from halfway to the Moon... and something enormous pulling our entire galaxy.",
+              "tags": ["space facts", "scary space", "apophis 2029", "great attractor", "magnetar", "neutron star", "rogue planets", "bootes void", "gamma ray burst", "amazing facts", "top 10", "astronomy", "universe"]},
+    "wonders": {"titles": ["10 Places That Look Fake (But Are 100% Real)", "These Places Look Photoshopped... They're Not", "Real Places That Look Like Another Planet"],
+              "hook": "A naturally bubblegum-pink lake, a rainbow mountain that was hidden under ice for centuries, a lake that turns animals to stone, and a beach where the waves glow in the dark. Every single one is real.",
+              "tags": ["places that look fake", "unreal places", "lake hillier", "rainbow mountain", "salar de uyuni", "zhangjiajie", "socotra", "waitomo glowworm caves", "lake natron", "bioluminescent beach", "travel", "amazing facts", "top 10"]},
+    "animals": {"titles": ["10 Animals With REAL Superpowers", "This Shrimp Punches Like a Bullet (and 9 More Animal Superpowers)", "Animals That Break the Laws of Nature"],
+              "hook": "A shrimp that punches like a bullet, a frog that freezes solid and comes back to life, a bird that flies three Moon round-trips in its lifetime... and an animal with three hearts, blue blood and arms that think for themselves.",
+              "tags": ["animal superpowers", "amazing animals", "mantis shrimp", "pistol shrimp", "octopus", "axolotl", "wood frog", "platypus", "peregrine falcon", "hummingbird", "animal facts", "top 10", "wildlife"]},
+    "ancient": {"titles": ["10 Ancient Mysteries Scientists Still Can't Solve", "This Temple Is 7,000 Years Older Than the Pyramids", "Ancient Mysteries That Rewrite History"],
+              "hook": "A temple built 6,000 years before Stonehenge by people who hadn't invented farming, a hidden void inside the Great Pyramid that no one has entered, and a 600-year-old book nobody can read.",
+              "tags": ["ancient mysteries", "gobekli tepe", "great pyramid", "voynich manuscript", "stonehenge", "easter island", "nazca lines", "baalbek", "derinkuyu", "indus valley", "history", "top 10", "unsolved mysteries"]},
+    "mega": {"titles": ["10 Megaprojects That Shouldn't Be Possible", "This Dam Slowed Down the Earth (and 9 More Insane Megaprojects)", "The Most Impossible Things Humans Ever Built"],
+              "hook": "A dam that slowed Earth's rotation, islands made from sea sand, a building where you can watch the sunset twice, and a telescope that had to unfold itself perfectly 1.5 million kilometres away.",
+              "tags": ["megaprojects", "engineering", "three gorges dam", "burj khalifa", "palm jumeirah", "james webb telescope", "large hadron collider", "channel tunnel", "panama canal", "mega structures", "top 10", "amazing facts"]},
+})
+
 
 def fmt(t):
     t = int(t)

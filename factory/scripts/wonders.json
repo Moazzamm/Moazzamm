@@ -1,0 +1,132 @@
+{
+ "id": "wonders",
+ "title": "10 Places That Look Fake (But Are 100% Real)",
+ "series": "REAL OR FAKE?",
+ "accent": "#FF5FA2",
+ "music": "wonder",
+ "next": "space",
+ "segments": [
+  {"id": "hook", "type": "hook",
+   "vo": "There's a lake that is naturally bubblegum pink. A mountain striped like a rainbow that stayed hidden under ice for centuries. And a lake so deadly it seems to turn animals into stone... yet millions of flamingos raise their chicks there. These places look photoshopped. Every single one is real. And number one glows in the dark.",
+   "beats": [
+    ["@", {"p": "lake hillier"}],
+    ["bubblegum pink", {"p": "pink lake aerial"}],
+    ["A mountain striped", {"p": "rainbow mountain peru"}],
+    ["hidden under ice", {"p": "snow mountain peru"}],
+    ["so deadly", {"p": "lake natron"}],
+    ["millions of flamingos", {"p": "flamingos flock"}],
+    ["look photoshopped", {"p": "salar de uyuni reflection"}],
+    ["Every single one", {"p": "zhangjiajie"}, {"title": "10 PLACES THAT LOOK FAKE — BUT ARE 100% REAL"}],
+    ["glows in the dark", {"p": "bioluminescent beach"}]
+   ]},
+  {"id": "i10", "type": "item", "rank": 10, "name": "THE PINK LAKE", "place": "LAKE HILLIER · AUSTRALIA", "pin": [123.2, -34.09],
+   "vo": "Number ten: Lake Hillier, on an island off Western Australia. From above, it looks like someone poured strawberry milkshake next to the ocean. But that pink is completely natural. It's made by salt-loving microalgae and bacteria that produce pink and red pigments. The craziest part? Scoop the water into a glass... and it's still pink.",
+   "beats": [
+    ["@", {"p": "lake hillier"}],
+    ["From above", {"p": "pink lake ocean aerial"}],
+    ["completely natural", {"map": {"view": "world", "lat": -34.09, "lon": 123.2, "label": "LAKE HILLIER · WESTERN AUSTRALIA"}}],
+    ["salt-loving", {"p": "pink salt lake"}],
+    ["Scoop the water", {"p": "pink water"}, {"text": "STILL PINK IN A GLASS"}]
+   ]},
+  {"id": "i9", "type": "item", "rank": 9, "name": "THE SPOTTED LAKE", "place": "KLILUK · BRITISH COLUMBIA, CANADA", "pin": [-119.57, 49.08],
+   "vo": "Number nine: Spotted Lake, in Canada. Every summer, most of its water evaporates, and what's left behind is hundreds of separate pools, each one a different colour. They're packed with minerals like magnesium sulfate, the same stuff as Epsom salt. The Syilx Okanagan people have treated it as a sacred healing place for generations. Today, you're only allowed to look from the road.",
+   "beats": [
+    ["@", {"p": "spotted lake canada"}],
+    ["most of its water", {"p": "mineral pools aerial"}],
+    ["hundreds of separate pools", {"p": "colorful pools"}],
+    ["Epsom salt", {"p": "epsom salt crystals"}],
+    ["sacred healing place", {"map": {"view": "world", "lat": 49.08, "lon": -119.57, "label": "SPOTTED LAKE · CANADA"}}],
+    ["from the road", {"p": "british columbia landscape"}]
+   ]},
+  {"id": "i8", "type": "item", "rank": 8, "name": "THE RAINBOW MOUNTAIN", "place": "VINICUNCA · PERU", "pin": [-71.3, -13.87],
+   "vo": "Number eight: Vinicunca, Peru's Rainbow Mountain. At over 5,000 meters high, its slopes are striped red, gold, turquoise and lavender. Each stripe is a different layer of mineral-rich sediment, coloured by things like iron oxide and copper. But for most of history, almost nobody saw it. It was buried under snow and ice. Only in the last decade or so, as the ice melted, did it become one of Peru's most famous sights.",
+   "beats": [
+    ["@", {"p": "rainbow mountain peru"}],
+    ["over 5,000", {"p": "vinicunca"}, {"stat": ["5,200 M", "ABOVE SEA LEVEL"]}],
+    ["Each stripe", {"p": "colorful mountain layers"}],
+    ["almost nobody saw it", {"p": "snow mountains andes"}],
+    ["as the ice melted", {"map": {"view": "world", "lat": -13.87, "lon": -71.3, "label": "VINICUNCA · PERU"}}],
+    ["most famous sights", {"p": "rainbow mountain hikers"}]
+   ]},
+  {"id": "i7", "type": "item", "rank": 7, "name": "THE WORLD'S BIGGEST MIRROR", "place": "SALAR DE UYUNI · BOLIVIA", "pin": [-67.49, -20.13],
+   "vo": "Number seven: Salar de Uyuni in Bolivia, the largest salt flat on Earth, more than 10,000 square kilometres. It's so flat that satellites use it to calibrate their instruments. And when a thin layer of rain covers it, it becomes the biggest mirror in the world. The sky and the ground become the same thing. Walk across it, and it feels like you're walking on clouds.",
+   "beats": [
+    ["@", {"p": "salar de uyuni"}],
+    ["largest salt flat", {"p": "salt flat bolivia"}, {"stat": ["10,000+ KM²", "OF SALT — THE LARGEST ON EARTH"]}],
+    ["so flat", {"map": {"view": "world", "lat": -20.13, "lon": -67.49, "label": "SALAR DE UYUNI · BOLIVIA"}}],
+    ["thin layer of rain", {"p": "salar de uyuni reflection"}],
+    ["sky and the ground", {"p": "uyuni mirror sunset"}, {"text": "THE BIGGEST MIRROR ON EARTH"}],
+    ["walking on clouds", {"p": "salt flat person reflection"}]
+   ]},
+  {"id": "i6", "type": "item", "rank": 6, "name": "THE AVATAR MOUNTAINS", "place": "ZHANGJIAJIE · CHINA", "pin": [110.48, 29.12],
+   "vo": "Number six: Zhangjiajie, in China. Thousands of sandstone pillars rise straight out of the mist, some more than 200 meters tall. Millions of years of rain and erosion carved them out. If they look familiar, there's a reason: they helped inspire the floating mountains in the movie Avatar. One of the pillars was even renamed 'Avatar Hallelujah Mountain'.",
+   "beats": [
+    ["@", {"p": "zhangjiajie"}],
+    ["Thousands of sandstone", {"p": "zhangjiajie mist"}, {"stat": ["3,000+", "SANDSTONE PILLARS"]}],
+    ["rain and erosion", {"map": {"view": "world", "lat": 29.12, "lon": 110.48, "label": "ZHANGJIAJIE · HUNAN, CHINA"}}],
+    ["look familiar", {"p": "zhangjiajie pillars"}],
+    ["floating mountains", {"p": "mountains above clouds"}, {"text": "THE REAL PANDORA"}],
+    ["renamed", {"p": "zhangjiajie national forest"}]
+   ]},
+  {"id": "i5", "type": "item", "rank": 5, "name": "THE ALIEN ISLAND", "place": "SOCOTRA · YEMEN", "pin": [53.87, 12.46],
+   "vo": "Number five: Socotra, an island off the coast of Yemen, often called the most alien-looking place on Earth. It has been isolated for millions of years, and about a third of its plants are found nowhere else. The most famous is the dragon's blood tree, shaped like an umbrella turned inside out. Cut its bark, and it bleeds a deep red resin. People have used it for centuries as a dye and a medicine.",
+   "beats": [
+    ["@", {"p": "socotra"}],
+    ["isolated for millions", {"map": {"view": "world", "lat": 12.46, "lon": 53.87, "label": "SOCOTRA · YEMEN"}}],
+    ["a third of its plants", {"p": "socotra landscape"}, {"stat": ["~1/3", "OF ITS PLANTS EXIST NOWHERE ELSE"]}],
+    ["dragon's blood tree", {"p": "dragon blood tree"}],
+    ["bleeds a deep red", {"p": "red resin"}, {"text": "THE TREE THAT BLEEDS"}],
+    ["dye and a medicine", {"p": "dragon tree socotra"}]
+   ]},
+  {"id": "i4", "type": "item", "rank": 4, "name": "THE DESERT FULL OF LAGOONS", "place": "LENÇÓIS MARANHENSES · BRAZIL", "pin": [-43.1, -2.53],
+   "vo": "Number four: Lençóis Maranhenses, in Brazil. It looks like a desert, with endless white sand dunes. But every rainy season, the gaps between the dunes fill with thousands of crystal-clear turquoise lagoons. And somehow, there are fish in them. Some species survive the dry months buried in damp mud, waiting for the rain to come back.",
+   "beats": [
+    ["@", {"p": "lencois maranhenses"}],
+    ["looks like a desert", {"p": "white sand dunes"}],
+    ["every rainy season", {"map": {"view": "world", "lat": -2.53, "lon": -43.1, "label": "LENÇÓIS MARANHENSES · BRAZIL"}}],
+    ["turquoise lagoons", {"p": "dunes lagoons aerial"}],
+    ["fish in them", {"p": "fish clear water"}, {"text": "FISH. IN A 'DESERT'."}],
+    ["buried in damp mud", {"p": "lencois maranhenses lagoon"}]
+   ]},
+  {"id": "cta", "type": "cta",
+   "vo": "If you're enjoying the trip, hit subscribe. It really helps a small channel. Now... number three is beautiful. Until you find out what it is.",
+   "beats": [["@", {"p": "travel landscape aerial"}, {"sub": true}]]},
+  {"id": "i3", "type": "item", "rank": 3, "name": "THE CAVE OF STARS", "place": "WAITOMO CAVES · NEW ZEALAND", "pin": [175.1, -38.26],
+   "vo": "Deep in the Waitomo Caves of New Zealand, you drift on a boat in total darkness, under a ceiling glowing with thousands of blue lights, like a galaxy. But they aren't stars. They're glowworms: the larvae of a small fly. Each one hangs down sticky threads of silk and glows to lure insects in. So that magical starry sky? It's actually a field of hungry maggots, fishing for dinner.",
+   "beats": [
+    ["@", {"p": "glowworm cave"}],
+    ["ceiling glowing", {"p": "waitomo glowworm"}],
+    ["they aren't stars", {"map": {"view": "world", "lat": -38.26, "lon": 175.1, "label": "WAITOMO CAVES · NEW ZEALAND"}}],
+    ["sticky threads", {"p": "glowworm threads"}],
+    ["magical starry sky", {"p": "glowworm cave"}, {"text": "HUNGRY MAGGOTS."}]
+   ]},
+  {"id": "i2", "type": "item", "rank": 2, "name": "THE LAKE THAT TURNS ANIMALS TO STONE", "place": "LAKE NATRON · TANZANIA", "pin": [36.0, -2.42],
+   "vo": "Number two: Lake Natron, in Tanzania. Its water is so alkaline it can burn skin, and it can heat up to around 60 degrees Celsius. Animals that die in it don't rot the normal way. Minerals coat their bodies and preserve them, leaving eerie, stone-like statues on the shore. And yet, this toxic red lake is the most important breeding ground on Earth for lesser flamingos. Millions of them. Because almost no predator dares to follow them in.",
+   "beats": [
+    ["@", {"p": "lake natron"}],
+    ["so alkaline", {"p": "red lake aerial"}, {"stat": ["~60°C", "WATER THAT CAN BURN YOUR SKIN"]}],
+    ["don't rot", {"map": {"view": "world", "lat": -2.42, "lon": 36.0, "label": "LAKE NATRON · TANZANIA"}}],
+    ["stone-like statues", {"p": "dead bird statue"}],
+    ["And yet", {"p": "lesser flamingos"}],
+    ["Millions of them", {"p": "flamingos aerial"}],
+    ["no predator dares", {"p": "flamingos red water"}, {"text": "NO PREDATOR DARES FOLLOW"}]
+   ]},
+  {"id": "i1", "type": "item", "rank": 1, "name": "THE SEA OF STARS", "place": "VAADHOO ISLAND · MALDIVES", "pin": [73.47, 2.35],
+   "vo": "And number one. On some nights in the Maldives, the waves crashing onto the beach glow electric blue, as if the ocean is full of stars. It's caused by bioluminescent plankton. When the water is disturbed, they light up. Scientists think it's a kind of burglar alarm: the flash startles the creatures trying to eat them... and attracts bigger predators that eat the attackers. Walk along the shore, and every footstep in the wet sand lights up. It's real. And it's one of the most beautiful things on Earth.",
+   "beats": [
+    ["@", {"p": "bioluminescent waves"}],
+    ["glow electric blue", {"p": "bioluminescence beach night"}],
+    ["bioluminescent plankton", {"map": {"view": "world", "lat": 2.35, "lon": 73.47, "label": "VAADHOO ISLAND · MALDIVES"}}],
+    ["When the water", {"p": "glowing water night"}],
+    ["burglar alarm", {"p": "plankton glowing"}, {"text": "A BURGLAR ALARM — MADE OF LIGHT"}],
+    ["every footstep", {"p": "bioluminescent beach"}],
+    ["It's real", {"p": "glowing waves night sky"}]
+   ]},
+  {"id": "outro", "type": "outro",
+   "vo": "Earth is full of places that don't look real. But if you think these are strange, wait until you see what's hiding in space. Ten terrifying things, including a planet where it rains glass. It's right here on your screen. See you there.",
+   "beats": [
+    ["@", {"p": "earth sunrise from space"}],
+    ["wait until you see", {"use": "next"}, {"end": true}]
+   ]}
+ ]
+}
