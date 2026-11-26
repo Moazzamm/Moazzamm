@@ -1,0 +1,91 @@
+{
+ "congo": {
+  "src": "ai_biliape",
+  "side": "left",
+  "zoom": 1.25,
+  "origin": "65% 45%",
+  "lines": [
+   {
+    "t": "THE CONGO",
+    "size": 120
+   },
+   {
+    "t": "IS HIDING",
+    "size": 120
+   },
+   {
+    "t": "SOMETHING",
+    "size": 120,
+    "bg": "#FFB020"
+   }
+  ],
+  "badge": "SCIENCE CAN'T EXPLAIN IT",
+  "tx": 14,
+  "bright": 1.35
+ },
+ "micro": {
+  "src": "i4_0",
+  "side": "left",
+  "zoom": 1.25,
+  "origin": "60% 55%",
+  "lines": [
+   {
+    "t": "THEY LIVE",
+    "size": 124
+   },
+   {
+    "t": "ON YOUR",
+    "size": 124
+   },
+   {
+    "t": "FACE",
+    "size": 170,
+    "bg": "#3DF5C8"
+   }
+  ],
+  "circle": [
+   700,
+   330,
+   210
+  ]
+ },
+ "forbidden": {
+  "src": "ai_sentinel",
+  "side": "right",
+  "zoom": 1.2,
+  "origin": "40% 50%",
+  "lines": [
+   {
+    "t": "DO NOT",
+    "size": 150
+   },
+   {
+    "t": "GO HERE",
+    "size": 150,
+    "bg": "#FF3B3B"
+   }
+  ],
+  "badge": "FORBIDDEN"
+ },
+ "ocean": {
+  "src": "ai_siphonophore",
+  "side": "left",
+  "zoom": 1.15,
+  "origin": "60% 50%",
+  "lines": [
+   {
+    "t": "THIS",
+    "size": 130
+   },
+   {
+    "t": "SHOULDN'T",
+    "size": 130
+   },
+   {
+    "t": "EXIST",
+    "size": 170,
+    "bg": "#2EC5FF"
+   }
+  ]
+ }
+}

@@ -1,0 +1,133 @@
+{
+ "id": "ocean",
+ "title": "10 Things in the Ocean That Shouldn't Exist",
+ "series": "THE DEEP",
+ "accent": "#2EC5FF",
+ "music": "ocean",
+ "next": "micro",
+ "segments": [
+  {"id": "hook", "type": "hook",
+   "vo": "There's a waterfall hidden under the sea, more than three times taller than any on land. A lake at the bottom of the ocean that kills anything that swims into it. A shark that may have been born before the United States existed. And deep in the Pacific, scientists found something making oxygen in total darkness. Which, according to everything we thought we knew, should be impossible. Here are ten things in the ocean that shouldn't exist.",
+   "beats": [
+    ["@", {"p": "dark ocean underwater"}],
+    ["waterfall hidden", {"ai": "A colossal underwater waterfall of dark cold water cascading down a deep seafloor cliff, visible as a turbulent density current with swirling sediment, dim blue light, cinematic deep sea scene", "key": "waterfall"}],
+    ["A lake at the bottom", {"ai": "A dark brine pool lake on the deep sea floor with a rim of mussels like a shoreline, lit by submarine ROV lights, eerie ripples, cinematic", "key": "brine"}],
+    ["A shark", {"ai": "A huge ancient Greenland shark gliding slowly through dark icy Arctic water, scarred grey skin, pale eyes, cinematic wildlife photo", "key": "greenland"}],
+    ["making oxygen", {"ai": "Potato-sized black polymetallic nodules covering the abyssal sea floor, lit by a submarine's lights in total darkness, cinematic", "key": "nodules"}],
+    ["should be impossible", {"p": "deep ocean darkness"}],
+    ["Here are ten", {"p": "ocean surface storm"}, {"title": "10 THINGS IN THE OCEAN THAT SHOULDN'T EXIST"}]
+   ]},
+  {"id": "i10", "type": "item", "rank": 10, "name": "THE WATERFALL UNDER THE SEA", "place": "DENMARK STRAIT · GREENLAND / ICELAND", "pin": [-27.0, 66.0],
+   "vo": "Number ten. The tallest waterfall on land is Angel Falls, in Venezuela: 979 meters. But the biggest waterfall on Earth is underwater, between Greenland and Iceland. In the Denmark Strait, freezing, dense Arctic water meets warmer water and plunges down the sea floor for about three and a half kilometres. It moves more than three million cubic meters of water every second. Hundreds of times the flow of Niagara Falls. And you'd never see it from a ship. The surface looks completely calm.",
+   "beats": [
+    ["@", {"p": "angel falls venezuela"}],
+    ["biggest waterfall", {"use": "waterfall"}],
+    ["Denmark Strait", {"map": {"view": "atlantic", "lat": 66, "lon": -27, "label": "DENMARK STRAIT"}}],
+    ["plunges down", {"bg": "dark"}, {"compare": [["ANGEL FALLS", 979], ["DENMARK STRAIT CATARACT", 3505]], "unit": "M"}],
+    ["three million", {"p": "ocean current underwater"}, {"stat": ["3,000,000+", "CUBIC METERS OF WATER — EVERY SECOND"]}],
+    ["never see it", {"p": "calm arctic sea"}]
+   ]},
+  {"id": "i9", "type": "item", "rank": 9, "name": "THE LAKE OF DEATH", "place": "GULF OF MEXICO · 1 KM DOWN", "pin": [-91.0, 27.7],
+   "vo": "Number nine. A kilometre down in the Gulf of Mexico, scientists found a lake... at the bottom of the sea. It has a shoreline. You can even see ripples on its surface. It's up to five times saltier than the ocean around it, so it doesn't mix. And it's full of methane and toxic hydrogen sulfide. Fish and crabs that wander in go into shock and die. Some end up pickled in the brine. The researchers who found it in 2015 gave it a name: the Jacuzzi of Despair.",
+   "beats": [
+    ["@", {"use": "brine"}],
+    ["It has a shoreline", {"p": "deep sea floor"}],
+    ["five times saltier", {"use": "brine"}, {"stat": ["5×", "SALTIER THAN THE SURROUNDING OCEAN"]}],
+    ["methane", {"p": "underwater bubbles"}],
+    ["Fish and crabs", {"p": "deep sea crab"}],
+    ["pickled", {"p": "deep sea fish"}],
+    ["gave it a name", {"use": "brine"}, {"text": "THE JACUZZI OF DESPAIR"}]
+   ]},
+  {"id": "i8", "type": "item", "rank": 8, "name": "LONGER THAN A BLUE WHALE", "place": "NINGALOO CANYONS · WESTERN AUSTRALIA", "pin": [113.5, -22.5],
+   "vo": "Number eight. In 2020, off the coast of Western Australia, a robot submarine found something spiralling in the deep like a glowing string. It was a siphonophore, estimated at around 47 meters long. That's longer than a blue whale, and possibly the longest animal ever recorded. But here's the twist: it isn't really one animal. It's a colony of countless tiny clones, each with a different job. Some swim. Some sting. Some digest. All working together as one body.",
+   "beats": [
+    ["@", {"p": "underwater robot submarine"}],
+    ["glowing string", {"ai": "A giant siphonophore spiraling like a glowing string in the pitch-black deep ocean, bioluminescent, lit by ROV lights, cinematic", "key": "siphonophore"}],
+    ["estimated at", {"bg": "dark"}, {"compare": [["BLUE WHALE", 30], ["GIANT SIPHONOPHORE", 47]], "unit": "M"}],
+    ["isn't really one animal", {"p": "bioluminescent jellyfish"}],
+    ["countless tiny clones", {"p": "plankton microscope"}],
+    ["All working together", {"use": "siphonophore"}]
+   ]},
+  {"id": "i7", "type": "item", "rank": 7, "name": "THE 400-YEAR-OLD SHARK", "place": "ARCTIC OCEAN", "pin": [-40.0, 72.0],
+   "vo": "Number seven. In 2016, scientists used radiocarbon dating on the eyes of Greenland sharks, and got a stunning result. The oldest was estimated at around 400 years old. That would make it the longest-living vertebrate ever discovered. They grow about one centimetre a year, swim at a crawl, and don't reach adulthood until they're about 150. Some Greenland sharks alive today may have been born before the United States even existed.",
+   "beats": [
+    ["@", {"use": "greenland"}],
+    ["radiocarbon dating", {"p": "laboratory scientist"}],
+    ["The oldest", {"use": "greenland"}, {"stat": ["~400", "YEARS OLD"]}],
+    ["one centimetre", {"p": "arctic ice underwater"}],
+    ["reach adulthood", {"p": "icebergs arctic"}, {"text": "AN ADULT AT 150"}],
+    ["born before", {"p": "old sailing ship painting"}]
+   ]},
+  {"id": "i6", "type": "item", "rank": 6, "name": "THE SNAIL WITH IRON ARMOUR", "place": "INDIAN OCEAN VENTS · ~3 KM DOWN", "pin": [70.0, -25.0],
+   "vo": "Number six. Near hydrothermal vents in the Indian Ocean, almost three kilometres down, lives a snail wearing armour made of metal. The scaly-foot snail builds its shell, and the scales on its foot, out of iron sulfide. It's the only known animal that uses iron in its skeleton like this. A tiny knight, living next to vents that spew water hot enough to melt lead. And in 2019, it became the first animal listed as endangered because of deep-sea mining.",
+   "beats": [
+    ["@", {"p": "hydrothermal vent"}],
+    ["armour made of metal", {"ai": "The scaly-foot snail with a black iron-plated shell and overlapping metallic iron scales on its foot, beside a smoking deep-sea hydrothermal vent, macro photo", "key": "scalyfoot"}],
+    ["iron sulfide", {"use": "scalyfoot"}, {"text": "IRON ARMOUR"}],
+    ["tiny knight", {"p": "knight armor"}],
+    ["melt lead", {"p": "underwater volcano"}],
+    ["endangered", {"p": "mining machine"}]
+   ]},
+  {"id": "i5", "type": "item", "rank": 5, "name": "TRASH AT THE BOTTOM OF THE WORLD", "place": "MARIANA TRENCH · ~11 KM DOWN", "pin": [142.2, 11.35],
+   "vo": "Number five. The Mariana Trench is the deepest place on Earth, nearly 11 kilometres down. If you dropped Mount Everest in, its peak would still be more than two kilometres underwater. Down there, crushed by over a thousand times the pressure at the surface, scientists spotted something that shouldn't be there: a plastic bag. Humans had barely begun to explore the deepest place on Earth... and our trash had already beaten us there.",
+   "beats": [
+    ["@", {"p": "deep ocean"}],
+    ["Mount Everest", {"p": "mount everest"}, {"text": "EVEREST WOULD SINK 2 KM DEEP"}],
+    ["crushed by", {"p": "submarine deep sea"}, {"stat": ["1,000×", "THE PRESSURE AT THE SURFACE"]}],
+    ["a plastic bag", {"p": "plastic bag underwater"}],
+    ["our trash", {"p": "plastic pollution ocean"}, {"text": "OUR TRASH GOT THERE FIRST"}]
+   ]},
+  {"id": "i4", "type": "item", "rank": 4, "name": "THE 2,000-YEAR-OLD COMPUTER", "place": "ANTIKYTHERA · GREECE", "pin": [23.3, 35.87],
+   "vo": "Number four. In 1901, sponge divers pulled a lump of corroded bronze from a Roman-era shipwreck, off the Greek island of Antikythera. For decades, nobody understood it. Then X-rays revealed what was inside: a hand-cranked machine with dozens of interlocking gears. It could predict eclipses, track the Moon and planets, and even count down to the Olympic Games. It's over 2,000 years old. Nothing with gears this complex shows up again for more than a thousand years.",
+   "beats": [
+    ["@", {"p": "shipwreck underwater"}],
+    ["sponge divers", {"p": "vintage diver helmet"}],
+    ["corroded bronze", {"p": "antikythera mechanism"}],
+    ["X-rays revealed", {"ai": "Reconstruction of the Antikythera mechanism, intricate interlocking bronze gears and dials, warm museum light, cinematic close-up", "key": "antikythera"}],
+    ["predict eclipses", {"p": "solar eclipse"}],
+    ["Olympic Games", {"p": "ancient greek stadium"}],
+    ["over 2,000", {"use": "antikythera"}, {"stat": ["2,000+", "YEARS OLD"]}],
+    ["Nothing with gears", {"p": "clock gears"}]
+   ]},
+  {"id": "cta", "type": "cta",
+   "vo": "Real quick: if you've learned something already, subscribe. We're a small channel trying to hit ten thousand, and you'd help a ton. Now, number three... is an entire continent.",
+   "beats": [["@", {"p": "ocean waves aerial"}, {"sub": true}]]},
+  {"id": "i3", "type": "item", "rank": 3, "name": "THE LOST CONTINENT", "place": "ZEALANDIA · SOUTH PACIFIC", "pin": [172.0, -41.0],
+   "vo": "There's a continent you've probably never heard of, and about 94% of it is underwater. It's called Zealandia. It's almost five million square kilometres, more than half the size of Australia. New Zealand and New Caledonia are just its highest mountains, poking above the waves. Geologists only formally argued it was a continent in 2017, and the full map of its shape was published in 2023. We literally misplaced a continent.",
+   "beats": [
+    ["@", {"p": "new zealand aerial"}],
+    ["called Zealandia", {"map": {"view": "pacific", "lat": -41, "lon": 172, "label": "ZEALANDIA — 94% UNDERWATER", "zealandia": true}}],
+    ["five million", {"p": "new zealand mountains"}, {"stat": ["4.9M KM²", "MORE THAN HALF THE SIZE OF AUSTRALIA"]}],
+    ["highest mountains", {"p": "new zealand mountains lake"}],
+    ["Geologists", {"p": "geologist rocks"}],
+    ["misplaced a continent", {"p": "new caledonia"}, {"text": "WE MISPLACED A CONTINENT."}]
+   ]},
+  {"id": "i2", "type": "item", "rank": 2, "name": "THE IMMORTAL JELLYFISH", "place": "TURRITOPSIS DOHRNII",
+   "vo": "Number two. This jellyfish is smaller than your fingernail... and it might be immortal. When Turritopsis dohrnii is injured, starving, or getting old, it can do something almost no other animal can. It turns its body back into a baby, a polyp, and starts its life over again. In theory, it could keep doing this forever. It can still be eaten, or killed by disease. But it doesn't seem to die of old age.",
+   "beats": [
+    ["@", {"p": "small jellyfish"}],
+    ["might be immortal", {"ai": "A tiny transparent Turritopsis immortal jellyfish with a bright red-orange stomach, delicate tentacles, macro photography on a black background", "key": "turritopsis"}, {"text": "IMMORTAL?"}],
+    ["turns its body back", {"p": "jellyfish macro"}],
+    ["forever", {"p": "jellyfish glowing"}],
+    ["old age", {"use": "turritopsis"}]
+   ]},
+  {"id": "i1", "type": "item", "rank": 1, "name": "DARK OXYGEN", "place": "CLARION–CLIPPERTON ZONE · PACIFIC", "pin": [-130.0, 12.0],
+   "vo": "And number one. For as long as we've studied life, we've believed Earth's oxygen comes from one source: sunlight. Plants and plankton, doing photosynthesis. Then, in 2024, scientists measuring the sea floor four kilometres down in the Pacific saw oxygen levels rising. In total darkness. The leading theory? Potato-sized metal nodules on the sea floor may act like natural batteries, with enough voltage to split seawater into hydrogen and oxygen. Other scientists are still challenging it. But if it's confirmed, it could change the story of how life on Earth began. And those same nodules are exactly what mining companies want to dig up.",
+   "beats": [
+    ["@", {"p": "sunlight underwater"}],
+    ["Plants and plankton", {"p": "kelp forest sunlight"}],
+    ["in 2024", {"use": "nodules"}],
+    ["total darkness", {"p": "deep ocean darkness"}, {"text": "OXYGEN. IN TOTAL DARKNESS."}],
+    ["natural batteries", {"use": "nodules"}],
+    ["still challenging", {"p": "research ship"}],
+    ["how life on Earth began", {"p": "earth from space"}],
+    ["mining companies", {"p": "mining machine"}]
+   ]},
+  {"id": "outro", "type": "outro",
+   "vo": "The ocean covers 71% of our planet, and we've mapped only about a quarter of its floor in high detail. Whatever's waiting down there is probably stranger than anything on this list. And if you think the ocean is alien, wait until you zoom in on your own skin. Ten things that look alien under a microscope. It's right here. See you there.",
+   "beats": [
+    ["@", {"p": "ocean aerial"}],
+    ["wait until you zoom in", {"use": "next"}, {"end": true}]
+   ]}
+ ]
+}

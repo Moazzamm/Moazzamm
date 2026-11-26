@@ -1,0 +1,143 @@
+{
+ "id": "forbidden",
+ "title": "10 Places on Earth You're FORBIDDEN to Enter",
+ "series": "OFF LIMITS",
+ "accent": "#FF3B3B",
+ "music": "dark",
+ "next": "ocean",
+ "segments": [
+  {"id": "hook", "type": "hook",
+   "vo": "There's an island where the locals shoot arrows at helicopters. A tomb no one dares to open, because the ground around it is laced with mercury. And a mountain where women have been banned for more than a thousand years. Some places are off-limits to protect us... and some are off-limits to protect them from us. Here are ten places on Earth you're forbidden to enter. And number one is guarded by people who have rejected the outside world for thousands of years.",
+   "beats": [
+    ["@", {"ai": "Aerial view of a small remote tropical island ringed by white surf and coral reef, covered in dense untouched jungle, deep blue Bay of Bengal, no buildings, cinematic drone photo", "key": "sentinel"}],
+    ["arrows at helicopters", {"p": "helicopter over ocean"}],
+    ["A tomb", {"p": "terracotta army"}],
+    ["laced with mercury", {"p": "liquid mercury"}],
+    ["And a mountain", {"p": "mount athos"}],
+    ["women have been banned", {"p": "monastery cliff greece"}],
+    ["Some places", {"p": "barbed wire fence"}],
+    ["protect them from us", {"p": "remote island aerial"}],
+    ["Here are ten", {"p": "restricted area sign"}, {"title": "10 PLACES YOU'RE FORBIDDEN TO ENTER"}],
+    ["guarded by people", {"use": "sentinel"}]
+   ]},
+  {"id": "i10", "type": "item", "rank": 10, "name": "LASCAUX CAVE", "place": "DORDOGNE · FRANCE", "pin": [1.17, 45.05],
+   "vo": "Number ten: Lascaux Cave, in France. In 1940, four teenagers squeezed down a hole and found one of the greatest art galleries in history. Around 600 paintings of horses, bulls and deer, painted about 17,000 years ago. After it opened to the public, more than a thousand visitors a day poured in... and their breath alone started destroying it. Carbon dioxide, heat and moisture brought algae and mould. In 1963 it was sealed. Today, only a handful of experts may enter, for just a few days a year.",
+   "beats": [
+    ["@", {"p": "cave paintings"}],
+    ["four teenagers", {"p": "cave entrance"}],
+    ["greatest art galleries", {"ai": "Prehistoric Lascaux cave paintings of horses, bulls and deer on a curved limestone cave wall, lit by a single warm flashlight beam, ultra realistic photograph", "key": "lascaux"}],
+    ["painted about", {"use": "lascaux"}, {"stat": ["17,000", "YEARS OLD"]}],
+    ["their breath alone", {"p": "tourists crowd cave"}],
+    ["algae and mould", {"p": "mold macro"}],
+    ["In 1963", {"p": "locked door dark"}, {"text": "SEALED: 1963"}]
+   ]},
+  {"id": "i9", "type": "item", "rank": 9, "name": "SURTSEY", "place": "OFF THE SOUTH COAST OF ICELAND", "pin": [-20.6, 63.3],
+   "vo": "Number nine: Surtsey. In November 1963, the sea off Iceland began to boil. A volcanic eruption pushed brand-new land out of the ocean, and when it finally stopped in 1967, Earth had a new island. Scientists realised they had a perfect natural laboratory to watch how life colonises empty ground. So it's been off-limits to almost everyone ever since. Seeds arrived on birds. Insects arrived on the wind. And once, researchers found a tomato plant growing there... traced back to a visiting scientist who'd relieved himself on the island. It was promptly pulled out.",
+   "beats": [
+    ["@", {"p": "iceland volcanic island"}],
+    ["began to boil", {"ai": "A 1963 volcanic eruption bursting out of the North Atlantic off Iceland, huge black ash and white steam column rising from the sea, birth of a new island, vintage documentary photo look", "key": "surtsey"}],
+    ["new island", {"p": "iceland coast aerial"}],
+    ["natural laboratory", {"p": "moss lava rocks"}],
+    ["Seeds arrived", {"p": "seabirds cliff"}],
+    ["tomato plant", {"p": "tomato plant"}],
+    ["promptly pulled out", {"p": "tomato plant"}, {"text": "PULLED OUT."}]
+   ]},
+  {"id": "i8", "type": "item", "rank": 8, "name": "THE DOOMSDAY VAULT", "place": "SVALBARD · NORWAY", "pin": [15.5, 78.2],
+   "vo": "Number eight. Deep inside a frozen mountain, halfway between mainland Norway and the North Pole, sits humanity's backup drive. The Svalbard Global Seed Vault stores more than 1.3 million samples of seeds from almost every country on Earth, kept at minus 18 degrees. It's built to survive earthquakes, power cuts, even war. You can't go inside. But in 2015, it was opened for a real emergency. War in Syria had wrecked a seed bank near Aleppo, and the backups were withdrawn to regrow its crops.",
+   "beats": [
+    ["@", {"p": "svalbard"}],
+    ["humanity's backup drive", {"p": "svalbard seed vault"}],
+    ["stores more than", {"p": "seeds"}, {"stat": ["1.3 MILLION+", "SEED SAMPLES"]}],
+    ["minus 18", {"p": "frozen tunnel"}],
+    ["You can't go inside", {"p": "bunker door"}],
+    ["in 2015", {"map": {"view": "europe", "lat": 36.2, "lon": 37.1, "label": "ALEPPO, SYRIA — FIRST WITHDRAWAL", "from": [15.5, 78.2]}}],
+    ["regrow its crops", {"p": "wheat field"}]
+   ]},
+  {"id": "i7", "type": "item", "rank": 7, "name": "ISE GRAND SHRINE", "place": "MIE PREFECTURE · JAPAN", "pin": [136.73, 34.45],
+   "vo": "Number seven: Ise Grand Shrine, Japan's most sacred site. Every 20 years, for more than 1,300 years, the inner shrine has been torn down and rebuilt, identically, on the plot next door. But the real secret is inside. The shrine is said to hold the Sacred Mirror, one of Japan's three imperial treasures. Ordinary visitors can't pass the outer fence. Only priests and members of the imperial family may go further. And the mirror itself? It's kept wrapped and hidden. The public has never seen it.",
+   "beats": [
+    ["@", {"p": "ise grand shrine"}],
+    ["torn down and rebuilt", {"p": "japanese shrine wood"}, {"stat": ["1,300+", "YEARS OF REBUILDING"]}],
+    ["Sacred Mirror", {"ai": "An ancient round bronze sacred mirror half-wrapped in silk inside a dim wooden Shinto shrine, mysterious, soft candlelight, cinematic", "key": "mirror"}],
+    ["Ordinary visitors", {"p": "torii gate forest"}],
+    ["Only priests", {"p": "shinto priest"}],
+    ["never seen it", {"use": "mirror"}, {"text": "NEVER SHOWN TO THE PUBLIC"}]
+   ]},
+  {"id": "i6", "type": "item", "rank": 6, "name": "THE FORBIDDEN ISLE", "place": "NI'IHAU · HAWAII", "pin": [-160.15, 21.9],
+   "vo": "Number six: Niihau, Hawaii's 'Forbidden Isle'. In 1864, a Scottish widow named Elizabeth Sinclair bought the entire island from the Kingdom of Hawaii for ten thousand dollars in gold. Her descendants, the Robinson family, still own it today. A small community lives there, speaking Hawaiian as their first language, with no paved roads and no hotels. Outsiders come by invitation only. Its isolation was so complete that when a Japanese pilot crash-landed there on December 7th, 1941, the islanders had no idea Pearl Harbor had just been attacked.",
+   "beats": [
+    ["@", {"p": "hawaii island aerial"}],
+    ["Scottish widow", {"p": "old sailing ship"}],
+    ["ten thousand dollars", {"p": "gold coins"}, {"stat": ["$10,000", "IN GOLD — FOR AN ENTIRE ISLAND"]}],
+    ["still own it", {"p": "hawaii sea cliffs"}],
+    ["first language", {"p": "empty hawaii beach"}],
+    ["invitation only", {"p": "private property sign"}],
+    ["Japanese pilot", {"p": "ww2 fighter plane"}],
+    ["no idea", {"p": "pearl harbor"}]
+   ]},
+  {"id": "i5", "type": "item", "rank": 5, "name": "THE MOUNTAIN WITH NO WOMEN", "place": "MOUNT ATHOS · GREECE", "pin": [24.33, 40.16],
+   "vo": "Number five: Mount Athos, in Greece. It's a peninsula of 20 monasteries, home to around two thousand Orthodox monks. And women have been banned from entering for more than a thousand years. The rule is so strict, it traditionally extends to female animals too... with one famous exception: cats. Because they keep the mice away. Men can visit, but only with a special permit, and only a limited number are allowed in each day.",
+   "beats": [
+    ["@", {"p": "mount athos"}],
+    ["20 monasteries", {"p": "mount athos monastery"}],
+    ["women have been banned", {"p": "orthodox monk"}, {"text": "NO WOMEN. FOR 1,000+ YEARS."}],
+    ["female animals", {"p": "goats mountain"}],
+    ["cats", {"p": "cat sitting stone"}],
+    ["special permit", {"p": "boat greek coast"}]
+   ]},
+  {"id": "i4", "type": "item", "rank": 4, "name": "THE ISLAND THAT IS A GOD", "place": "OKINOSHIMA · JAPAN", "pin": [130.1, 34.24],
+   "vo": "Number four: Okinoshima. A tiny island between Japan and Korea, so sacred that the island itself is worshipped as a god. For centuries, women weren't allowed on it at all. Men who were permitted had to strip naked and purify themselves in the sea before landing. They couldn't take anything away. Not a single leaf or pebble. And they weren't supposed to speak about what they saw. Archaeologists found around 80,000 ancient offerings there. And in 2017, after it became a World Heritage site, it banned ordinary visitors entirely.",
+   "beats": [
+    ["@", {"ai": "A remote sacred forested island in a misty sea between Japan and Korea, a small weathered Shinto torii gate on its rocky shore, dawn light, cinematic", "key": "okinoshima"}],
+    ["worshipped as a god", {"p": "torii gate sea"}],
+    ["strip naked", {"p": "ocean waves dawn"}],
+    ["single leaf", {"p": "pebbles beach"}],
+    ["Archaeologists found", {"p": "ancient gold artifacts"}, {"stat": ["80,000", "ANCIENT OFFERINGS FOUND"]}],
+    ["World Heritage", {"use": "okinoshima"}, {"text": "CLOSED TO ALL VISITORS"}]
+   ]},
+  {"id": "cta", "type": "cta",
+   "vo": "By the way, if you're enjoying this, hit subscribe. This channel is tiny, and it honestly makes a huge difference. Okay. Number three. You do not want to go here.",
+   "beats": [["@", {"p": "barbed wire"}, {"sub": true}]]},
+  {"id": "i3", "type": "item", "rank": 3, "name": "SNAKE ISLAND", "place": "ILHA DA QUEIMADA GRANDE · BRAZIL", "pin": [-46.67, -24.49],
+   "vo": "Ilha da Queimada Grande. Better known as Snake Island. Off the coast of Brazil, this island is home to thousands of golden lancehead vipers, found nowhere else on Earth. When sea levels rose thousands of years ago, the snakes were trapped. With little to eat on the ground, they evolved to hunt birds, and their venom became fast and extremely potent, so prey can't fly away before it dies. The Brazilian Navy bans visitors. Even the lighthouse is automated, so no keeper has to live there.",
+   "beats": [
+    ["@", {"p": "island aerial brazil"}],
+    ["golden lancehead", {"ai": "A golden lancehead pit viper coiled on a mossy branch, golden-yellow scales, tongue out, island rainforest, wildlife photo, dramatic light", "key": "lancehead"}],
+    ["sea levels rose", {"p": "stormy sea waves"}],
+    ["hunt birds", {"p": "bird flying forest"}],
+    ["venom became", {"use": "lancehead"}, {"text": "FAST. POTENT. DEADLY."}],
+    ["Navy bans", {"p": "navy ship"}],
+    ["lighthouse", {"p": "lighthouse island"}]
+   ]},
+  {"id": "i2", "type": "item", "rank": 2, "name": "THE EMPEROR'S TOMB", "place": "XI'AN · CHINA", "pin": [109.25, 34.38],
+   "vo": "Number two. In 1974, farmers digging a well in China struck something hard. A clay soldier. It was part of the Terracotta Army: around 8,000 life-size warriors built to guard China's first emperor in the afterlife. But here's what most people don't know. The emperor's actual tomb has never been opened. An ancient historian wrote that it contains rivers of flowing mercury, and crossbows rigged to fire at intruders. It sounds like a legend... except soil tests around the mound show mercury levels far higher than normal. And so far, archaeologists have chosen not to open it.",
+   "beats": [
+    ["@", {"p": "terracotta army"}],
+    ["life-size warriors", {"p": "terracotta warrior"}, {"stat": ["8,000", "LIFE-SIZE WARRIORS"]}],
+    ["actual tomb", {"ai": "Inside a vast ancient Chinese imperial tomb chamber with rivers of liquid silver mercury flowing between miniature palaces, dim torchlight, cinematic, mysterious", "key": "qintomb"}],
+    ["crossbows", {"p": "ancient crossbow"}],
+    ["soil tests", {"p": "soil sample science"}],
+    ["far higher", {"use": "qintomb"}, {"text": "MERCURY: CONFIRMED"}],
+    ["chosen not to open", {"p": "chinese burial mound"}]
+   ]},
+  {"id": "i1", "type": "item", "rank": 1, "name": "NORTH SENTINEL ISLAND", "place": "ANDAMAN ISLANDS · INDIA", "pin": [92.23, 11.55],
+   "vo": "And number one: North Sentinel Island, in the Bay of Bengal. It's home to the Sentinelese, one of the last peoples on Earth with almost no contact with the modern world. Their ancestors may have lived here for tens of thousands of years. After the 2004 tsunami, an Indian helicopter flew over to check on them, and a man walked onto the beach and fired arrows at it. India now bans anyone from going near the island. The rule protects them as much as it protects us: a single common cold could devastate them. In 2018, an American who tried to land anyway was killed. They've made their answer clear. They want to be left alone.",
+   "beats": [
+    ["@", {"use": "sentinel"}],
+    ["Sentinelese", {"p": "jungle island beach"}],
+    ["tens of thousands", {"p": "dense jungle"}, {"stat": ["TENS OF 1,000s", "OF YEARS IN ISOLATION"]}],
+    ["2004 tsunami", {"p": "tsunami wave"}],
+    ["fired arrows", {"p": "bow and arrow silhouette"}],
+    ["bans anyone", {"map": {"view": "asia", "lat": 11.55, "lon": 92.23, "label": "NORTH SENTINEL — EXCLUSION ZONE", "rings": true}}],
+    ["common cold", {"p": "virus"}],
+    ["In 2018", {"p": "fishing boat sea"}],
+    ["left alone", {"use": "sentinel"}, {"text": "LEAVE THEM ALONE."}]
+   ]},
+  {"id": "outro", "type": "outro",
+   "vo": "Some places on Earth are forbidden on purpose. Others are just too deep to reach. Next up: ten things found in the ocean that shouldn't exist, including a waterfall more than three times taller than any on land. It's right here on your screen. See you down there.",
+   "beats": [
+    ["@", {"p": "deep ocean"}],
+    ["Next up", {"use": "next"}, {"end": true}]
+   ]}
+ ]
+}

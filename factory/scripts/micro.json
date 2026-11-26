@@ -1,0 +1,138 @@
+{
+ "id": "micro",
+ "title": "10 Things That Look ALIEN Under a Microscope",
+ "series": "ZOOM IN",
+ "accent": "#3DF5C8",
+ "music": "wonder",
+ "next": "congo",
+ "segments": [
+  {"id": "hook", "type": "hook",
+   "vo": "Everything around you is hiding a second world. Your bed is a feeding ground. Your face has residents that come out at night. And one creature you could find in a puddle has survived the vacuum of outer space. But the most alien thing you'll see in this video isn't out there. It's you. Let's zoom in.",
+   "beats": [
+    ["@", {"p": "microscope"}],
+    ["Your bed", {"p": "messy bed sheets"}],
+    ["Your face", {"p": "face skin close up"}],
+    ["come out at night", {"ai": "Microscope image of Demodex face mites, elongated worm-like eight-legged mites emerging from a human hair follicle, false color scanning electron micrograph, scientific, ultra detailed", "key": "demodex"}],
+    ["one creature", {"ai": "Scanning electron microscope image of a tardigrade water bear with stubby clawed legs, false color, ultra detailed, dramatic lighting, black background", "key": "tardigrade"}],
+    ["outer space", {"p": "earth from space"}],
+    ["the most alien", {"p": "human eye macro"}],
+    ["Let's zoom in", {"p": "microscope lens"}, {"title": "10 THINGS THAT LOOK ALIEN UNDER A MICROSCOPE"}]
+   ]},
+  {"id": "i10", "type": "item", "rank": 10, "name": "SAND", "place": "MAGNIFIED ~50×",
+   "vo": "Number ten: sand. Put a pinch of beach sand under a microscope, and it stops looking like dirt and starts looking like treasure. Tiny spiral shells, star-shaped skeletons, polished crystals. Many of those grains were once living creatures. And on tropical beaches, there's an even weirder source: parrotfish. They bite off chunks of coral, grind it up... and poop it out as fine white sand. A single parrotfish can make hundreds of kilos of sand every year. So that perfect white beach? A lot of it is fish poop.",
+   "beats": [
+    ["@", {"p": "white sand beach"}],
+    ["Put a pinch", {"p": "sand macro"}],
+    ["Tiny spiral shells", {"ai": "Sand grains under a microscope: tiny spiral foraminifera shells, star-shaped skeletons and polished colorful crystals, macro photography, black background, ultra detailed", "key": "sand"}],
+    ["Many of those", {"use": "sand"}, {"text": "THEY WERE ONCE ALIVE"}],
+    ["parrotfish", {"p": "parrotfish"}],
+    ["grind it up", {"p": "coral reef"}],
+    ["A single parrotfish", {"p": "tropical beach aerial"}, {"stat": ["100s OF KG", "OF SAND — PER FISH, PER YEAR"]}],
+    ["perfect white beach", {"p": "white sand beach turquoise"}, {"text": "FISH POOP."}]
+   ]},
+  {"id": "i9", "type": "item", "rank": 9, "name": "THE BLUE THAT ISN'T BLUE", "place": "BLUE MORPHO BUTTERFLY",
+   "vo": "Number nine. This butterfly is one of the bluest things in nature. But zoom in on its wing, and there's a problem. There is no blue in it. The wing is covered in thousands of tiny scales, laid like roof tiles, and each scale is carved with ridges so precise they bend light, cancelling out every colour except blue. It's called structural colour. Grind the wing into powder and the blue disappears. Because the colour was never a pigment. It was a shape.",
+   "beats": [
+    ["@", {"p": "blue morpho butterfly"}],
+    ["zoom in", {"p": "butterfly wing macro"}],
+    ["no blue", {"p": "butterfly wing scales"}, {"text": "ZERO BLUE PIGMENT"}],
+    ["tiny scales", {"ai": "Extreme microscope view of blue morpho butterfly wing scales overlapping like roof tiles, iridescent electric blue, scanning electron micrograph style, ultra detailed", "key": "morpho"}],
+    ["structural colour", {"use": "morpho"}],
+    ["Grind the wing", {"p": "blue butterfly"}],
+    ["It was a shape", {"use": "morpho"}, {"text": "IT WAS A SHAPE."}]
+   ]},
+  {"id": "i8", "type": "item", "rank": 8, "name": "THE SIX-NEEDLE BITE", "place": "MOSQUITO PROBOSCIS",
+   "vo": "Number eight. A mosquito bite feels like one tiny prick. Under a microscope, it's surgery. That 'needle' is actually a sheath holding six separate needles. Two have serrated edges that saw through your skin. Two hold the tissue apart. One pumps in saliva that stops your blood from clotting. And the last one bends around inside your skin, hunting for a blood vessel. The itchy bump afterwards? That's your immune system reacting to the saliva it left behind.",
+   "beats": [
+    ["@", {"p": "mosquito"}],
+    ["it's surgery", {"ai": "Scanning electron microscope image of a mosquito head with its long proboscis, false color, ultra detailed, black background", "key": "mosquito"}],
+    ["six separate needles", {"use": "mosquito"}, {"stat": ["6", "NEEDLES IN EVERY BITE"]}],
+    ["serrated edges", {"p": "mosquito macro"}],
+    ["stops your blood", {"p": "mosquito biting skin"}],
+    ["blood vessel", {"p": "veins hand"}],
+    ["itchy bump", {"p": "scratching arm"}]
+   ]},
+  {"id": "i7", "type": "item", "rank": 7, "name": "SKIN MADE OF TEETH", "place": "SHARK SKIN",
+   "vo": "Number seven. Run your hand along a shark, and it feels smooth one way... and like sandpaper the other. That's because shark skin is covered in millions of microscopic teeth, called dermal denticles. They're built like real teeth, with a hard outer coating, dentine, and even a pulp cavity. And they guide water so efficiently that engineers copied them for racing swimsuits, and for hospital surfaces that bacteria struggle to stick to.",
+   "beats": [
+    ["@", {"p": "shark underwater"}],
+    ["like sandpaper", {"p": "shark close up"}],
+    ["microscopic teeth", {"ai": "Scanning electron microscope image of shark skin dermal denticles, rows of tiny tooth-like ridged scales, false color, ultra detailed", "key": "denticles"}],
+    ["built like real teeth", {"use": "denticles"}, {"text": "TEETH. EVERYWHERE."}],
+    ["racing swimsuits", {"p": "swimmer race pool"}],
+    ["hospital surfaces", {"p": "hospital corridor"}]
+   ]},
+  {"id": "i6", "type": "item", "rank": 6, "name": "FEET THAT DEFY GRAVITY", "place": "GECKO TOE PADS",
+   "vo": "Number six. A gecko can sprint up a pane of glass and hang upside down by a single toe. No glue. No suction. Zoom in, and each foot is covered in hundreds of thousands of tiny hairs, and each hair splits into hundreds of even tinier tips. They get so close to the surface that molecular forces make them stick. In theory, if every hair grabbed at once, one gecko could hold up around 130 kilos. That's about the weight of two adults.",
+   "beats": [
+    ["@", {"p": "gecko glass"}],
+    ["No glue", {"p": "gecko feet"}],
+    ["each foot", {"ai": "Electron microscope image of gecko toe setae, dense forest of microscopic hairs branching into tiny spatula tips, false color, ultra detailed", "key": "setae"}],
+    ["molecular forces", {"use": "setae"}],
+    ["In theory", {"p": "gecko wall"}, {"stat": ["130 KG", "ONE GECKO COULD HOLD — IN THEORY"]}],
+    ["two adults", {"p": "gecko upside down"}]
+   ]},
+  {"id": "i5", "type": "item", "rank": 5, "name": "YOUR BED'S HIDDEN ARMY", "place": "HOUSE DUST MITES",
+   "vo": "Number five. Tonight, you'll share your bed with an army. Dust mites are too small to see, but a single mattress can be home to hundreds of thousands of them. They have no eyes. They breathe through their skin. And they eat the dead skin cells you shed every night. Here's the gross part: when you're allergic to dust, you're mostly not allergic to the mites themselves. You're allergic to their poop.",
+   "beats": [
+    ["@", {"p": "bed pillow dark"}],
+    ["Dust mites", {"ai": "Scanning electron microscope image of a house dust mite crawling on fabric fibers, false color, ultra detailed, creepy", "key": "dustmite"}],
+    ["a single mattress", {"p": "mattress"}, {"stat": ["100,000s", "OF MITES IN ONE MATTRESS"]}],
+    ["no eyes", {"use": "dustmite"}],
+    ["dead skin cells", {"p": "skin macro"}],
+    ["gross part", {"p": "sneezing"}],
+    ["their poop", {"use": "dustmite"}, {"text": "YOU'RE ALLERGIC TO THEIR POOP"}]
+   ]},
+  {"id": "i4", "type": "item", "rank": 4, "name": "MITES LIVING ON YOUR FACE", "place": "DEMODEX FOLLICULORUM",
+   "vo": "Number four. And this one's personal. Right now, there are probably tiny mites living in the pores of your face. Almost every adult has them. They're called Demodex. They spend the day head-down inside your hair follicles, eating oil. At night, they crawl out onto your skin to find a mate... then crawl back in. For decades, people claimed they had no anus. In 2022, scientists proved that's a myth. And they're becoming so dependent on us, they may one day be unable to live anywhere else.",
+   "beats": [
+    ["@", {"p": "face close up"}],
+    ["Almost every adult", {"p": "crowd people street"}],
+    ["They're called", {"use": "demodex"}],
+    ["At night", {"p": "sleeping in bed night"}],
+    ["no anus", {"use": "demodex"}, {"text": "MYTH BUSTED — 2022"}],
+    ["so dependent", {"p": "skin pores macro"}]
+   ]},
+  {"id": "cta", "type": "cta",
+   "vo": "If your skin is crawling right now, do me a favour and subscribe. It genuinely helps a small channel like this one. Because number three can survive things that would kill you instantly.",
+   "beats": [["@", {"p": "microscope laboratory"}, {"sub": true}]]},
+  {"id": "i3", "type": "item", "rank": 3, "name": "THE UNKILLABLE ANIMAL", "place": "TARDIGRADE · 'WATER BEAR'",
+   "vo": "Meet the tardigrade, or 'water bear'. An eight-legged animal, most barely half a millimetre long. Dry it out, and it curls into a tiny ball and basically switches life off. In that state, it can survive temperatures close to absolute zero, and radiation hundreds of times stronger than what would kill you. In 2007, scientists sent tardigrades into orbit and exposed them to the vacuum of space. Some survived. Researchers in Japan even revived tardigrades that had been frozen for 30 years.",
+   "beats": [
+    ["@", {"use": "tardigrade"}],
+    ["Dry it out", {"p": "moss macro"}],
+    ["absolute zero", {"p": "frozen ice"}],
+    ["radiation", {"p": "radiation warning"}],
+    ["In 2007", {"p": "rocket launch"}],
+    ["Some survived", {"p": "earth from orbit"}, {"text": "THEY SURVIVED SPACE"}],
+    ["Researchers in Japan", {"p": "antarctica ice"}, {"stat": ["30 YEARS", "FROZEN — THEN BROUGHT BACK TO LIFE"]}]
+   ]},
+  {"id": "i2", "type": "item", "rank": 2, "name": "THE ALIEN ROBOT", "place": "BACTERIOPHAGE",
+   "vo": "Number two. This looks like a lunar lander. It's actually a virus called a bacteriophage, and it only hunts bacteria. It lands on its target, grips it with spindly legs, and injects its DNA like a syringe. Within about half an hour, the bacterium becomes a factory, building new phages until it bursts. There are an estimated ten million trillion trillion of them on Earth. More than every star in the observable universe. And doctors have started using them to save patients from superbugs that antibiotics can no longer kill.",
+   "beats": [
+    ["@", {"ai": "A bacteriophage virus that looks like a lunar lander, landing with spindly legs on the surface of a bacterium, electron microscope style render, false color, ultra detailed", "key": "phage"}],
+    ["lands on its target", {"use": "phage"}],
+    ["becomes a factory", {"p": "bacteria microscope"}],
+    ["ten million trillion", {"p": "galaxy stars"}, {"stat": ["10³¹", "PHAGES ON EARTH — MORE THAN STARS IN THE UNIVERSE"]}],
+    ["superbugs", {"p": "pills antibiotics"}],
+    ["no longer kill", {"p": "doctor hospital"}]
+   ]},
+  {"id": "i1", "type": "item", "rank": 1, "name": "YOU", "place": "THE HUMAN BODY",
+   "vo": "And number one... is you. Right now, inside your body, there are roughly 38 trillion bacteria. About as many as your own human cells. Every second, your bone marrow builds around two million new red blood cells. Your skin sheds tens of thousands of dead cells every minute: food for the mites in your bed. And on your face, Demodex are quietly waiting for nightfall. Under a microscope, there's no clear line where 'you' ends and everything else begins. The most alien world on this list... has been you all along.",
+   "beats": [
+    ["@", {"p": "human silhouette"}],
+    ["inside your body", {"p": "bacteria colony"}, {"stat": ["38 TRILLION", "BACTERIA LIVING IN YOU"]}],
+    ["Every second", {"ai": "Red blood cells flowing through a blood vessel, microscopic, cinematic, deep crimson, ultra detailed", "key": "rbc"}],
+    ["Your skin sheds", {"p": "skin texture macro"}],
+    ["on your face", {"use": "demodex"}],
+    ["no clear line", {"p": "human eye macro"}],
+    ["has been you", {"p": "person mirror reflection"}, {"text": "THE ALIEN WAS YOU."}]
+   ]},
+  {"id": "outro", "type": "outro",
+   "vo": "If this changed how you see your own bed tonight, you'll want to see the opposite extreme. A jungle hiding things science still can't explain. The Congo. That video is right here on your screen. See you there.",
+   "beats": [
+    ["@", {"p": "microscope dark"}],
+    ["the opposite extreme", {"use": "next"}, {"end": true}]
+   ]}
+ ]
+}

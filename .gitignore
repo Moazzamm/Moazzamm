@@ -1,0 +1,7 @@
+factory/node_modules/
+factory/assets/
+factory/public/
+factory/out/
+factory/*.log
+videos/*.mp4
+__pycache__/
