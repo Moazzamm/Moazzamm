@@ -13,21 +13,22 @@ A dam that slowed Earth's rotation, islands made from sea sand, a building where
 
 ⏱ CHAPTERS
 0:00 Intro
-0:26 #10 Islands Made To Order
-0:55 #9 See The Sunset Twice
-1:19 #8 The 164-Kilometre Bridge
-1:41 #7 Through The Alps
-2:05 #6 The Dam That Slowed The Earth
-2:39 #5 The Shortcut That Cost Thousands Of Lives
-3:36 #4 Meeting Under The Sea
-4:17 #3 A House In Space
-4:45 #2 The Coldest Place In The Universe
-5:18 #1 The Telescope That Couldn'T Fail
+0:22 #10 Islands Made To Order
+0:51 #9 See The Sunset Twice
+1:15 #8 The 164-Kilometre Bridge
+1:37 #7 Through The Alps
+2:01 #6 The Dam That Slowed The Earth
+2:34 #5 The Shortcut That Cost Thousands Of Lives
+3:05 #4 Meeting Under The Sea
+3:42 #3 A House In Space
+4:10 #2 The Coldest Place In The Universe
+4:43 #1 The Telescope That Couldn'T Fail
 
 ▶ WATCH NEXT: 10 Animals With REAL Superpowers
 
 Facts were checked against published research and reputable sources. Spotted a mistake? Tell us in the comments and we'll pin the correction.
 
+🎬 Stock footage via Pexels (pexels.com)
 📷 Photos via Unsplash: Aaron Burden, Ahmed Aldaie, Ahmed Galal, Alex Pagliuca, Antonio Vivace, Brandon Style, Brian J. Tromp, CHUTTERSNAP, Chopsticks on the Loose, Danist Soh, Dave LZ, David Rodrigo, Diane Picchiottino, Dong Zhang, Eamonn Wang, Francisco Kemeny, Frederic Köberl, Haris khan, Jeremy Thomas, Jhonwayne Pumaras, Josh Olalde, Junyoung Sung, Kevin JD, Kevin Stadnyk, Mahad Aamir, Marco Meyer, Mohamed Ziyan, NASA, NASA Hubble Space Telescope, Nick Fewings, Oliver Potter, Osama Elsayed, Prateek Srivastava, Rapha Wilde, Ricardo Gomez Angel, Rikin Katyal, Skifo, SpaceX, Tahamie Farooqui, Thilina Alagiyawanna, Thomas Haas, Yux Xiang, ZQ Lee, Zdeněk Macháček, shraga kopstein
 🎵 Original soundtrack produced for this channel.
 ```

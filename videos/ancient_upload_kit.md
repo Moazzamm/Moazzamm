@@ -13,21 +13,22 @@ A temple built 6,000 years before Stonehenge by people who hadn't invented farmi
 
 ⏱ CHAPTERS
 0:00 Intro
-0:27 #10 The Heads Have Bodies
-0:59 #9 Drawings For The Gods
-1:29 #8 Walls No Blade Can Enter
-1:58 #7 The Stones Too Big To Move
-2:32 #6 The Stone From 700 Km Away
-2:58 #5 The City Underground
-3:30 #4 The Great Pyramid'S Secret
-4:00 #3 The Book No One Can Read
-4:22 #2 The Silent Civilisation
-4:49 #1 The Temple That Rewrote History
+0:23 #10 The Heads Have Bodies
+0:56 #9 Drawings For The Gods
+1:25 #8 Walls No Blade Can Enter
+1:54 #7 The Stones Too Big To Move
+2:28 #6 The Stone From 700 Km Away
+2:54 #5 The City Underground
+3:23 #4 The Great Pyramid'S Secret
+3:53 #3 The Book No One Can Read
+4:15 #2 The Silent Civilisation
+4:42 #1 The Temple That Rewrote History
 
 ▶ WATCH NEXT: 10 Megaprojects That Shouldn't Be Possible
 
 Facts were checked against published research and reputable sources. Spotted a mistake? Tell us in the comments and we'll pin the correction.
 
+🎬 Stock footage via Pexels (pexels.com)
 📷 Photos via Unsplash: 7500 RPM, AJOY DAS, Abdelrhman Allam, Adam Young, Afonso Azevedo Neves, Akbar Nemati, Aleksandra Sapozhnikova, Aleksei Filimonov, Alexander Schimmeck, Ankit Sood, Annie Spratt, Armand Mckenzie, BHLNZ - Biodiversity Heritage Library NZ, Boudewijn Huysmans, Chloe Christine, Danny Greenberg, Efe Kekikciler, Emerson Moretto, FERNANDO TRIVIÑO, Frank Samol, Fred Nassar, Hal Cooks, Hongbin, Hulki Okan Tabak, Igor Sporynin, JP Desvigne, Jack B, Jeremy Bishop, Jonathan Francisca, K Munggaran, K. Mitch Hodge, Marija Zaric, Mario Gogh, Mark Rasmuson, Markus Kammermann, Michael Starkie, Nada Habashy, Niketh Vellanki, Noman Bukhari, Nunzio Guerrera, Oliver Klamt, Osama Elsayed, Rafael Peier, Raph Howald, Rob Tol, Ruben Hanssen, Sheila C, Sophie Laurent, Suzi Kim, Tanner Mardis, Timur Garifov, Willian Justen de Vasconcellos, Yosuke Ota, Yuheng Mei, yeswanth M
 🎵 Original soundtrack produced for this channel.
 ```

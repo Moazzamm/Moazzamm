@@ -21,18 +21,34 @@ def foot(j):
     return 1
 
 
+def _ok(path, dur):
+    import subprocess as sp
+    if not os.path.exists(path) or os.path.getsize(path) < 10000:
+        return False
+    r = sp.run(["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", path], capture_output=True, text=True)
+    try:
+        return float(r.stdout.strip()) >= dur - 0.25
+    except ValueError:
+        return False
+
+
 def job(j):
+    j = dict(j); final = j["out"]; j["out"] = final + ".part.mp4"
+    if _ok(final, j["dur"]):
+        return 0
+    r = _job(j)
+    os.replace(j["out"], final)
+    return r
+
+
+def _job(j):
     import parallax
     if j.get("type") == "foot":
-        if os.path.exists(j["out"]) and os.path.getsize(j["out"]) > 10000:
-            return 0
         if foot(j):
             return 1
         fb = j["fallback"]
         parallax.render(fb["img"], j["out"], j["dur"], fb["preset"], 1.0, depth_cache=fb["img"] + ".depth.png")
         return 1
-    if os.path.exists(j["out"]) and os.path.getsize(j["out"]) > 10000:
-        return 0
     parallax.render(j["img"], j["out"], j["dur"], j["preset"], j.get("strength", 1.0), depth_cache=j["img"] + ".depth.png")
     return 1
 

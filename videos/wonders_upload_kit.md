@@ -28,6 +28,7 @@ A naturally bubblegum-pink lake, a rainbow mountain that was hidden under ice fo
 
 Facts were checked against published research and reputable sources. Spotted a mistake? Tell us in the comments and we'll pin the correction.
 
+🎬 Stock footage via Pexels (pexels.com)
 📷 Photos via Unsplash: ActionVance, Alexander Schimmeck, Alexis Magnone, Alvaro Palacios, Andrew Svk, B, Chengbo Zheng, Christian Ruehmer, Dattatreya Patra, Dione Film, Eddie Kiszka, Gislane Dijkstra, Iain, Jonathan Phelps, Joshua Sortino, Ken Cheung, Lesly Derksen, Luca Calderone, Léo Castro, Marcus Dall Col, Matheus Oliveira, Matthew Cabret, Nicole Geri, Patrick Fore, RAJA G N, Robynne O, Samuel Scrimshaw, Sergio Kian, Sharisse Bullock, Sifan Liu, Urlaubstracker, gabriel xu, m c
 🎵 Original soundtrack produced for this channel.
 ```

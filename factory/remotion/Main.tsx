@@ -356,7 +356,6 @@ export const Main: React.FC<any> = (tl) => {
           <div style={{position: 'absolute', left: 0, right: 0, bottom: 0, height: h, background: '#000'}} /></>;
       })()}
       {!inCard && !vis.some((b) => b.fx?.title && t >= b.s) && <Captions caps={tl.captions} t={t} accent={tl.accent} lift={beats.some((b) => b.fx?.title && t < b.s)} />}
-      <AbsoluteFill style={{backgroundImage: `url(${staticFile('grain.png')})`, backgroundPosition: `${(frame * 137) % 512}px ${(frame * 291) % 512}px`, opacity: 0.045, mixBlendMode: 'overlay'}} />
     </AbsoluteFill>
   );
 };

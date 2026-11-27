@@ -19,15 +19,16 @@ A waterfall under the sea three times taller than any on land, a lake at the bot
 1:49 #7 The 400-Year-Old Shark
 2:13 #6 The Snail With Iron Armour
 2:34 #5 Trash At The Bottom Of The World
-2:52 #4 The 2,000-Year-Old Computer
-3:29 #3 The Lost Continent
-3:54 #2 The Immortal Jellyfish
-4:15 #1 Dark Oxygen
+2:53 #4 The 2,000-Year-Old Computer
+3:30 #3 The Lost Continent
+3:56 #2 The Immortal Jellyfish
+4:17 #1 Dark Oxygen
 
 ▶ WATCH NEXT: 10 Things That Look ALIEN Under a Microscope
 
 Facts were checked against published research and reputable sources. Spotted a mistake? Tell us in the comments and we'll pin the correction.
 
+🎬 Stock footage via Pexels (pexels.com)
 📷 Photos via Unsplash: Abdul Basit, Andreas Gäbler, Andrzej Kryszpiniuk, Anna Evans, Annie Spratt, Bro Takes Photos, Chris Münch, Claudio Guglieri, Clayton Tonna, Conor Sexton, Cristian Palmer, Dan Freeman, Dave Meckler, Dorian Mongel, Elizabeth George, Emma Francis, Erick Morales Oyola, Europeana, Faruk Erkin, Gary Saldana, Gerald Schömbs, John Salzarulo, Jonathan Borba, Jongsun Lee, Kai Dahms, Karo K., Katarzyna Urbanek, Laura Ockel, Logan Gutierrez, Marat Gilyadzinov, Marcos Paulo Prado, Mathieu Turle, Michael Benz, NASA, NOAA, Naja Bertolt Jensen, Navid Moazzez, Nik Shuliahin, Pierre Goiffon, Sarah Lee, Smithsonian, Sophie Turner, Teddy O, ThisisEngineering, Tim Mossholder, Tobias Keller, Tormius, Torsten Dederichs, Yosh Ginsu, samsommer, will dornelles, wu yi, Ömer Faruk Bekdemir
 🎵 Original soundtrack produced for this channel.
 ```

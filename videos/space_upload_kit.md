@@ -28,6 +28,7 @@ On Friday the 13th, April 2029, an asteroid will pass closer to Earth than our T
 
 Facts were checked against published research and reputable sources. Spotted a mistake? Tell us in the comments and we'll pin the correction.
 
+🎬 Stock footage via Pexels (pexels.com)
 📷 Photos via Unsplash: Andrew Hughes, Benjamin Voros, Benjamin Wedemeyer, BoliviaInteligente, Braňo, Carl Wang, Color Crescent, Conrad Crawford, Daniel Kraus, David Clode, Dns Dgn, Graham Holtshausen, Greg Rakozy, Harsh Kumar, Heather Newsom, Jake Weirick, Javier Miranda, Jay Rembert, Jeremy Perkins, Jeremy Thomas, Ken Cheung, Kevin Stadnyk, Mara F, Matteo Curcio, NASA, NASA Hubble Space Telescope, Nastya Dulhiier, Phil Botha, Planet Volumes, Rajiv Bajaj, Renato Ulpiano, Rohit Tandon, Shot by Cerqueira, SpaceX, Tetiana GRY, Vimal S, Vincentiu Solomon, rupixen, yared lopez
 🎵 Original soundtrack produced for this channel.
 ```

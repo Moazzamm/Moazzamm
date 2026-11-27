@@ -13,22 +13,23 @@ There are mites living in the pores of your face, an animal that survived the va
 
 ⏱ CHAPTERS
 0:00 Intro
-0:19 #10 Sand
-0:52 #9 The Blue That Isn'T Blue
-1:22 #8 The Six-Needle Bite
-1:54 #7 Skin Made Of Teeth
-2:22 #6 Feet That Defy Gravity
-2:50 #5 Your Bed'S Hidden Army
-3:15 #4 Mites Living On Your Face
-4:01 #3 The Unkillable Animal
-4:33 #2 The Alien Robot
-5:06 #1 You
+0:20 #10 Sand
+0:54 #9 The Blue That Isn'T Blue
+1:24 #8 The Six-Needle Bite
+1:55 #7 Skin Made Of Teeth
+2:23 #6 Feet That Defy Gravity
+2:52 #5 Your Bed'S Hidden Army
+3:18 #4 Mites Living On Your Face
+4:04 #3 The Unkillable Animal
+4:36 #2 The Alien Robot
+5:09 #1 You
 
 ▶ WATCH NEXT: The Congo Is Hiding Things Science Can't Explain
 
 Facts were checked against published research and reputable sources. Spotted a mistake? Tell us in the comments and we'll pin the correction.
 
-📷 Photos via Unsplash: Abby Santurbane, Amber Wolfe, Anirudh, Bioscience Image Library by Fayette Reynolds, Clint Patterson, Colin Lloyd, Damon On Road, David Clode, Derek Oyen, Dmytro Vynohradov, Emily Horne, Flavie Martin, Garrett Schmid, Hush Naidoo Jade Photography, Indra Projects, James Tiono, Jeremy Thomas, Joe Shields, Katelyn G, Konrad Koller, Linus Belanger, Logan Gutierrez, Luis Quintero, MIROV, Maddison Lavanda, Marcus Ng, Markus Spiske, Michael Schiffer, Michal Mrozek, Mike Uderevsky, NASA, NEOM, National Institute of Allergy and Infectious Diseases, Nattu Adnan, Nicolas Hoizey, Nora Jane Long, Oleksandr Sushko, Olga Thelavart, Online Marketing, Pauline Bernfeld, Quentin Schulz, Quilia, RODRIGO GONZALEZ, Rapha Wilde, Robert Schwarz, Roberto Sorin, Sebastien, Shakti Rajpurohit, Sirisvisual, SpaceX, Syed Ali, Towfiqu barbhuiya, Ty Carlson, Utsman Media, Vitaly Gariev, Yassine Khalfalli, Zulfugar Karimov, engin akyurt, masakazu sasaki, v2osk, Михаил Секацкий
+🎬 Stock footage via Pexels (pexels.com)
+📷 Photos via Unsplash: Abby Santurbane, Amber Wolfe, Anirudh, Bioscience Image Library by Fayette Reynolds, Clint Patterson, Colin Lloyd, Damon On Road, David Clode, Derek Oyen, Dmytro Vynohradov, Emily Horne, Flavie Martin, Garrett Schmid, Hush Naidoo Jade Photography, Indra Projects, James Tiono, Jeremy Thomas, Joe Shields, Katelyn G, Konrad Koller, Linus Belanger, Logan Gutierrez, Luis Quintero, MIROV, Maddison Lavanda, Marcus Ng, Markus Spiske, Michael Schiffer, Michal Mrozek, Mike Uderevsky, NASA, NEOM, National Institute of Allergy and Infectious Diseases, Nattu Adnan, Nora Jane Long, Oleksandr Sushko, Olga Thelavart, Online Marketing, Pauline Bernfeld, Quentin Schulz, Quilia, RODRIGO GONZALEZ, Rapha Wilde, Robert Schwarz, Roberto Sorin, Sebastien, Shakti Rajpurohit, Sirisvisual, SpaceX, Syed Ali, Towfiqu barbhuiya, Ty Carlson, Utsman Media, Vitaly Gariev, Yassine Khalfalli, Zulfugar Karimov, engin akyurt, masakazu sasaki, v2osk, Михаил Секацкий
 🎵 Original soundtrack produced for this channel.
 ```
 

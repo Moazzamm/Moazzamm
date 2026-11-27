@@ -189,8 +189,8 @@ def intensity_curve(tl, n):
     for b in tl["beats"]:
         if (b.get("fx") or {}).get("sub"):
             I[int(b["s"] * SR):int(b["e"] * SR)] = 0.35
-    k = int(1.5 * SR)
-    return np.convolve(I, np.ones(k) / k, mode="same")
+    from scipy.ndimage import uniform_filter1d
+    return uniform_filter1d(I, size=int(1.5 * SR), mode="nearest")  # O(n) moving average
 
 
 def score(tl, mood):
