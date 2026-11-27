@@ -15,7 +15,7 @@ def review(vid):
     subprocess.run(["ffmpeg", "-loglevel", "error", "-y", "-i", src, "-vf", "scale=-2:480", "-r", "15", "-c:v", "libx264", "-crf", "30",
                     "-preset", "veryfast", "-c:a", "aac", "-b:a", "64k", low], check=True)
     f = gem.upload(low, "video/mp4")
-    for m in ["gemini-flash-latest", "gemini-3-flash-preview", "gemini-flash-lite-latest"]:
+    for m in ["gemini-3.6-flash", "gemini-3.1-flash-lite", "gemini-flash-lite-latest", "gemini-3.5-flash"]:
         try:
             out = gem.text(Q, model=m, files=[{"mimeType": "video/mp4", "uri": f["uri"]}])
             open(f"out/{vid}_review.md", "w").write(f"model: {m}\n\n" + out)

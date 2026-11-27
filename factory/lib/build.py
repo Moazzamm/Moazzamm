@@ -131,7 +131,7 @@ def build(vid):
                     bs = vs + words[i]["s"] - 0.12
             if seg_beats and bs < seg_beats[-1]["s"] + 0.9:
                 bs = seg_beats[-1]["s"] + 0.9
-            beat = {"s": round(bs, 3), "seg": seg["id"], "fx": fx}
+            beat = {"s": round(bs, 3), "seg": seg["id"], "fx": fx, "id": bid}
             if "map" in vis:
                 beat["map"] = vis["map"]
                 sfx.append({"name": "whoosh", "t": bs - 0.1, "gain": 0.3})
@@ -236,8 +236,38 @@ def build(vid):
     if os.environ.get("CLIPS"):
         os.makedirs(f"{pub}/clips", exist_ok=True)
         jobs_px = []
+        fpath = f"{ROOT}/assets/{vid}/footage.json"
+        foot = json.load(open(fpath)) if os.path.exists(fpath) else {}
+        os.makedirs(f"{pub}/foot", exist_ok=True)
+        pcp = f"{ROOT}/assets/{vid}/photocheck.json"
+        pc = json.load(open(pcp)) if os.path.exists(pcp) else {}
+        ikey = lambda x: x.get("img", "").split("/")[-1].rsplit(".", 1)[0]
+        for b in beats:  # swap wrong-subject photos for a verified visual from the same item
+            if not b.get("img") or b.get("map") or foot.get(b.get("id")) or pc.get(ikey(b)) != "wrong":
+                continue
+            good = [x for x in beats if x is not b and x["seg"] == b["seg"] and x.get("img") and not x.get("map")
+                    and (foot.get(x.get("id")) or pc.get(ikey(x)) == "ok")]
+            if not good:
+                good = [x for x in beats if x is not b and x.get("img") and foot.get(x.get("id"))
+                        and abs(x["s"] - b["s"]) < 40]
+            if good:
+                g = min(good, key=lambda x: abs(x["s"] - b["s"]))
+                if foot.get(g.get("id")):
+                    b["alias_foot"] = g["id"]
+                else:
+                    b["img"] = g["img"]
+                b["swapped"] = True
         for i, b in enumerate(beats):
             if not b.get("img") or (b.get("fx") or {}).get("end"):
+                continue
+            f = foot.get(b.get("id")) or foot.get(b.get("alias_foot"))
+            if f and not b.get("scope"):
+                d = round(b["e"] - b["s"] + 0.45, 2)
+                clip = f"{vid}/foot/{b['id']}_{int(d * 100)}.mp4"
+                b["clip"] = clip
+                jobs_px.append({"type": "foot", "src": f["file"], "out": f"{ROOT}/public/{clip}", "dur": d,
+                                "start_frac": 0.75 if b.get("alias_foot") else 0.3,
+                                "fallback": {"img": f"{ROOT}/public/{b['img']}", "preset": "push"}})
                 continue
             preset = "push" if b["seg"] == "hook" or b.get("fx") else PRESET_CYCLE[i % len(PRESET_CYCLE)]
             d = round(b["e"] - b["s"] + 0.45, 2)

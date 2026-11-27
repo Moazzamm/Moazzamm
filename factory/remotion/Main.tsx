@@ -160,7 +160,7 @@ const Compare: React.FC<{rows: [string, number][]; unit: string; t: number; acce
             <div style={{fontFamily: 'Inter', fontWeight: 900, fontSize: 40, color: '#fff', letterSpacing: 3, marginBottom: 14, opacity: interpolate(t, [i * 0.6, 0.3 + i * 0.6], [0, 1], C)}}>{lab}</div>
             <div style={{display: 'flex', alignItems: 'center', gap: 30}}>
               <div style={{height: 90, width: (1300 * val / max) * p, background: hl ? accent : '#6b7a8c', boxShadow: hl ? `0 0 30px ${accent}` : 'none'}} />
-              <div style={{fontFamily: 'Anton', fontSize: 80, color: hl ? accent : '#fff'}}>{Math.round(val * p).toLocaleString('en-US')} {unit}</div>
+              <div style={{fontFamily: 'Anton', fontSize: 80, color: hl ? accent : '#fff'}}>{(val < 50 ? val : Math.max(1, Math.round(val * p))).toLocaleString('en-US')} {unit}</div>
             </div>
           </div>
         );
@@ -272,30 +272,22 @@ const Captions: React.FC<{caps: any[]; t: number; accent: string; lift?: boolean
 };
 
 const Subscribe: React.FC<{t: number; accent: string; d: number}> = ({t, accent, d}) => {
-  const a = interpolate(t, [0, 0.5], [0, 1], {...C, easing: EO});
-  const out = interpolate(t, [d - 0.4, d], [1, 0], C);
-  const clicked = t > 1.6;
-  const cx = interpolate(t, [0.4, 1.5], [1500, 1085], {...C, easing: EO}), cy = interpolate(t, [0.4, 1.5], [900, 640], {...C, easing: EO});
-  const press = t > 1.5 && t < 1.7 ? 0.92 : 1;
-  const bar = interpolate(t, [1.8, 3.2], [0, 0.02], {...C, easing: EO});
+  const a = interpolate(t, [0.2, 0.7], [0, 1], {...C, easing: EO});
+  const out = interpolate(t, [Math.min(d, 6) - 0.5, Math.min(d, 6)], [1, 0], C);
+  const clicked = t > 1.7;
+  const cx = interpolate(t, [0.6, 1.5], [760, 560], {...C, easing: EO}), cy = interpolate(t, [0.6, 1.5], [1040, 960], {...C, easing: EO});
+  const press = t > 1.55 && t < 1.75 ? 0.92 : 1;
   return (
     <AbsoluteFill style={{opacity: a * out}}>
-      <AbsoluteFill style={{background: 'rgba(0,0,0,0.55)'}} />
-      <div style={{position: 'absolute', left: 460, top: 360, width: 1000, padding: 44, background: 'rgba(15,15,18,0.92)', borderRadius: 26,
-        transform: `translateY(${(1 - a) * 60}px)`, border: '2px solid rgba(255,255,255,0.08)'}}>
-        <div style={{display: 'flex', alignItems: 'center', gap: 30}}>
-          <div style={{width: 110, height: 110, borderRadius: 55, background: accent, display: 'flex', alignItems: 'center', justifyContent: 'center', fontFamily: 'Anton', fontSize: 58, color: '#111'}}>?!</div>
-          <div style={{flex: 1, fontFamily: 'Inter', fontWeight: 900, fontSize: 44, color: '#fff'}}>Help us reach 10,000</div>
-          <div style={{transform: `scale(${press})`, background: clicked ? '#3a3a3a' : '#ff0033', color: '#fff', fontFamily: 'Inter', fontWeight: 900,
-            fontSize: 34, padding: '20px 34px', borderRadius: 40, letterSpacing: 1}}>{clicked ? 'SUBSCRIBED ✓' : 'SUBSCRIBE'}</div>
-        </div>
-        <div style={{marginTop: 36, height: 22, background: 'rgba(255,255,255,0.12)', borderRadius: 11, overflow: 'hidden'}}>
-          <div style={{width: `${Math.max(1.5, bar * 100)}%`, height: '100%', background: accent}} />
-        </div>
-        <div style={{display: 'flex', justifyContent: 'space-between', marginTop: 12, fontFamily: 'Inter', fontWeight: 800, fontSize: 26, color: '#aaa'}}>
-          <span>ROAD TO 10K</span><span>YOU'RE PART OF IT</span></div>
+      <div style={{position: 'absolute', left: 70, bottom: 190, display: 'flex', alignItems: 'center', gap: 22, padding: '18px 26px 18px 18px',
+        background: 'rgba(12,12,14,0.82)', borderRadius: 60, transform: `translateX(${(1 - a) * -60}px)`, border: '1px solid rgba(255,255,255,0.12)'}}>
+        <div style={{width: 74, height: 74, borderRadius: 37, background: accent, display: 'flex', alignItems: 'center', justifyContent: 'center',
+          fontFamily: 'Anton', fontSize: 38, color: '#111'}}>?!</div>
+        <div style={{fontFamily: 'Inter', fontWeight: 900, fontSize: 30, color: '#fff', lineHeight: 1.15}}>Help us hit 10,000<div style={{fontWeight: 700, fontSize: 22, color: '#bbb'}}>new facts every week</div></div>
+        <div style={{transform: `scale(${press})`, background: clicked ? '#3a3a3a' : '#ff0033', color: '#fff', fontFamily: 'Inter', fontWeight: 900,
+          fontSize: 26, padding: '16px 26px', borderRadius: 40}}>{clicked ? 'SUBSCRIBED ✓' : 'SUBSCRIBE'}</div>
       </div>
-      <svg style={{position: 'absolute', left: cx, top: cy}} width={60} height={60} viewBox="0 0 24 24"><path d="M3 2l7 19 2.5-7.5L20 11z" fill="#fff" stroke="#000" strokeWidth={1.2} /></svg>
+      <svg style={{position: 'absolute', left: cx, top: cy}} width={46} height={46} viewBox="0 0 24 24"><path d="M3 2l7 19 2.5-7.5L20 11z" fill="#fff" stroke="#000" strokeWidth={1.2} /></svg>
     </AbsoluteFill>
   );
 };

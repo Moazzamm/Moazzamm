@@ -80,6 +80,7 @@ def make(vid):
 
 Facts were checked against published research and reputable sources. Spotted a mistake? Tell us in the comments and we'll pin the correction.
 
+🎬 Stock footage via Pexels (pexels.com)
 📷 Photos via Unsplash: {', '.join(credits)}
 🎵 Original soundtrack produced for this channel.
 """
