@@ -6,3 +6,4 @@ factory/*.log
 videos/*.mp4
 __pycache__/
 videos/**/*.mp4
+videos/zips/
