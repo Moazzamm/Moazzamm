@@ -1,5 +1,5 @@
 import React from 'react';
-import {AbsoluteFill, Img, staticFile, useCurrentFrame, useVideoConfig, interpolate, Easing, spring} from 'remotion';
+import {AbsoluteFill, Img, staticFile, useCurrentFrame, useVideoConfig, interpolate, Easing, spring, Sequence, OffthreadVideo} from 'remotion';
 import '@fontsource/anton';
 import '@fontsource/inter/700.css';
 import '@fontsource/inter/800.css';
@@ -16,10 +16,15 @@ type Item = {rank: number; name: string; place: string; s: number; e: number};
 const Media: React.FC<{b: Beat; t: number; accent: string}> = ({b, t, accent}) => {
   const p = interpolate(t, [b.s - 0.25, b.e], [0, 1], C);
   const pe = Easing.inOut(Easing.sin)(p);
-  const z = lerp(b.k.z0, b.k.z1, pe) * interpolate(t, [b.s - 0.25, b.s + 0.35], [1.07, 1], {...C, easing: EO});
+  const z = lerp(b.k.z0, b.k.z1, pe);
   const x = lerp(b.k.x0, b.k.x1, pe), y = lerp(b.k.y0, b.k.y1, pe);
   if (b.map) return <Globe m={b.map} t={t - b.s} dur={b.e - b.s} accent={accent} />;
   if (!b.img) return <AbsoluteFill style={{background: 'radial-gradient(circle at 50% 40%, #142235, #05070c 75%)'}} />;
+  if ((b as any).clip && !(b as any).scope) return (
+    <AbsoluteFill style={{background: '#000'}}>
+      <OffthreadVideo src={staticFile((b as any).clip)} muted style={{width: '100%', height: '100%', objectFit: 'cover'}} />
+    </AbsoluteFill>
+  );
   if ((b as any).scope) {
     const lt = t - b.s;
     const scan = ((lt * 0.45) % 1) * 100;
@@ -50,6 +55,27 @@ const Media: React.FC<{b: Beat; t: number; accent: string}> = ({b, t, accent}) =
     <AbsoluteFill style={{overflow: 'hidden', background: '#000'}}>
       <Img src={staticFile(b.img)} style={{width: '100%', height: '100%', objectFit: 'cover',
         transform: `scale(${z}) translate(${x}%, ${y}%)`, transformOrigin: `${50 + (b.k.fx ?? 0)}% ${50 + (b.k.fy ?? 0)}%`}} />
+    </AbsoluteFill>
+  );
+};
+
+
+const PARTS = Array.from({length: 64}, (_, i) => ({x: (i * 7919) % 1920, y: (i * 104729) % 1080, s: 1.5 + ((i * 13) % 5) * 0.8,
+  v: 6 + ((i * 17) % 20), ph: ((i * 31) % 100) / 100, o: 0.12 + ((i * 37) % 45) / 100}));
+const Particles: React.FC<{kind: string | null; t: number}> = ({kind, t}) => {
+  if (!kind) return null;
+  return (
+    <AbsoluteFill style={{pointerEvents: 'none'}}>
+      {PARTS.map((p, i) => {
+        let x = p.x, y = p.y, o = p.o, s = p.s;
+        if (kind === 'bubbles') { y = ((p.y - t * p.v * 4) % 1180 + 1180) % 1180 - 50; x = p.x + Math.sin(t * 1.3 + p.ph * 6) * 12; s = p.s * 2.2; }
+        else if (kind === 'stars') { o = p.o * (0.55 + 0.45 * Math.sin(t * (1 + p.ph * 2) + p.ph * 9)); s = p.s * 0.7; }
+        else { x = ((p.x + t * p.v * 1.4) % 1980 + 1980) % 1980 - 30; y = ((p.y - t * p.v * 0.8) % 1140 + 1140) % 1140 - 30 + Math.sin(t * 0.7 + p.ph * 6) * 10; if (kind === 'specks') { s = p.s * 0.8; } }
+        const col = kind === 'bubbles' ? '210,240,255' : kind === 'specks' ? '190,255,240' : kind === 'stars' ? '255,255,255' : '255,236,210';
+        return <div key={i} style={{position: 'absolute', left: x, top: y, width: s * 2, height: s * 2, borderRadius: '50%', opacity: o,
+          background: kind === 'bubbles' ? 'transparent' : `radial-gradient(circle, rgba(${col},0.95) 0%, rgba(${col},0) 70%)`,
+          border: kind === 'bubbles' ? `1px solid rgba(${col},0.55)` : 'none'}} />;
+      })}
     </AbsoluteFill>
   );
 };
@@ -303,10 +329,13 @@ export const Main: React.FC<any> = (tl) => {
   return (
     <AbsoluteFill style={{background: '#000'}}>
       {vis.map((b) => (
-        <AbsoluteFill key={b.s} style={{opacity: interpolate(t, [b.s - 0.25, b.s + 0.02], [0, 1], C)}}>
-          <Media b={b} t={t} accent={tl.accent} />
-        </AbsoluteFill>
+        <Sequence key={b.s} from={Math.max(0, Math.round((b.s - 0.25) * fps))} durationInFrames={Math.max(1, Math.round((b.e - b.s + 0.45) * fps))} layout="none">
+          <AbsoluteFill style={{opacity: interpolate(t, [b.s - 0.25, b.s + 0.02], [0, 1], C)}}>
+            <Media b={b} t={t} accent={tl.accent} />
+          </AbsoluteFill>
+        </Sequence>
       ))}
+      <Particles kind={tl.particles} t={t} />
       <AbsoluteFill style={{background: 'radial-gradient(ellipse at center, rgba(0,0,0,0) 55%, rgba(0,0,0,0.6) 100%)'}} />
       {vis.filter((b) => b.fx && t >= b.s).map((b) => {
         const lt = t - b.s, d = b.e - b.s, fx = b.fx;

@@ -6,7 +6,7 @@ from voice import _norm
 import audio
 
 PUNCT = set(".,?!:;—")
-MAX_BEAT = 4.8
+MAX_BEAT = 99.0 if os.environ.get("CLIPS") else 4.8
 
 
 OVERRIDE = {"congo/ai_ghostfish": ["-modulate", "115,0", "-fill", "#bfe3ff", "-colorize", "12"]}
@@ -22,7 +22,12 @@ def grade(src, dst, mood):
                     "-quality", "88", dst], check=True)
 
 
+PRESET_CYCLE = ["push_l", "push", "push_r", "rise", "push_l", "drift_r", "push", "push_r", "drift_l"]
+
+
 def motion(rng, detail=False):
+    if os.environ.get("CLIPS"):
+        return {"z0": 1.0, "z1": 1.05, "x0": 0, "x1": 0, "y0": 0, "y1": 0}
     if detail:
         return {"z0": 1.5, "z1": 1.68, "x0": 0, "x1": rng.uniform(-3, 3), "y0": 0, "y1": rng.uniform(-2, 2),
                 "fx": rng.choice([-24, -16, 16, 24]), "fy": rng.choice([-16, -8, 8, 16])}
@@ -228,9 +233,24 @@ def build(vid):
         caps[c]["e"] = min(caps[c]["e"], caps[c + 1]["s"])
     with cf.ThreadPoolExecutor(4) as ex:
         list(ex.map(lambda j: grade(j[0], j[1], mood), set(jobs)))
+    if os.environ.get("CLIPS"):
+        os.makedirs(f"{pub}/clips", exist_ok=True)
+        jobs_px = []
+        for i, b in enumerate(beats):
+            if not b.get("img") or (b.get("fx") or {}).get("end"):
+                continue
+            preset = "push" if b["seg"] == "hook" or b.get("fx") else PRESET_CYCLE[i % len(PRESET_CYCLE)]
+            d = round(b["e"] - b["s"] + 0.45, 2)
+            key = b["img"].split("/")[-1].rsplit(".", 1)[0]
+            clip = f"{vid}/clips/{key}_{preset}_{int(d * 100)}.mp4"
+            b["clip"] = clip
+            jobs_px.append({"img": f"{ROOT}/public/{b['img']}", "out": f"{ROOT}/public/{clip}", "dur": d, "preset": preset,
+                            "strength": 0.75 if b.get("fx") else 1.0})
+        json.dump(jobs_px, open(f"{ROOT}/assets/{vid}/clip_jobs.json", "w"))
     tl = {"vid": vid, "dur": round(dur, 3), "accent": s["accent"], "series": s["series"], "title": s["title"],
           "beats": beats, "items": items, "captions": caps, "sfx": sfx, "vo": vo, "music": mood,
-          "next": {"title": nxt["title"], "img": f"{vid}/next.jpg"}}
+          "next": {"title": nxt["title"], "img": f"{vid}/next.jpg"},
+          "particles": {"ocean": "bubbles", "space": "stars", "micro": "specks", "wonders": None}.get(vid, "dust")}
     json.dump(tl, open(f"{ROOT}/assets/{vid}/timeline.json", "w"))
     print(vid, f"dur {dur/60:.2f} min", len(beats), "beats", len(caps), "captions", f"avg shot {dur/len(beats):.1f}s")
     return tl
